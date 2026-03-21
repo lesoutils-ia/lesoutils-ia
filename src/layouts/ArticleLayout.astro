@@ -31,16 +31,18 @@ const h2headings = headings.filter(h => h.depth === 2 || h.depth === 3);
     .article-cat-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 1rem; }
     .article-cat { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); background: var(--accent-dim); padding: 4px 10px; border-radius: 3px; }
     .article-tag { font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); padding: 4px 10px; border-radius: 3px; border: 1px solid var(--border); }
+
+    /* TITRE PRINCIPAL — police changée en DM Sans, plus de coupure */
     .article-title {
-      font-family: var(--font-display);
-      font-size: clamp(20px, 2.8vw, 36px);
+      font-family: var(--font-body);
+      font-size: clamp(26px, 4vw, 44px);
       font-weight: 700;
-      line-height: 1.5;
-      letter-spacing: 0px;
+      line-height: 1.4;
+      letter-spacing: -0.3px;
       margin-bottom: 1.2rem;
       overflow: visible;
-      padding-bottom: 0.3rem;
     }
+
     .article-subtitle { font-size: 16px; color: var(--text-mid); line-height: 1.65; font-weight: 300; margin-bottom: 1.5rem; }
     .article-meta-row { display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap; padding: 1rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); font-size: 12px; color: var(--text-muted); }
     .meta-author { display: flex; align-items: center; gap: 8px; }
@@ -57,49 +59,59 @@ const h2headings = headings.filter(h => h.depth === 2 || h.depth === 3);
     .toc-list li.toc-h3 a { padding-left: 20px; font-size: 12px; }
     .article-body-wrap { padding: 2.5rem 0; display: grid; grid-template-columns: 1fr 300px; gap: 4rem; align-items: start; }
     @media (max-width: 900px) { .article-body-wrap { grid-template-columns: 1fr; gap: 2.5rem; } }
+
+    /* TITRES H2 — grand espace avant */
     .article-content h2 {
       font-family: var(--font-display);
       font-size: clamp(18px, 2.2vw, 24px);
       font-weight: 700;
-      letter-spacing: -0.2px;
       line-height: 1.4;
-      margin: 4rem 0 1.5rem;
-      padding-top: 2.5rem;
+      margin-top: 5rem;
+      margin-bottom: 1.5rem;
+      padding-top: 3rem;
       border-top: 1px solid var(--border);
     }
     .article-content h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+
+    /* TITRES H3 — espace généreux aussi */
     .article-content h3 {
       font-family: var(--font-display);
       font-size: 17px;
       font-weight: 700;
-      letter-spacing: -0.1px;
-      margin: 3rem 0 1rem;
+      margin-top: 3.5rem;
+      margin-bottom: 1rem;
     }
+
+    /* PARAGRAPHES — bien aérés */
     .article-content p {
       font-size: 15px;
       line-height: 1.9;
       color: var(--text-mid);
       margin-bottom: 2rem;
     }
+
     .article-content strong { color: var(--text); font-weight: 500; }
-    .article-content ul {
-      margin: 0 0 2rem 0;
-      padding-left: 1.4rem;
-      color: var(--text-mid);
-      list-style-type: disc;
-    }
+
+    /* LISTES — alignées avec le texte, reset complet */
     .article-content ol {
-      margin: 0 0 2rem 0;
-      padding-left: 1.4rem;
-      color: var(--text-mid);
       list-style-type: decimal;
+      margin: 1rem 0 2.5rem 0;
+      padding-left: 2rem;
+      color: var(--text-mid);
+    }
+    .article-content ul {
+      list-style-type: disc;
+      margin: 1rem 0 2.5rem 0;
+      padding-left: 2rem;
+      color: var(--text-mid);
     }
     .article-content li {
       font-size: 15px;
       line-height: 1.9;
-      margin-bottom: 10px;
-      padding-left: 0.3rem;
+      margin-bottom: 12px;
+      padding-left: 0;
     }
+
     .article-content a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
     .article-content blockquote {
       background: var(--bg3);
@@ -109,7 +121,7 @@ const h2headings = headings.filter(h => h.depth === 2 || h.depth === 3);
       border-radius: 0 6px 6px 0;
       font-size: 14px;
       color: var(--text-mid);
-      line-height: 1.8;
+      line-height: 1.9;
     }
     .article-content code { background: var(--bg3); border: 1px solid var(--border); padding: 2px 7px; border-radius: 4px; font-size: 13px; color: var(--accent); font-family: monospace; }
     .article-content pre { background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; padding: 1.2rem; margin: 2.5rem 0; overflow-x: auto; }
