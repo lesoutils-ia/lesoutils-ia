@@ -23,6 +23,24 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
   <style is:global>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* RESET LISTES — empêche le reset global d'écraser les styles des articles */
+    .article-content ol {
+      list-style-type: decimal !important;
+      padding-left: 2rem !important;
+      margin: 1rem 0 2.5rem 0 !important;
+    }
+    .article-content ul {
+      list-style-type: disc !important;
+      padding-left: 2rem !important;
+      margin: 1rem 0 2.5rem 0 !important;
+    }
+    .article-content li {
+      margin-bottom: 12px !important;
+      padding-left: 0 !important;
+      line-height: 1.9 !important;
+    }
+
     :root {
       --bg: #080808; --bg3: #161616;
       --border: rgba(255,255,255,0.07); --border-strong: rgba(255,255,255,0.14);
