@@ -24,36 +24,41 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <style is:global>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    /* RESET ARTICLE — force tous les espacements malgré le reset global */
+    /* RESET ARTICLE — priorité absolue sur tout */
     .article-content p {
-  margin-bottom: 1rem !important;
-  line-height: 1.8 !important;
-}
-.article-content h2 {
-  margin-top: 2.5rem !important;
-  margin-bottom: 1rem !important;
-  padding-top: 1.5rem !important;
-}
-.article-content h3 {
-  margin-top: 2rem !important;
-  margin-bottom: 0.8rem !important;
-}
+      margin-bottom: 0.8rem !important;
+      line-height: 1.8 !important;
+    }
+    .article-content h2 {
+      margin-top: 2rem !important;
+      margin-bottom: 0.8rem !important;
+      padding-top: 1.5rem !important;
+    }
+    .article-content h3 {
+      margin-top: 1.5rem !important;
+      margin-bottom: 0.6rem !important;
+    }
+    .article-content blockquote {
+      margin: 1rem 0 !important;
+      padding: 0.8rem 1.2rem !important;
+    }
+    .article-content blockquote p {
+      margin-bottom: 0.3rem !important;
+      line-height: 1.7 !important;
+    }
     .article-content ol {
       list-style-type: decimal !important;
       padding-left: 1.5rem !important;
-      margin: 0.5rem 0 2rem 0 !important;
+      margin: 0.5rem 0 1rem 0 !important;
     }
     .article-content ul {
       list-style-type: disc !important;
       padding-left: 1.5rem !important;
-      margin: 0.5rem 0 2rem 0 !important;
+      margin: 0.5rem 0 1rem 0 !important;
     }
     .article-content li {
-      margin-bottom: 12px !important;
-      line-height: 1.9 !important;
-    }
-    .article-content blockquote {
-      margin: 2.5rem 0 !important;
+      margin-bottom: 8px !important;
+      line-height: 1.8 !important;
     }
 
     :root {
