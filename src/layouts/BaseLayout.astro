@@ -1,0 +1,117 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Le média de référence des outils IA pour entreprises françaises. Comparatifs, avis et guides pratiques." } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalURL} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <style is:global>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #080808; --bg3: #161616;
+      --border: rgba(255,255,255,0.07); --border-strong: rgba(255,255,255,0.14);
+      --text: #f0ede8; --text-muted: #7a7570; --text-mid: #a09b96;
+      --accent: #c8f135; --accent-dim: rgba(200,241,53,0.12); --accent-text: #0a1a00;
+      --red: #ff4d3d;
+      --font-display: 'Syne', sans-serif; --font-body: 'DM Sans', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 1.5rem; height: 56px; background: rgba(8,8,8,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); gap: 1rem; }
+    .nav-logo { font-family: var(--font-display); font-weight: 800; font-size: 17px; letter-spacing: -0.5px; display: flex; align-items: center; gap: 7px; flex-shrink: 0; transition: opacity .15s; }
+    .nav-logo:hover { opacity: .8; }
+    .nav-logo-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); display: inline-block; flex-shrink: 0; }
+    .nav-links { display: flex; align-items: center; gap: 1.5rem; list-style: none; font-size: 13px; color: var(--text-muted); }
+    .nav-links li a:hover { color: var(--text); }
+    .nav-cta { background: var(--accent); color: var(--accent-text); font-family: var(--font-display); font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 7px 14px; border-radius: 4px; flex-shrink: 0; }
+    .nav-cta:hover { opacity: .9; }
+    @media (max-width: 768px) { .nav-links { display: none; } }
+    .wrap { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+    .footer-grid { padding: 3rem 0; display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 2.5rem; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    @media (max-width: 860px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
+    .footer-logo { font-family: var(--font-display); font-weight: 800; font-size: 18px; letter-spacing: -0.5px; margin-bottom: 10px; display: flex; align-items: center; gap: 7px; }
+    .footer-logo:hover { opacity: .8; }
+    .footer-tagline { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+    .footer-col-title { font-family: var(--font-display); font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+    .footer-links li a { font-size: 13px; color: var(--text-muted); }
+    .footer-links li a:hover { color: var(--text); }
+    .footer-bottom { padding: 1.2rem 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: 12px; color: var(--text-muted); }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+    .fade-up { animation: fadeUp .5s ease both; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo"><span class="nav-logo-dot"></span>lesoutils-ia.fr</a>
+  <ul class="nav-links">
+    <li><a href="/comparatifs">Comparatifs</a></li>
+    <li><a href="/redaction-ia">Rédaction IA</a></li>
+    <li><a href="/automatisation">Automatisation</a></li>
+    <li><a href="/ia-pour-pme">IA pour PME</a></li>
+    <li><a href="/guides">Guides</a></li>
+  </ul>
+  <a href="/#newsletter" class="nav-cta">Newsletter</a>
+</nav>
+
+<slot />
+
+<div class="wrap">
+  <div class="footer-grid">
+    <div>
+      <a href="/" class="footer-logo"><span class="nav-logo-dot"></span>lesoutils-ia.fr</a>
+      <p class="footer-tagline">Le média indépendant de référence sur les outils IA pour les entreprises françaises.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Comparatifs</div>
+      <ul class="footer-links">
+        <li><a href="/redaction-ia">Rédaction IA</a></li>
+        <li><a href="/automatisation">Automatisation</a></li>
+        <li><a href="/ia-pour-pme">IA pour PME</a></li>
+        <li><a href="/comparatifs/crm">CRM intelligents</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Ressources</div>
+      <ul class="footer-links">
+        <li><a href="/guides">Guides pratiques</a></li>
+        <li><a href="/actualites">Actualités IA</a></li>
+        <li><a href="/#newsletter">Newsletter</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">À propos</div>
+      <ul class="footer-links">
+        <li><a href="/methode">Notre méthode</a></li>
+        <li><a href="/partenariats">Partenariats</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 lesoutils-ia.fr — Tous droits réservés</span>
+    <span>Certains liens sont affiliés — <a href="/mentions-legales" style="color:var(--accent)">En savoir plus</a></span>
+  </div>
+</div>
+
+</body>
+</html>
