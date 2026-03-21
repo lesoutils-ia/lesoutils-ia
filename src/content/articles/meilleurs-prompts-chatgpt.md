@@ -12,55 +12,72 @@ featured: false
 draft: false
 ---
 
-Un bon prompt ChatGPT, c'est la différence entre une réponse générique et un résultat directement utilisable. Voici notre sélection des meilleurs prompts testés en conditions réelles avec des équipes françaises.
+Je me souviens exactement du moment où j'ai arrêté d'utiliser ChatGPT comme un moteur de recherche amélioré. C'était sur un email de prospection. J'avais écrit "rédige-moi un email commercial" et obtenu quelque chose d'inutilisable — poli, vague, corporate. Par curiosité, j'ai réessayé en disant à ChatGPT qu'il était un copywriter B2B avec dix ans d'expérience dans le secteur visé, en lui donnant le profil exact du destinataire, et en lui interdisant toute formule bateau. Le résultat était tellement différent que j'ai relu deux fois pour m'assurer que c'était bien la même IA.
 
-## Les prompts marketing les plus efficaces
+Depuis, j'ai passé des mois à affiner des prompts avec des équipes françaises — marketing, direction, commercial. Ce qui suit n'est pas une liste théorique. C'est ce qu'on utilise vraiment, semaine après semaine.
 
-### Rédiger un email de prospection
+## Votre prompt actuel ne fonctionne probablement pas
 
-Copiez ce prompt et remplacez les crochets par vos informations :
+"Écris-moi un email de prospection." Tout le monde commence par là. Le problème c'est que ChatGPT n'a aucune information sur vous, sur votre cible, sur ce qui différencie votre offre. Il produit donc quelque chose de statistiquement moyen — ce qui fonctionne pour tout le monde ne fonctionne vraiment pour personne.
 
-> Tu es un expert en copywriting B2B. Rédige un email de prospection pour [entreprise] qui vend [produit/service]. Cible : [poste du destinataire] dans une PME de [secteur]. Ton : professionnel mais direct, pas corporate. Longueur : 150 mots maximum. Accroche : commence par un constat sur leur secteur, pas par une présentation.
+Pensez-y autrement : si vous embauchiez un rédacteur freelance et que vous lui disiez juste "écris un email", vous seriez surpris par le résultat ? Non. Ce serait pareil.
 
-### Créer une ligne objet d'email qui convertit
+La recette qui change tout tient en quatre mots : rôle, contexte, tâche, format. ChatGPT a besoin de savoir qui il est dans cette conversation, dans quelle situation vous vous trouvez, ce que vous voulez précisément, et sous quelle forme vous le voulez. Ça paraît évident dit comme ça. Pourtant 90% des prompts qu'on voit au quotidien ignorent au moins deux de ces quatre éléments.
 
-> Génère 10 lignes objet pour un email sur [sujet]. Contraintes : maximum 50 caractères, sans emoji, sans les mots "exclusif", "urgent", "important". Varie les approches : question, chiffre, bénéfice, curiosité.
+## Les prompts marketing qui changent vraiment les résultats
 
-### Analyser un email concurrent
+### L'email de prospection qui ne finit pas à la corbeille
 
-> Voici un email que j'ai reçu d'un concurrent : [coller l'email]. Analyse : 1) Ce qui fonctionne dans cet email, 2) Ce qui ne fonctionne pas, 3) Comment je pourrais faire mieux pour mon contexte : [votre contexte].
+Ce que j'utilise. Remplacez les crochets :
 
-## Les prompts pour gagner du temps au quotidien
+> Tu es un expert en copywriting B2B qui a travaillé dix ans dans [secteur de votre cible]. Rédige un email de prospection pour une entreprise qui vend [votre produit/service] à des [poste du destinataire] dans des PME françaises. Commence par un constat sur leur quotidien, pas par une présentation de l'entreprise. 150 mots maximum. Ton direct, pas de jargon corporate.
 
-### Résumer une réunion
+Le détail qui change tout : préciser que ChatGPT "a travaillé dix ans dans le secteur". Ça le force à adopter le point de vue de quelqu'un qui connaît les vrais problèmes de vos clients, pas une vision extérieure et généraliste.
 
-> Voici le compte-rendu brut de notre réunion : [coller vos notes]. Reformate en : décisions prises, actions à faire avec responsable et deadline, points en suspens, prochaine réunion.
+### Trouver une ligne objet qui donne envie d'ouvrir
 
-### Rédiger une réponse difficile
+> Génère dix lignes objet pour un email sur [sujet]. Maximum 50 caractères chacune. Interdis-toi les mots "exclusif", "urgent" et "important". Varie les angles : une question, un chiffre, un bénéfice concret, une curiosité, une provocation légère.
 
-> Je dois répondre à [client/collaborateur] qui [situation problématique]. Mon objectif : [ce que je veux obtenir]. Contrainte : maintenir une bonne relation. Rédige une réponse de 3 paragraphes : 1) accusé de réception empathique, 2) ma position clairement expliquée, 3) proposition concrète pour avancer.
+Toujours en demander dix. Pas cinq, pas trois — dix. Vous n'en garderez qu'une, mais comparer vous force à comprendre pourquoi certaines accrochent et d'autres non. C'est un entraînement autant qu'un outil.
 
-## Les prompts pour les dirigeants
+### Décortiquer ce que font vos concurrents
 
-### Analyser une décision stratégique
+> Voici un email reçu d'un concurrent : [collez l'email]. Dis-moi ce qui fonctionne techniquement dans la structure et l'accroche. Ce qui ne fonctionne pas. Et si tu devais réécrire cet email pour qu'il performe mieux auprès de [votre cible], par quoi tu commencerais ?
 
-> Je dois décider si [décision]. Contexte : [votre situation]. Budget disponible : [montant]. Délai : [calendrier]. Analyse cette décision selon : arguments pour, arguments contre, risques principaux, ce que je ne considère peut-être pas, ta recommandation en une phrase.
+J'utilise ça sur des emails concurrents mais aussi sur mes propres anciens emails. Se faire critiquer par une IA c'est parfois plus utile que de demander l'avis de collègues qui vont ménager votre ego.
 
-### Préparer un entretien d'embauche
+## Les prompts qui récupèrent du temps sur les tâches ingrates
 
-> Je dois recruter un [poste] pour [entreprise dans secteur]. Voici le profil idéal : [description]. Génère : 10 questions techniques, 5 questions comportementales méthode STAR, 3 questions pièges pour tester la réflexion, les réponses rédhibitoires à écouter.
+### Transformer le chaos d'une réunion en quelque chose d'utilisable
 
-## La règle des 4 éléments d'un bon prompt
+Vingt minutes économisées par réunion, minimum :
 
-Tout bon prompt contient ces 4 éléments :
+> Voici mes notes brutes : [collez tout, y compris le fouillis]. Reformate en trois blocs : les décisions prises avec qui les a validées, les actions à faire avec responsable et deadline, les points toujours en suspens. Une ligne par item, pas de phrases longues.
 
-1. **Rôle** — Dis à ChatGPT qui il est ("Tu es un expert en...")
-2. **Contexte** — Donne le maximum d'informations sur ta situation
-3. **Tâche** — Décris précisément ce que tu veux
-4. **Format** — Spécifie comment tu veux la réponse
+Un conseil contre-intuitif : ne nettoyez pas vos notes avant de coller. Plus vous donnez de matière brute, mieux ChatGPT s'en sort. Il est étrangement bon pour extraire du sens du désordre.
 
-**Sans ces éléments :** "Écris un article sur l'IA" → résultat générique inutilisable.
+### Répondre à un email tendu sans aggraver les choses
 
-**Avec ces éléments :** "Tu es un journaliste spécialisé tech qui écrit pour des dirigeants de PME françaises. Contexte : je publie sur lesoutils-ia.fr. Rédige une introduction de 150 mots sur l'impact de l'IA sur les PME en 2026. Format : accroche choc + 3 phrases de contexte + question rhétorique finale."
+> Je dois répondre à [client/collègue] qui [situation en une phrase]. Objectif : [ce que vous voulez obtenir]. Contrainte : ne pas détériorer la relation. Propose trois versions — ferme, neutre, conciliante — pour que je choisisse selon mon ressenti du moment.
 
-La différence de qualité est immédiate.
+Demander trois versions plutôt qu'une, c'est une habitude que j'ai prise après m'être retrouvé plusieurs fois avec une seule proposition qui ne convenait pas. Avoir le choix change complètement la façon dont vous utilisez le résultat.
+
+## Les prompts pour les décisions difficiles
+
+### Quand vous n'arrivez pas à trancher
+
+> Je dois décider si [décision]. Contexte : [votre situation en 3-4 phrases]. Budget : [montant]. Délai : [date]. Joue l'avocat du diable — dis-moi tout ce qui pourrait mal se passer, ce que je ne vois probablement pas, et les questions que je devrais me poser avant de décider.
+
+La nuance importante : demander explicitement "l'avocat du diable" plutôt que "analyse cette décision". La seconde formulation donne une liste équilibrée pour/contre. La première force ChatGPT à chercher ce que vous n'avez pas envie d'entendre — ce qui est précisément ce dont vous avez besoin avant un choix important.
+
+### Préparer un entretien sans improviser les questions difficiles
+
+> Je recrute un [poste] pour [entreprise et secteur en deux phrases]. Profil recherché : [description]. Génère quinze questions — cinq techniques sur les compétences, cinq comportementales en format STAR, cinq déstabilisantes pour voir comment le candidat réagit sous pression. Pour chaque question difficile, précise quelle réponse serait rédhibitoire.
+
+La dernière partie est ce qui manque quand on prépare des entretiens seul. Savoir à l'avance ce qu'on ne veut pas entendre clarifie les critères de sélection bien mieux qu'une liste de qualités souhaitées.
+
+## Ce que j'ai vraiment appris en utilisant ça au quotidien
+
+Les prompts que vous venez de lire sont des points de départ, pas des formules magiques. Votre version finale sera meilleure parce que vous connaissez votre contexte, votre secteur, vos clients mieux que n'importe quel article.
+
+Ce qui change vraiment la donne sur le long terme : apprendre à corriger plutôt qu'à recommencer. Quand une réponse rate, au lieu de tout relancer, dites à ChatGPT exactement ce qui cloche. "Le ton est trop formel, reprends en plus direct." "L'accroche ne parle pas assez aux problèmes du client, reformule." Trois échanges comme ça donnent souvent un résultat bien meilleur qu'une dizaine de prompts différents envoyés depuis zéro.
