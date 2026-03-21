@@ -4,7 +4,7 @@ export interface Props {
   description?: string;
 }
 
-const { title, description = "Le média de référence des outils IA pour entreprises françaises. Comparatifs, avis et guides pratiques." } = Astro.props;
+const { title, description = "Le média de référence des outils IA pour entreprises françaises." } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 <!DOCTYPE html>
@@ -24,21 +24,36 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <style is:global>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    /* RESET LISTES — empêche le reset global d'écraser les styles des articles */
+    /* RESET ARTICLE — force tous les espacements malgré le reset global */
+    .article-content p {
+      margin-bottom: 2rem !important;
+      line-height: 1.9 !important;
+    }
+    .article-content h2 {
+      margin-top: 4rem !important;
+      margin-bottom: 2rem !important;
+      padding-top: 3rem !important;
+    }
+    .article-content h3 {
+      margin-top: 3rem !important;
+      margin-bottom: 1.5rem !important;
+    }
     .article-content ol {
       list-style-type: decimal !important;
-      padding-left: 2rem !important;
-      margin: 1rem 0 2.5rem 0 !important;
+      padding-left: 1.5rem !important;
+      margin: 0.5rem 0 2rem 0 !important;
     }
     .article-content ul {
       list-style-type: disc !important;
-      padding-left: 2rem !important;
-      margin: 1rem 0 2.5rem 0 !important;
+      padding-left: 1.5rem !important;
+      margin: 0.5rem 0 2rem 0 !important;
     }
     .article-content li {
       margin-bottom: 12px !important;
-      padding-left: 0 !important;
       line-height: 1.9 !important;
+    }
+    .article-content blockquote {
+      margin: 2.5rem 0 !important;
     }
 
     :root {
