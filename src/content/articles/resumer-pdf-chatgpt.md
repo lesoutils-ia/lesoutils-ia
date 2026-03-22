@@ -1,8 +1,8 @@
 ---
 title: "Résumer un PDF avec ChatGPT — guide complet 2026"
-description: "Comment résumer n'importe quel PDF avec ChatGPT en moins de 2 minutes. Méthodes gratuites et payantes, prompts optimisés et astuces pour les documents longs."
+description: "Comment résumer n'importe quel PDF avec ChatGPT en moins de 2 minutes. Méthodes gratuites et payantes, prompts optimisés pour documents longs."
 category: "Guide ChatGPT"
-tags: ["ChatGPT", "PDF", "Productivité"]
+tags: ["ChatGPT", "PDF", "résumer PDF", "productivité IA", "outil IA gratuit"]
 author: "Équipe lesoutils-ia"
 authorInitials: "LI"
 publishDate: "2026-03-21"
@@ -68,3 +68,16 @@ PDF.ai est spécialisé uniquement là-dessus. L'interface est épurée, le plan
 La version gratuite avec copier-coller fonctionne bien sur les documents simples — des rapports en texte pur, des articles, des guides. Là où ChatGPT Plus fait vraiment la différence, c'est quand le PDF contient des tableaux ou des graphiques. Le texte copié perd sa structure et ChatGPT a du mal à reconstituer le sens.
 
 Si vous lisez régulièrement des documents techniques ou des contrats, les 20$/mois sont vite amortis. Sinon, la version gratuite est amplement suffisante.
+
+Pour aller plus loin dans votre usage de ChatGPT, jetez un œil à notre sélection des [meilleurs prompts ChatGPT pour les professionnels](/articles/meilleurs-prompts-chatgpt) — les mêmes principes s'appliquent, et certains prompts de la liste sont directement adaptables à l'analyse de documents.
+
+## Questions fréquentes
+
+**Peut-on résumer un PDF avec ChatGPT gratuitement ?**
+Oui. Sans abonnement, copiez le texte du PDF et collez-le dans ChatGPT. Pour les documents longs, découpez en plusieurs parties en demandant à ChatGPT de "noter sans résumer" jusqu'à la dernière partie où vous demandez la synthèse complète.
+
+**Quelle est la taille maximale de PDF acceptée par ChatGPT ?**
+Avec ChatGPT Plus, la limite est de 512 Mo par fichier. Sans abonnement, vous êtes limité par la taille du contexte : environ 3 000 mots par message, ce qui représente une dizaine de pages standard.
+
+**ChatGPT ou Claude pour résumer un PDF ?**
+Pour les documents courts, les deux font bien le travail. Pour les rapports de plus de 50 pages, Claude.ai a un avantage concret : sa fenêtre de contexte est plus grande, ce qui évite de découper le document en plusieurs morceaux.
