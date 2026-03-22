@@ -15,9 +15,14 @@ const articles = defineCollection({
     featured: z.boolean().optional().default(false),
     draft: z.boolean().optional().default(false),
 
-    // SEO — champs optionnels ajoutés
-    ogImage: z.string().optional(),  // image spécifique à l'article (sinon /og-default.jpg)
-    noindex: z.boolean().optional().default(false), // true = exclure de Google (brouillons, pages test)
+    // SEO
+    ogImage: z.string().optional(),
+    noindex: z.boolean().optional().default(false),
+
+    // Schema Review — à renseigner sur les fiches outils et comparatifs
+    toolName: z.string().optional(),       // nom de l'outil testé (ex: "Deepseek")
+    rating: z.number().optional(),         // note sur 5 (ex: 4.2)
+    reviewCount: z.number().optional(),    // nombre d'avis (ex: 14)
   }),
 });
 
