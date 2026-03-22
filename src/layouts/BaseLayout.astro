@@ -15,12 +15,63 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <title>{title}</title>
   <meta name="description" content={description} />
   <link rel="canonical" href={canonicalURL} />
+
+  <!-- Open Graph -->
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:site_name" content="lesoutils-ia.fr" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:image" content="/og-default.jpg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content="/og-default.jpg" />
+
+  <!-- Robots -->
+  <meta name="robots" content="index, follow" />
+
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <!-- Slot pour les metas supplémentaires (pages articles, fiches outils...) -->
+  <slot name="head" />
+
+  <!-- Schema Organization + WebSite (présent sur toutes les pages) -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://lesoutils-ia.fr/#org",
+        "name": "lesoutils-ia.fr",
+        "url": "https://lesoutils-ia.fr",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://lesoutils-ia.fr/favicon.svg"
+        },
+        "description": "Média B2B indépendant sur les outils IA pour entreprises françaises",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "lesoutilsia1@gmail.com",
+          "contactType": "customer support"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://lesoutils-ia.fr/#website",
+        "url": "https://lesoutils-ia.fr",
+        "name": "lesoutils-ia.fr",
+        "inLanguage": "fr-FR",
+        "publisher": { "@id": "https://lesoutils-ia.fr/#org" }
+      }
+    ]
+  })} />
+
   <style is:global>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
