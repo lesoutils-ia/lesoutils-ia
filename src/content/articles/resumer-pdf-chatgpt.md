@@ -2,7 +2,7 @@
 title: "Résumer un PDF avec ChatGPT — guide complet 2026"
 description: "Comment résumer n'importe quel PDF avec ChatGPT en moins de 2 minutes. Méthodes gratuites et payantes, prompts optimisés pour documents longs."
 category: "Guide ChatGPT"
-tags: ["ChatGPT", "PDF", "résumer PDF", "productivité IA", "outil IA gratuit"]
+tags: ["résumer pdf chatgpt", "ChatGPT", "PDF", "productivité", "outil IA gratuit"]
 author: "Équipe lesoutils-ia"
 authorInitials: "LI"
 publishDate: "2026-03-21"
