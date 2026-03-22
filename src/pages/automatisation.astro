@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const articles = await getCollection('articles', ({ data }) => !data.draft);
+const filtered = articles.filter(a => a.data.category.toLowerCase().includes('automatisation'));
+---
+
+<BaseLayout title="Automatisation IA pour entreprises — lesoutils-ia.fr">
+  <style>
+    .page { padding-top: 56px; }
+    .page-header { padding: 3rem 0 2rem; border-bottom: 1px solid var(--border); }
+    .page-label { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.8rem; }
+    .page-title { font-family: var(--font-display); font-size: clamp(28px, 4vw, 48px); font-weight: 800; line-height: 1.2; letter-spacing: -1px; margin-bottom: 0.8rem; }
+    .page-desc { font-size: 16px; color: var(--text-muted); line-height: 1.7; max-width: 600px; }
+    .articles-list { padding: 2rem 0; }
+    .article-row { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2rem; padding: 1.5rem 0; border-bottom: 1px solid var(--border); text-decoration: none; color: inherit; }
+    .article-row:last-child { border-bottom: none; }
+    .article-row-cat { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 5px; }
+    .article-row-title { font-family: var(--font-body); font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 5px; transition: color .15s; }
+    .article-row:hover .article-row-title { color: var(--accent); }
+    .article-row-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+    .article-row-meta { font-size: 12px; color: var(--text-muted); white-space: nowrap; }
+    .empty-state { padding: 4rem 0; text-align: center; color: var(--text-muted); font-size: 15px; }
+  </style>
+
+  <div class="page">
+    <div class="wrap">
+      <div class="page-header">
+        <div class="page-label">Automatisation</div>
+        <h1 class="page-title">Automatisation IA<br>pour entreprises</h1>
+        <p class="page-desc">Zapier, Make.com, n8n — comparatifs et guides pour automatiser vos processus métier et gagner des heures chaque semaine.</p>
+      </div>
+      <div class="articles-list">
+        {filtered.length > 0 ? filtered.map(a => (
+          <a href={`/articles/${a.slug}`} class="article-row">
+            <div>
+              <div class="article-row-cat">{a.data.category}</div>
+              <div class="article-row-title">{a.data.title}</div>
+              <div class="article-row-desc">{a.data.description}</div>
+            </div>
+            <div class="article-row-meta">{a.data.readTime}</div>
+          </a>
+        )) : (
+          <div class="empty-state">Nos premiers articles sur l'automatisation arrivent très bientôt.</div>
+        )}
+      </div>
+    </div>
+  </div>
+</BaseLayout>
