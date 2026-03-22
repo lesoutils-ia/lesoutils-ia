@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Newsletter — lesoutils-ia.fr">
+  <style>
+    .page { padding-top: 56px; }
+    .newsletter-page { max-width: 600px; margin: 0 auto; padding: 5rem 1.5rem; text-align: center; }
+    .newsletter-icon { font-size: 48px; margin-bottom: 1.5rem; }
+    .newsletter-title { font-family: var(--font-display); font-size: clamp(28px, 4vw, 42px); font-weight: 800; line-height: 1.2; letter-spacing: -1px; margin-bottom: 1rem; }
+    .newsletter-title span { color: var(--accent); }
+    .newsletter-desc { font-size: 16px; color: var(--text-muted); line-height: 1.7; margin-bottom: 2.5rem; }
+    .newsletter-benefits { display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 2.5rem; text-align: left; }
+    .benefit-item { display: flex; align-items: center; gap: 12px; font-size: 15px; color: var(--text-mid); }
+    .benefit-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+    .newsletter-form { background: var(--bg3); border: 1px solid var(--accent); border-radius: 12px; padding: 2rem; }
+    .newsletter-form-title { font-family: var(--font-display); font-size: 18px; font-weight: 800; margin-bottom: 0.5rem; }
+    .newsletter-form-desc { font-size: 13px; color: var(--text-muted); margin-bottom: 1.5rem; }
+    .newsletter-input { width: 100%; background: var(--bg); border: 1px solid var(--border); color: var(--text); font-family: var(--font-body); font-size: 15px; padding: 12px 16px; border-radius: 6px; outline: none; margin-bottom: 10px; display: block; }
+    .newsletter-input::placeholder { color: var(--text-muted); }
+    .newsletter-input:focus { border-color: var(--accent); }
+    .newsletter-btn { width: 100%; background: var(--accent); color: var(--accent-text); font-family: var(--font-display); font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 14px; border-radius: 6px; border: none; cursor: pointer; transition: opacity .15s; }
+    .newsletter-btn:hover { opacity: .9; }
+    .newsletter-note { font-size: 12px; color: var(--text-muted); margin-top: 0.8rem; }
+  </style>
+
+  <div class="page">
+    <div class="wrap">
+      <div class="newsletter-page">
+        <div class="newsletter-icon">📬</div>
+        <h1 class="newsletter-title">Un outil IA par semaine,<br><span>sélectionné pour vous</span></h1>
+        <p class="newsletter-desc">Chaque lundi matin, recevez la sélection des meilleurs outils IA pour les entreprises françaises — avec notre avis honnête et des cas d'usage concrets.</p>
+
+        <div class="newsletter-benefits">
+          <div class="benefit-item"><span class="benefit-dot"></span><span>1 outil IA analysé en profondeur chaque semaine</span></div>
+          <div class="benefit-item"><span class="benefit-dot"></span><span>Les nouveautés importantes sur ChatGPT, HubSpot, Make.com...</span></div>
+          <div class="benefit-item"><span class="benefit-dot"></span><span>Des prompts et astuces directement utilisables</span></div>
+          <div class="benefit-item"><span class="benefit-dot"></span><span>Lu par des dirigeants et équipes de PME françaises</span></div>
+          <div class="benefit-item"><span class="benefit-dot"></span><span>Zéro spam, désinscription en un clic</span></div>
+        </div>
+
+        <div class="newsletter-form">
+          <div class="newsletter-form-title">Rejoindre la newsletter</div>
+          <div class="newsletter-form-desc">Gratuit — chaque lundi matin dans votre boîte mail</div>
+          <input type="email" class="newsletter-input" placeholder="votre@email.fr" />
+          <button class="newsletter-btn">Je m'abonne gratuitement</button>
+          <p class="newsletter-note">En vous inscrivant, vous acceptez de recevoir notre newsletter hebdomadaire. Désinscription possible à tout moment.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
