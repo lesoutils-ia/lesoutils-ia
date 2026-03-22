@@ -152,11 +152,13 @@ const recent = sorted.filter(a => a.slug !== featured?.slug).slice(0, 3);
           <div class="comparatif-label">Mis à jour mars 2026</div>
           <h2 class="comparatif-title">Meilleur outil IA<br>de rédaction pour PME</h2>
           <p class="comparatif-desc">Après 3 mois de tests avec des équipes marketing françaises, notre sélection des 5 meilleurs outils de rédaction IA.</p>
-          <div class="ranking-row"><div class="rank-num sponsored">01</div><div><div class="rank-name">Jasper AI</div><div class="rank-desc">Meilleur pour les équipes marketing — templates métiers</div></div><span class="rank-badge badge-sponsored">Sponsorisé</span></div>
-          <div class="ranking-row"><div class="rank-num">02</div><div><div class="rank-name">Copy.ai</div><div class="rank-desc">Excellent rapport qualité-prix, workflows automatisés</div></div><span class="rank-badge badge-best">Coup de cœur</span></div>
-          <div class="ranking-row"><div class="rank-num">03</div><div><div class="rank-name">Writesonic</div><div class="rank-desc">Fort sur les articles longs, SEO intégré</div></div><span class="rank-badge badge-free">Essai gratuit</span></div>
-          <div class="ranking-row"><div class="rank-num">04</div><div><div class="rank-name">Notion AI</div><div class="rank-desc">Parfait si vous utilisez déjà Notion</div></div><span class="rank-badge badge-free">Essai gratuit</span></div>
-          <div class="ranking-row"><div class="rank-num">05</div><div><div class="rank-name">Mistral le Chat Pro</div><div class="rank-desc">Solution française, RGPD natif</div></div><span class="rank-badge badge-free">Essai gratuit</span></div>
+          <a href="/articles/meilleurs-outils-ia-contenu" style="display:block;text-decoration:none;color:inherit;">
+            <div class="ranking-row"><div class="rank-num sponsored">01</div><div><div class="rank-name">Jasper AI</div><div class="rank-desc">Meilleur pour les équipes marketing — templates métiers</div></div><span class="rank-badge badge-sponsored">Sponsorisé</span></div>
+            <div class="ranking-row"><div class="rank-num">02</div><div><div class="rank-name">Copy.ai</div><div class="rank-desc">Excellent rapport qualité-prix, workflows automatisés</div></div><span class="rank-badge badge-best">Coup de cœur</span></div>
+            <div class="ranking-row"><div class="rank-num">03</div><div><div class="rank-name">Writesonic</div><div class="rank-desc">Fort sur les articles longs, SEO intégré</div></div><span class="rank-badge badge-free">Essai gratuit</span></div>
+            <div class="ranking-row"><div class="rank-num">04</div><div><div class="rank-name">Notion AI</div><div class="rank-desc">Parfait si vous utilisez déjà Notion</div></div><span class="rank-badge badge-free">Essai gratuit</span></div>
+            <div class="ranking-row"><div class="rank-num">05</div><div><div class="rank-name">Mistral le Chat Pro</div><div class="rank-desc">Solution française, RGPD natif</div></div><span class="rank-badge badge-free">Essai gratuit</span></div>
+          </a>
         </div>
         <div class="comparatif-sidebar">
           <div class="sidebar-widget">
@@ -172,14 +174,14 @@ const recent = sorted.filter(a => a.slug !== featured?.slug).slice(0, 3);
             <div class="newsletter-widget-title">Un outil IA par semaine</div>
             <p>Chaque lundi, la sélection des meilleurs outils IA.</p>
             <input type="email" class="newsletter-input" placeholder="votre@email.fr" />
-            <button class="newsletter-btn">Je m'abonne gratuitement</button>
+            <a href="/newsletter" class="newsletter-btn" style="display:block;text-align:center;text-decoration:none;">Je m'abonne gratuitement</a>
           </div>
         </div>
       </div>
 
       <div class="section-header">
         <span class="section-title">Derniers articles</span>
-        <a href="/articles" class="section-link">Voir tout →</a>
+        <a href="/outils" class="section-link">Voir tout →</a>
       </div>
 
       <div class="articles-grid">
@@ -192,9 +194,9 @@ const recent = sorted.filter(a => a.slug !== featured?.slug).slice(0, 3);
           </a>
         )) : (
           <>
-            <div class="article-card"><div class="article-cat">Guide ChatGPT</div><h3 class="article-title">Résumer un PDF avec ChatGPT — guide complet 2026</h3><p class="article-excerpt">Comment résumer n'importe quel PDF en moins de 2 minutes. Méthodes gratuites et payantes.</p><div class="article-footer"><span>7 min</span><span class="article-read">Lire l'article</span></div></div>
-            <div class="article-card"><div class="article-cat">Automatisation</div><h3 class="article-title">Make.com vs Zapier : lequel choisir pour votre PME en 2026 ?</h3><p class="article-excerpt">Deux leaders de l'automatisation no-code aux philosophies opposées. Notre comparatif.</p><div class="article-footer"><span>8 min</span><span class="article-read">Lire l'article</span></div></div>
-            <div class="article-card"><div class="article-cat">CRM</div><h3 class="article-title">HubSpot vs Pipedrive — quel CRM choisir pour votre PME ?</h3><p class="article-excerpt">Notre comparatif complet après 8 semaines de tests dans des conditions réelles.</p><div class="article-footer"><span>9 min</span><span class="article-read">Lire l'article</span></div></div>
+            <a href="/articles/resumer-pdf-chatgpt" class="article-card"><div class="article-cat">Guide ChatGPT</div><h3 class="article-title">Résumer un PDF avec ChatGPT — guide complet 2026</h3><p class="article-excerpt">Comment résumer n'importe quel PDF en moins de 2 minutes.</p><div class="article-footer"><span>7 min</span><span class="article-read">Lire l'article</span></div></a>
+            <a href="/articles/meilleurs-prompts-chatgpt" class="article-card"><div class="article-cat">Guide ChatGPT</div><h3 class="article-title">Les meilleurs prompts ChatGPT pour les professionnels</h3><p class="article-excerpt">50 prompts testés et optimisés pour gagner 2h par jour.</p><div class="article-footer"><span>10 min</span><span class="article-read">Lire l'article</span></div></a>
+            <a href="/articles/deepseek-avis" class="article-card"><div class="article-cat">Comparatif</div><h3 class="article-title">Deepseek avis — test complet de l'IA chinoise 2026</h3><p class="article-excerpt">L'IA chinoise qui a secoué le marché vaut-elle vraiment ChatGPT ?</p><div class="article-footer"><span>9 min</span><span class="article-read">Lire l'article</span></div></a>
           </>
         )}
       </div>
@@ -204,18 +206,18 @@ const recent = sorted.filter(a => a.slug !== featured?.slug).slice(0, 3);
         <a href="/outils" class="section-link">Tous les outils →</a>
       </div>
 
-      <div class="tools-strip">
-        <div class="tool-card"><div class="tool-icon">J</div><div><div class="tool-name">Jasper AI</div><div class="tool-desc">Rédaction marketing et copywriting</div><div class="tool-score">★ 4.8 — Dès 39€/mois</div></div></div>
-        <div class="tool-card"><div class="tool-icon">H</div><div><div class="tool-name">HubSpot AI</div><div class="tool-desc">CRM et marketing automation</div><div class="tool-score">★ 4.5 — Gratuit puis 15€/mois</div></div></div>
-        <div class="tool-card"><div class="tool-icon">M</div><div><div class="tool-name">Make.com</div><div class="tool-desc">Automatisation de workflows</div><div class="tool-score">★ 4.7 — Gratuit puis 9€/mois</div></div></div>
-        <div class="tool-card"><div class="tool-icon">C</div><div><div class="tool-name">ChatGPT Plus</div><div class="tool-desc">IA généraliste pour le travail</div><div class="tool-score">★ 4.9 — 20$/mois</div></div></div>
+            <div class="tools-strip">
+        <a href="/articles/meilleurs-prompts-chatgpt" class="tool-card" style="text-decoration:none;color:inherit;"><div class="tool-icon">C</div><div><div class="tool-name">ChatGPT Plus</div><div class="tool-desc">IA généraliste pour le travail</div><div class="tool-score">★ 4.9 — 20$/mois</div></div></a>
+        <a href="/articles/meilleurs-outils-ia-contenu" class="tool-card" style="text-decoration:none;color:inherit;"><div class="tool-icon">J</div><div><div class="tool-name">Jasper AI</div><div class="tool-desc">Rédaction marketing et copywriting</div><div class="tool-score">★ 4.8 — Dès 39€/mois</div></div></a>
+        <a href="/articles/meilleurs-outils-ia-contenu" class="tool-card" style="text-decoration:none;color:inherit;"><div class="tool-icon">H</div><div><div class="tool-name">HubSpot AI</div><div class="tool-desc">CRM et marketing automation</div><div class="tool-score">★ 4.5 — Gratuit puis 15€/mois</div></div></a>
+        <a href="/articles/tarif-outils-ia" class="tool-card" style="text-decoration:none;color:inherit;"><div class="tool-icon">M</div><div><div class="tool-name">Make.com</div><div class="tool-desc">Automatisation de workflows</div><div class="tool-score">★ 4.7 — Gratuit puis 9€/mois</div></div></a>
       </div>
 
       <div class="bottom-banner">
         <h2 class="banner-title">Votre outil IA absent<br>de notre <span>classement</span> ?</h2>
         <div class="banner-actions">
           <a href="/contact" class="btn-primary">Soumettre un outil</a>
-          <a href="/partenariats" class="btn-outline">Devenir partenaire</a>
+          <a href="/contact" class="btn-outline">Devenir partenaire</a>
         </div>
       </div>
     </div>
