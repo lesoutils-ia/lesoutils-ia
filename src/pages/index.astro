@@ -45,8 +45,9 @@ const recent = sorted.filter(a => a.slug !== featured?.slug).slice(0, 3);
     .comparatif-label { display: inline-flex; align-items: center; font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; background: var(--accent-dim); padding: 4px 10px; border-radius: 3px; }
     .comparatif-title { font-family: var(--font-display); font-size: clamp(22px, 3vw, 32px); font-weight: 800; line-height: 1.1; letter-spacing: -1px; margin-bottom: 1rem; }
     .comparatif-desc { font-size: 14px; color: var(--text-mid); line-height: 1.7; margin-bottom: 1.5rem; }
-    .ranking-row { display: grid; grid-template-columns: 36px 1fr auto; align-items: center; gap: 1rem; padding: 0.9rem 0; border-bottom: 1px solid var(--border); }
+    .ranking-row { display: grid; grid-template-columns: 36px 1fr auto; align-items: center; gap: 1rem; padding: 0.9rem 0; border-bottom: 1px solid var(--border); transition: background .15s; }
     .ranking-row:last-child { border-bottom: none; }
+    .ranking-row:hover { background: var(--bg3); }
     .rank-num { font-family: var(--font-display); font-size: 20px; font-weight: 800; color: var(--border-strong); text-align: center; }
     .rank-num.sponsored { color: var(--accent); }
     .rank-name { font-family: var(--font-body); font-size: 14px; font-weight: 700; margin-bottom: 2px; }
@@ -67,7 +68,7 @@ const recent = sorted.filter(a => a.slug !== featured?.slug).slice(0, 3);
     .newsletter-input { width: 100%; background: var(--bg); border: 1px solid var(--border); color: var(--text); font-family: var(--font-body); font-size: 13px; padding: 10px 14px; border-radius: 4px; outline: none; margin-bottom: 8px; display: block; }
     .newsletter-input::placeholder { color: var(--text-muted); }
     .newsletter-input:focus { border-color: var(--accent); }
-    .newsletter-btn { width: 100%; background: var(--accent); color: var(--accent-text); font-family: var(--font-display); font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 10px; border-radius: 4px; border: none; cursor: pointer; }
+    .newsletter-btn { width: 100%; background: var(--accent); color: var(--accent-text); font-family: var(--font-display); font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 10px; border-radius: 4px; border: none; cursor: pointer; display: block; text-align: center; text-decoration: none; }
     .articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid var(--border); }
     @media (max-width: 900px) { .articles-grid { grid-template-columns: 1fr; } }
     @media (min-width: 601px) and (max-width: 900px) { .articles-grid { grid-template-columns: 1fr 1fr; } }
@@ -83,7 +84,7 @@ const recent = sorted.filter(a => a.slug !== featured?.slug).slice(0, 3);
     .tools-strip { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid var(--border); }
     @media (max-width: 860px) { .tools-strip { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 480px) { .tools-strip { grid-template-columns: 1fr; } }
-    .tool-card { padding: 1.4rem 1.6rem; border-right: 1px solid var(--border); display: flex; align-items: flex-start; gap: 12px; transition: background .15s; }
+    .tool-card { padding: 1.4rem 1.6rem; border-right: 1px solid var(--border); display: flex; align-items: flex-start; gap: 12px; transition: background .15s; text-decoration: none; color: inherit; }
     .tool-card:last-child { border-right: none; }
     .tool-card:hover { background: var(--bg3); }
     .tool-icon { width: 38px; height: 38px; border-radius: 8px; background: var(--bg3); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 800; font-size: 17px; color: var(--accent); flex-shrink: 0; }
@@ -174,7 +175,7 @@ const recent = sorted.filter(a => a.slug !== featured?.slug).slice(0, 3);
             <div class="newsletter-widget-title">Un outil IA par semaine</div>
             <p>Chaque lundi, la sélection des meilleurs outils IA.</p>
             <input type="email" class="newsletter-input" placeholder="votre@email.fr" />
-            <a href="/newsletter" class="newsletter-btn" style="display:block;text-align:center;text-decoration:none;">Je m'abonne gratuitement</a>
+            <a href="/newsletter" class="newsletter-btn">Je m'abonne gratuitement</a>
           </div>
         </div>
       </div>
@@ -206,18 +207,18 @@ const recent = sorted.filter(a => a.slug !== featured?.slug).slice(0, 3);
         <a href="/outils" class="section-link">Tous les outils →</a>
       </div>
 
-            <div class="tools-strip">
-        <a href="/articles/meilleurs-prompts-chatgpt" class="tool-card" style="text-decoration:none;color:inherit;"><div class="tool-icon">C</div><div><div class="tool-name">ChatGPT Plus</div><div class="tool-desc">IA généraliste pour le travail</div><div class="tool-score">★ 4.9 — 20$/mois</div></div></a>
-        <a href="/articles/meilleurs-outils-ia-contenu" class="tool-card" style="text-decoration:none;color:inherit;"><div class="tool-icon">J</div><div><div class="tool-name">Jasper AI</div><div class="tool-desc">Rédaction marketing et copywriting</div><div class="tool-score">★ 4.8 — Dès 39€/mois</div></div></a>
-        <a href="/articles/meilleurs-outils-ia-contenu" class="tool-card" style="text-decoration:none;color:inherit;"><div class="tool-icon">H</div><div><div class="tool-name">HubSpot AI</div><div class="tool-desc">CRM et marketing automation</div><div class="tool-score">★ 4.5 — Gratuit puis 15€/mois</div></div></a>
-        <a href="/articles/tarif-outils-ia" class="tool-card" style="text-decoration:none;color:inherit;"><div class="tool-icon">M</div><div><div class="tool-name">Make.com</div><div class="tool-desc">Automatisation de workflows</div><div class="tool-score">★ 4.7 — Gratuit puis 9€/mois</div></div></a>
+      <div class="tools-strip">
+        <a href="/articles/meilleurs-prompts-chatgpt" class="tool-card"><div class="tool-icon">C</div><div><div class="tool-name">ChatGPT Plus</div><div class="tool-desc">IA généraliste pour le travail</div><div class="tool-score">★ 4.9 — 20$/mois</div></div></a>
+        <a href="/articles/meilleurs-outils-ia-contenu" class="tool-card"><div class="tool-icon">J</div><div><div class="tool-name">Jasper AI</div><div class="tool-desc">Rédaction marketing et copywriting</div><div class="tool-score">★ 4.8 — Dès 39€/mois</div></div></a>
+        <a href="/articles/tarif-outils-ia" class="tool-card"><div class="tool-icon">H</div><div><div class="tool-name">HubSpot AI</div><div class="tool-desc">CRM et marketing automation</div><div class="tool-score">★ 4.5 — Gratuit puis 15€/mois</div></div></a>
+        <a href="/articles/tarif-outils-ia" class="tool-card"><div class="tool-icon">M</div><div><div class="tool-name">Make.com</div><div class="tool-desc">Automatisation de workflows</div><div class="tool-score">★ 4.7 — Gratuit puis 9€/mois</div></div></a>
       </div>
 
-      <div class="bottom-banner">
+            <div class="bottom-banner">
         <h2 class="banner-title">Votre outil IA absent<br>de notre <span>classement</span> ?</h2>
         <div class="banner-actions">
-          <a href="/contact" class="btn-primary">Soumettre un outil</a>
-          <a href="/contact" class="btn-outline">Devenir partenaire</a>
+          <a href="/contact?type=outil" class="btn-primary">Soumettre un outil</a>
+          <a href="/contact?type=partenariat" class="btn-outline">Devenir partenaire</a>
         </div>
       </div>
     </div>
