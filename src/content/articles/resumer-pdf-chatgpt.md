@@ -20,12 +20,12 @@ Voici exactement comment je fais — avec les versions gratuites et payantes.
 
 C'est la méthode la plus simple si vous avez l'abonnement à 20$/mois. Vous envoyez le fichier comme vous enverriez une pièce jointe à un collègue, et vous lui dites ce que vous voulez.
 
-1. Ouvrez [chat.openai.com](https://chat.openai.com)
+1. Ouvrez chat.openai.com
 2. Cliquez sur l'icône trombone en bas
 3. Chargez votre PDF (512 Mo max)
 4. Copiez-collez ce prompt :
 
-> Résume ce document en 5 points clés maximum. Pour chaque point, indique la page source. Utilise un langage professionnel adapté à un dirigeant d'entreprise.
+*Résume ce document en 5 points clés maximum. Pour chaque point, indique la page source. Utilise un langage professionnel adapté à un dirigeant d'entreprise.*
 
 Trente secondes plus tard vous avez votre résumé. Avec les numéros de page pour vérifier si besoin.
 
@@ -35,7 +35,7 @@ La version gratuite ne peut pas lire les PDF directement. Mais vous copiez le te
 
 Le seul problème : ChatGPT accepte environ 3 000 mots par message. Donc pour les gros documents, vous découpez en morceaux et vous utilisez ce prompt pour ne pas perdre le fil :
 
-> Voici la partie 1 sur 3 d'un document. Ne résume pas encore — note juste ce qui est important. Je t'envoie la suite.
+*Voici la partie 1 sur 3 d'un document. Ne résume pas encore — note juste ce qui est important. Je t'envoie la suite.*
 
 Vous répétez pour chaque partie. Puis vous demandez la synthèse finale. C'est cinq minutes de plus, mais franchement ça marche très bien.
 
@@ -45,15 +45,15 @@ C'est là que la plupart des gens se trompent. Envoyer juste "résume ça" donne
 
 Pour un **rapport financier**, posez la question directement :
 
-> Quels sont les 3 chiffres importants dans ce rapport ? Quels risques sont mentionnés ? Quelles sont les recommandations ? Une phrase par élément.
+*Quels sont les 3 chiffres importants dans ce rapport ? Quels risques sont mentionnés ? Quelles sont les recommandations ? Une phrase par élément.*
 
 Pour un **contrat**, vous voulez savoir où ça peut coincer :
 
-> Lis ce contrat. Dis-moi ce que chaque partie s'engage à faire, les dates à ne pas rater, et tout ce qui te semble inhabituel ou risqué.
+*Lis ce contrat. Dis-moi ce que chaque partie s'engage à faire, les dates à ne pas rater, et tout ce qui te semble inhabituel ou risqué.*
 
 Pour un **article de recherche**, vous voulez comprendre sans vous noyer dans le jargon :
 
-> Explique-moi cet article simplement : quelle était la question au départ, comment ils ont fait l'étude en deux phrases, ce qu'ils ont trouvé, et ce que ça change en pratique.
+*Explique-moi cet article simplement : quelle était la question au départ, comment ils ont fait l'étude en deux phrases, ce qu'ils ont trouvé, et ce que ça change en pratique.*
 
 ## Les alternatives si vous ne voulez pas payer
 
