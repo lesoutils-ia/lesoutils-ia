@@ -10,9 +10,15 @@ const typeParam = Astro.url.searchParams.get('type') || 'general';
     .page-wrap { max-width: 700px; margin: 0 auto; padding: 3rem 1.5rem; }
     .page-title { font-family: var(--font-display); font-size: clamp(28px, 4vw, 42px); font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; }
     .page-subtitle { font-size: 16px; color: var(--text-muted); margin-bottom: 3rem; line-height: 1.7; }
+
+    /* RADIO CACHÉS */
+    .contact-radio { display: none; }
+
     .contact-types { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2.5rem; }
     @media (max-width: 600px) { .contact-types { grid-template-columns: 1fr; } }
+
     .contact-type {
+      display: block;
       background: var(--bg3);
       border: 2px solid var(--border);
       border-radius: 8px;
@@ -20,16 +26,22 @@ const typeParam = Astro.url.searchParams.get('type') || 'general';
       cursor: pointer;
       transition: border-color .15s, background .15s;
       -webkit-tap-highlight-color: transparent;
-      touch-action: manipulation;
     }
     .contact-type:hover { border-color: var(--border-strong); }
-    .contact-type.active {
+
+    /* Quand le radio associé est coché, le label devient actif */
+    #type-general:checked ~ .contact-types label[for="type-general"],
+    #type-partenariat:checked ~ .contact-types label[for="type-partenariat"],
+    #type-outil:checked ~ .contact-types label[for="type-outil"],
+    #type-autre:checked ~ .contact-types label[for="type-autre"] {
       border-color: var(--accent) !important;
       background: var(--accent-dim) !important;
     }
+
     .contact-type-icon { font-size: 20px; margin-bottom: 0.4rem; }
     .contact-type-title { font-family: var(--font-display); font-size: 14px; font-weight: 700; margin-bottom: 0.2rem; }
     .contact-type-desc { font-size: 12px; color: var(--text-muted); }
+
     .contact-form { background: var(--bg3); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; }
     .form-group { margin-bottom: 1.2rem; }
     .form-label { display: block; font-size: 13px; font-weight: 500; color: var(--text-mid); margin-bottom: 0.5rem; }
@@ -37,8 +49,7 @@ const typeParam = Astro.url.searchParams.get('type') || 'general';
     .form-input:focus { border-color: var(--accent); }
     .form-input::placeholder { color: var(--text-muted); }
     textarea.form-input { min-height: 140px; resize: vertical; }
-    .form-submit { width: 100%; background: var(--accent); color: var(--accent-text); font-family: var(--font-display); font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 14px; border-radius: 6px; border: none; cursor: pointer; transition: opacity .15s; margin-top: 0.5rem; }
-    .form-submit:hover { opacity: .9; }
+    .form-submit { width: 100%; background: var(--accent); color: var(--accent-text); font-family: var(--font-display); font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 14px; border-radius: 6px; border: none; cursor: pointer; margin-top: 0.5rem; }
     .form-note { font-size: 12px; color: var(--text-muted); margin-top: 1rem; text-align: center; }
     .success-msg { display: none; background: var(--accent-dim); border: 1px solid var(--accent); border-radius: 8px; padding: 1.2rem; text-align: center; font-size: 15px; color: var(--text); margin-top: 1rem; }
   </style>
@@ -49,32 +60,37 @@ const typeParam = Astro.url.searchParams.get('type') || 'general';
         <h1 class="page-title">Contactez-nous</h1>
         <p class="page-subtitle">Une question, un partenariat, un outil à nous soumettre ? On vous répond sous 48h ouvrées.</p>
 
-        <div class="contact-types" id="contactTypes">
-          <div class="contact-type" data-type="general" data-label="Question générale">
+        <!-- LES RADIOS DOIVENT ÊTRE AVANT .contact-types POUR QUE LE CSS ~ FONCTIONNE -->
+        <input type="radio" name="contactType" id="type-general" class="contact-radio" value="Question générale" checked={typeParam === 'general' || !['partenariat','outil','autre'].includes(typeParam)} />
+        <input type="radio" name="contactType" id="type-partenariat" class="contact-radio" value="Partenariat" checked={typeParam === 'partenariat'} />
+        <input type="radio" name="contactType" id="type-outil" class="contact-radio" value="Soumettre un outil" checked={typeParam === 'outil'} />
+        <input type="radio" name="contactType" id="type-autre" class="contact-radio" value="Autre" checked={typeParam === 'autre'} />
+
+        <div class="contact-types">
+          <label for="type-general" class="contact-type">
             <div class="contact-type-icon">💬</div>
             <div class="contact-type-title">Question générale</div>
             <div class="contact-type-desc">Un article, une info, une correction</div>
-          </div>
-          <div class="contact-type" data-type="partenariat" data-label="Partenariat">
+          </label>
+          <label for="type-partenariat" class="contact-type">
             <div class="contact-type-icon">🤝</div>
             <div class="contact-type-title">Partenariat</div>
             <div class="contact-type-desc">Classement sponsorisé, affiliation</div>
-          </div>
-          <div class="contact-type" data-type="outil" data-label="Soumettre un outil">
+          </label>
+          <label for="type-outil" class="contact-type">
             <div class="contact-type-icon">🛠️</div>
             <div class="contact-type-title">Soumettre un outil</div>
             <div class="contact-type-desc">Faire tester et référencer votre outil IA</div>
-          </div>
-          <div class="contact-type" data-type="autre" data-label="Autre">
+          </label>
+          <label for="type-autre" class="contact-type">
             <div class="contact-type-icon">📝</div>
             <div class="contact-type-title">Autre</div>
             <div class="contact-type-desc">Toute autre demande</div>
-          </div>
+          </label>
         </div>
 
         <div class="contact-form">
           <form id="contactForm">
-            <input type="hidden" id="contactTypeValue" value="Question générale" />
             <div class="form-group">
               <label class="form-label">Votre prénom</label>
               <input type="text" class="form-input" id="senderName" placeholder="Marie" required />
@@ -99,45 +115,14 @@ const typeParam = Astro.url.searchParams.get('type') || 'general';
   </div>
 </BaseLayout>
 
-<script define:vars={{ typeParam }}>
-  // Sélection d'un type
-  function selectType(typeId) {
-    var cards = document.querySelectorAll('.contact-type');
-    cards.forEach(function(card) {
-      card.classList.remove('active');
-    });
-    var target = document.querySelector('[data-type="' + typeId + '"]');
-    if (target) {
-      target.classList.add('active');
-      var label = target.getAttribute('data-label');
-      document.getElementById('contactTypeValue').value = label;
-    }
-  }
-
-  // Ajouter les événements sur chaque carte — touch ET click
-  var cards = document.querySelectorAll('.contact-type');
-  cards.forEach(function(card) {
-    card.addEventListener('click', function() {
-      selectType(card.getAttribute('data-type'));
-    });
-    card.addEventListener('touchend', function(e) {
-      e.preventDefault();
-      selectType(card.getAttribute('data-type'));
-    });
-  });
-
-  // Présélection selon le paramètre URL
-  var validTypes = ['general', 'partenariat', 'outil', 'autre'];
-  var initial = validTypes.indexOf(typeParam) >= 0 ? typeParam : 'general';
-  selectType(initial);
-
-  // Envoi du formulaire
+<script>
   document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    var type = document.getElementById('contactTypeValue').value;
-    var email = document.getElementById('senderEmail').value;
-    var name = document.getElementById('senderName').value;
-    var msg = document.getElementById('message').value;
+    var selected = document.querySelector('input[name="contactType"]:checked');
+    var type = selected ? selected.value : 'Question générale';
+    var name = (document.getElementById('senderName') as HTMLInputElement).value;
+    var email = (document.getElementById('senderEmail') as HTMLInputElement).value;
+    var msg = (document.getElementById('message') as HTMLTextAreaElement).value;
     var subject = encodeURIComponent('[lesoutils-ia.fr] ' + type);
     var body = encodeURIComponent('Prénom : ' + name + '\nEmail : ' + email + '\nType : ' + type + '\n\nMessage :\n' + msg);
     window.location.href = 'mailto:lesoutilsia1@gmail.com?subject=' + subject + '&body=' + body;
