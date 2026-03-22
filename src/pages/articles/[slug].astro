@@ -12,6 +12,22 @@ export async function getStaticPaths() {
 
 const { article } = Astro.props;
 const { Content, headings } = await article.render();
+
+// Schema Review — uniquement si rating et toolName sont renseignés dans le frontmatter
+const reviewSchema = article.data.rating && article.data.toolName ? JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": article.data.toolName,
+  "applicationCategory": "BusinessApplication",
+  "inLanguage": "fr-FR",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": article.data.rating,
+    "reviewCount": article.data.reviewCount || 10,
+    "bestRating": 5,
+    "worstRating": 1
+  }
+}) : null;
 ---
 
 <ArticleLayout
@@ -26,5 +42,8 @@ const { Content, headings } = await article.render();
   readTime={article.data.readTime}
   headings={headings}
 >
+  {reviewSchema && (
+    <script type="application/ld+json" set:html={reviewSchema} slot="head" />
+  )}
   <Content />
 </ArticleLayout>
