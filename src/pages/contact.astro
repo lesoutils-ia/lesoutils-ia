@@ -5,57 +5,101 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <BaseLayout title="Contact — lesoutils-ia.fr">
   <style>
     .page { padding-top: 56px; }
-    .page-wrap { max-width: 800px; margin: 0 auto; padding: 3rem 1.5rem; }
+    .page-wrap { max-width: 700px; margin: 0 auto; padding: 3rem 1.5rem; }
     .page-title { font-family: var(--font-display); font-size: clamp(28px, 4vw, 42px); font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; }
     .page-subtitle { font-size: 16px; color: var(--text-muted); margin-bottom: 3rem; line-height: 1.7; }
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 3rem; }
-    @media (max-width: 600px) { .contact-grid { grid-template-columns: 1fr; } }
-    .contact-card { background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; padding: 1.6rem; }
-    .contact-card-icon { font-size: 24px; margin-bottom: 0.8rem; }
-    .contact-card-title { font-family: var(--font-display); font-size: 15px; font-weight: 700; margin-bottom: 0.4rem; }
-    .contact-card-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 1rem; }
-    .contact-card-link { color: var(--accent); font-size: 14px; font-weight: 500; text-decoration: underline; text-underline-offset: 3px; word-break: break-all; }
-    .contact-note { background: var(--accent-dim); border: 1px solid var(--accent); border-radius: 8px; padding: 1.4rem; font-size: 14px; color: var(--text-mid); line-height: 1.7; }
-    .contact-note strong { color: var(--text); }
+    .contact-types { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2.5rem; }
+    @media (max-width: 600px) { .contact-types { grid-template-columns: 1fr; } }
+    .contact-type { background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; padding: 1.2rem; cursor: pointer; transition: border-color .15s; }
+    .contact-type.active { border-color: var(--accent); background: var(--accent-dim); }
+    .contact-type-icon { font-size: 20px; margin-bottom: 0.4rem; }
+    .contact-type-title { font-family: var(--font-display); font-size: 14px; font-weight: 700; margin-bottom: 0.2rem; }
+    .contact-type-desc { font-size: 12px; color: var(--text-muted); }
+    .contact-form { background: var(--bg3); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; }
+    .form-group { margin-bottom: 1.2rem; }
+    .form-label { display: block; font-size: 13px; font-weight: 500; color: var(--text-mid); margin-bottom: 0.5rem; }
+    .form-input { width: 100%; background: var(--bg); border: 1px solid var(--border); color: var(--text); font-family: var(--font-body); font-size: 14px; padding: 10px 14px; border-radius: 6px; outline: none; display: block; }
+    .form-input:focus { border-color: var(--accent); }
+    .form-input::placeholder { color: var(--text-muted); }
+    textarea.form-input { min-height: 140px; resize: vertical; }
+    .form-submit { width: 100%; background: var(--accent); color: var(--accent-text); font-family: var(--font-display); font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 14px; border-radius: 6px; border: none; cursor: pointer; transition: opacity .15s; margin-top: 0.5rem; }
+    .form-submit:hover { opacity: .9; }
+    .form-note { font-size: 12px; color: var(--text-muted); margin-top: 1rem; text-align: center; }
+    .success-msg { display: none; background: var(--accent-dim); border: 1px solid var(--accent); border-radius: 8px; padding: 1.2rem; text-align: center; font-size: 15px; color: var(--text); margin-top: 1rem; }
   </style>
 
   <div class="page">
     <div class="wrap">
       <div class="page-wrap">
-        <h1 class="page-title">Contact</h1>
-        <p class="page-subtitle">Une question, un partenariat, un outil à nous soumettre ? On vous répond sous 48h.</p>
+        <h1 class="page-title">Contactez-nous</h1>
+        <p class="page-subtitle">Une question, un partenariat, un outil à nous soumettre ? On vous répond sous 48h ouvrées.</p>
 
-        <div class="contact-grid">
-          <div class="contact-card">
-            <div class="contact-card-icon">✉️</div>
-            <div class="contact-card-title">Contact général</div>
-            <div class="contact-card-desc">Questions, suggestions, corrections d'articles.</div>
-            <a href="mailto:lesoutilsia1@gmail.com" class="contact-card-link">lesoutilsia1@gmail.com</a>
+        <div class="contact-types">
+          <div class="contact-type active" onclick="selectType(this, 'Question générale')">
+            <div class="contact-type-icon">💬</div>
+            <div class="contact-type-title">Question générale</div>
+            <div class="contact-type-desc">Un article, une info, une correction</div>
           </div>
-          <div class="contact-card">
-            <div class="contact-card-icon">🤝</div>
-            <div class="contact-card-title">Partenariats</div>
-            <div class="contact-card-desc">Classements sponsorisés, affiliation, vente de liens.</div>
-            <a href="mailto:lesoutilsia1@gmail.com" class="contact-card-link">lesoutilsia1@gmail.com</a>
+          <div class="contact-type" onclick="selectType(this, 'Partenariat')">
+            <div class="contact-type-icon">🤝</div>
+            <div class="contact-type-title">Partenariat</div>
+            <div class="contact-type-desc">Classement sponsorisé, affiliation</div>
           </div>
-          <div class="contact-card">
-            <div class="contact-card-icon">🛠️</div>
-            <div class="contact-card-title">Soumettre un outil</div>
-            <div class="contact-card-desc">Vous avez un outil IA à faire tester et référencer.</div>
-            <a href="mailto:lesoutilsia1@gmail.com" class="contact-card-link">lesoutilsia1@gmail.com</a>
+          <div class="contact-type" onclick="selectType(this, 'Soumettre un outil')">
+            <div class="contact-type-icon">🛠️</div>
+            <div class="contact-type-title">Soumettre un outil</div>
+            <div class="contact-type-desc">Faire tester et référencer votre outil IA</div>
           </div>
-          <div class="contact-card">
-            <div class="contact-card-icon">📝</div>
-            <div class="contact-card-title">Presse</div>
-            <div class="contact-card-desc">Demandes d'interviews, citations, collaboration éditoriale.</div>
-            <a href="mailto:lesoutilsia1@gmail.com" class="contact-card-link">lesoutilsia1@gmail.com</a>
+          <div class="contact-type" onclick="selectType(this, 'Autre')">
+            <div class="contact-type-icon">📝</div>
+            <div class="contact-type-title">Autre</div>
+            <div class="contact-type-desc">Toute autre demande</div>
           </div>
         </div>
 
-        <div class="contact-note">
-          <strong>Délai de réponse :</strong> Nous répondons à tous les emails sous 48h ouvrées. Pour les demandes de partenariat, merci de préciser le nom de votre outil ou service et votre budget mensuel estimé.
+        <div class="contact-form">
+          <form id="contactForm" onsubmit="submitForm(event)">
+            <input type="hidden" id="contactType" value="Question générale" />
+            <div class="form-group">
+              <label class="form-label">Votre prénom</label>
+              <input type="text" class="form-input" placeholder="Marie" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Votre email</label>
+              <input type="email" class="form-input" id="senderEmail" placeholder="marie@entreprise.fr" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Votre message</label>
+              <textarea class="form-input" id="message" placeholder="Décrivez votre demande en quelques lignes..." required></textarea>
+            </div>
+            <button type="submit" class="form-submit">Envoyer le message</button>
+            <p class="form-note">Réponse garantie sous 48h ouvrées</p>
+          </form>
+          <div class="success-msg" id="successMsg">
+            ✅ Message envoyé ! Nous vous répondons sous 48h.
+          </div>
         </div>
       </div>
     </div>
   </div>
 </BaseLayout>
+
+<script>
+  function selectType(el: HTMLElement, type: string) {
+    document.querySelectorAll('.contact-type').forEach(c => c.classList.remove('active'));
+    el.classList.add('active');
+    (document.getElementById('contactType') as HTMLInputElement).value = type;
+  }
+
+  function submitForm(e: Event) {
+    e.preventDefault();
+    const type = (document.getElementById('contactType') as HTMLInputElement).value;
+    const email = (document.getElementById('senderEmail') as HTMLInputElement).value;
+    const msg = (document.getElementById('message') as HTMLTextAreaElement).value;
+    const subject = encodeURIComponent(`[lesoutils-ia.fr] ${type}`);
+    const body = encodeURIComponent(`Type de demande : ${type}\nEmail : ${email}\n\nMessage :\n${msg}`);
+    window.location.href = `mailto:lesoutilsia1@gmail.com?subject=${subject}&body=${body}`;
+    document.getElementById('successMsg')!.style.display = 'block';
+    (document.getElementById('contactForm') as HTMLFormElement).style.display = 'none';
+  }
+</script>
