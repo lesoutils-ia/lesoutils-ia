@@ -17,9 +17,73 @@ export interface Props {
 const { title, description, category, tags, author, authorInitials, updateDate, publishDate, readTime, headings } = Astro.props;
 const pageTitle = `${title} — lesoutils-ia.fr`;
 const h2headings = headings.filter(h => h.depth === 2 || h.depth === 3);
+const categorySlug = category.toLowerCase().replace(/ /g, '-').normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 ---
 
 <BaseLayout title={pageTitle} description={description}>
+
+  <!-- ============================================================
+       METAS SPÉCIFIQUES À L'ARTICLE (injectées dans le slot "head")
+       ============================================================ -->
+  <Fragment slot="head">
+    <!-- Surcharge og:type en "article" -->
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content={publishDate} />
+    {updateDate && <meta property="article:modified_time" content={updateDate} />}
+    <meta property="article:section" content={category} />
+    {tags.map(tag => <meta property="article:tag" content={tag} />)}
+
+    <!-- Schema Article -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": title,
+      "description": description,
+      "datePublished": publishDate,
+      "dateModified": updateDate || publishDate,
+      "author": {
+        "@type": "Person",
+        "name": author
+      },
+      "publisher": {
+        "@id": "https://lesoutils-ia.fr/#org"
+      },
+      "inLanguage": "fr-FR",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": `https://lesoutils-ia.fr/articles/${categorySlug}`
+      }
+    })} />
+
+    <!-- Schema BreadcrumbList -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://lesoutils-ia.fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": category,
+          "item": `https://lesoutils-ia.fr/${categorySlug}`
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": title
+        }
+      ]
+    })} />
+  </Fragment>
+
+  <!-- ============================================================
+       CONTENU DE LA PAGE
+       ============================================================ -->
   <style>
     .progress-bar { position: fixed; top: 56px; left: 0; height: 2px; background: var(--accent); z-index: 99; width: 0%; transition: width .1s linear; }
     .article-page { padding-top: 56px; }
@@ -87,7 +151,7 @@ const h2headings = headings.filter(h => h.depth === 2 || h.depth === 3);
     .article-content strong { color: var(--text); font-weight: 600; }
     .article-content em { font-style: italic; }
 
-    /* BLOCKQUOTES — alignés à gauche, pas de décalage */
+    /* BLOCKQUOTES */
     .article-content blockquote {
       background: none !important;
       border-left: none !important;
@@ -193,7 +257,7 @@ const h2headings = headings.filter(h => h.depth === 2 || h.depth === 3);
       <div class="breadcrumb">
         <a href="/">Accueil</a>
         <span class="breadcrumb-sep">›</span>
-        <a href={`/${category.toLowerCase().replace(/ /g, '-')}`}>{category}</a>
+        <a href={`/${categorySlug}`}>{category}</a>
         <span class="breadcrumb-sep">›</span>
         <span style="color:var(--text-mid);">{title.substring(0, 45)}…</span>
       </div>
