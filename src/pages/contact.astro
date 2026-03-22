@@ -1,8 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const url = Astro.url;
-const typeParam = url.searchParams.get('type') || 'general';
+const typeParam = Astro.url.searchParams.get('type') || 'general';
 ---
 
 <BaseLayout title="Contact — lesoutils-ia.fr">
@@ -20,7 +19,8 @@ const typeParam = url.searchParams.get('type') || 'general';
       padding: 1.2rem;
       cursor: pointer;
       transition: border-color .15s, background .15s;
-      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
     }
     .contact-type:hover { border-color: var(--border-strong); }
     .contact-type.active {
@@ -49,23 +49,23 @@ const typeParam = url.searchParams.get('type') || 'general';
         <h1 class="page-title">Contactez-nous</h1>
         <p class="page-subtitle">Une question, un partenariat, un outil à nous soumettre ? On vous répond sous 48h ouvrées.</p>
 
-        <div class="contact-types">
-          <div class="contact-type" id="type-general" onclick="selectType('general', 'Question générale')">
+        <div class="contact-types" id="contactTypes">
+          <div class="contact-type" data-type="general" data-label="Question générale">
             <div class="contact-type-icon">💬</div>
             <div class="contact-type-title">Question générale</div>
             <div class="contact-type-desc">Un article, une info, une correction</div>
           </div>
-          <div class="contact-type" id="type-partenariat" onclick="selectType('partenariat', 'Partenariat')">
+          <div class="contact-type" data-type="partenariat" data-label="Partenariat">
             <div class="contact-type-icon">🤝</div>
             <div class="contact-type-title">Partenariat</div>
             <div class="contact-type-desc">Classement sponsorisé, affiliation</div>
           </div>
-          <div class="contact-type" id="type-outil" onclick="selectType('outil', 'Soumettre un outil')">
+          <div class="contact-type" data-type="outil" data-label="Soumettre un outil">
             <div class="contact-type-icon">🛠️</div>
             <div class="contact-type-title">Soumettre un outil</div>
             <div class="contact-type-desc">Faire tester et référencer votre outil IA</div>
           </div>
-          <div class="contact-type" id="type-autre" onclick="selectType('autre', 'Autre')">
+          <div class="contact-type" data-type="autre" data-label="Autre">
             <div class="contact-type-icon">📝</div>
             <div class="contact-type-title">Autre</div>
             <div class="contact-type-desc">Toute autre demande</div>
@@ -73,11 +73,11 @@ const typeParam = url.searchParams.get('type') || 'general';
         </div>
 
         <div class="contact-form">
-          <form id="contactForm" onsubmit="submitForm(event)">
-            <input type="hidden" id="contactType" value="Question générale" />
+          <form id="contactForm">
+            <input type="hidden" id="contactTypeValue" value="Question générale" />
             <div class="form-group">
               <label class="form-label">Votre prénom</label>
-              <input type="text" class="form-input" placeholder="Marie" required />
+              <input type="text" class="form-input" id="senderName" placeholder="Marie" required />
             </div>
             <div class="form-group">
               <label class="form-label">Votre email</label>
@@ -100,37 +100,48 @@ const typeParam = url.searchParams.get('type') || 'general';
 </BaseLayout>
 
 <script define:vars={{ typeParam }}>
-  // Mapping des paramètres URL vers les IDs
-  const typeMap = {
-    'general': { id: 'type-general', label: 'Question générale' },
-    'partenariat': { id: 'type-partenariat', label: 'Partenariat' },
-    'outil': { id: 'type-outil', label: 'Soumettre un outil' },
-    'autre': { id: 'type-autre', label: 'Autre' },
-  };
-
-  function selectType(typeId, label) {
-    // Désélectionne tout
-    document.querySelectorAll('.contact-type').forEach(c => c.classList.remove('active'));
-    // Sélectionne le bon
-    const el = document.getElementById('type-' + typeId);
-    if (el) el.classList.add('active');
-    // Met à jour la valeur cachée
-    document.getElementById('contactType').value = label;
+  // Sélection d'un type
+  function selectType(typeId) {
+    var cards = document.querySelectorAll('.contact-type');
+    cards.forEach(function(card) {
+      card.classList.remove('active');
+    });
+    var target = document.querySelector('[data-type="' + typeId + '"]');
+    if (target) {
+      target.classList.add('active');
+      var label = target.getAttribute('data-label');
+      document.getElementById('contactTypeValue').value = label;
+    }
   }
 
-  // Présélection au chargement selon le paramètre URL
-  const mapped = typeMap[typeParam] || typeMap['general'];
-  selectType(typeParam, mapped.label);
+  // Ajouter les événements sur chaque carte — touch ET click
+  var cards = document.querySelectorAll('.contact-type');
+  cards.forEach(function(card) {
+    card.addEventListener('click', function() {
+      selectType(card.getAttribute('data-type'));
+    });
+    card.addEventListener('touchend', function(e) {
+      e.preventDefault();
+      selectType(card.getAttribute('data-type'));
+    });
+  });
 
-  function submitForm(e) {
+  // Présélection selon le paramètre URL
+  var validTypes = ['general', 'partenariat', 'outil', 'autre'];
+  var initial = validTypes.indexOf(typeParam) >= 0 ? typeParam : 'general';
+  selectType(initial);
+
+  // Envoi du formulaire
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    const type = document.getElementById('contactType').value;
-    const email = document.getElementById('senderEmail').value;
-    const msg = document.getElementById('message').value;
-    const subject = encodeURIComponent('[lesoutils-ia.fr] ' + type);
-    const body = encodeURIComponent('Type de demande : ' + type + '\nEmail : ' + email + '\n\nMessage :\n' + msg);
+    var type = document.getElementById('contactTypeValue').value;
+    var email = document.getElementById('senderEmail').value;
+    var name = document.getElementById('senderName').value;
+    var msg = document.getElementById('message').value;
+    var subject = encodeURIComponent('[lesoutils-ia.fr] ' + type);
+    var body = encodeURIComponent('Prénom : ' + name + '\nEmail : ' + email + '\nType : ' + type + '\n\nMessage :\n' + msg);
     window.location.href = 'mailto:lesoutilsia1@gmail.com?subject=' + subject + '&body=' + body;
     document.getElementById('successMsg').style.display = 'block';
     document.getElementById('contactForm').style.display = 'none';
-  }
+  });
 </script>
