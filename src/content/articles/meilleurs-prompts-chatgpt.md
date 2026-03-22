@@ -28,21 +28,21 @@ La recette qui change tout tient en quatre mots : rôle, contexte, tâche, forma
 
 ### L'email de prospection qui ne finit pas à la corbeille
 
-Ce que j'utilise. Remplacez les crochets :
+Voici ce que j'utilise. Remplacez les crochets :
 
-> Tu es un expert en copywriting B2B qui a travaillé dix ans dans [secteur de votre cible]. Rédige un email de prospection pour une entreprise qui vend [votre produit/service] à des [poste du destinataire] dans des PME françaises. Commence par un constat sur leur quotidien, pas par une présentation de l'entreprise. 150 mots maximum. Ton direct, pas de jargon corporate.
+*Tu es un expert en copywriting B2B qui a travaillé dix ans dans [secteur de votre cible]. Rédige un email de prospection pour une entreprise qui vend [votre produit/service] à des [poste du destinataire] dans des PME françaises. Commence par un constat sur leur quotidien, pas par une présentation de l'entreprise. 150 mots maximum. Ton direct, pas de jargon corporate.*
 
 Le détail qui change tout : préciser que ChatGPT "a travaillé dix ans dans le secteur". Ça le force à adopter le point de vue de quelqu'un qui connaît les vrais problèmes de vos clients, pas une vision extérieure et généraliste.
 
 ### Trouver une ligne objet qui donne envie d'ouvrir
 
-> Génère dix lignes objet pour un email sur [sujet]. Maximum 50 caractères chacune. Interdis-toi les mots "exclusif", "urgent" et "important". Varie les angles : une question, un chiffre, un bénéfice concret, une curiosité, une provocation légère.
+*Génère dix lignes objet pour un email sur [sujet]. Maximum 50 caractères chacune. Interdis-toi les mots "exclusif", "urgent" et "important". Varie les angles : une question, un chiffre, un bénéfice concret, une curiosité, une provocation légère.*
 
 Toujours en demander dix. Pas cinq, pas trois — dix. Vous n'en garderez qu'une, mais comparer vous force à comprendre pourquoi certaines accrochent et d'autres non. C'est un entraînement autant qu'un outil.
 
 ### Décortiquer ce que font vos concurrents
 
-> Voici un email reçu d'un concurrent : [collez l'email]. Dis-moi ce qui fonctionne techniquement dans la structure et l'accroche. Ce qui ne fonctionne pas. Et si tu devais réécrire cet email pour qu'il performe mieux auprès de [votre cible], par quoi tu commencerais ?
+*Voici un email reçu d'un concurrent : [collez l'email]. Dis-moi ce qui fonctionne techniquement dans la structure et l'accroche. Ce qui ne fonctionne pas. Et si tu devais réécrire cet email pour qu'il performe mieux auprès de [votre cible], par quoi tu commencerais ?*
 
 J'utilise ça sur des emails concurrents mais aussi sur mes propres anciens emails. Se faire critiquer par une IA c'est parfois plus utile que de demander l'avis de collègues qui vont ménager votre ego.
 
@@ -52,13 +52,13 @@ J'utilise ça sur des emails concurrents mais aussi sur mes propres anciens emai
 
 Vingt minutes économisées par réunion, minimum :
 
-> Voici mes notes brutes : [collez tout, y compris le fouillis]. Reformate en trois blocs : les décisions prises avec qui les a validées, les actions à faire avec responsable et deadline, les points toujours en suspens. Une ligne par item, pas de phrases longues.
+*Voici mes notes brutes : [collez tout, y compris le fouillis]. Reformate en trois blocs : les décisions prises avec qui les a validées, les actions à faire avec responsable et deadline, les points toujours en suspens. Une ligne par item, pas de phrases longues.*
 
 Un conseil contre-intuitif : ne nettoyez pas vos notes avant de coller. Plus vous donnez de matière brute, mieux ChatGPT s'en sort. Il est étrangement bon pour extraire du sens du désordre.
 
 ### Répondre à un email tendu sans aggraver les choses
 
-> Je dois répondre à [client/collègue] qui [situation en une phrase]. Objectif : [ce que vous voulez obtenir]. Contrainte : ne pas détériorer la relation. Propose trois versions — ferme, neutre, conciliante — pour que je choisisse selon mon ressenti du moment.
+*Je dois répondre à [client/collègue] qui [situation en une phrase]. Objectif : [ce que vous voulez obtenir]. Contrainte : ne pas détériorer la relation. Propose trois versions — ferme, neutre, conciliante — pour que je choisisse selon mon ressenti du moment.*
 
 Demander trois versions plutôt qu'une, c'est une habitude que j'ai prise après m'être retrouvé plusieurs fois avec une seule proposition qui ne convenait pas. Avoir le choix change complètement la façon dont vous utilisez le résultat.
 
@@ -66,13 +66,13 @@ Demander trois versions plutôt qu'une, c'est une habitude que j'ai prise après
 
 ### Quand vous n'arrivez pas à trancher
 
-> Je dois décider si [décision]. Contexte : [votre situation en 3-4 phrases]. Budget : [montant]. Délai : [date]. Joue l'avocat du diable — dis-moi tout ce qui pourrait mal se passer, ce que je ne vois probablement pas, et les questions que je devrais me poser avant de décider.
+*Je dois décider si [décision]. Contexte : [votre situation en 3-4 phrases]. Budget : [montant]. Délai : [date]. Joue l'avocat du diable — dis-moi tout ce qui pourrait mal se passer, ce que je ne vois probablement pas, et les questions que je devrais me poser avant de décider.*
 
 La nuance importante : demander explicitement "l'avocat du diable" plutôt que "analyse cette décision". La seconde formulation donne une liste équilibrée pour/contre. La première force ChatGPT à chercher ce que vous n'avez pas envie d'entendre — ce qui est précisément ce dont vous avez besoin avant un choix important.
 
 ### Préparer un entretien sans improviser les questions difficiles
 
-> Je recrute un [poste] pour [entreprise et secteur en deux phrases]. Profil recherché : [description]. Génère quinze questions — cinq techniques sur les compétences, cinq comportementales en format STAR, cinq déstabilisantes pour voir comment le candidat réagit sous pression. Pour chaque question difficile, précise quelle réponse serait rédhibitoire.
+*Je recrute un [poste] pour [entreprise et secteur en deux phrases]. Profil recherché : [description]. Génère quinze questions — cinq techniques sur les compétences, cinq comportementales en format STAR, cinq déstabilisantes pour voir comment le candidat réagit sous pression. Pour chaque question difficile, précise quelle réponse serait rédhibitoire.*
 
 La dernière partie est ce qui manque quand on prépare des entretiens seul. Savoir à l'avance ce qu'on ne veut pas entendre clarifie les critères de sélection bien mieux qu'une liste de qualités souhaitées.
 
