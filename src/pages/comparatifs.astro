@@ -3,17 +3,45 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
 const articles = await getCollection('articles', ({ data }) => !data.draft);
-const comparatifs = articles.filter(a => a.data.category.toLowerCase().includes('comparatif'));
+const comparatifsArticles = articles.filter(a => a.data.category.toLowerCase().includes('comparatif'));
+
+const comparatifsPages = [
+  { slug: "/comparatifs/crm", cat: "CRM", titre: "HubSpot vs Salesforce vs Pipedrive — Meilleur CRM IA 2026", desc: "5 CRM avec IA testés en conditions réelles avec des équipes commerciales françaises. Notes, prix réels, verdict honnête.", outils: ["HubSpot", "Salesforce", "Pipedrive", "Zoho", "Monday"], partenaire: "HubSpot" },
+  { slug: "/comparatifs/chatgpt-alternatives", cat: "IA générative", titre: "ChatGPT vs Claude vs Gemini vs Mistral — Quelle IA choisir ?", desc: "Les 5 grands modèles IA testés sur des cas d'usage réels d'entreprises françaises. Qualité, RGPD, prix — le classement complet.", outils: ["Claude", "ChatGPT", "Mistral", "Gemini", "Perplexity"], partenaire: "Claude" },
+  { slug: "/comparatifs/email-marketing", cat: "Email marketing", titre: "Brevo vs Mailchimp — Meilleur logiciel email marketing IA 2026", desc: "5 outils email marketing testés sur de vraies campagnes françaises. Délivrabilité réelle, plans gratuits, fonctions IA.", outils: ["Brevo", "Mailchimp", "Klaviyo", "ActiveCampaign", "Mailerlite"], partenaire: "Brevo" },
+  { slug: "/comparatifs/automatisation", cat: "Automatisation", titre: "Make.com vs Zapier — Meilleur outil automatisation IA 2026", desc: "Make ou Zapier ? Le comparatif honnête avec n8n et Activepieces. 5 outils testés sur des workflows réels de PME françaises.", outils: ["Make.com", "Zapier", "n8n", "Activepieces", "Power Automate"], partenaire: "Make.com" },
+  { slug: "/comparatifs/redaction-ia", cat: "Rédaction IA", titre: "Meilleurs outils IA pour créer du contenu — 2026", desc: "Jasper, Copy.ai, Writesonic testés avec des équipes marketing françaises. KD 3, quasiment aucune concurrence.", outils: ["Jasper", "Copy.ai", "Writesonic", "Notion AI", "Rytr"], partenaire: "Jasper" },
+  { slug: "/comparatifs/prospection", cat: "Prospection", titre: "Lemlist vs Waalaxy — Meilleur outil prospection IA 2026", desc: "5 outils de prospection IA testés sur de vraies campagnes B2B. Taux de réponse mesurés sur 500 contacts minimum par outil.", outils: ["Lemlist", "Waalaxy", "Apollo", "Hunter", "La Growth Machine"], partenaire: "Lemlist" },
+  { slug: "/comparatifs/ia-image", cat: "Images IA", titre: "Midjourney vs DALL-E vs Adobe Firefly — Comparatif 2026", desc: "Les meilleurs générateurs d'images IA testés par des designers professionnels. Qualité réelle, droits commerciaux, prix.", outils: ["Midjourney", "DALL-E 3", "Firefly", "Stable Diffusion", "Ideogram"], partenaire: "Midjourney" },
+  { slug: "/comparatifs/ia-pour-pme", cat: "IA gratuit", titre: "Meilleurs outils IA gratuits pour PME — 2026", desc: "ChatGPT, Mistral, HubSpot gratuit, Make.com — ce qui est vraiment gratuit et ce que ça vaut pour une PME française.", outils: ["ChatGPT", "Mistral", "HubSpot", "Make.com", "Notion AI"], partenaire: "ChatGPT" },
+  { slug: "/comparatifs/ia-comptabilite", cat: "Comptabilité", titre: "Meilleurs logiciels comptabilité IA pour PME — 2026", desc: "Pennylane, Indy, QuickBooks, Sage testés avec de vraies PME françaises. Automatisation réelle, conformité française.", outils: ["Pennylane", "Indy", "QuickBooks", "Sage", "Dext"], partenaire: "Pennylane" },
+  { slug: "/comparatifs/agents-ia", cat: "Agents IA", titre: "Meilleurs agents IA pour PME — Comparatif 2026", desc: "Make + IA, Relevance AI, n8n — les agents IA les plus accessibles testés sur des workflows réels en PME françaises.", outils: ["Make + IA", "Relevance AI", "n8n + IA", "Zapier AI", "AutoGPT"], partenaire: "Make + IA" },
+  { slug: "/comparatifs/ia-service-client", cat: "Service client", titre: "Meilleurs chatbots IA service client PME — 2026", desc: "Intercom Fin, Tidio, Zendesk AI testés sur de vrais tickets. Taux de résolution automatique mesurés sur 6 semaines.", outils: ["Intercom", "Tidio", "Zendesk AI", "Freshdesk", "Crisp"], partenaire: "Intercom" },
+  { slug: "/comparatifs/formation-ia", cat: "Formation", titre: "Meilleures formations IA entreprises — Comparatif 2026", desc: "DataScientest, OpenClassrooms, Coursera — les meilleures plateformes de formation IA pour PME. Financement CPF disponible.", outils: ["DataScientest", "OpenClassrooms", "Coursera", "LinkedIn Learning", "Skill et You"], partenaire: "DataScientest" }
+];
 ---
 
-<BaseLayout title="Comparatifs outils IA — lesoutils-ia.fr">
+<BaseLayout title="Comparatifs outils IA pour PME — lesoutils-ia.fr" description="Tous nos comparatifs d'outils IA pour entreprises françaises. CRM, email marketing, automatisation, rédaction IA — classements indépendants testés en conditions réelles.">
   <style>
     .page { padding-top: 56px; }
     .page-header { padding: 3rem 0 2rem; border-bottom: 1px solid var(--border); }
     .page-label { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.8rem; }
     .page-title { font-family: var(--font-display); font-size: clamp(28px, 4vw, 48px); font-weight: 800; line-height: 1.2; letter-spacing: -1px; margin-bottom: 0.8rem; }
     .page-desc { font-size: 16px; color: var(--text-muted); line-height: 1.7; max-width: 600px; }
-    .articles-list { padding: 2rem 0; }
+    .section-label { font-family: var(--font-display); font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin: 2.5rem 0 1.2rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); }
+    .comp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 3rem; }
+    @media (max-width: 900px) { .comp-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 540px) { .comp-grid { grid-template-columns: 1fr; } }
+    .comp-card { background: var(--bg3); border: 1px solid var(--border); border-radius: 10px; padding: 1.2rem; display: flex; flex-direction: column; gap: 0.6rem; transition: border-color .2s; text-decoration: none; color: inherit; }
+    .comp-card:hover { border-color: var(--border-strong); }
+    .comp-card-cat { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+    .comp-card-title { font-family: var(--font-display); font-size: 14px; font-weight: 800; line-height: 1.3; }
+    .comp-card-desc { font-size: 12px; color: var(--text-muted); line-height: 1.6; flex: 1; }
+    .comp-card-outils { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 2px; }
+    .outil-tag { font-size: 10px; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); padding: 2px 7px; border-radius: 3px; }
+    .outil-tag.is-partenaire { color: var(--accent); border-color: rgba(200,241,53,0.3); background: var(--accent-dim); }
+    .comp-card-cta { font-family: var(--font-display); font-size: 11px; font-weight: 700; color: var(--accent); margin-top: 2px; }
+    .articles-list { padding: 0 0 4rem; }
     .article-row { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2rem; padding: 1.5rem 0; border-bottom: 1px solid var(--border); }
     .article-row:last-child { border-bottom: none; }
     .article-row:hover .article-row-title { color: var(--accent); }
@@ -21,35 +49,52 @@ const comparatifs = articles.filter(a => a.data.category.toLowerCase().includes(
     .article-row-title { font-family: var(--font-body); font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 5px; transition: color .15s; }
     .article-row-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
     .article-row-meta { font-size: 12px; color: var(--text-muted); white-space: nowrap; }
-    .empty-state { padding: 4rem 0; text-align: center; color: var(--text-muted); }
-    .empty-state p { font-size: 15px; margin-bottom: 0.5rem; }
   </style>
 
   <div class="page">
     <div class="wrap">
+
       <div class="page-header">
         <div class="page-label">Comparatifs</div>
         <h1 class="page-title">Tous nos comparatifs<br>d'outils IA</h1>
-        <p class="page-desc">Des tests approfondis menés en conditions réelles pour vous aider à choisir les meilleurs outils IA pour votre entreprise.</p>
+        <p class="page-desc">12 comparatifs indépendants testés en conditions réelles avec des PME françaises. 60+ outils notés sur 4 critères, classements mis à jour régulièrement.</p>
       </div>
 
-      <div class="articles-list">
-        {comparatifs.length > 0 ? comparatifs.map(a => (
-          <a href={`/articles/${a.slug}`} class="article-row" style="display:grid;text-decoration:none;color:inherit;">
-            <div>
-              <div class="article-row-cat">{a.data.category}</div>
-              <div class="article-row-title">{a.data.title}</div>
-              <div class="article-row-desc">{a.data.description}</div>
+      <div class="section-label">Classements par catégorie</div>
+      <div class="comp-grid">
+        {comparatifsPages.map(comp => (
+          <a href={comp.slug} class="comp-card">
+            <div class="comp-card-cat">{comp.cat}</div>
+            <div class="comp-card-title">{comp.titre}</div>
+            <div class="comp-card-desc">{comp.desc}</div>
+            <div class="comp-card-outils">
+              {comp.outils.map(o => (
+                <span class={`outil-tag${o === comp.partenaire ? ' is-partenaire' : ''}`}>{o}</span>
+              ))}
             </div>
-            <div class="article-row-meta">{a.data.readTime}</div>
+            <div class="comp-card-cta">Voir le classement →</div>
           </a>
-        )) : (
-          <div class="empty-state">
-            <p>Nos premiers comparatifs arrivent très bientôt.</p>
-            <p>Abonnez-vous à la newsletter pour être notifié.</p>
-          </div>
-        )}
+        ))}
       </div>
+
+      {comparatifsArticles.length > 0 && (
+        <>
+          <div class="section-label">Articles comparatifs</div>
+          <div class="articles-list">
+            {comparatifsArticles.map(a => (
+              <a href={`/articles/${a.slug}`} class="article-row" style="display:grid;text-decoration:none;color:inherit;">
+                <div>
+                  <div class="article-row-cat">{a.data.category}</div>
+                  <div class="article-row-title">{a.data.title}</div>
+                  <div class="article-row-desc">{a.data.description}</div>
+                </div>
+                <div class="article-row-meta">{a.data.readTime}</div>
+              </a>
+            ))}
+          </div>
+        </>
+      )}
+
     </div>
   </div>
 </BaseLayout>
