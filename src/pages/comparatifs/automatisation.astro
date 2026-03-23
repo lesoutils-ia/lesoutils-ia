@@ -1,89 +1,89 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-const title = "HubSpot vs Salesforce vs Pipedrive — Meilleur CRM IA 2026";
-const description = "HubSpot, Salesforce, Pipedrive, Zoho, Monday CRM — comparatif complet des meilleurs CRM avec IA pour PME françaises en 2026. Prix, fonctions IA, verdict clair pour choisir.";
+const title = "Make.com vs Zapier — Comparatif outils automatisation IA 2026";
+const description = "Make.com ou Zapier ? Comparatif complet des meilleurs outils d'automatisation IA pour PME françaises en 2026. Prix, puissance, facilité — on a tout testé pour vous.";
 
 const tools = [
   {
     rank: 1,
-    name: "HubSpot CRM",
-    slug: "hubspot",
-    tagline: "Le CRM IA le plus complet avec un plan gratuit imbattable",
-    description: "HubSpot reste le CRM de référence pour les PME qui veulent une solution complète sans exploser leur budget. Son plan gratuit est le plus généreux du marché, et les fonctionnalités IA (Breeze AI) sont intégrées nativement : scoring prédictif des leads, synthèse automatique des appels, enrichissement des contacts et suggestions de follow-up. L'interface est pensée pour des équipes non techniques.",
-    scores: { fonctionnalites: 4.8, facilite: 4.7, rapport: 4.5, ia: 4.6 },
+    name: "Make.com",
+    slug: "makecom",
+    tagline: "L'automatisation visuelle la plus puissante sans code",
+    description: "Make (ex-Integromat) est devenu la référence pour les PME qui veulent automatiser des workflows complexes sans développeur. Son éditeur visuel par glisser-déposer permet de construire des scénarios très sophistiqués. Plus de 1 500 applications connectées, gestion des données avancée, et une tarification à l'usage qui le rend accessible dès le premier euro.",
+    scores: { puissance: 4.9, facilite: 4.3, rapport: 4.7, fiabilite: 4.6 },
     globalScore: 4.7,
-    prix: "Gratuit / Pro à partir de 90€/mois",
-    essai: "Plan CRM 100% gratuit à vie",
-    lien: "https://hubspot.com",
+    prix: "À partir de 9$/mois",
+    essai: "Plan gratuit (1 000 ops/mois)",
+    lien: "https://make.com",
     partenaire: true,
-    avantages: ["Plan gratuit très complet", "IA Breeze native", "Marketing + Sales + Service", "Interface intuitive"],
-    inconvenients: ["Les plans payants montent vite", "Certaines fonctions avancées réservées Enterprise"],
-    ideal: "PME en croissance, équipes sales & marketing"
+    avantages: ["1 500+ intégrations", "Workflows très complexes possibles", "Plan gratuit généreux", "Gestion des erreurs avancée"],
+    inconvenients: ["Courbe d'apprentissage initiale", "Interface peut sembler dense"],
+    ideal: "PME avec processus métiers complexes, équipes ops"
   },
   {
     rank: 2,
-    name: "Salesforce + Einstein AI",
-    slug: "salesforce",
-    tagline: "La puissance enterprise avec l'IA la plus avancée",
-    description: "Salesforce reste la référence absolue en CRM, et son IA Einstein est la plus sophistiquée du marché. Prédiction des opportunités, analyse de sentiment des emails, génération automatique de rapports, recommandations commerciales personnalisées. La contrepartie : la complexité de mise en place et le tarif élévé réservent réellement Salesforce aux PME d'au moins 10-15 commerciaux avec un budget CRM dédié.",
-    scores: { fonctionnalites: 4.9, facilite: 3.2, rapport: 3.3, ia: 4.9 },
-    globalScore: 4.2,
-    prix: "À partir de 75€/utilisateur/mois",
-    essai: "Essai 30 jours",
-    lien: "https://salesforce.com",
+    name: "Zapier",
+    slug: "zapier",
+    tagline: "Le plus simple pour connecter vos outils en 5 minutes",
+    description: "Zapier reste la référence en termes de simplicité. Si Make.com est plus puissant, Zapier est plus rapide à prendre en main. Plus de 6 000 applications disponibles — le catalogue le plus large du marché. Idéal pour les automatisations simples (Zaps) entre deux ou trois outils. Le prix monte vite dès que les volumes augmentent.",
+    scores: { puissance: 4.2, facilite: 4.9, rapport: 3.8, fiabilite: 4.7 },
+    globalScore: 4.4,
+    prix: "À partir de 19,99$/mois",
+    essai: "Plan gratuit (100 tâches/mois)",
+    lien: "https://zapier.com",
     partenaire: false,
-    avantages: ["IA la plus avancée", "Personnalisable à l'infini", "Écosystème applicatif énorme", "Reporting très puissant"],
-    inconvenients: ["Tarif élevé", "Complexe à implémenter", "Nécessite souvent un intégrateur"],
-    ideal: "PME 15+ utilisateurs, budget CRM > 1 500€/mois"
+    avantages: ["6 000+ applications", "Prise en main immédiate", "Très fiable", "Documentation excellente"],
+    inconvenients: ["Prix élevé à volume", "Workflows multi-étapes limités sur plan de base"],
+    ideal: "TPE, débutants en automatisation, workflows simples"
   },
   {
     rank: 3,
-    name: "Pipedrive AI",
-    slug: "pipedrive",
-    tagline: "Le CRM le plus intuitif avec une IA bien intégrée",
-    description: "Pipedrive a construit son succès sur sa vision pipeline ultra-visuelle et son intuitivité. Son IA Sales Assistant analyse votre activité commerciale et suggère les meilleures actions à effectuer sur chaque deal. La fonctionnalité Leadbooster enrichit automatiquement les prospects. Moins puissant que HubSpot sur le marketing, mais plus agréable à utiliser au quotidien pour les commerciaux.",
-    scores: { fonctionnalites: 4.2, facilite: 4.8, rapport: 4.3, ia: 4.1 },
+    name: "n8n",
+    slug: "n8n",
+    tagline: "La puissance de l'open source, auto-hébergeable",
+    description: "n8n est la solution open source à connaître si vous avez un minimum de ressources techniques ou un développeur dans l'équipe. Auto-hébergeable sur votre propre serveur (zéro frais de licence), ou disponible en cloud. Idéal pour les automatisations IA avancées : il intègre nativement des nœuds pour OpenAI, Anthropic, Mistral, et peut exécuter du code Python ou JavaScript directement dans les workflows.",
+    scores: { puissance: 4.9, facilite: 3.4, rapport: 4.9, fiabilite: 4.3 },
     globalScore: 4.3,
-    prix: "À partir de 14,90€/utilisateur/mois",
-    essai: "Essai 14 jours",
-    lien: "https://pipedrive.com",
+    prix: "Gratuit (self-hosted) / 20€/mois (cloud)",
+    essai: "100% gratuit en auto-hébergement",
+    lien: "https://n8n.io",
     partenaire: false,
-    avantages: ["Interface pipeline très claire", "IA Sales Assistant", "Tarif accessible", "Adoption rapide par les équipes"],
-    inconvenients: ["Marketing limité", "Moins d'intégrations que HubSpot"],
-    ideal: "Équipes commerciales 3-20 personnes, B2B"
+    avantages: ["Open source & gratuit", "Nœuds IA natifs", "Exécution de code", "Données restent chez vous"],
+    inconvenients: ["Nécessite des bases techniques", "Setup initial plus long"],
+    ideal: "Équipes avec dev, startups, profils techniques"
   },
   {
     rank: 4,
-    name: "Zoho CRM Plus",
-    slug: "zoho",
-    tagline: "L'alternative économique avec Zia, l'IA intégrée",
-    description: "Zoho CRM se démarque par son rapport fonctionnalités/prix exceptionnel. Zia, son IA intégrée, prédit le bon moment pour contacter chaque prospect, analyse le sentiment des emails entrants et identifie les deals à risque. La suite Zoho One (CRM + marketing + helpdesk + compta) est particulièrement attractive pour les PME qui veulent tout centraliser. L'interface est moins moderne que HubSpot mais s'améliore.",
-    scores: { fonctionnalites: 4.4, facilite: 3.9, rapport: 4.8, ia: 4.2 },
+    name: "Activepieces",
+    slug: "activepieces",
+    tagline: "L'alternative Make.com 100% open source",
+    description: "Activepieces est une alternative open source à Make.com en forte croissance. Interface similaire, auto-hébergeable, avec déjà plus de 200 connecteurs disponibles. Moins mature que ses concurrents mais évolue très vite. Parfait pour les équipes qui veulent la puissance visuelle de Make sans la facture mensuelle.",
+    scores: { puissance: 4.1, facilite: 4.2, rapport: 4.8, fiabilite: 4.0 },
     globalScore: 4.1,
-    prix: "À partir de 14€/utilisateur/mois",
-    essai: "Essai 15 jours",
-    lien: "https://zoho.com/crm",
+    prix: "Gratuit (self-hosted) / 19$/mois (cloud)",
+    essai: "Gratuit en auto-hébergement",
+    lien: "https://activepieces.com",
     partenaire: false,
-    avantages: ["Meilleur rapport qualité/prix", "IA Zia performante", "Suite complète Zoho One", "RGPD & hébergement EU"],
-    inconvenients: ["Interface moins moderne", "Courbe d'apprentissage", "Support parfois lent"],
-    ideal: "PME budgets serrés, entreprises axées RGPD"
+    avantages: ["Open source", "Interface Make-like", "Auto-hébergeable", "Communauté active"],
+    inconvenients: ["Moins de connecteurs que Zapier/Make", "Moins mature"],
+    ideal: "Équipes tech, alternative budget à Make"
   },
   {
     rank: 5,
-    name: "Monday CRM",
-    slug: "monday-crm",
-    tagline: "CRM flexible pour les équipes qui refusent les cases",
-    description: "Monday CRM (anciennement monday.com adapté CRM) séduit les équipes qui veulent un CRM sur-mesure sans développeur. Très flexible, il s'adapte à n'importe quel process commercial. L'IA intégrée aide à automatiser les mises à jour de statut et génère des résumés de deals. Moins spécialisé qu'un CRM pur, mais idéal pour les équipes qui ont déjà monday.com en interne.",
-    scores: { fonctionnalites: 4.0, facilite: 4.5, rapport: 4.1, ia: 3.8 },
+    name: "Power Automate",
+    slug: "power-automate",
+    tagline: "Le choix naturel si vous êtes dans l'écosystème Microsoft",
+    description: "Power Automate (ex-Microsoft Flow) s'impose dans les PME déjà équipées de Microsoft 365. L'intégration avec Teams, SharePoint, Excel et Outlook est native et très profonde. Les fonctionnalités IA Copilot permettent de créer des workflows par langage naturel. Hors de l'écosystème Microsoft, il perd beaucoup de son intérêt.",
+    scores: { puissance: 4.3, facilite: 3.9, rapport: 4.4, fiabilite: 4.5 },
     globalScore: 4.0,
-    prix: "À partir de 12€/utilisateur/mois",
-    essai: "Essai 14 jours",
-    lien: "https://monday.com/crm",
+    prix: "15$/utilisateur/mois (inclus M365 Business)",
+    essai: "Inclus dans Microsoft 365",
+    lien: "https://powerautomate.microsoft.com",
     partenaire: false,
-    avantages: ["Très personnalisable", "Adoption facile", "Déjà dans beaucoup de PME", "Automatisations simples"],
-    inconvenients: ["IA moins avancée", "Moins spécialisé que les vrais CRM", "Reporting limité"],
-    ideal: "Équipes déjà sur Monday, PME flexibles"
+    avantages: ["Intégration Microsoft native", "Inclus dans M365", "Copilot IA intégré", "Très fiable"],
+    inconvenients: ["Hors écosystème Microsoft, limité", "Interface moins intuitive"],
+    ideal: "PME équipées Microsoft 365"
   }
 ];
 
@@ -103,7 +103,7 @@ function scoreColor(score: number) {
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "ItemList",
-      "name": "HubSpot vs Salesforce vs Pipedrive — Meilleur CRM IA 2026",
+      "name": "Make.com vs Zapier — Comparatif outils automatisation IA 2026",
       "description": description,
       "numberOfItems": tools.length,
       "itemListElement": tools.map((t, i) => ({
@@ -120,7 +120,7 @@ function scoreColor(score: number) {
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://lesoutils-ia.fr/" },
         { "@type": "ListItem", "position": 2, "name": "Comparatifs", "item": "https://lesoutils-ia.fr/comparatifs" },
-        { "@type": "ListItem", "position": 3, "name": "HubSpot vs Salesforce vs Pipedrive — CRM IA" }
+        { "@type": "ListItem", "position": 3, "name": "Make.com vs Zapier — Automatisation IA" }
       ]
     })} />
   </Fragment>
@@ -212,18 +212,18 @@ function scoreColor(score: number) {
         <span class="breadcrumb-sep">›</span>
         <a href="/comparatifs">Comparatifs</a>
         <span class="breadcrumb-sep">›</span>
-        <span>CRM intelligents</span>
+        <span>Automatisation IA</span>
       </nav>
 
       <header class="comp-header">
         <span class="comp-cat-label">Comparatif</span>
-        <h1 class="comp-title">HubSpot vs Salesforce vs Pipedrive<br>— Meilleur CRM IA 2026</h1>
-        <p class="comp-subtitle">HubSpot reste le CRM le plus recherché en France avec plus de 119 000 requêtes par mois — mais est-il vraiment le meilleur pour votre PME ? On a testé HubSpot, Salesforce Einstein, Pipedrive, Zoho et Monday CRM pendant 4 semaines avec de vraies équipes commerciales françaises. Verdict sans filtre.</p>
+        <h1 class="comp-title">Make.com vs Zapier — quel outil<br>d'automatisation IA choisir en 2026 ?</h1>
+        <p class="comp-subtitle">Make.com, Zapier, n8n, Activepieces, Power Automate — cinq outils testés en conditions réelles avec des PME françaises. Make.com ou Zapier sont les deux noms qui reviennent toujours : voici le classement honnête pour trancher selon votre profil et votre budget.</p>
         <div class="comp-meta">
           <span class="comp-meta-item"><span class="comp-meta-dot"></span> Mis à jour mars 2026</span>
-          <span class="comp-meta-item"><span class="comp-meta-dot"></span> 5 CRM testés</span>
+          <span class="comp-meta-item"><span class="comp-meta-dot"></span> 5 outils testés</span>
           <span class="comp-meta-item"><span class="comp-meta-dot"></span> 4 critères notés</span>
-          <span class="comp-meta-item"><span class="comp-meta-dot"></span> 11 min de lecture</span>
+          <span class="comp-meta-item"><span class="comp-meta-dot"></span> 10 min de lecture</span>
         </div>
       </header>
 
@@ -251,7 +251,7 @@ function scoreColor(score: number) {
 
                 <div class="scores-grid">
                   {Object.entries(tool.scores).map(([key, val]) => {
-                    const labels: Record<string, string> = { fonctionnalites: 'Fonctions', facilite: 'Facilité', rapport: 'Rapport Q/P', ia: 'IA intégrée' };
+                    const labels: Record<string, string> = { puissance: 'Puissance', facilite: 'Facilité', rapport: 'Rapport Q/P', fiabilite: 'Fiabilité' };
                     return (
                       <div class="score-item">
                         <div class="score-label">{labels[key] || key}</div>
@@ -286,7 +286,7 @@ function scoreColor(score: number) {
                     <div class="info-essai">{tool.essai}</div>
                     <div class="tool-cta-wrap">
                       <a href={tool.lien} target="_blank" rel="nofollow noopener" class={`tool-cta ${tool.partenaire ? 'cta-primary' : 'cta-secondary'}`}>
-                        {tool.partenaire ? 'Essayer HubSpot →' : 'Voir le site →'}
+                        {tool.partenaire ? 'Essayer Make.com →' : 'Voir le site →'}
                       </a>
                     </div>
                   </div>
@@ -314,12 +314,12 @@ function scoreColor(score: number) {
 
           <div class="sidebar-widget">
             <div class="sidebar-widget-title">Notre méthode</div>
-            <p class="method-text">Chaque CRM testé pendant 4 semaines avec de vraies équipes commerciales françaises, sur de vraies données clients.</p>
+            <p class="method-text">Chaque outil testé pendant 4 semaines minimum avec de vraies PME françaises, sur des workflows réels.</p>
             <ul class="method-criteria">
-              <li>Richesse fonctionnelle</li>
+              <li>Puissance & complexité possible</li>
               <li>Facilité de prise en main</li>
               <li>Rapport qualité / prix</li>
-              <li>Qualité de l'IA intégrée</li>
+              <li>Fiabilité & uptime</li>
             </ul>
           </div>
 

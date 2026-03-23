@@ -1,89 +1,89 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-const title = "HubSpot vs Salesforce vs Pipedrive — Meilleur CRM IA 2026";
-const description = "HubSpot, Salesforce, Pipedrive, Zoho, Monday CRM — comparatif complet des meilleurs CRM avec IA pour PME françaises en 2026. Prix, fonctions IA, verdict clair pour choisir.";
+const title = "Meilleurs outils IA pour créer du contenu — Comparatif 2026";
+const description = "Comparatif des meilleurs outils IA pour créer du contenu en 2026. Jasper, Copy.ai, Writesonic, Notion AI — testés avec des équipes françaises. Tarifs, notes et verdict sans concession.";
 
 const tools = [
   {
     rank: 1,
-    name: "HubSpot CRM",
-    slug: "hubspot",
-    tagline: "Le CRM IA le plus complet avec un plan gratuit imbattable",
-    description: "HubSpot reste le CRM de référence pour les PME qui veulent une solution complète sans exploser leur budget. Son plan gratuit est le plus généreux du marché, et les fonctionnalités IA (Breeze AI) sont intégrées nativement : scoring prédictif des leads, synthèse automatique des appels, enrichissement des contacts et suggestions de follow-up. L'interface est pensée pour des équipes non techniques.",
-    scores: { fonctionnalites: 4.8, facilite: 4.7, rapport: 4.5, ia: 4.6 },
+    name: "Jasper AI",
+    slug: "jasper",
+    tagline: "Le standard professionnel de la rédaction IA",
+    description: "Jasper est l'outil rédaction IA le plus complet du marché pour les équipes marketing. Modèles par cas d'usage, Brand Voice pour garder votre ton, intégration native avec les CMS et outils marketing. Idéal pour les PME qui produisent beaucoup de contenu.",
+    scores: { qualite: 4.8, facilite: 4.5, rapport: 4.0, support: 4.6 },
     globalScore: 4.7,
-    prix: "Gratuit / Pro à partir de 90€/mois",
-    essai: "Plan CRM 100% gratuit à vie",
-    lien: "https://hubspot.com",
+    prix: "À partir de 49$/mois",
+    essai: "Essai 7 jours",
+    lien: "https://jasper.ai",
     partenaire: true,
-    avantages: ["Plan gratuit très complet", "IA Breeze native", "Marketing + Sales + Service", "Interface intuitive"],
-    inconvenients: ["Les plans payants montent vite", "Certaines fonctions avancées réservées Enterprise"],
-    ideal: "PME en croissance, équipes sales & marketing"
+    avantages: ["Brand Voice intégré", "70+ templates métiers", "Intégrations CMS", "Équipes illimitées"],
+    inconvenients: ["Prix élevé", "Interface en anglais"],
+    ideal: "Équipes marketing, agences, e-commerce"
   },
   {
     rank: 2,
-    name: "Salesforce + Einstein AI",
-    slug: "salesforce",
-    tagline: "La puissance enterprise avec l'IA la plus avancée",
-    description: "Salesforce reste la référence absolue en CRM, et son IA Einstein est la plus sophistiquée du marché. Prédiction des opportunités, analyse de sentiment des emails, génération automatique de rapports, recommandations commerciales personnalisées. La contrepartie : la complexité de mise en place et le tarif élévé réservent réellement Salesforce aux PME d'au moins 10-15 commerciaux avec un budget CRM dédié.",
-    scores: { fonctionnalites: 4.9, facilite: 3.2, rapport: 3.3, ia: 4.9 },
-    globalScore: 4.2,
-    prix: "À partir de 75€/utilisateur/mois",
-    essai: "Essai 30 jours",
-    lien: "https://salesforce.com",
+    name: "Copy.ai",
+    slug: "copyai",
+    tagline: "Rapide, simple, efficace pour les petites équipes",
+    description: "Copy.ai se distingue par sa simplicité d'usage et son rapport qualité-prix. Parfait pour les TPE et indépendants qui veulent générer des textes marketing sans courbe d'apprentissage. Les workflows automatisés permettent de chaîner plusieurs tâches de rédaction.",
+    scores: { qualite: 4.3, facilite: 4.8, rapport: 4.6, support: 4.0 },
+    globalScore: 4.4,
+    prix: "À partir de 36$/mois",
+    essai: "Plan gratuit disponible",
+    lien: "https://copy.ai",
     partenaire: false,
-    avantages: ["IA la plus avancée", "Personnalisable à l'infini", "Écosystème applicatif énorme", "Reporting très puissant"],
-    inconvenients: ["Tarif élevé", "Complexe à implémenter", "Nécessite souvent un intégrateur"],
-    ideal: "PME 15+ utilisateurs, budget CRM > 1 500€/mois"
+    avantages: ["Plan gratuit généreux", "Interface très intuitive", "Workflows automatisés", "90+ langues"],
+    inconvenients: ["Moins performant sur textes longs", "Peu de personnalisation"],
+    ideal: "Indépendants, TPE, solopreneurs"
   },
   {
     rank: 3,
-    name: "Pipedrive AI",
-    slug: "pipedrive",
-    tagline: "Le CRM le plus intuitif avec une IA bien intégrée",
-    description: "Pipedrive a construit son succès sur sa vision pipeline ultra-visuelle et son intuitivité. Son IA Sales Assistant analyse votre activité commerciale et suggère les meilleures actions à effectuer sur chaque deal. La fonctionnalité Leadbooster enrichit automatiquement les prospects. Moins puissant que HubSpot sur le marketing, mais plus agréable à utiliser au quotidien pour les commerciaux.",
-    scores: { fonctionnalites: 4.2, facilite: 4.8, rapport: 4.3, ia: 4.1 },
+    name: "Writesonic",
+    slug: "writesonic",
+    tagline: "Le meilleur rapport qualité-prix du marché",
+    description: "Writesonic combine rédaction IA et SEO dans un seul outil. Son article writer génère des contenus longs bien structurés, et l'outil Surfer SEO intégré optimise automatiquement pour Google. Bon choix pour les PME qui misent sur le content marketing.",
+    scores: { qualite: 4.4, facilite: 4.2, rapport: 4.7, support: 4.1 },
     globalScore: 4.3,
-    prix: "À partir de 14,90€/utilisateur/mois",
-    essai: "Essai 14 jours",
-    lien: "https://pipedrive.com",
+    prix: "À partir de 16$/mois",
+    essai: "Plan gratuit disponible",
+    lien: "https://writesonic.com",
     partenaire: false,
-    avantages: ["Interface pipeline très claire", "IA Sales Assistant", "Tarif accessible", "Adoption rapide par les équipes"],
-    inconvenients: ["Marketing limité", "Moins d'intégrations que HubSpot"],
-    ideal: "Équipes commerciales 3-20 personnes, B2B"
+    avantages: ["Tarif très compétitif", "SEO intégré", "Articles longs de qualité", "Chatbot Chatsonic"],
+    inconvenients: ["Qualité variable selon les templates", "Support moyen"],
+    ideal: "Blogueurs, content marketing, SEO"
   },
   {
     rank: 4,
-    name: "Zoho CRM Plus",
-    slug: "zoho",
-    tagline: "L'alternative économique avec Zia, l'IA intégrée",
-    description: "Zoho CRM se démarque par son rapport fonctionnalités/prix exceptionnel. Zia, son IA intégrée, prédit le bon moment pour contacter chaque prospect, analyse le sentiment des emails entrants et identifie les deals à risque. La suite Zoho One (CRM + marketing + helpdesk + compta) est particulièrement attractive pour les PME qui veulent tout centraliser. L'interface est moins moderne que HubSpot mais s'améliore.",
-    scores: { fonctionnalites: 4.4, facilite: 3.9, rapport: 4.8, ia: 4.2 },
+    name: "Notion AI",
+    slug: "notion-ai",
+    tagline: "L'IA intégrée à votre espace de travail",
+    description: "Notion AI n'est pas un outil de rédaction pur, mais son intégration dans Notion en fait un choix naturel pour les équipes qui utilisent déjà la plateforme. Résumé de notes, rédaction de briefs, reformulation — tout se passe dans votre espace de travail habituel.",
+    scores: { qualite: 4.0, facilite: 4.9, rapport: 4.5, support: 3.8 },
     globalScore: 4.1,
-    prix: "À partir de 14€/utilisateur/mois",
-    essai: "Essai 15 jours",
-    lien: "https://zoho.com/crm",
+    prix: "10$/mois (add-on Notion)",
+    essai: "20 essais gratuits",
+    lien: "https://notion.so",
     partenaire: false,
-    avantages: ["Meilleur rapport qualité/prix", "IA Zia performante", "Suite complète Zoho One", "RGPD & hébergement EU"],
-    inconvenients: ["Interface moins moderne", "Courbe d'apprentissage", "Support parfois lent"],
-    ideal: "PME budgets serrés, entreprises axées RGPD"
+    avantages: ["Intégré à Notion", "Prix abordable", "Zéro friction", "Résumé de documents"],
+    inconvenients: ["Nécessite Notion", "Limité pour contenu marketing avancé"],
+    ideal: "Équipes déjà sur Notion, rédaction interne"
   },
   {
     rank: 5,
-    name: "Monday CRM",
-    slug: "monday-crm",
-    tagline: "CRM flexible pour les équipes qui refusent les cases",
-    description: "Monday CRM (anciennement monday.com adapté CRM) séduit les équipes qui veulent un CRM sur-mesure sans développeur. Très flexible, il s'adapte à n'importe quel process commercial. L'IA intégrée aide à automatiser les mises à jour de statut et génère des résumés de deals. Moins spécialisé qu'un CRM pur, mais idéal pour les équipes qui ont déjà monday.com en interne.",
-    scores: { fonctionnalites: 4.0, facilite: 4.5, rapport: 4.1, ia: 3.8 },
-    globalScore: 4.0,
-    prix: "À partir de 12€/utilisateur/mois",
-    essai: "Essai 14 jours",
-    lien: "https://monday.com/crm",
+    name: "Rytr",
+    slug: "rytr",
+    tagline: "L'option budget pour démarrer sans risque",
+    description: "Rytr est l'outil le moins cher de ce comparatif. Les résultats sont corrects pour des textes courts — emails, descriptions produits, posts réseaux sociaux. Sans prétendre rivaliser avec Jasper sur la qualité, il rend service aux budgets serrés.",
+    scores: { qualite: 3.6, facilite: 4.6, rapport: 4.9, support: 3.7 },
+    globalScore: 3.9,
+    prix: "À partir de 9$/mois",
+    essai: "Plan gratuit (10 000 caractères/mois)",
+    lien: "https://rytr.me",
     partenaire: false,
-    avantages: ["Très personnalisable", "Adoption facile", "Déjà dans beaucoup de PME", "Automatisations simples"],
-    inconvenients: ["IA moins avancée", "Moins spécialisé que les vrais CRM", "Reporting limité"],
-    ideal: "Équipes déjà sur Monday, PME flexibles"
+    avantages: ["Tarif très bas", "Simple d'utilisation", "40+ cas d'usage", "Plan gratuit utile"],
+    inconvenients: ["Qualité limitée", "Pas adapté aux contenus longs", "Peu de personnalisation"],
+    ideal: "Débutants, budget < 10€/mois"
   }
 ];
 
@@ -103,7 +103,7 @@ function scoreColor(score: number) {
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "ItemList",
-      "name": "HubSpot vs Salesforce vs Pipedrive — Meilleur CRM IA 2026",
+      "name": "Meilleurs outils IA pour créer du contenu 2026",
       "description": description,
       "numberOfItems": tools.length,
       "itemListElement": tools.map((t, i) => ({
@@ -120,7 +120,7 @@ function scoreColor(score: number) {
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://lesoutils-ia.fr/" },
         { "@type": "ListItem", "position": 2, "name": "Comparatifs", "item": "https://lesoutils-ia.fr/comparatifs" },
-        { "@type": "ListItem", "position": 3, "name": "HubSpot vs Salesforce vs Pipedrive — CRM IA" }
+        { "@type": "ListItem", "position": 3, "name": "Rédaction IA" }
       ]
     })} />
   </Fragment>
@@ -128,9 +128,13 @@ function scoreColor(score: number) {
   <style>
     .comp-page { padding-top: 56px; }
     .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* BREADCRUMB */
     .breadcrumb { padding: 1.2rem 0 0; display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text-muted); flex-wrap: wrap; }
     .breadcrumb a:hover { color: var(--accent); }
     .breadcrumb-sep { opacity: .4; }
+
+    /* HEADER */
     .comp-header { padding: 2rem 0 2.5rem; border-bottom: 1px solid var(--border); }
     .comp-cat-label { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); background: var(--accent-dim); padding: 4px 10px; border-radius: 3px; display: inline-block; margin-bottom: 1rem; }
     .comp-title { font-family: var(--font-display); font-size: clamp(26px, 4vw, 42px); font-weight: 800; line-height: 1.2; letter-spacing: -0.5px; margin-bottom: 1rem; }
@@ -138,25 +142,35 @@ function scoreColor(score: number) {
     .comp-meta { display: flex; align-items: center; gap: 1.5rem; font-size: 12px; color: var(--text-muted); flex-wrap: wrap; }
     .comp-meta-item { display: flex; align-items: center; gap: 6px; }
     .comp-meta-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--accent); display: inline-block; }
+
+    /* LAYOUT BODY */
     .comp-body { display: grid; grid-template-columns: 1fr 280px; gap: 3.5rem; padding: 2.5rem 0 4rem; align-items: start; }
     @media (max-width: 860px) { .comp-body { grid-template-columns: 1fr; gap: 2rem; } }
+
+    /* TOOL CARDS */
     .tools-list { display: flex; flex-direction: column; gap: 1.5rem; }
+
     .tool-card { background: var(--bg3); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; transition: border-color .2s; }
     .tool-card:hover { border-color: var(--border-strong); }
     .tool-card.is-partenaire { border-color: rgba(200,241,53,0.3); }
+
     .tool-card-top { padding: 1.4rem 1.4rem 0; }
     .tool-rank-row { display: flex; align-items: center; gap: 10px; margin-bottom: 1rem; }
     .tool-rank { font-family: var(--font-display); font-size: 11px; font-weight: 700; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); padding: 3px 9px; border-radius: 3px; }
     .tool-rank.rank-1 { color: var(--accent); border-color: rgba(200,241,53,0.4); background: var(--accent-dim); }
     .badge-partenaire { font-size: 9px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-text); background: var(--accent); padding: 3px 8px; border-radius: 3px; }
     .badge-affilie { font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); border: 1px solid var(--border); padding: 3px 8px; border-radius: 3px; }
+
     .tool-name-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
     .tool-name { font-family: var(--font-display); font-size: 20px; font-weight: 800; }
     .tool-global-score { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
     .score-number { font-family: var(--font-display); font-size: 22px; font-weight: 800; }
     .score-max { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
     .tool-tagline { font-size: 13px; color: var(--text-muted); font-style: italic; margin-bottom: 0.8rem; }
     .tool-desc { font-size: 14px; color: var(--text-mid); line-height: 1.7; margin-bottom: 1.2rem; }
+
+    /* SCORES GRID */
     .scores-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; padding: 1rem 1.4rem; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
     @media (max-width: 540px) { .scores-grid { grid-template-columns: repeat(2, 1fr); } }
     .score-item { text-align: center; }
@@ -164,6 +178,8 @@ function scoreColor(score: number) {
     .score-bar-wrap { height: 3px; background: var(--border); border-radius: 2px; margin-bottom: 4px; }
     .score-bar { height: 3px; border-radius: 2px; }
     .score-val { font-family: var(--font-display); font-size: 13px; font-weight: 700; }
+
+    /* PROS/CONS + INFOS */
     .tool-bottom { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; padding: 1.2rem 1.4rem 1.4rem; }
     @media (max-width: 640px) { .tool-bottom { grid-template-columns: 1fr; gap: 0.8rem; } }
     .pros-cons-title { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.5rem; }
@@ -171,35 +187,47 @@ function scoreColor(score: number) {
     .pros-list li, .cons-list li { font-size: 12px; color: var(--text-mid); display: flex; align-items: flex-start; gap: 6px; line-height: 1.5; }
     .pros-list li::before { content: '+'; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
     .cons-list li::before { content: '−'; color: var(--text-muted); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+    .tool-info-block { }
     .info-price { font-family: var(--font-display); font-size: 14px; font-weight: 700; margin-bottom: 3px; }
     .info-essai { font-size: 12px; color: var(--accent); margin-bottom: 8px; }
     .info-ideal-label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 3px; }
     .info-ideal { font-size: 12px; color: var(--text-mid); line-height: 1.5; }
+
     .tool-cta-wrap { display: flex; align-items: flex-end; }
     .tool-cta { display: inline-block; width: 100%; text-align: center; padding: 10px 18px; border-radius: 5px; font-family: var(--font-display); font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; transition: opacity .15s; }
     .tool-cta.cta-primary { background: var(--accent); color: var(--accent-text); }
     .tool-cta.cta-secondary { background: var(--bg); border: 1px solid var(--border); color: var(--text-mid); }
     .tool-cta:hover { opacity: .85; }
+
+    /* SIDEBAR */
     .sidebar { position: sticky; top: 72px; display: flex; flex-direction: column; gap: 1.2rem; }
     @media (max-width: 860px) { .sidebar { position: static; } }
+
     .sidebar-widget { background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; padding: 1.4rem; }
     .sidebar-widget-title { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; text-align: center; }
-    .quick-rank-item { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border); cursor: pointer; transition: opacity .15s; text-decoration: none; color: inherit; }
+
+    .quick-rank-item { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border); cursor: pointer; transition: opacity .15s; }
     .quick-rank-item:last-child { border-bottom: none; padding-bottom: 0; }
     .quick-rank-item:hover { opacity: .75; }
     .qr-num { font-family: var(--font-display); font-size: 11px; font-weight: 800; color: var(--text-muted); width: 18px; flex-shrink: 0; }
     .qr-num.rank-1 { color: var(--accent); }
     .qr-name { font-size: 13px; font-weight: 600; flex: 1; }
     .qr-score { font-family: var(--font-display); font-size: 13px; font-weight: 700; }
+
     .method-text { font-size: 13px; color: var(--text-mid); line-height: 1.7; margin-bottom: 1rem; }
     .method-criteria { list-style: none; display: flex; flex-direction: column; gap: 6px; }
     .method-criteria li { display: flex; align-items: flex-start; gap: 8px; font-size: 12px; color: var(--text-mid); line-height: 1.5; }
     .method-criteria li::before { content: '→'; color: var(--accent); flex-shrink: 0; }
+
     .nl-title { font-family: var(--font-display); font-size: 14px; font-weight: 700; margin-bottom: 0.5rem; }
     .nl-text { font-size: 13px; color: var(--text-mid); line-height: 1.6; margin-bottom: 1rem; }
     .nl-input { width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 5px; padding: 9px 12px; font-size: 13px; color: var(--text); margin-bottom: 8px; outline: none; transition: border-color .15s; }
     .nl-input:focus { border-color: var(--accent); }
     .nl-btn { width: 100%; background: var(--accent); color: var(--accent-text); font-family: var(--font-display); font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 10px; border-radius: 5px; border: none; cursor: pointer; }
+    .nl-btn:hover { opacity: .9; }
+
+    /* NOTE BAS DE PAGE */
     .comp-footer-note { border-top: 1px solid var(--border); padding: 2rem 0; font-size: 12px; color: var(--text-muted); line-height: 1.7; max-width: 720px; }
     .comp-footer-note a { color: var(--accent); }
   </style>
@@ -212,22 +240,23 @@ function scoreColor(score: number) {
         <span class="breadcrumb-sep">›</span>
         <a href="/comparatifs">Comparatifs</a>
         <span class="breadcrumb-sep">›</span>
-        <span>CRM intelligents</span>
+        <span>Rédaction IA</span>
       </nav>
 
       <header class="comp-header">
         <span class="comp-cat-label">Comparatif</span>
-        <h1 class="comp-title">HubSpot vs Salesforce vs Pipedrive<br>— Meilleur CRM IA 2026</h1>
-        <p class="comp-subtitle">HubSpot reste le CRM le plus recherché en France avec plus de 119 000 requêtes par mois — mais est-il vraiment le meilleur pour votre PME ? On a testé HubSpot, Salesforce Einstein, Pipedrive, Zoho et Monday CRM pendant 4 semaines avec de vraies équipes commerciales françaises. Verdict sans filtre.</p>
+        <h1 class="comp-title">Meilleurs outils IA pour créer<br>du contenu — 2026</h1>
+        <p class="comp-subtitle">Jasper, Copy.ai, Writesonic, Notion AI, Rytr — 5 outils IA marketing testés pendant 4 semaines avec de vraies équipes françaises. Classement sans concession, prix réels, et le verdict clair sur ce qui vaut le coup selon votre profil et votre budget.</p>
         <div class="comp-meta">
           <span class="comp-meta-item"><span class="comp-meta-dot"></span> Mis à jour mars 2026</span>
-          <span class="comp-meta-item"><span class="comp-meta-dot"></span> 5 CRM testés</span>
+          <span class="comp-meta-item"><span class="comp-meta-dot"></span> 5 outils testés</span>
           <span class="comp-meta-item"><span class="comp-meta-dot"></span> 4 critères notés</span>
-          <span class="comp-meta-item"><span class="comp-meta-dot"></span> 11 min de lecture</span>
+          <span class="comp-meta-item"><span class="comp-meta-dot"></span> 12 min de lecture</span>
         </div>
       </header>
 
       <div class="comp-body">
+
         <main>
           <div class="tools-list">
             {tools.map(tool => (
@@ -251,7 +280,7 @@ function scoreColor(score: number) {
 
                 <div class="scores-grid">
                   {Object.entries(tool.scores).map(([key, val]) => {
-                    const labels: Record<string, string> = { fonctionnalites: 'Fonctions', facilite: 'Facilité', rapport: 'Rapport Q/P', ia: 'IA intégrée' };
+                    const labels: Record<string, string> = { qualite: 'Qualité', facilite: 'Facilité', rapport: 'Rapport Q/P', support: 'Support' };
                     return (
                       <div class="score-item">
                         <div class="score-label">{labels[key] || key}</div>
@@ -281,12 +310,12 @@ function scoreColor(score: number) {
                       <div class="info-ideal">{tool.ideal}</div>
                     </div>
                   </div>
-                  <div>
+                  <div class="tool-info-block">
                     <div class="info-price">{tool.prix}</div>
                     <div class="info-essai">{tool.essai}</div>
                     <div class="tool-cta-wrap">
                       <a href={tool.lien} target="_blank" rel="nofollow noopener" class={`tool-cta ${tool.partenaire ? 'cta-primary' : 'cta-secondary'}`}>
-                        {tool.partenaire ? 'Essayer HubSpot →' : 'Voir le site →'}
+                        {tool.partenaire ? 'Essayer Jasper →' : 'Voir le site →'}
                       </a>
                     </div>
                   </div>
@@ -296,7 +325,7 @@ function scoreColor(score: number) {
           </div>
 
           <div class="comp-footer-note">
-            <strong>Note éditoriale</strong> — Comparatif mis à jour régulièrement. Certains liens sont affiliés. Le classement reflète nos tests indépendants. Les outils marqués "Partenaire" bénéficient d'une mise en avant commerciale mais leur position tient compte de leur performance réelle. <a href="/mentions-legales">En savoir plus</a>.
+            <strong>Note éditoriale</strong> — Ce comparatif est mis à jour régulièrement. Certains liens sont affiliés : si vous souscrivez via nos liens, nous percevons une commission sans surcoût pour vous. Le classement reflète nos tests indépendants. Les outils marqués "Partenaire" bénéficient d'une mise en avant commerciale, mais leur position résulte aussi de leur performance réelle. <a href="/mentions-legales">En savoir plus sur notre méthode</a>.
           </div>
         </main>
 
@@ -304,7 +333,7 @@ function scoreColor(score: number) {
           <div class="sidebar-widget">
             <div class="sidebar-widget-title">Classement rapide</div>
             {tools.map(t => (
-              <a href={`#${t.slug}`} class="quick-rank-item">
+              <a href={`#${t.slug}`} class="quick-rank-item" style="text-decoration:none; color: inherit;">
                 <span class={`qr-num${t.rank === 1 ? ' rank-1' : ''}`}>#{t.rank}</span>
                 <span class="qr-name">{t.name}</span>
                 <span class="qr-score" style={`color: ${scoreColor(t.globalScore)}`}>{t.globalScore.toFixed(1)}</span>
@@ -314,22 +343,23 @@ function scoreColor(score: number) {
 
           <div class="sidebar-widget">
             <div class="sidebar-widget-title">Notre méthode</div>
-            <p class="method-text">Chaque CRM testé pendant 4 semaines avec de vraies équipes commerciales françaises, sur de vraies données clients.</p>
+            <p class="method-text">Chaque outil a été testé pendant minimum 4 semaines en conditions réelles avec des équipes PME françaises.</p>
             <ul class="method-criteria">
-              <li>Richesse fonctionnelle</li>
+              <li>Qualité des textes générés</li>
               <li>Facilité de prise en main</li>
               <li>Rapport qualité / prix</li>
-              <li>Qualité de l'IA intégrée</li>
+              <li>Réactivité du support</li>
             </ul>
           </div>
 
           <div class="sidebar-widget">
             <div class="nl-title">Un outil IA par semaine</div>
-            <p class="nl-text">La sélection des meilleurs outils IA chaque lundi dans votre boîte mail.</p>
+            <p class="nl-text">La sélection des meilleurs outils IA chaque lundi, directement dans votre boîte mail.</p>
             <input type="email" class="nl-input" placeholder="votre@email.fr" />
             <button class="nl-btn">Je m'abonne</button>
           </div>
         </aside>
+
       </div>
     </div>
   </div>
