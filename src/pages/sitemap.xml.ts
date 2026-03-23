@@ -4,23 +4,39 @@ import { getCollection } from 'astro:content';
 export const GET: APIRoute = async () => {
   const site = 'https://lesoutils-ia.fr';
 
-  // Pages statiques du site
   const staticPages = [
+    // Pages principales
     { url: '/', priority: '1.0', changefreq: 'weekly' },
-    { url: '/comparatifs/', priority: '0.8', changefreq: 'weekly' },
-    { url: '/redaction-ia/', priority: '0.8', changefreq: 'weekly' },
-    { url: '/automatisation/', priority: '0.8', changefreq: 'weekly' },
-    { url: '/ia-pour-pme/', priority: '0.8', changefreq: 'weekly' },
+    { url: '/comparatifs/', priority: '0.9', changefreq: 'weekly' },
     { url: '/guides/', priority: '0.8', changefreq: 'weekly' },
     { url: '/actualites/', priority: '0.7', changefreq: 'daily' },
     { url: '/newsletter/', priority: '0.6', changefreq: 'monthly' },
+    { url: '/methode/', priority: '0.6', changefreq: 'monthly' },
+    { url: '/contact/', priority: '0.5', changefreq: 'monthly' },
+    { url: '/mentions-legales/', priority: '0.3', changefreq: 'yearly' },
+
+    // Pages catégories
+    { url: '/redaction-ia/', priority: '0.7', changefreq: 'weekly' },
+    { url: '/automatisation/', priority: '0.7', changefreq: 'weekly' },
+    { url: '/ia-pour-pme/', priority: '0.7', changefreq: 'weekly' },
     { url: '/outils/', priority: '0.7', changefreq: 'weekly' },
-    { url: '/comparatifs/crm/', priority: '0.7', changefreq: 'weekly' },
+
+    // Pages comparatifs — priorité haute car pages de monétisation
+    { url: '/comparatifs/crm/', priority: '0.9', changefreq: 'monthly' },
+    { url: '/comparatifs/chatgpt-alternatives/', priority: '0.9', changefreq: 'monthly' },
+    { url: '/comparatifs/email-marketing/', priority: '0.9', changefreq: 'monthly' },
+    { url: '/comparatifs/automatisation/', priority: '0.9', changefreq: 'monthly' },
+    { url: '/comparatifs/redaction-ia/', priority: '0.9', changefreq: 'monthly' },
+    { url: '/comparatifs/prospection/', priority: '0.9', changefreq: 'monthly' },
+    { url: '/comparatifs/ia-image/', priority: '0.9', changefreq: 'monthly' },
+    { url: '/comparatifs/ia-pour-pme/', priority: '0.9', changefreq: 'monthly' },
+    { url: '/comparatifs/ia-comptabilite/', priority: '0.9', changefreq: 'monthly' },
+    { url: '/comparatifs/agents-ia/', priority: '0.9', changefreq: 'monthly' },
+    { url: '/comparatifs/ia-service-client/', priority: '0.9', changefreq: 'monthly' },
+    { url: '/comparatifs/formation-ia/', priority: '0.9', changefreq: 'monthly' },
   ];
 
-  // Articles dynamiques depuis la collection Astro
   const articles = await getCollection('articles', ({ data }) => !data.draft);
-
   const today = new Date().toISOString().split('T')[0];
 
   const staticUrls = staticPages.map(page => `
