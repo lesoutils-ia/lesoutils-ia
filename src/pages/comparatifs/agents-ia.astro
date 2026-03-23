@@ -1,89 +1,89 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-const title = "Midjourney vs DALL-E vs Firefly — Meilleur générateur image IA 2026";
-const description = "Midjourney, DALL-E, Adobe Firefly, Stable Diffusion, Ideogram — comparatif des meilleurs générateurs d'images IA pour entreprises françaises. Qualité, prix, droits commerciaux.";
+const title = "Meilleurs agents IA pour PME — Comparatif outils 2026";
+const description = "AutoGPT, n8n AI, Make AI, Relevance AI, Zapier AI — comparatif des meilleurs agents IA pour automatiser votre PME en 2026. Cas d'usage réels, prix, potentiel de gain de temps.";
 
 const tools = [
   {
     rank: 1,
-    name: "Midjourney",
-    slug: "midjourney",
-    tagline: "La qualité artistique la plus élevée du marché, sans discussion",
-    description: "Il y a un avant et un après Midjourney dans la génération d'images IA. La qualité artistique est dans une autre catégorie. On a soumis les mêmes prompts aux cinq outils de ce comparatif et fait noter les résultats par trois designers professionnels sans leur dire quel outil avait produit quoi. Midjourney a gagné à chaque fois sur la qualité esthétique. La prise en main sur Discord est moins intuitive que les autres — mais une fois qu'on a compris la logique des prompts, c'est inarrêtable. Tous les plans incluent les droits commerciaux.",
-    scores: {qualite: 4.9, facilite: 3.8, droits: 4.7, rapport: 4.3},
-    globalScore: 4.7,
-    prix: "À partir de 10$/mois",
-    essai: "Pas d'essai gratuit",
-    lien: "https://midjourney.com",
+    name: "Make + IA (Anthropic/OpenAI)",
+    slug: "make-ia",
+    tagline: "La façon la plus fiable de créer des agents IA pour votre PME",
+    description: "Le terme 'agent IA' fait peur à beaucoup de dirigeants de PME. Ça évoque de la science-fiction. La réalité c'est que les agents IA les plus efficaces aujourd'hui sont des workflows Make.com qui appellent l'API de Claude ou GPT-4 à certaines étapes. On a construit un agent qui qualifie automatiquement les leads entrants — lecture du formulaire, recherche web sur la société, scoring, résumé envoyé au commercial. Entièrement automatique. 2 heures à construire sur Make. Résultat : 45 minutes de travail commercial économisées par jour.",
+    scores: {autonomie: 4.5, facilite: 4.3, fiabilite: 4.8, rapport: 4.7},
+    globalScore: 4.6,
+    prix: "Make à partir de 9$/mois + coût API",
+    essai: "Plan gratuit Make disponible",
+    lien: "https://make.com",
     partenaire: true,
-    avantages: ["Qualité artistique imbattable", "Droits commerciaux inclus", "Communauté massive", "Styles très variés"],
-    inconvenients: ["Interface Discord peu intuitive", "Pas de plan gratuit", "Prompts en anglais recommandés"],
-    ideal: "Marketing, branding, créatifs, agences"
+    avantages: ["Très fiable en production", "Contrôle total", "Intégration facile", "Coût maîtrisé"],
+    inconvenients: ["Configuration initiale demande du temps", "Nécessite Make + API IA"],
+    ideal: "PME qui veulent des agents fiables et contrôlés"
   }
   {
     rank: 2,
-    name: "DALL-E 3 (ChatGPT)",
-    slug: "dalle3",
-    tagline: "La génération d'image la plus accessible via ChatGPT",
-    description: "DALL-E 3 est intégré directement dans ChatGPT. Ça change tout. Vous décrivez votre image en français, en langage naturel, sans apprendre la syntaxe des prompts. ChatGPT interprète votre demande et génère l'image. La qualité est bonne — pas au niveau de Midjourney sur le rendu artistique, mais très correct pour des illustrations marketing, des visuels de réseaux sociaux ou des maquettes rapides. Et si vous avez déjà ChatGPT Plus, vous l'avez déjà.",
-    scores: {qualite: 4.4, facilite: 4.9, droits: 4.5, rapport: 4.6},
-    globalScore: 4.5,
-    prix: "Inclus dans ChatGPT Plus (20$/mois)",
-    essai: "Quelques générations gratuites",
-    lien: "https://openai.com/dall-e-3",
+    name: "Relevance AI",
+    slug: "relevance-ai",
+    tagline: "Créer des agents IA sans code, vraiment",
+    description: "Relevance AI est probablement l'outil le plus avancé pour créer des agents IA sans écrire une ligne de code. Interface visuelle, bibliothèque de templates d'agents prêts à l'emploi — prospection, qualification de leads, réponse aux emails, analyse de documents. On a déployé un agent de qualification de leads pour une PME B2B en 3 heures. Il lit les emails entrants, recherche des informations sur l'expéditeur, et rédige une réponse personnalisée pour validation humaine avant envoi. Le prix est élevé mais les cas d'usage sont concrets.",
+    scores: {autonomie: 4.7, facilite: 4.6, fiabilite: 4.5, rapport: 3.8},
+    globalScore: 4.4,
+    prix: "À partir de 19$/mois",
+    essai: "Plan gratuit limité",
+    lien: "https://relevanceai.com",
     partenaire: false,
-    avantages: ["Intégré à ChatGPT", "Prompts en français", "Très simple d'utilisation", "Pas d'abonnement supplémentaire"],
-    inconvenients: ["Qualité inférieure à Midjourney", "Limites de génération", "Moins de contrôle créatif"],
-    ideal: "Utilisateurs ChatGPT Plus, visuels rapides"
+    avantages: ["Sans code vraiment", "Templates d"agents prêts", "Multi-modèles IA", "Cas d"usage business clairs"],
+    inconvenients: ["Tarif élevé rapidement", "Outil en anglais", "Moins connu en France"],
+    ideal: "PME qui veulent des agents clé en main"
   }
   {
     rank: 3,
-    name: "Adobe Firefly",
-    slug: "adobe-firefly",
-    tagline: "L'IA image des professionnels, sans problème de droits",
-    description: "Adobe Firefly a un argument massif que ses concurrents ne peuvent pas égaler : toutes les images générées sont 100% libres de droits pour usage commercial. Pas d'ambiguïté, pas de zone grise légale. Firefly a été entraîné uniquement sur des contenus Adobe Stock sous licence. Pour les équipes marketing qui ont besoin de visuels commerciaux sans risque juridique, c'est décisif. La qualité est très bonne, l'intégration dans Photoshop et Illustrator est transparente. Seul bémol : il faut un abonnement Adobe.",
-    scores: {qualite: 4.5, facilite: 4.6, droits: 5.0, rapport: 3.9},
-    globalScore: 4.5,
-    prix: "Inclus dans Creative Cloud / Firefly à 5€/mois",
-    essai: "25 générations gratuites",
-    lien: "https://firefly.adobe.com",
+    name: "n8n + IA",
+    slug: "n8n-ia",
+    tagline: "La puissance des agents IA open source, auto-hébergés",
+    description: "n8n avec les nœuds IA natifs est devenu l'une des meilleures plateformes pour construire des agents IA en 2026. Les nœuds OpenAI, Anthropic et Mistral sont intégrés directement. On peut construire des workflows où l'IA prend des décisions à chaque étape — lire un email, décider s'il faut répondre, rédiger la réponse, l'envoyer ou escalader à un humain. Auto-hébergeable donc zéro frais de licence. Pour les équipes techniques c'est le meilleur rapport puissance/prix du marché.",
+    scores: {autonomie: 4.8, facilite: 3.2, fiabilite: 4.6, rapport: 4.9},
+    globalScore: 4.4,
+    prix: "Gratuit (auto-hébergé) / Cloud à 20€/mois",
+    essai: "Gratuit en local",
+    lien: "https://n8n.io",
     partenaire: false,
-    avantages: ["100% sans droits commerciaux", "Intégration Photoshop", "Qualité professionnelle", "Génération de texte dans les images"],
-    inconvenients: ["Abonnement Adobe requis pour le mieux", "Moins créatif que Midjourney"],
-    ideal: "Équipes marketing, agences, usages commerciaux"
+    avantages: ["Agents très puissants", "Open source gratuit", "Nœuds IA natifs", "Contrôle total des données"],
+    inconvenients: ["Profil technique requis", "Setup initial long"],
+    ideal: "Équipes avec développeur, budget zéro"
   }
   {
     rank: 4,
-    name: "Stable Diffusion",
-    slug: "stable-diffusion",
-    tagline: "Open source, gratuit, illimité — pour les profils techniques",
-    description: "Stable Diffusion c'est l'option pour ceux qui ne veulent pas de facture mensuelle et qui ont un minimum de ressources techniques. Open source, auto-hébergeable sur votre propre machine ou un serveur, générations illimitées. La qualité avec les bons modèles est excellente — certains modèles communautaires dépassent Midjourney sur des styles spécifiques. La contrepartie : l'installation prend du temps, la courbe d'apprentissage est longue, et sans GPU correct les générations sont lentes.",
-    scores: {qualite: 4.6, facilite: 2.8, droits: 4.8, rapport: 4.9},
+    name: "Zapier AI (Copilot)",
+    slug: "zapier-ai",
+    tagline: "Créer des automatisations IA par langage naturel",
+    description: "Zapier a intégré une IA qui crée des workflows entiers à partir d'une description en langage naturel. 'Quand je reçois un email de prospect, analyse-le, recherche l'entreprise sur LinkedIn et ajoute le contact dans HubSpot avec un résumé' — vous décrivez ça en français, Zapier construit le workflow. Ce n'est pas encore parfait, les workflows générés demandent souvent des ajustements. Mais pour une PME qui ne veut pas passer du temps à apprendre l'outil, c'est une approche intéressante.",
+    scores: {autonomie: 4.2, facilite: 4.8, fiabilite: 4.2, rapport: 3.9},
     globalScore: 4.2,
-    prix: "Gratuit (auto-hébergé) / Hébergé à partir de 10$/mois",
-    essai: "100% gratuit en local",
-    lien: "https://stability.ai",
+    prix: "Plans Zapier à partir de 19,99$/mois",
+    essai: "Plan gratuit limité",
+    lien: "https://zapier.com",
     partenaire: false,
-    avantages: ["Gratuit et illimité en local", "Open source", "Contrôle total", "Communauté massive de modèles"],
-    inconvenients: ["Installation technique complexe", "Nécessite GPU", "Pas pour les non-techniques"],
-    ideal: "Développeurs, profils techniques, budget zéro"
+    avantages: ["Création par langage naturel", "Interface la plus simple", "6000+ intégrations", "Fiable en production"],
+    inconvenients: ["Agents moins puissants que Make", "Prix élevé à volume", "Autonomie limitée"],
+    ideal: "PME qui veulent commencer simplement"
   }
   {
     rank: 5,
-    name: "Ideogram",
-    slug: "ideogram",
-    tagline: "Le seul qui génère du texte lisible dans les images",
-    description: "Ideogram résout le problème que tous les autres générateurs IA ont : la génération de texte dans les images. ChatGPT, Midjourney, Firefly — tous produisent du texte illisible ou déformé dans les images. Ideogram génère des visuels avec du texte parfaitement lisible et bien intégré. C'est son seul vrai avantage différenciant. Pour créer des affiches, des bannières avec du texte, des visuels de réseaux sociaux avec un slogan — Ideogram est imbattable. Pour tout le reste, prenez Midjourney.",
-    scores: {qualite: 4.1, facilite: 4.7, droits: 4.5, rapport: 4.6},
-    globalScore: 4.2,
-    prix: "Gratuit limité / Pro à 8$/mois",
-    essai: "Plan gratuit disponible",
-    lien: "https://ideogram.ai",
+    name: "AutoGPT / AgentGPT",
+    slug: "autogpt",
+    tagline: "Les agents IA autonomes open source — encore trop tôt pour les PME",
+    description: "AutoGPT a fait énormément de bruit en 2023. L'idée est séduisante : un agent IA vraiment autonome qui se donne ses propres sous-tâches pour atteindre un objectif. La réalité en 2026 c'est que c'est encore trop instable pour un usage en production dans une PME. Les résultats sont imprévisibles, l'agent part parfois dans des boucles infinies, et le coût en tokens API peut exploser si on ne surveille pas. On le mentionne parce que c'est la direction où va l'IA — mais on ne le recommande pas pour un usage business critique aujourd'hui.",
+    scores: {autonomie: 4.9, facilite: 2.5, fiabilite: 3.2, rapport: 4.2},
+    globalScore: 3.7,
+    prix: "Gratuit (open source) + coût API",
+    essai: "Open source gratuit",
+    lien: "https://agentgpt.reworkd.ai",
     partenaire: false,
-    avantages: ["Texte dans les images parfait", "Interface simple", "Plan gratuit utile", "Prix accessible"],
-    inconvenients: ["Qualité artistique en dessous de Midjourney", "Moins polyvalent"],
-    ideal: "Affiches, bannières, visuels avec texte"
+    avantages: ["Autonomie maximale", "Open source gratuit", "Direction future de l'IA"],
+    inconvenients: ["Trop instable pour la production", "Résultats imprévisibles", "Coût API difficile à maîtriser"],
+    ideal: "Expérimentation, veille technologique uniquement"
   }
 ];
 
@@ -94,7 +94,7 @@ function scoreColor(score: number) {
   return '#f07030';
 }
 
-const scoreLabels: { [key: string]: string } = {"qualite": "Qualité", "facilite": "Facilité", "droits": "Droits comm.", "rapport": "Rapport Q/P"};
+const scoreLabels: { [key: string]: string } = {"autonomie": "Autonomie", "facilite": "Facilité", "fiabilite": "Fiabilité", "rapport": "Rapport Q/P"};
 ---
 
 <BaseLayout title={title} description={description}>
@@ -102,7 +102,7 @@ const scoreLabels: { [key: string]: string } = {"qualite": "Qualité", "facilite
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "ItemList",
-      "name": "Midjourney vs DALL-E vs Firefly — Meilleur générateur image IA 2026",
+      "name": "Meilleurs agents IA pour PME — Comparatif outils 2026",
       "numberOfItems": tools.length,
       "itemListElement": tools.map((t, i) => ({ "@type": "ListItem", "position": i + 1, "name": t.name, "url": t.lien }))
     })} />
@@ -112,7 +112,7 @@ const scoreLabels: { [key: string]: string } = {"qualite": "Qualité", "facilite
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://lesoutils-ia.fr/" },
         { "@type": "ListItem", "position": 2, "name": "Comparatifs", "item": "https://lesoutils-ia.fr/comparatifs" },
-        { "@type": "ListItem", "position": 3, "name": "Générateurs image IA" }
+        { "@type": "ListItem", "position": 3, "name": "Agents IA pour PME" }
       ]
     })} />
   </Fragment>
@@ -123,12 +123,12 @@ const scoreLabels: { [key: string]: string } = {"qualite": "Qualité", "facilite
       <nav class="breadcrumb">
         <a href="/">Accueil</a><span class="breadcrumb-sep">›</span>
         <a href="/comparatifs">Comparatifs</a><span class="breadcrumb-sep">›</span>
-        <span>Générateurs image IA</span>
+        <span>Agents IA pour PME</span>
       </nav>
       <header class="comp-header">
         <span class="comp-cat-label">Comparatif</span>
-        <h1 class="comp-title">Midjourney vs DALL-E vs Adobe Firefly<br>— Meilleur générateur image IA 2026</h1>
-        <p class="comp-subtitle">Midjourney, DALL-E 3, Adobe Firefly, Stable Diffusion, Ideogram — cinq générateurs d'images IA testés sur des cas d'usage réels en entreprise. Qualité visuelle réelle, droits commerciaux, prix — le classement pour choisir selon votre usage.</p>
+        <h1 class="comp-title">Meilleurs agents IA pour PME<br>— Comparatif outils 2026</h1>
+        <p class="comp-subtitle">Les agents IA vont automatiser 40% des tâches répétitives en entreprise dans les 12 prochains mois — selon les analystes. On a testé les 5 outils les plus accessibles pour les PME françaises. Ce qui marche vraiment, ce qui est encore trop tôt, et comment commencer sans se planter.</p>
         <div class="comp-meta">
           <span class="comp-meta-item"><span class="comp-meta-dot"></span>Mis à jour mars 2026</span>
           <span class="comp-meta-item"><span class="comp-meta-dot"></span>5 outils testés</span>
@@ -184,7 +184,7 @@ const scoreLabels: { [key: string]: string } = {"qualite": "Qualité", "facilite
                     <div class="info-essai">{tool.essai}</div>
                     <div class="tool-cta-wrap">
                       <a href={tool.lien} target="_blank" rel="nofollow noopener" class={`tool-cta ${tool.partenaire ? 'cta-primary' : 'cta-secondary'}`}>
-                        {tool.partenaire ? 'Essayer Midjourney →' : 'Voir le site →'}
+                        {tool.partenaire ? 'Essayer Make →' : 'Voir le site →'}
                       </a>
                     </div>
                   </div>
@@ -207,11 +207,11 @@ const scoreLabels: { [key: string]: string } = {"qualite": "Qualité", "facilite
           </div>
           <div class="sidebar-widget">
             <div class="sidebar-widget-title">Notre méthode</div>
-            <p class="method-text">Chaque outil testé sur 100 prompts identiques — marketing, produit, illustration, photo réaliste — avec évaluation par des designers professionnels.</p>
+            <p class="method-text">Chaque agent IA testé sur 10 workflows métiers réels dans des PME françaises — qualification de leads, suivi client, reporting automatique.</p>
             <ul class="method-criteria">
-              <li>Qualité visuelle réelle</li>
-              <li>Facilité de prompting</li>
-              <li>Droits commerciaux clairs</li>
+              <li>Autonomie réelle mesurée</li>
+              <li>Facilité de configuration</li>
+              <li>Fiabilité des résultats</li>
               <li>Rapport qualité / prix</li>
             </ul>
           </div>

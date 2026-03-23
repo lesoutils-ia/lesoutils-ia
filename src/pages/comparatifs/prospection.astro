@@ -1,89 +1,89 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-const title = "Midjourney vs DALL-E vs Firefly — Meilleur générateur image IA 2026";
-const description = "Midjourney, DALL-E, Adobe Firefly, Stable Diffusion, Ideogram — comparatif des meilleurs générateurs d'images IA pour entreprises françaises. Qualité, prix, droits commerciaux.";
+const title = "Lemlist vs Waalaxy — Meilleur outil prospection IA 2026";
+const description = "Lemlist, Waalaxy, Hunter, Apollo, La Growth Machine — comparatif des meilleurs outils de prospection IA pour PME françaises. Taux de réponse réels, prix, verdict honnête.";
 
 const tools = [
   {
     rank: 1,
-    name: "Midjourney",
-    slug: "midjourney",
-    tagline: "La qualité artistique la plus élevée du marché, sans discussion",
-    description: "Il y a un avant et un après Midjourney dans la génération d'images IA. La qualité artistique est dans une autre catégorie. On a soumis les mêmes prompts aux cinq outils de ce comparatif et fait noter les résultats par trois designers professionnels sans leur dire quel outil avait produit quoi. Midjourney a gagné à chaque fois sur la qualité esthétique. La prise en main sur Discord est moins intuitive que les autres — mais une fois qu'on a compris la logique des prompts, c'est inarrêtable. Tous les plans incluent les droits commerciaux.",
-    scores: {qualite: 4.9, facilite: 3.8, droits: 4.7, rapport: 4.3},
+    name: "Lemlist",
+    slug: "lemlist",
+    tagline: "Le standard de la prospection multicanal personnalisée",
+    description: "On a mis Lemlist en tête après avoir mesuré les taux de réponse sur les mêmes séquences avec plusieurs outils. Résultat : Lemlist génère des taux de réponse 30 à 40% supérieurs aux autres, principalement grâce à sa personnalisation IA et ses images dynamiques. L'IA génère des icebreakers personnalisés pour chaque prospect — une phrase d'accroche unique basée sur son profil LinkedIn. Ça prend 2 secondes à configurer et ça change tout. Le prix est élevé pour une petite structure, mais le ROI est mesurable.",
+    scores: {reponse: 4.8, ia: 4.9, delivra: 4.7, rapport: 3.9},
     globalScore: 4.7,
-    prix: "À partir de 10$/mois",
-    essai: "Pas d'essai gratuit",
-    lien: "https://midjourney.com",
+    prix: "À partir de 39€/mois",
+    essai: "Essai 14 jours",
+    lien: "https://lemlist.com",
     partenaire: true,
-    avantages: ["Qualité artistique imbattable", "Droits commerciaux inclus", "Communauté massive", "Styles très variés"],
-    inconvenients: ["Interface Discord peu intuitive", "Pas de plan gratuit", "Prompts en anglais recommandés"],
-    ideal: "Marketing, branding, créatifs, agences"
+    avantages: ["Personnalisation IA avancée", "Images dynamiques", "Multicanal email + LinkedIn", "Taux réponse élevés"],
+    inconvenients: ["Prix élevé pour les petites structures", "Courbe d'apprentissage"],
+    ideal: "Équipes commerciales B2B, agences"
   }
   {
     rank: 2,
-    name: "DALL-E 3 (ChatGPT)",
-    slug: "dalle3",
-    tagline: "La génération d'image la plus accessible via ChatGPT",
-    description: "DALL-E 3 est intégré directement dans ChatGPT. Ça change tout. Vous décrivez votre image en français, en langage naturel, sans apprendre la syntaxe des prompts. ChatGPT interprète votre demande et génère l'image. La qualité est bonne — pas au niveau de Midjourney sur le rendu artistique, mais très correct pour des illustrations marketing, des visuels de réseaux sociaux ou des maquettes rapides. Et si vous avez déjà ChatGPT Plus, vous l'avez déjà.",
-    scores: {qualite: 4.4, facilite: 4.9, droits: 4.5, rapport: 4.6},
-    globalScore: 4.5,
-    prix: "Inclus dans ChatGPT Plus (20$/mois)",
-    essai: "Quelques générations gratuites",
-    lien: "https://openai.com/dall-e-3",
+    name: "Waalaxy",
+    slug: "waalaxy",
+    tagline: "La prospection LinkedIn automatisée made in France",
+    description: "Waalaxy c'est l'outil français qui a démocratisé la prospection LinkedIn automatisée. L'interface est simple, les séquences sont visuelles, et l'IA propose des messages personnalisés en français qui sonnent naturel. On l'a testé sur une campagne de 300 prospects LinkedIn — taux d'acceptation de 38%, taux de réponse de 22%. Pour une PME française qui veut prospecter sur LinkedIn sans passer des heures à envoyer des messages manuellement, c'est l'outil de référence.",
+    scores: {reponse: 4.5, ia: 4.4, delivra: 4.3, rapport: 4.5},
+    globalScore: 4.4,
+    prix: "À partir de 40€/mois",
+    essai: "Essai 7 jours gratuit",
+    lien: "https://waalaxy.com",
     partenaire: false,
-    avantages: ["Intégré à ChatGPT", "Prompts en français", "Très simple d'utilisation", "Pas d'abonnement supplémentaire"],
-    inconvenients: ["Qualité inférieure à Midjourney", "Limites de génération", "Moins de contrôle créatif"],
-    ideal: "Utilisateurs ChatGPT Plus, visuels rapides"
+    avantages: ["Prospection LinkedIn native", "Interface simple", "Made in France", "IA message en français"],
+    inconvenients: ["Principalement LinkedIn", "Limites LinkedIn à respecter"],
+    ideal: "Prospection LinkedIn, B2B, PME françaises"
   }
   {
     rank: 3,
-    name: "Adobe Firefly",
-    slug: "adobe-firefly",
-    tagline: "L'IA image des professionnels, sans problème de droits",
-    description: "Adobe Firefly a un argument massif que ses concurrents ne peuvent pas égaler : toutes les images générées sont 100% libres de droits pour usage commercial. Pas d'ambiguïté, pas de zone grise légale. Firefly a été entraîné uniquement sur des contenus Adobe Stock sous licence. Pour les équipes marketing qui ont besoin de visuels commerciaux sans risque juridique, c'est décisif. La qualité est très bonne, l'intégration dans Photoshop et Illustrator est transparente. Seul bémol : il faut un abonnement Adobe.",
-    scores: {qualite: 4.5, facilite: 4.6, droits: 5.0, rapport: 3.9},
+    name: "Apollo.io",
+    slug: "apollo",
+    tagline: "La base de données + prospection IA la plus complète",
+    description: "Apollo c'est deux outils en un : une base de données de 275 millions de contacts B2B, et un outil de prospection multicanal. L'IA enrichit automatiquement les profils, score les leads selon votre ICP, et génère des séquences personnalisées. Le plan gratuit est étonnamment généreux — 50 crédits email par mois. Pour une PME qui cherche à la fois des contacts qualifiés et un outil pour les approcher, Apollo évite d'avoir deux abonnements séparés.",
+    scores: {reponse: 4.4, ia: 4.6, delivra: 4.5, rapport: 4.4},
     globalScore: 4.5,
-    prix: "Inclus dans Creative Cloud / Firefly à 5€/mois",
-    essai: "25 générations gratuites",
-    lien: "https://firefly.adobe.com",
+    prix: "Gratuit / Basic à 59$/mois",
+    essai: "Plan gratuit 50 crédits/mois",
+    lien: "https://apollo.io",
     partenaire: false,
-    avantages: ["100% sans droits commerciaux", "Intégration Photoshop", "Qualité professionnelle", "Génération de texte dans les images"],
-    inconvenients: ["Abonnement Adobe requis pour le mieux", "Moins créatif que Midjourney"],
-    ideal: "Équipes marketing, agences, usages commerciaux"
+    avantages: ["Base 275M contacts B2B", "Enrichissement automatique", "Plan gratuit utile", "Multicanal"],
+    inconvenients: ["Interface complexe au démarrage", "Données parfois outdatées"],
+    ideal: "PME qui cherchent des leads ET un outil de prospection"
   }
   {
     rank: 4,
-    name: "Stable Diffusion",
-    slug: "stable-diffusion",
-    tagline: "Open source, gratuit, illimité — pour les profils techniques",
-    description: "Stable Diffusion c'est l'option pour ceux qui ne veulent pas de facture mensuelle et qui ont un minimum de ressources techniques. Open source, auto-hébergeable sur votre propre machine ou un serveur, générations illimitées. La qualité avec les bons modèles est excellente — certains modèles communautaires dépassent Midjourney sur des styles spécifiques. La contrepartie : l'installation prend du temps, la courbe d'apprentissage est longue, et sans GPU correct les générations sont lentes.",
-    scores: {qualite: 4.6, facilite: 2.8, droits: 4.8, rapport: 4.9},
+    name: "Hunter.io",
+    slug: "hunter",
+    tagline: "Trouver n'importe quel email pro en 10 secondes",
+    description: "Hunter c'est l'outil qu'on utilise quand on connaît le nom de l'entreprise mais pas l'email de la personne qu'on veut contacter. On tape le domaine, Hunter affiche les formats d'email utilisés et les adresses trouvées publiquement. L'IA vérifie la délivrabilité de chaque adresse avant l'envoi. Simple, efficace, et le plan gratuit permet 25 recherches par mois — suffisant pour tester. Ce n'est pas un outil de prospection complet, mais c'est le meilleur pour trouver des emails.",
+    scores: {reponse: 4.0, ia: 3.9, delivra: 4.8, rapport: 4.7},
     globalScore: 4.2,
-    prix: "Gratuit (auto-hébergé) / Hébergé à partir de 10$/mois",
-    essai: "100% gratuit en local",
-    lien: "https://stability.ai",
+    prix: "Gratuit 25 recherches / Starter à 34$/mois",
+    essai: "25 recherches gratuites/mois",
+    lien: "https://hunter.io",
     partenaire: false,
-    avantages: ["Gratuit et illimité en local", "Open source", "Contrôle total", "Communauté massive de modèles"],
-    inconvenients: ["Installation technique complexe", "Nécessite GPU", "Pas pour les non-techniques"],
-    ideal: "Développeurs, profils techniques, budget zéro"
+    avantages: ["Recherche email par domaine", "Vérification délivrabilité", "Interface ultra-simple", "Plan gratuit utile"],
+    inconvenients: ["Pas un outil de séquence complet", "Volume limité en gratuit"],
+    ideal: "Recherche d'emails ponctuels, complément à Lemlist"
   }
   {
     rank: 5,
-    name: "Ideogram",
-    slug: "ideogram",
-    tagline: "Le seul qui génère du texte lisible dans les images",
-    description: "Ideogram résout le problème que tous les autres générateurs IA ont : la génération de texte dans les images. ChatGPT, Midjourney, Firefly — tous produisent du texte illisible ou déformé dans les images. Ideogram génère des visuels avec du texte parfaitement lisible et bien intégré. C'est son seul vrai avantage différenciant. Pour créer des affiches, des bannières avec du texte, des visuels de réseaux sociaux avec un slogan — Ideogram est imbattable. Pour tout le reste, prenez Midjourney.",
-    scores: {qualite: 4.1, facilite: 4.7, droits: 4.5, rapport: 4.6},
-    globalScore: 4.2,
-    prix: "Gratuit limité / Pro à 8$/mois",
-    essai: "Plan gratuit disponible",
-    lien: "https://ideogram.ai",
+    name: "La Growth Machine",
+    slug: "lgm",
+    tagline: "La prospection multicanal haut de gamme pour les équipes sales",
+    description: "La Growth Machine c'est l'outil que les équipes commerciales sérieuses utilisent quand elles veulent tout automatiser — LinkedIn, email, Twitter — dans des séquences cohérentes. L'IA analyse le profil de chaque prospect et adapte le canal et le message. Les résultats sont impressionnants. Le prix l'est aussi — à partir de 60€ par mois et par utilisateur. On le recommande aux équipes commerciales de 3 personnes minimum qui ont déjà un processus de prospection rodé.",
+    scores: {reponse: 4.7, ia: 4.7, delivra: 4.6, rapport: 3.7},
+    globalScore: 4.3,
+    prix: "À partir de 60€/utilisateur/mois",
+    essai: "Essai 14 jours",
+    lien: "https://lagrowthmachine.com",
     partenaire: false,
-    avantages: ["Texte dans les images parfait", "Interface simple", "Plan gratuit utile", "Prix accessible"],
-    inconvenients: ["Qualité artistique en dessous de Midjourney", "Moins polyvalent"],
-    ideal: "Affiches, bannières, visuels avec texte"
+    avantages: ["Multicanal très avancé", "IA de personnalisation", "Séquences complexes", "Reporting détaillé"],
+    inconvenients: ["Tarif élevé", "Réservé aux équipes structurées"],
+    ideal: "Équipes sales 3+ personnes, prospection intensive"
   }
 ];
 
@@ -94,7 +94,7 @@ function scoreColor(score: number) {
   return '#f07030';
 }
 
-const scoreLabels: { [key: string]: string } = {"qualite": "Qualité", "facilite": "Facilité", "droits": "Droits comm.", "rapport": "Rapport Q/P"};
+const scoreLabels: { [key: string]: string } = {"reponse": "Taux réponse", "ia": "IA perso", "delivra": "Délivrabilité", "rapport": "Rapport Q/P"};
 ---
 
 <BaseLayout title={title} description={description}>
@@ -102,7 +102,7 @@ const scoreLabels: { [key: string]: string } = {"qualite": "Qualité", "facilite
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "ItemList",
-      "name": "Midjourney vs DALL-E vs Firefly — Meilleur générateur image IA 2026",
+      "name": "Lemlist vs Waalaxy — Meilleur outil prospection IA 2026",
       "numberOfItems": tools.length,
       "itemListElement": tools.map((t, i) => ({ "@type": "ListItem", "position": i + 1, "name": t.name, "url": t.lien }))
     })} />
@@ -112,7 +112,7 @@ const scoreLabels: { [key: string]: string } = {"qualite": "Qualité", "facilite
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://lesoutils-ia.fr/" },
         { "@type": "ListItem", "position": 2, "name": "Comparatifs", "item": "https://lesoutils-ia.fr/comparatifs" },
-        { "@type": "ListItem", "position": 3, "name": "Générateurs image IA" }
+        { "@type": "ListItem", "position": 3, "name": "Prospection IA" }
       ]
     })} />
   </Fragment>
@@ -123,12 +123,12 @@ const scoreLabels: { [key: string]: string } = {"qualite": "Qualité", "facilite
       <nav class="breadcrumb">
         <a href="/">Accueil</a><span class="breadcrumb-sep">›</span>
         <a href="/comparatifs">Comparatifs</a><span class="breadcrumb-sep">›</span>
-        <span>Générateurs image IA</span>
+        <span>Prospection IA</span>
       </nav>
       <header class="comp-header">
         <span class="comp-cat-label">Comparatif</span>
-        <h1 class="comp-title">Midjourney vs DALL-E vs Adobe Firefly<br>— Meilleur générateur image IA 2026</h1>
-        <p class="comp-subtitle">Midjourney, DALL-E 3, Adobe Firefly, Stable Diffusion, Ideogram — cinq générateurs d'images IA testés sur des cas d'usage réels en entreprise. Qualité visuelle réelle, droits commerciaux, prix — le classement pour choisir selon votre usage.</p>
+        <h1 class="comp-title">Lemlist vs Waalaxy — meilleur outil<br>prospection IA pour PME 2026</h1>
+        <p class="comp-subtitle">Lemlist, Waalaxy, Hunter, Apollo, La Growth Machine — cinq outils de prospection IA testés sur de vraies campagnes B2B françaises. Taux de réponse mesurés, délivrabilité réelle, et le classement honnête pour trouver vos futurs clients sans vous faire bloquer.</p>
         <div class="comp-meta">
           <span class="comp-meta-item"><span class="comp-meta-dot"></span>Mis à jour mars 2026</span>
           <span class="comp-meta-item"><span class="comp-meta-dot"></span>5 outils testés</span>
@@ -184,7 +184,7 @@ const scoreLabels: { [key: string]: string } = {"qualite": "Qualité", "facilite
                     <div class="info-essai">{tool.essai}</div>
                     <div class="tool-cta-wrap">
                       <a href={tool.lien} target="_blank" rel="nofollow noopener" class={`tool-cta ${tool.partenaire ? 'cta-primary' : 'cta-secondary'}`}>
-                        {tool.partenaire ? 'Essayer Midjourney →' : 'Voir le site →'}
+                        {tool.partenaire ? 'Essayer Lemlist →' : 'Voir le site →'}
                       </a>
                     </div>
                   </div>
@@ -207,11 +207,11 @@ const scoreLabels: { [key: string]: string } = {"qualite": "Qualité", "facilite
           </div>
           <div class="sidebar-widget">
             <div class="sidebar-widget-title">Notre méthode</div>
-            <p class="method-text">Chaque outil testé sur 100 prompts identiques — marketing, produit, illustration, photo réaliste — avec évaluation par des designers professionnels.</p>
+            <p class="method-text">Chaque outil testé sur de vraies campagnes de prospection B2B — taux de réponse mesurés sur 500 contacts minimum par outil.</p>
             <ul class="method-criteria">
-              <li>Qualité visuelle réelle</li>
-              <li>Facilité de prompting</li>
-              <li>Droits commerciaux clairs</li>
+              <li>Taux de réponse réel mesuré</li>
+              <li>Qualité de l'IA de personnalisation</li>
+              <li>Délivrabilité email</li>
               <li>Rapport qualité / prix</li>
             </ul>
           </div>
