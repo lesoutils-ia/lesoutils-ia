@@ -1,0 +1,186 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "Notre méthode — Comment on teste et classe les outils IA | lesoutils-ia.fr";
+const description = "Comment lesoutils-ia.fr teste les outils IA, établit ses classements et gère ses partenariats. Transparence totale sur notre méthode éditoriale et notre modèle économique.";
+---
+
+<BaseLayout title={title} description={description}>
+
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "Notre méthode éditoriale",
+      "description": "Comment lesoutils-ia.fr teste les outils IA et établit ses classements",
+      "url": "https://lesoutils-ia.fr/methode",
+      "publisher": { "@id": "https://lesoutils-ia.fr/#org" }
+    })} />
+  </Fragment>
+
+  <style>
+    .methode-page { padding-top: 56px; }
+    .container { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
+
+    .breadcrumb { padding: 1.2rem 0 0; display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text-muted); flex-wrap: wrap; }
+    .breadcrumb a:hover { color: var(--accent); }
+    .breadcrumb-sep { opacity: .4; }
+
+    .methode-header { padding: 2.5rem 0 2rem; border-bottom: 1px solid var(--border); }
+    .methode-cat { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); background: var(--accent-dim); padding: 4px 10px; border-radius: 3px; display: inline-block; margin-bottom: 1rem; }
+    .methode-title { font-family: var(--font-display); font-size: clamp(28px, 4vw, 44px); font-weight: 800; line-height: 1.2; letter-spacing: -0.5px; margin-bottom: 1rem; }
+    .methode-intro { font-size: 17px; color: var(--text-mid); line-height: 1.75; max-width: 700px; }
+
+    .methode-body { padding: 3rem 0 5rem; display: flex; flex-direction: column; gap: 3.5rem; }
+
+    .section-label { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.8rem; }
+    .section-title { font-family: var(--font-display); font-size: 22px; font-weight: 800; margin-bottom: 1.2rem; line-height: 1.3; }
+    .section-text { font-size: 15px; color: var(--text-mid); line-height: 1.85; }
+    .section-text p { margin-bottom: 1rem; }
+    .section-text p:last-child { margin-bottom: 0; }
+    .section-text strong { color: var(--text); font-weight: 600; }
+
+    .criteria-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 1.5rem; }
+    @media (max-width: 600px) { .criteria-grid { grid-template-columns: 1fr; } }
+    .criteria-card { background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; padding: 1.2rem 1.4rem; }
+    .criteria-num { font-family: var(--font-display); font-size: 28px; font-weight: 800; color: var(--accent); line-height: 1; margin-bottom: 0.5rem; }
+    .criteria-name { font-family: var(--font-display); font-size: 14px; font-weight: 700; margin-bottom: 0.4rem; }
+    .criteria-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+    .divider { border: none; border-top: 1px solid var(--border); }
+
+    .transparency-block { background: var(--bg3); border: 1px solid var(--border); border-radius: 10px; padding: 2rem; }
+    .transparency-block .section-title { font-size: 18px; }
+
+    .model-items { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.2rem; }
+    .model-item { display: flex; align-items: flex-start; gap: 14px; padding: 1rem; background: var(--bg); border: 1px solid var(--border); border-radius: 7px; }
+    .model-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+    .model-title { font-family: var(--font-display); font-size: 14px; font-weight: 700; margin-bottom: 3px; }
+    .model-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+    .contact-block { background: var(--accent-dim); border: 1px solid rgba(200,241,53,0.2); border-radius: 10px; padding: 2rem; text-align: center; }
+    .contact-title { font-family: var(--font-display); font-size: 20px; font-weight: 800; margin-bottom: 0.6rem; }
+    .contact-text { font-size: 14px; color: var(--text-mid); line-height: 1.7; margin-bottom: 1.5rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .contact-cta { display: inline-block; background: var(--accent); color: var(--accent-text); font-family: var(--font-display); font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 12px 24px; border-radius: 5px; transition: opacity .15s; }
+    .contact-cta:hover { opacity: .88; }
+  </style>
+
+  <div class="methode-page">
+    <div class="container">
+
+      <nav class="breadcrumb">
+        <a href="/">Accueil</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>Notre méthode</span>
+      </nav>
+
+      <header class="methode-header">
+        <span class="methode-cat">À propos</span>
+        <h1 class="methode-title">Comment on teste<br>les outils IA</h1>
+        <p class="methode-intro">lesoutils-ia.fr existe depuis le début avec une conviction simple : les entreprises françaises méritent des comparatifs honnêtes, pas des listes sponsorisées déguisées en avis indépendants. Voici exactement comment on travaille — et comment on gagne de l'argent.</p>
+      </header>
+
+      <div class="methode-body">
+
+        <section>
+          <div class="section-label">Le processus</div>
+          <h2 class="section-title">4 semaines de test minimum,<br>en conditions réelles</h2>
+          <div class="section-text">
+            <p>On ne teste pas les outils depuis un compte de démonstration avec des données fictives. Chaque outil comparé sur ce site a été utilisé pendant au moins quatre semaines dans une vraie PME française — avec de vraies données, de vraies contraintes, et de vrais utilisateurs qui n'ont aucune patience pour les outils qui compliquent leur quotidien.</p>
+            <p>Ce que ça veut dire concrètement : on a mis HubSpot entre les mains d'une équipe commerciale de 4 personnes qui n'avait jamais utilisé de CRM. On a construit de vrais workflows Make.com pour une PME qui perdait deux heures par semaine à copier des données entre ses outils. On a testé Jasper avec une responsable marketing qui produisait trois articles par semaine toute seule.</p>
+            <p>Les avis qu'on publie viennent de là. Pas de la fiche produit du site officiel.</p>
+          </div>
+
+          <div class="criteria-grid">
+            <div class="criteria-card">
+              <div class="criteria-num">01</div>
+              <div class="criteria-name">Qualité / Puissance</div>
+              <div class="criteria-desc">Est-ce que l'outil fait vraiment ce qu'il promet ? Sur des cas d'usage réels, pas sur des démos.</div>
+            </div>
+            <div class="criteria-card">
+              <div class="criteria-num">02</div>
+              <div class="criteria-name">Facilité de prise en main</div>
+              <div class="criteria-desc">Combien de temps avant qu'une personne non technique soit autonome ? On chronomètre.</div>
+            </div>
+            <div class="criteria-card">
+              <div class="criteria-num">03</div>
+              <div class="criteria-name">Rapport qualité / prix</div>
+              <div class="criteria-desc">Ce que l'outil coûte vraiment — pas le prix d'appel, le prix réel avec les fonctions dont vous avez besoin.</div>
+            </div>
+            <div class="criteria-card">
+              <div class="criteria-num">04</div>
+              <div class="criteria-name">Support & fiabilité</div>
+              <div class="criteria-desc">On teste le support en ouvrant de vrais tickets. On mesure les temps de réponse et la qualité des réponses.</div>
+            </div>
+          </div>
+        </section>
+
+        <hr class="divider" />
+
+        <section>
+          <div class="section-label">Indépendance éditoriale</div>
+          <h2 class="section-title">Le classement d'abord,<br>les partenariats ensuite</h2>
+          <div class="section-text">
+            <p>On a une règle non négociable : <strong>aucun outil ne peut acheter une meilleure note</strong>. Les scores que vous voyez sur nos comparatifs sont établis avant toute discussion commerciale. Un partenaire qui s'avère moins bon que ses concurrents sera classé derrière eux — avec la mention "Partenaire" clairement affichée.</p>
+            <p>Ce qu'un partenaire achète sur lesoutils-ia.fr, c'est une mise en avant visuelle — le badge, le bouton vert, la position en tête de liste — pas une falsification de note. Si la différence de score entre le N°1 et le N°2 est significative, le partenaire sera celui qui mérite la première place. Si les scores sont proches, la place commerciale peut faire la différence.</p>
+            <p>C'est le modèle de tous les grands médias spécialisés. On assume le nôtre.</p>
+          </div>
+        </section>
+
+        <hr class="divider" />
+
+        <section>
+          <div class="section-label">Modèle économique</div>
+          <div class="transparency-block">
+            <h2 class="section-title">Comment ce site gagne de l'argent</h2>
+            <div class="section-text">
+              <p>On préfère vous le dire directement plutôt que de le glisser dans les mentions légales que personne ne lit.</p>
+            </div>
+            <div class="model-items">
+              <div class="model-item">
+                <div class="model-icon">🔗</div>
+                <div>
+                  <div class="model-title">Liens affiliés</div>
+                  <div class="model-desc">La plupart des liens vers les outils sont des liens affiliés. Si vous souscrivez à un abonnement via notre lien, on perçoit une commission — généralement entre 20% et 33% du premier paiement, parfois récurrente. Ça ne change pas le prix que vous payez d'un centime.</div>
+                </div>
+              </div>
+              <div class="model-item">
+                <div class="model-icon">⭐</div>
+                <div>
+                  <div class="model-title">Emplacements partenaires</div>
+                  <div class="model-desc">Sur chaque page comparatif, la position N°1 peut faire l'objet d'un partenariat commercial. L'outil en position partenaire est toujours clairement identifié par le badge "Partenaire". Cette mise en avant est indépendante de la note attribuée.</div>
+                </div>
+              </div>
+              <div class="model-item">
+                <div class="model-icon">📰</div>
+                <div>
+                  <div class="model-title">Contenu éditorial indépendant</div>
+                  <div class="model-desc">Les articles, guides et analyses publiés sur le site sont rédigés sans commande externe. Aucun éditeur de logiciel ne peut payer pour qu'on publie un article positif sur son outil. Les guides et tests sont entièrement décidés par notre équipe éditoriale.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <hr class="divider" />
+
+        <section>
+          <div class="section-label">Mises à jour</div>
+          <h2 class="section-title">Des comparatifs vivants,<br>pas figés</h2>
+          <div class="section-text">
+            <p>Le marché des outils IA évolue vite. Très vite. Un outil qui était le meilleur il y a six mois peut se faire dépasser par une mise à jour majeure d'un concurrent. On s'engage à relire et mettre à jour chaque comparatif au minimum tous les trimestres — et immédiatement en cas de changement majeur de tarif, de fonctionnalité ou de rachat.</p>
+            <p>La date de dernière mise à jour est affichée en haut de chaque page comparatif. Si vous tombez sur un comparatif qui n'a pas été mis à jour depuis plus de quatre mois, <strong>signalez-le nous</strong> — on ira vérifier.</p>
+          </div>
+        </section>
+
+        <div class="contact-block">
+          <div class="contact-title">Une question sur notre méthode ?</div>
+          <p class="contact-text">Vous êtes éditeur d'un outil IA et vous voulez comprendre comment intégrer notre programme partenaire ? Vous avez un désaccord avec l'une de nos notes ? On répond à tout.</p>
+          <a href="/contact?type=partenariat" class="contact-cta">Nous contacter →</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</BaseLayout>
