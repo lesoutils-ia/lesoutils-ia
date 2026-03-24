@@ -63,7 +63,7 @@ const tools = [
     globalScore: 4.3,
     prix: "Gratuit (1 000 ops/mois) / Pro à 9$/mois",
     essai: "Gratuit sans CB",
-    lien: "https://make.com",
+    lien: "https://www.make.com/en/register?pc=lesoutilsia",
     partenaire: false,
     avantages: ["1 000 opérations gratuites", "1 500+ intégrations", "Sans code", "Upgrade progressif"],
     inconvenients: ["1 000 ops vite atteintes", "Courbe d'apprentissage"],
@@ -308,7 +308,7 @@ const scoreLabels: { [key: string]: string } = {
           <div class="sidebar-widget">
             <div class="sidebar-widget-title">Classement rapide</div>
             {tools.map(t => (
-              <a href={`#${t.slug}`} class="quick-rank-item">
+              <a href={t.partenaire ? t.lien : `#${t.slug}`} target={t.partenaire ? "_blank" : "_self"} rel={t.partenaire ? "nofollow noopener" : ""} class="quick-rank-item">
                 <span class={`qr-num${t.rank === 1 ? ' rank-1' : ''}`}>#{t.rank}</span>
                 <span class="qr-name">{t.name}</span>
                 <span class="qr-score" style={`color: ${scoreColor(t.globalScore)}`}>{t.globalScore.toFixed(1)}</span>

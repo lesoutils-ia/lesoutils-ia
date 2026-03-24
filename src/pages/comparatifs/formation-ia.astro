@@ -198,7 +198,7 @@ const scoreLabels: { [key: string]: string } = {"pedagogie": "Pédagogie", "terr
           <div class="sidebar-widget">
             <div class="sidebar-widget-title">Classement rapide</div>
             {tools.map(t => (
-              <a href={`#${t.slug}`} class="quick-rank-item">
+              <a href={t.partenaire ? t.lien : `#${t.slug}`} target={t.partenaire ? "_blank" : "_self"} rel={t.partenaire ? "nofollow noopener" : ""} class="quick-rank-item">
                 <span class={`qr-num${t.rank === 1 ? ' rank-1' : ''}`}>{`#${t.rank}`}</span>
                 <span class="qr-name">{t.name}</span>
                 <span class="qr-score" style={`color:${scoreColor(t.globalScore)}`}>{t.globalScore.toFixed(1)}</span>
