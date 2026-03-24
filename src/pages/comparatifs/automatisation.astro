@@ -1,0 +1,342 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "Make.com vs Zapier — Comparatif outils automatisation IA 2026";
+const description = "Make.com ou Zapier ? Comparatif complet des meilleurs outils d'automatisation IA pour PME françaises en 2026. Prix, puissance, facilité — on a tout testé pour vous.";
+
+const tools = [
+  {
+    rank: 1,
+    name: "Make.com",
+    slug: "makecom",
+    tagline: "L'automatisation visuelle la plus puissante sans code",
+    description: "La première fois qu'on a ouvert Make, on a pensé que c'était trop compliqué. Beaucoup de blocs, beaucoup de connecteurs, une interface dense. Et puis on a construit un premier scénario — formulaire de contact vers CRM avec email automatique — en 25 minutes. Sans toucher une ligne de code. C'est ça Make : une courbe d'apprentissage réelle les deux premières heures, et ensuite une puissance qu'on ne retrouve nulle part ailleurs au même prix. 1 500 applications connectées, c'est presque tout ce qu'une PME utilise.",
+    scores: { puissance: 4.9, facilite: 4.3, rapport: 4.7, fiabilite: 4.6 },
+    globalScore: 4.7,
+    prix: "À partir de 9$/mois",
+    essai: "Plan gratuit (1 000 ops/mois)",
+    lien: "https://www.make.com/en/register?pc=lesoutilsia",
+    partenaire: true,
+    avantages: ["1 500+ intégrations", "Workflows très complexes possibles", "Plan gratuit généreux", "Gestion des erreurs avancée"],
+    inconvenients: ["Courbe d'apprentissage initiale", "Interface peut sembler dense"],
+    ideal: "PME avec processus métiers complexes, équipes ops"
+  },
+  {
+    rank: 2,
+    name: "Zapier",
+    slug: "zapier",
+    tagline: "Le plus simple pour connecter vos outils en 5 minutes",
+    description: "Zapier, c'est l'outil que votre assistante peut configurer toute seule un mardi matin. Pas d'explication requise, l'interface guide à chaque étape. On connecte Gmail à Slack, les formulaires Typeform à HubSpot, les commandes Shopify à une feuille Google Sheets. En 10 minutes. Le problème c'est le prix : au-delà de 100 tâches par mois, il faut passer au plan payant. Et ça monte vite quand les volumes augmentent. Pour des automatisations simples et peu fréquentes, c'est parfait. Pour tout le reste, Make est plus rentable.",
+    scores: { puissance: 4.2, facilite: 4.9, rapport: 3.8, fiabilite: 4.7 },
+    globalScore: 4.4,
+    prix: "À partir de 19,99$/mois",
+    essai: "Plan gratuit (100 tâches/mois)",
+    lien: "https://zapier.com",
+    partenaire: false,
+    avantages: ["6 000+ applications", "Prise en main immédiate", "Très fiable", "Documentation excellente"],
+    inconvenients: ["Prix élevé à volume", "Workflows multi-étapes limités sur plan de base"],
+    ideal: "TPE, débutants en automatisation, workflows simples"
+  },
+  {
+    rank: 3,
+    name: "n8n",
+    slug: "n8n",
+    tagline: "La puissance de l'open source, auto-hébergeable",
+    description: "n8n c'est pour ceux qui ne veulent pas payer une facture mensuelle à vie pour un outil qu'ils maîtrisent. Open source, hébergeable sur votre propre serveur, zéro licence. On a monté une instance sur un VPS à 5€ par mois — n8n tournait dessus avec 15 workflows actifs sans broncher. Le truc vraiment différenciant : vous pouvez écrire du vrai code Python ou JavaScript à l'intérieur des workflows. Pour une startup ou une PME avec un profil technique, c'est difficile à battre. Sans ce profil, passez votre chemin.",
+    scores: { puissance: 4.9, facilite: 3.4, rapport: 4.9, fiabilite: 4.3 },
+    globalScore: 4.3,
+    prix: "Gratuit (self-hosted) / 20€/mois (cloud)",
+    essai: "100% gratuit en auto-hébergement",
+    lien: "https://n8n.io",
+    partenaire: false,
+    avantages: ["Open source & gratuit", "Nœuds IA natifs", "Exécution de code", "Données restent chez vous"],
+    inconvenients: ["Nécessite des bases techniques", "Setup initial plus long"],
+    ideal: "Équipes avec dev, startups, profils techniques"
+  },
+  {
+    rank: 4,
+    name: "Activepieces",
+    slug: "activepieces",
+    tagline: "L'alternative Make.com 100% open source",
+    description: "Activepieces, on ne le connaissait pas il y a six mois. On l'a découvert dans un forum de no-code et depuis on l'a à l'œil. L'interface ressemble à Make — même logique de blocs, même éditeur visuel — mais c'est open source et auto-hébergeable. 200 connecteurs pour l'instant, c'est moins que Make, mais les plus utilisés sont là. La communauté grandit vite. Ce n'est pas encore aussi stable que Make sur des workflows critiques, mais pour des automatisations secondaires ou pour tester, c'est une option sérieuse à zéro euro.",
+    scores: { puissance: 4.1, facilite: 4.2, rapport: 4.8, fiabilite: 4.0 },
+    globalScore: 4.1,
+    prix: "Gratuit (self-hosted) / 19$/mois (cloud)",
+    essai: "Gratuit en auto-hébergement",
+    lien: "https://activepieces.com",
+    partenaire: false,
+    avantages: ["Open source", "Interface Make-like", "Auto-hébergeable", "Communauté active"],
+    inconvenients: ["Moins de connecteurs que Zapier/Make", "Moins mature"],
+    ideal: "Équipes tech, alternative budget à Make"
+  },
+  {
+    rank: 5,
+    name: "Power Automate",
+    slug: "power-automate",
+    tagline: "Le choix naturel si vous êtes dans l'écosystème Microsoft",
+    description: "Si votre PME tourne sous Microsoft 365 — Teams, Outlook, SharePoint, Excel — Power Automate est déjà inclus dans votre abonnement. Autant l'utiliser. L'intégration avec l'écosystème Microsoft est d'une profondeur qu'aucun concurrent ne peut égaler sur ce terrain. Copilot IA permet même de décrire un workflow en français et de le générer automatiquement. En dehors de cet écosystème par contre, l'outil perd son principal avantage. On ne le recommanderait pas à une PME sous Google Workspace.",
+    scores: { puissance: 4.3, facilite: 3.9, rapport: 4.4, fiabilite: 4.5 },
+    globalScore: 4.0,
+    prix: "15$/utilisateur/mois (inclus M365 Business)",
+    essai: "Inclus dans Microsoft 365",
+    lien: "https://powerautomate.microsoft.com",
+    partenaire: false,
+    avantages: ["Intégration Microsoft native", "Inclus dans M365", "Copilot IA intégré", "Très fiable"],
+    inconvenients: ["Hors écosystème Microsoft, limité", "Interface moins intuitive"],
+    ideal: "PME équipées Microsoft 365"
+  }
+];
+
+function scoreColor(score: number) {
+  if (score >= 4.5) return '#c8f135';
+  if (score >= 4.0) return '#a0d020';
+  if (score >= 3.5) return '#f0c030';
+  return '#f07030';
+}
+
+const scoreLabels: { [key: string]: string } = {
+  puissance: 'Puissance',
+  facilite: 'Facilité',
+  rapport: 'Rapport Q/P',
+  fiabilite: 'Fiabilité'
+};
+---
+
+<BaseLayout title={title} description={description}>
+
+  <Fragment slot="head">
+    <meta property="og:type" content="website" />
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Make.com vs Zapier — Comparatif outils automatisation IA 2026",
+      "description": description,
+      "numberOfItems": tools.length,
+      "itemListElement": tools.map((t, i) => ({
+        "@type": "ListItem",
+        "position": i + 1,
+        "name": t.name,
+        "url": t.lien
+      }))
+    })} />
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://lesoutils-ia.fr/" },
+        { "@type": "ListItem", "position": 2, "name": "Comparatifs", "item": "https://lesoutils-ia.fr/comparatifs" },
+        { "@type": "ListItem", "position": 3, "name": "Make.com vs Zapier — Automatisation IA" }
+      ]
+    })} />
+  </Fragment>
+
+  <style>
+    .comp-page { padding-top: 56px; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+    .breadcrumb { padding: 1.2rem 0 0; display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text-muted); flex-wrap: wrap; }
+    .breadcrumb a:hover { color: var(--accent); }
+    .breadcrumb-sep { opacity: .4; }
+    .comp-header { padding: 2rem 0 2.5rem; border-bottom: 1px solid var(--border); }
+    .comp-cat-label { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); background: var(--accent-dim); padding: 4px 10px; border-radius: 3px; display: inline-block; margin-bottom: 1rem; }
+    .comp-title { font-family: var(--font-display); font-size: clamp(26px, 4vw, 42px); font-weight: 800; line-height: 1.2; letter-spacing: -0.5px; margin-bottom: 1rem; }
+    .comp-subtitle { font-size: 16px; color: var(--text-mid); line-height: 1.65; max-width: 680px; margin-bottom: 1.5rem; }
+    .comp-meta { display: flex; align-items: center; gap: 1.5rem; font-size: 12px; color: var(--text-muted); flex-wrap: wrap; }
+    .comp-meta-item { display: flex; align-items: center; gap: 6px; }
+    .comp-meta-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--accent); display: inline-block; }
+    .comp-body { display: grid; grid-template-columns: 1fr 280px; gap: 3.5rem; padding: 2.5rem 0 4rem; align-items: start; }
+    @media (max-width: 860px) { .comp-body { grid-template-columns: 1fr; gap: 2rem; } }
+    .tools-list { display: flex; flex-direction: column; gap: 1.5rem; }
+    .tool-card { background: var(--bg3); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; transition: border-color .2s; }
+    .tool-card:hover { border-color: var(--border-strong); }
+    .tool-card.is-partenaire { border-color: rgba(200,241,53,0.3); }
+    .tool-card-top { padding: 1.4rem 1.4rem 0; }
+    .tool-rank-row { display: flex; align-items: center; gap: 10px; margin-bottom: 1rem; }
+    .tool-rank { font-family: var(--font-display); font-size: 11px; font-weight: 700; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); padding: 3px 9px; border-radius: 3px; }
+    .tool-rank.rank-1 { color: var(--accent); border-color: rgba(200,241,53,0.4); background: var(--accent-dim); }
+    .badge-partenaire { font-size: 9px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-text); background: var(--accent); padding: 3px 8px; border-radius: 3px; }
+    .badge-affilie { font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); border: 1px solid var(--border); padding: 3px 8px; border-radius: 3px; }
+    .tool-name-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
+    .tool-name { font-family: var(--font-display); font-size: 20px; font-weight: 800; }
+    .tool-global-score { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+    .score-number { font-family: var(--font-display); font-size: 22px; font-weight: 800; }
+    .score-max { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+    .tool-tagline { font-size: 13px; color: var(--text-muted); font-style: italic; margin-bottom: 0.8rem; }
+    .tool-desc { font-size: 14px; color: var(--text-mid); line-height: 1.7; margin-bottom: 1.2rem; }
+    .scores-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; padding: 1rem 1.4rem; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    @media (max-width: 540px) { .scores-grid { grid-template-columns: repeat(2, 1fr); } }
+    .score-item { text-align: center; }
+    .score-label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
+    .score-bar-wrap { height: 3px; background: var(--border); border-radius: 2px; margin-bottom: 4px; }
+    .score-bar { height: 3px; border-radius: 2px; }
+    .score-val { font-family: var(--font-display); font-size: 13px; font-weight: 700; }
+    .tool-bottom { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; padding: 1.2rem 1.4rem 1.4rem; }
+    @media (max-width: 640px) { .tool-bottom { grid-template-columns: 1fr; gap: 0.8rem; } }
+    .pros-cons-title { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.5rem; }
+    .pros-list, .cons-list { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+    .pros-list li, .cons-list li { font-size: 12px; color: var(--text-mid); display: flex; align-items: flex-start; gap: 6px; line-height: 1.5; }
+    .pros-list li::before { content: '+'; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .cons-list li::before { content: '−'; color: var(--text-muted); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .info-price { font-family: var(--font-display); font-size: 14px; font-weight: 700; margin-bottom: 3px; }
+    .info-essai { font-size: 12px; color: var(--accent); margin-bottom: 8px; }
+    .info-ideal-label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 3px; }
+    .info-ideal { font-size: 12px; color: var(--text-mid); line-height: 1.5; }
+    .tool-cta-wrap { display: flex; align-items: flex-end; }
+    .tool-cta { display: inline-block; width: 100%; text-align: center; padding: 10px 18px; border-radius: 5px; font-family: var(--font-display); font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; transition: opacity .15s; }
+    .tool-cta.cta-primary { background: var(--accent); color: var(--accent-text); }
+    .tool-cta.cta-secondary { background: var(--bg); border: 1px solid var(--border); color: var(--text-mid); }
+    .tool-cta:hover { opacity: .85; }
+    .sidebar { position: sticky; top: 72px; display: flex; flex-direction: column; gap: 1.2rem; }
+    @media (max-width: 860px) { .sidebar { position: static; } }
+    .sidebar-widget { background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; padding: 1.4rem; }
+    .sidebar-widget-title { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; text-align: center; }
+    .quick-rank-item { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border); cursor: pointer; transition: opacity .15s; text-decoration: none; color: inherit; }
+    .quick-rank-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .quick-rank-item:hover { opacity: .75; }
+    .qr-num { font-family: var(--font-display); font-size: 11px; font-weight: 800; color: var(--text-muted); width: 18px; flex-shrink: 0; }
+    .qr-num.rank-1 { color: var(--accent); }
+    .qr-name { font-size: 13px; font-weight: 600; flex: 1; }
+    .qr-score { font-family: var(--font-display); font-size: 13px; font-weight: 700; }
+    .method-text { font-size: 13px; color: var(--text-mid); line-height: 1.7; margin-bottom: 1rem; }
+    .method-criteria { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .method-criteria li { display: flex; align-items: flex-start; gap: 8px; font-size: 12px; color: var(--text-mid); line-height: 1.5; }
+    .method-criteria li::before { content: '→'; color: var(--accent); flex-shrink: 0; }
+    .nl-title { font-family: var(--font-display); font-size: 14px; font-weight: 700; margin-bottom: 0.5rem; }
+    .nl-text { font-size: 13px; color: var(--text-mid); line-height: 1.6; margin-bottom: 1rem; }
+    .nl-input { width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 5px; padding: 9px 12px; font-size: 13px; color: var(--text); margin-bottom: 8px; outline: none; transition: border-color .15s; }
+    .nl-input:focus { border-color: var(--accent); }
+    .nl-btn { width: 100%; background: var(--accent); color: var(--accent-text); font-family: var(--font-display); font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 10px; border-radius: 5px; border: none; cursor: pointer; }
+    .comp-footer-note { border-top: 1px solid var(--border); padding: 2rem 0; font-size: 12px; color: var(--text-muted); line-height: 1.7; max-width: 720px; }
+    .comp-footer-note a { color: var(--accent); }
+  </style>
+
+  <div class="comp-page">
+    <div class="container">
+
+      <nav class="breadcrumb">
+        <a href="/">Accueil</a>
+        <span class="breadcrumb-sep">›</span>
+        <a href="/comparatifs">Comparatifs</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>Automatisation IA</span>
+      </nav>
+
+      <header class="comp-header">
+        <span class="comp-cat-label">Comparatif</span>
+        <h1 class="comp-title">Make.com vs Zapier — quel outil<br>d'automatisation IA choisir en 2026 ?</h1>
+        <p class="comp-subtitle">Make.com, Zapier, n8n, Activepieces, Power Automate — cinq outils testés en conditions réelles avec des PME françaises. Make.com ou Zapier sont les deux noms qui reviennent toujours : voici le classement honnête pour trancher selon votre profil et votre budget.</p>
+        <div class="comp-meta">
+          <span class="comp-meta-item"><span class="comp-meta-dot"></span> Mis à jour mars 2026</span>
+          <span class="comp-meta-item"><span class="comp-meta-dot"></span> 5 outils testés</span>
+          <span class="comp-meta-item"><span class="comp-meta-dot"></span> 4 critères notés</span>
+          <span class="comp-meta-item"><span class="comp-meta-dot"></span> 10 min de lecture</span>
+        </div>
+      </header>
+
+      <div class="comp-body">
+        <main>
+          <div class="tools-list">
+            {tools.map(tool => (
+              <div class={`tool-card${tool.partenaire ? ' is-partenaire' : ''}`} id={tool.slug}>
+                <div class="tool-card-top">
+                  <div class="tool-rank-row">
+                    <span class={`tool-rank${tool.rank === 1 ? ' rank-1' : ''}`}>N°{tool.rank}</span>
+                    {tool.partenaire && <span class="badge-partenaire">Partenaire</span>}
+                    {!tool.partenaire && <span class="badge-affilie">Lien affilié</span>}
+                  </div>
+                  <div class="tool-name-row">
+                    <h2 class="tool-name">{tool.name}</h2>
+                    <div class="tool-global-score">
+                      <span class="score-number" style={`color: ${scoreColor(tool.globalScore)}`}>{tool.globalScore.toFixed(1)}</span>
+                      <span class="score-max">/5</span>
+                    </div>
+                  </div>
+                  <p class="tool-tagline">{tool.tagline}</p>
+                  <p class="tool-desc">{tool.description}</p>
+                </div>
+
+                <div class="scores-grid">
+                  {Object.entries(tool.scores).map(([key, val]) => {
+                    return (
+                      <div class="score-item">
+                        <div class="score-label">{scoreLabels[key] || key}</div>
+                        <div class="score-bar-wrap">
+                          <div class="score-bar" style={`width: ${(val/5)*100}%; background: ${scoreColor(val)}`}></div>
+                        </div>
+                        <div class="score-val" style={`color: ${scoreColor(val)}`}>{val.toFixed(1)}</div>
+                      </div>
+                    );
+                  })}
+                </div>
+
+                <div class="tool-bottom">
+                  <div>
+                    <div class="pros-cons-title">Points forts</div>
+                    <ul class="pros-list">
+                      {tool.avantages.map(a => <li>{a}</li>)}
+                    </ul>
+                  </div>
+                  <div>
+                    <div class="pros-cons-title">Limites</div>
+                    <ul class="cons-list">
+                      {tool.inconvenients.map(i => <li>{i}</li>)}
+                    </ul>
+                    <div style="margin-top: 1rem;">
+                      <div class="info-ideal-label">Idéal pour</div>
+                      <div class="info-ideal">{tool.ideal}</div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="info-price">{tool.prix}</div>
+                    <div class="info-essai">{tool.essai}</div>
+                    <div class="tool-cta-wrap">
+                      <a href={tool.lien} target="_blank" rel="nofollow noopener" class={`tool-cta ${tool.partenaire ? 'cta-primary' : 'cta-secondary'}`}>
+                        {tool.partenaire ? 'Essayer Make.com →' : 'Voir le site →'}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div class="comp-footer-note">
+            <strong>Note éditoriale</strong> — Comparatif mis à jour régulièrement. Certains liens sont affiliés. Le classement reflète nos tests indépendants. Les outils marqués "Partenaire" bénéficient d'une mise en avant commerciale mais leur position tient compte de leur performance réelle. <a href="/mentions-legales">En savoir plus</a>.
+          </div>
+        </main>
+
+        <aside class="sidebar">
+          <div class="sidebar-widget">
+            <div class="sidebar-widget-title">Classement rapide</div>
+            {tools.map(t => (
+              <a href={`#${t.slug}`} class="quick-rank-item">
+                <span class={`qr-num${t.rank === 1 ? ' rank-1' : ''}`}>#{t.rank}</span>
+                <span class="qr-name">{t.name}</span>
+                <span class="qr-score" style={`color: ${scoreColor(t.globalScore)}`}>{t.globalScore.toFixed(1)}</span>
+              </a>
+            ))}
+          </div>
+
+          <div class="sidebar-widget">
+            <div class="sidebar-widget-title">Notre méthode</div>
+            <p class="method-text">Chaque outil testé pendant 4 semaines minimum avec de vraies PME françaises, sur des workflows réels.</p>
+            <ul class="method-criteria">
+              <li>Puissance & complexité possible</li>
+              <li>Facilité de prise en main</li>
+              <li>Rapport qualité / prix</li>
+              <li>Fiabilité & uptime</li>
+            </ul>
+          </div>
+
+          <div class="sidebar-widget">
+            <div class="nl-title">Un outil IA par semaine</div>
+            <p class="nl-text">La sélection des meilleurs outils IA chaque lundi dans votre boîte mail.</p>
+            <input type="email" class="nl-input" placeholder="votre@email.fr" />
+            <button class="nl-btn">Je m'abonne</button>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
