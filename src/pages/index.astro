@@ -10,16 +10,16 @@ const recent = sorted.filter(a => a.slug !== featured?.slug).slice(0, 3);
 
 <BaseLayout title="lesoutils-ia.fr — Le média de référence des outils IA pour entreprises">
   <style>
-    /* FIX DESIGN : Empêche le débordement horizontal sans casser le reste */
+    /* FIX DE SÉCURITÉ POUR LE DÉCALAGE À DROITE */
     * { box-sizing: border-box; }
     .home-page { padding-top: 56px; overflow-x: hidden; width: 100%; }
     .wrap { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; width: 100%; }
 
+    /* TES STYLES ORIGINAUX COMPLETS */
     .ticker { background: var(--accent); color: var(--accent-text); font-family: var(--font-display); font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 7px 0; overflow: hidden; white-space: nowrap; }
     .ticker-inner { display: inline-block; animation: ticker 30s linear infinite; }
     .ticker-inner span { margin: 0 2.5rem; }
     @keyframes ticker { from { transform: translateX(0) } to { transform: translateX(-50%) } }
-    
     .hero { padding: 3rem 0; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; border-bottom: 1px solid var(--border); }
     .hero-left { padding-right: 3rem; border-right: 1px solid var(--border); display: flex; flex-direction: column; gap: 2rem; }
     @media (max-width: 860px) { .hero { grid-template-columns: 1fr; gap: 2rem; } .hero-left { border-right: none; padding-right: 0; border-bottom: 1px solid var(--border); padding-bottom: 2rem; } }
@@ -39,21 +39,18 @@ const recent = sorted.filter(a => a.slug !== featured?.slug).slice(0, 3);
     .hero-featured-cat { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 7px; }
     .hero-featured-title { font-family: var(--font-body); font-size: 18px; font-weight: 700; line-height: 1.4; letter-spacing: 0px; margin-bottom: 8px; }
     .hero-featured-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
-
     .section-header { display: flex; align-items: center; justify-content: space-between; padding: 2rem 0 1.2rem; border-bottom: 1px solid var(--border); }
     .section-title { font-family: var(--font-display); font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); }
     .section-link { font-size: 11px; color: var(--text-muted); }
     .section-link:hover { color: var(--accent); }
-
-    .comparatif-hero { display: grid; grid-template-columns: 1fr 320px; border-bottom: 1px solid var(--border); width: 100%; }
+    .comparatif-hero { display: grid; grid-template-columns: 1fr 320px; border-bottom: 1px solid var(--border); }
     .comparatif-main { padding: 2rem 2.5rem 2rem 0; border-right: 1px solid var(--border); }
     .comparatif-sidebar { padding: 2rem 0 2rem 2rem; }
     @media (max-width: 900px) { .comparatif-hero { grid-template-columns: 1fr; } .comparatif-main { border-right: none; padding-right: 0; border-bottom: 1px solid var(--border); padding-bottom: 2rem; } .comparatif-sidebar { padding: 2rem 0 0; } }
     .comparatif-label { display: inline-flex; align-items: center; font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; background: var(--accent-dim); padding: 4px 10px; border-radius: 3px; }
     .comparatif-title { font-family: var(--font-display); font-size: clamp(22px, 3vw, 32px); font-weight: 800; line-height: 1.1; letter-spacing: -1px; margin-bottom: 1rem; }
     .comparatif-desc { font-size: 14px; color: var(--text-mid); line-height: 1.7; margin-bottom: 1.5rem; }
-
-      .ranking-row { display: grid; grid-template-columns: 36px 1fr auto; align-items: center; gap: 1rem; padding: 0.9rem 0; border-bottom: 1px solid var(--border); transition: background .15s; text-decoration: none; color: inherit; }
+    .ranking-row { display: grid; grid-template-columns: 36px 1fr auto; align-items: center; gap: 1rem; padding: 0.9rem 0; border-bottom: 1px solid var(--border); transition: background .15s; text-decoration: none; color: inherit; }
     .ranking-row:last-child { border-bottom: none; }
     .ranking-row:hover { background: var(--bg3); }
     .rank-num { font-family: var(--font-display); font-size: 20px; font-weight: 800; color: var(--border-strong); text-align: center; }
@@ -64,41 +61,42 @@ const recent = sorted.filter(a => a.slug !== featured?.slug).slice(0, 3);
     .badge-sponsored { background: var(--accent-dim); color: var(--accent); }
     .badge-best { background: rgba(255,77,61,0.1); color: var(--red); }
     .badge-free { background: rgba(255,255,255,0.06); color: var(--text-muted); }
-
     .sidebar-widget { background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; padding: 1.4rem; margin-bottom: 1.2rem; }
     .sidebar-widget-title { font-family: var(--font-display); font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; }
     .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
     .stat-card { background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 12px; }
     .stat-val { font-family: var(--font-display); font-size: 22px; font-weight: 800; color: var(--accent); line-height: 1; margin-bottom: 3px; }
     .stat-label { font-size: 11px; color: var(--text-muted); }
-
-    .newsletter-widget { border: 1px solid var(--accent); border-radius: 8px; padding: 1.4rem; background: var(--accent-dim); width: 100%; }
+    .newsletter-widget { border: 1px solid var(--accent); border-radius: 8px; padding: 1.4rem; background: var(--accent-dim); }
     .newsletter-widget-title { font-family: var(--font-display); font-size: 15px; font-weight: 800; margin-bottom: 5px; }
-    .newsletter-input { width: 100%; background: var(--bg); border: 1px solid var(--border); color: var(--text); padding: 10px; border-radius: 4px; margin-bottom: 8px; display: block; outline: none; }
-    .newsletter-btn { width: 100%; background: var(--accent); color: var(--accent-text); font-family: var(--font-display); font-size: 12px; font-weight: 700; padding: 10px; border-radius: 4px; border: none; cursor: pointer; display: block; text-align: center; }
-
-    .articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid var(--border); width: 100%; }
+    .newsletter-input { width: 100%; background: var(--bg); border: 1px solid var(--border); color: var(--text); font-family: var(--font-body); font-size: 13px; padding: 10px 14px; border-radius: 4px; outline: none; margin-bottom: 8px; display: block; }
+    .newsletter-btn { width: 100%; background: var(--accent); color: var(--accent-text); font-family: var(--font-display); font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 10px; border-radius: 4px; border: none; cursor: pointer; display: block; text-align: center; }
+    .articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid var(--border); }
     @media (max-width: 900px) { .articles-grid { grid-template-columns: 1fr; } }
     .article-card { padding: 1.8rem; border-right: 1px solid var(--border); transition: background .15s; display: block; text-decoration: none; color: inherit; }
     .article-card:last-child { border-right: none; }
     .article-card:hover { background: var(--bg3); }
-    .article-cat { font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
-    .article-title { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .article-cat { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+    .article-title { font-family: var(--font-body); font-size: 16px; font-weight: 700; line-height: 1.4; letter-spacing: 0px; margin-bottom: 8px; }
     .article-excerpt { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.2rem; }
-
- .tools-strip { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid var(--border); width: 100%; }
+    .article-footer { display: flex; align-items: center; justify-content: space-between; font-size: 11px; color: var(--text-muted); }
+    .article-read { color: var(--accent); font-weight: 500; }
+    .article-read::after { content: ' →'; }
+    .tools-strip { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid var(--border); }
     @media (max-width: 860px) { .tools-strip { grid-template-columns: repeat(2, 1fr); } }
-    .tool-card { padding: 1.4rem 1.6rem; border-right: 1px solid var(--border); display: flex; align-items: flex-start; gap: 12px; text-decoration: none; color: inherit; }
-    .tool-icon { width: 38px; height: 38px; border-radius: 8px; background: var(--bg3); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-weight: 800; color: var(--accent); }
-    .tool-name { font-size: 13px; font-weight: 700; margin-bottom: 3px; }
-    .tool-desc { font-size: 11px; color: var(--text-muted); }
+    .tool-card { padding: 1.4rem 1.6rem; border-right: 1px solid var(--border); display: flex; align-items: flex-start; gap: 12px; transition: background .15s; text-decoration: none; color: inherit; }
+    .tool-card:last-child { border-right: none; }
+    .tool-card:hover { background: var(--bg3); }
+    .tool-icon { width: 38px; height: 38px; border-radius: 8px; background: var(--bg3); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 800; font-size: 17px; color: var(--accent); flex-shrink: 0; }
+    .tool-name { font-family: var(--font-body); font-size: 13px; font-weight: 700; margin-bottom: 3px; }
+    .tool-desc { font-size: 11px; color: var(--text-muted); line-height: 1.4; }
     .tool-score { margin-top: 5px; font-size: 11px; color: var(--accent); font-weight: 500; }
-
     .bottom-banner { padding: 3.5rem 0; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; border-bottom: 1px solid var(--border); }
     .banner-title { font-family: var(--font-display); font-size: clamp(22px, 3vw, 40px); font-weight: 800; letter-spacing: -1.5px; line-height: 1.1; }
     .banner-title span { color: var(--accent); }
-    .btn-primary { background: var(--accent); color: var(--accent-text); font-size: 12px; font-weight: 700; text-transform: uppercase; padding: 13px 24px; border-radius: 4px; text-decoration: none; display: inline-block; }
-    .btn-outline { border: 1px solid var(--border-strong); color: var(--text); font-size: 12px; font-weight: 600; text-transform: uppercase; padding: 13px 24px; border-radius: 4px; text-decoration: none; display: inline-block; }
+    .banner-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn-primary { background: var(--accent); color: var(--accent-text); font-family: var(--font-display); font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 13px 24px; border-radius: 4px; border: none; cursor: pointer; display: inline-block; text-decoration: none; }
+    .btn-outline { background: transparent; color: var(--text); font-family: var(--font-display); font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 13px 24px; border-radius: 4px; border: 1px solid var(--border-strong); cursor: pointer; display: inline-block; text-decoration: none; }
   </style>
 
   <div class="home-page">
@@ -129,7 +127,7 @@ const recent = sorted.filter(a => a.slug !== featured?.slug).slice(0, 3);
             <a href={`/articles/${featured.slug}`} class="hero-featured">
               <div class="hero-featured-img">
                 <span class="hero-featured-tag">À la une</span>
-                <span style="font-size:60px;color:var(--accent);opacity:.4;">⚡</span>
+                <span style="font-size:60px;color:var(--accent);opacity:.4;position:relative;z-index:1;">⚡</span>
               </div>
               <div class="hero-featured-body">
                 <div class="hero-featured-cat">{featured.data.category}</div>
@@ -150,48 +148,30 @@ const recent = sorted.filter(a => a.slug !== featured?.slug).slice(0, 3);
         <div class="comparatif-main">
           <div class="comparatif-label">Mis à jour mars 2026</div>
           <h2 class="comparatif-title">Meilleur outil IA<br>de rédaction pour PME</h2>
-          <p class="comparatif-desc">Après 3 mois de tests, notre sélection des 5 meilleurs outils de rédaction IA.</p>
+          <p class="comparatif-desc">Après 3 mois de tests avec des équipes marketing françaises, notre sélection des 5 meilleurs outils de rédaction IA.</p>
           
-          <a href="/articles/meilleurs-outils-ia-contenu" class="ranking-row">
-            <div class="rank-num sponsored">01</div>
-            <div><div class="rank-name">Jasper AI</div><div class="rank-desc">Meilleur pour les équipes marketing</div></div>
-            <span class="rank-badge badge-sponsored">Sponsorisé</span>
-          </a>
-          <a href="/articles/meilleurs-outils-ia-contenu" class="ranking-row">
-            <div class="rank-num">02</div>
-            <div><div class="rank-name">Copy.ai</div><div class="rank-desc">Excellent rapport qualité-prix</div></div>
-            <span class="rank-badge badge-best">Coup de cœur</span>
-          </a>
-          <a href="/articles/meilleurs-outils-ia-contenu" class="ranking-row">
-            <div class="rank-num">03</div>
-            <div><div class="rank-name">Writesonic</div><div class="rank-desc">Fort sur les articles longs</div></div>
-            <span class="rank-badge badge-free">Essai gratuit</span>
-          </a>
-          <a href="/articles/meilleurs-outils-ia-contenu" class="ranking-row">
-            <div class="rank-num">04</div>
-            <div><div class="rank-name">Notion AI</div><div class="rank-desc">Parfait pour les utilisateurs Notion</div></div>
-            <span class="rank-badge badge-free">Essai gratuit</span>
-          </a>
-          <a href="/articles/meilleurs-outils-ia-contenu" class="ranking-row">
-            <div class="rank-num">05</div>
-            <div><div class="rank-name">Mistral le Chat Pro</div><div class="rank-desc">Solution française, RGPD natif</div></div>
-            <span class="rank-badge badge-free">Essai gratuit</span>
-          </a>
+          <div style="display:block;text-decoration:none;color:inherit;">
+            <a href="/articles/meilleurs-outils-ia-contenu" class="ranking-row"><div class="rank-num sponsored">01</div><div><div class="rank-name">Jasper AI</div><div class="rank-desc">Meilleur pour les équipes marketing — templates métiers</div></div><span class="rank-badge badge-sponsored">Sponsorisé</span></a>
+            <a href="/articles/meilleurs-outils-ia-contenu" class="ranking-row"><div class="rank-num">02</div><div><div class="rank-name">Copy.ai</div><div class="rank-desc">Excellent rapport qualité-prix, workflows automatisés</div></div><span class="rank-badge badge-best">Coup de cœur</span></a>
+            <a href="/articles/meilleurs-outils-ia-contenu" class="ranking-row"><div class="rank-num">03</div><div><div class="rank-name">Writesonic</div><div class="rank-desc">Fort sur les articles longs, SEO intégré</div></div><span class="rank-badge badge-free">Essai gratuit</span></a>
+            <a href="/articles/meilleurs-outils-ia-contenu" class="ranking-row"><div class="rank-num">04</div><div><div class="rank-name">Notion AI</div><div class="rank-desc">Parfait si vous utilisez déjà Notion</div></div><span class="rank-badge badge-free">Essai gratuit</span></a>
+            <a href="/articles/meilleurs-outils-ia-contenu" class="ranking-row"><div class="rank-num">05</div><div><div class="rank-name">Mistral le Chat Pro</div><div class="rank-desc">Solution française, RGPD natif</div></div><span class="rank-badge badge-free">Essai gratuit</span></a>
+          </div>
         </div>
-<div class="comparatif-sidebar">
+        <div class="comparatif-sidebar">
           <div class="sidebar-widget">
             <div class="sidebar-widget-title">En chiffres</div>
             <div class="stat-grid">
-              <div class="stat-card"><div class="stat-val">5</div><div class="stat-label">Outils</div></div>
+              <div class="stat-card"><div class="stat-val">5</div><div class="stat-label">Outils testés</div></div>
               <div class="stat-card"><div class="stat-val">6</div><div class="stat-label">Semaines</div></div>
-              <div class="stat-card"><div class="stat-val">12</div><div class="stat-label">Testeurs</div></div>
-              <div class="stat-card"><div class="stat-val">340</div><div class="stat-label">Textes</div></div>
+              <div class="stat-card"><div class="stat-val">12</div><div class="stat-label">Testeurs PME</div></div>
+              <div class="stat-card"><div class="stat-val">340</div><div class="stat-label">Testés</div></div>
             </div>
           </div>
-
+          
           <form id="newsletter-form" action="https://2224bad4.sibforms.com/serve/MUIFAA5FZ9wsz8jYxQoLCDh0LwleB1JzinLPJ8-XdB2OVm1lXNjNpuVAZxqsMhUxpLQzP4qmL8FdgRRwFog-CWPz4rAQJspvW9Vumzyfg4PvOaNHtUe7pPeOEChXfHsSn58QNgN1bJruhL1EgT5UjU1ub9wi4KPai9kOQOfii2viH8r9IM2YY3c2bdF5kfXolnpmvlJm5dTrmPAlnw==" method="POST" class="newsletter-widget">
             <div class="newsletter-widget-title">Un outil IA par semaine</div>
-            <p style="font-size:12px; color:var(--text-muted); margin-bottom:1rem;">La sélection des meilleurs outils chaque lundi.</p>
+            <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 1rem;">Chaque lundi, la sélection des meilleurs outils IA.</p>
             <input type="email" name="EMAIL" class="newsletter-input" placeholder="votre@email.fr" required />
             <button type="submit" class="newsletter-btn">Je m'abonne gratuitement</button>
             <input type="text" name="email_address_check" value="" style="display:none;">
@@ -211,9 +191,21 @@ const recent = sorted.filter(a => a.slug !== featured?.slug).slice(0, 3);
             <div class="article-cat">{a.data.category}</div>
             <h3 class="article-title">{a.data.title}</h3>
             <p class="article-excerpt">{a.data.description}</p>
-            <div style="font-size:11px; color:var(--accent);">Lire l'article →</div>
+            <div class="article-footer"><span>{a.data.readTime}</span><span class="article-read">Lire l'article</span></div>
           </a>
         ))}
+      </div>
+
+      <div class="section-header">
+        <span class="section-title">Outils du moment</span>
+        <a href="/outils" class="section-link">Tous les outils →</a>
+      </div>
+
+      <div class="tools-strip">
+        <a href="/articles/meilleurs-prompts-chatgpt" class="tool-card"><div class="tool-icon">C</div><div><div class="tool-name">ChatGPT Plus</div><div class="tool-desc">IA généraliste pour le travail</div><div class="tool-score">★ 4.9 — 20$/mois</div></div></a>
+        <a href="/articles/meilleurs-outils-ia-contenu" class="tool-card"><div class="tool-icon">J</div><div><div class="tool-name">Jasper AI</div><div class="tool-desc">Rédaction marketing</div><div class="tool-score">★ 4.8 — Dès 39€/mois</div></div></a>
+        <a href="/articles/tarif-outils-ia" class="tool-card"><div class="tool-icon">H</div><div><div class="tool-name">HubSpot AI</div><div class="tool-desc">CRM et automation</div><div class="tool-score">★ 4.5 — Gratuit</div></div></a>
+        <a href="/articles/tarif-outils-ia" class="tool-card"><div class="tool-icon">M</div><div><div class="tool-name">Make.com</div><div class="tool-desc">Workflows</div><div class="tool-score">★ 4.7 — Gratuit</div></div></a>
       </div>
 
       <div class="bottom-banner">
@@ -233,7 +225,7 @@ const recent = sorted.filter(a => a.slug !== featured?.slug).slice(0, 3);
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const btn = form.querySelector('button');
-      btn.innerText = "ENVOI...";
+      btn.innerText = "PATIENTEZ...";
       btn.disabled = true;
       try {
         await fetch(form.action, { method: 'POST', body: new FormData(form), mode: 'no-cors' });
