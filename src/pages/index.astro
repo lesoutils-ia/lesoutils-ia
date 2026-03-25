@@ -171,14 +171,20 @@ const recent = sorted.filter(a => a.slug !== featured?.slug).slice(0, 3);
               <div class="stat-card"><div class="stat-val">340</div><div class="stat-label">Textes générés</div></div>
             </div>
           </div>
-          <div class="newsletter-widget" id="newsletter">
-            <div class="newsletter-widget-title">Un outil IA par semaine</div>
-            <p>Chaque lundi, la sélection des meilleurs outils IA.</p>
-            <input type="email" class="newsletter-input" placeholder="votre@email.fr" />
-            <a href="/newsletter" class="newsletter-btn">Je m'abonne gratuitement</a>
-          </div>
-        </div>
-      </div>
+          <form 
+  id="newsletter-form" 
+  action="https://2224bad4.sibforms.com/serve/MUIFAA5FZ9wsz8jYxQoLCDh0LwleB1JzinLPJ8-XdB2OVm1lXNjNpuVAZxqsMhUxpLQzP4qmL8FdgRRwFog-CWPz4rAQJspvW9Vumzyfg4PvOaNHtUe7pPeOEChXfHsSn58QNgN1bJruhL1EgT5UjU1ub9wi4KPai9kOQOfii2viH8r9IM2YY3c2bdF5kfXolnpmvlJm5dTrmPAlnw==" 
+  method="POST"
+  class="newsletter-widget"
+>
+  <div class="newsletter-widget-title">Un outil IA par semaine</div>
+  <p>Chaque lundi, la sélection des meilleurs outils IA.</p>
+  <input type="email" name="EMAIL" class="newsletter-input" placeholder="votre@email.fr" required />
+  <button type="submit" class="newsletter-btn">Je m'abonne gratuitement</button>
+  
+  <input type="text" name="email_address_check" value="" style="display:none;">
+  <input type="hidden" name="locale" value="fr">
+</form>
 
       <div class="section-header">
         <span class="section-title">Derniers articles</span>
@@ -224,3 +230,33 @@ const recent = sorted.filter(a => a.slug !== featured?.slug).slice(0, 3);
     </div>
   </div>
 </BaseLayout>
+<script is:inline>
+  const form = document.getElementById('newsletter-form');
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('button');
+      const originalText = btn.innerText;
+
+      btn.innerText = "PATIENTEZ...";
+      btn.disabled = true;
+
+      try {
+        await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          mode: 'no-cors'
+        });
+
+        btn.innerText = "MERCI !";
+        btn.style.backgroundColor = "#ffffff";
+        btn.style.color = "#000000";
+        form.reset();
+      } catch (err) {
+        btn.innerText = originalText;
+        btn.disabled = false;
+        alert("Une erreur est survenue.");
+      }
+    });
+  }
+</script>
