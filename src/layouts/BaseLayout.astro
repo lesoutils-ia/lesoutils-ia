@@ -16,7 +16,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <meta name="description" content={description} />
   <link rel="canonical" href={canonicalURL} />
 
-  <!-- Open Graph -->
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:type" content="website" />
@@ -25,20 +24,17 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:image" content="/og-default.jpg" />
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content="/og-default.jpg" />
 
-  <!-- Robots -->
   <meta name="robots" content="index, follow" />
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-  <!-- Google Analytics GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8HVXZ25QQD"></script>
-  <script>
+  <script is:inline>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
@@ -47,10 +43,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
 
-  <!-- Slot pour les metas supplémentaires (pages articles, fiches outils...) -->
   <slot name="head" />
 
-  <!-- Schema Organization + WebSite (présent sur toutes les pages) -->
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@graph": [
@@ -83,50 +77,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
   <style is:global>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    /* RESET ARTICLE */
-    .article-content p {
-      margin-bottom: 0.8rem !important;
-      line-height: 1.8 !important;
-    }
-    .article-content h2 {
-      margin-top: 2rem !important;
-      margin-bottom: 0.8rem !important;
-      padding-top: 1.5rem !important;
-    }
-    .article-content h3 {
-      margin-top: 1.5rem !important;
-      margin-bottom: 0.6rem !important;
-    }
-    .article-content blockquote {
-      background: none !important;
-      border-left: none !important;
-      padding: 0 !important;
-      margin: 0.3rem 0 0.8rem 0 !important;
-      border-radius: 0 !important;
-      font-size: 15px !important;
-      color: var(--text-mid) !important;
-    }
-    .article-content blockquote p {
-      margin-bottom: 0.2rem !important;
-      padding-left: 0 !important;
-      text-indent: 0 !important;
-      margin-left: 0 !important;
-    }
-    .article-content ol {
-      list-style-type: decimal !important;
-      padding-left: 1.5rem !important;
-      margin: 0.5rem 0 1rem 0 !important;
-    }
-    .article-content ul {
-      list-style-type: disc !important;
-      padding-left: 1.5rem !important;
-      margin: 0.5rem 0 1rem 0 !important;
-    }
-    .article-content li {
-      margin-bottom: 8px !important;
-      line-height: 1.8 !important;
-    }
+    .article-content p { margin-bottom: 0.8rem !important; line-height: 1.8 !important; }
+    .article-content h2 { margin-top: 2rem !important; margin-bottom: 0.8rem !important; padding-top: 1.5rem !important; }
+    .article-content h3 { margin-top: 1.5rem !important; margin-bottom: 0.6rem !important; }
+    .article-content blockquote { background: none !important; border-left: none !important; padding: 0 !important; margin: 0.3rem 0 0.8rem 0 !important; border-radius: 0 !important; font-size: 15px !important; color: var(--text-mid) !important; }
+    .article-content blockquote p { margin-bottom: 0.2rem !important; padding-left: 0 !important; text-indent: 0 !important; margin-left: 0 !important; }
+    .article-content ol { list-style-type: decimal !important; padding-left: 1.5rem !important; margin: 0.5rem 0 1rem 0 !important; }
+    .article-content ul { list-style-type: disc !important; padding-left: 1.5rem !important; margin: 0.5rem 0 1rem 0 !important; }
+    .article-content li { margin-bottom: 8px !important; line-height: 1.8 !important; }
 
     :root {
       --bg: #080808; --bg3: #161616;
@@ -226,6 +184,42 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <span>Certains liens sont affiliés — <a href="/mentions-legales" style="color:var(--accent)">En savoir plus</a></span>
   </div>
 </div>
+
+<script is:inline>
+  // GESTION GLOBALE DES NEWSLETTERS (Sidebar, Accueil, Page Newsletter)
+  document.addEventListener('submit', async (e) => {
+    const form = e.target;
+    // On cible tous les formulaires Brevo du site
+    if (form && form.action && form.action.includes('sibforms.com')) {
+      e.preventDefault();
+      const btn = form.querySelector('button');
+      if (!btn) return;
+
+      const originalText = btn.innerText;
+      btn.innerText = "PATIENTEZ...";
+      btn.disabled = true;
+
+      try {
+        await fetch(form.action, { 
+          method: 'POST', 
+          body: new FormData(form), 
+          mode: 'no-cors' 
+        });
+        
+        // Succès visuel
+        btn.innerText = "MERCI !";
+        btn.style.backgroundColor = "#fff";
+        btn.style.color = "#000";
+        form.reset();
+      } catch (err) {
+        console.error("Erreur inscription:", err);
+        btn.innerText = "ERREUR";
+        btn.disabled = false;
+        setTimeout(() => { btn.innerText = originalText; }, 3000);
+      }
+    }
+  });
+</script>
 
 </body>
 </html>
