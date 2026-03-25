@@ -98,16 +98,6 @@ const scoreLabels: { [key: string]: string } = {"autonomie": "Autonomie", "facil
 ---
 
 <BaseLayout title={title} description={description}>
-  <Fragment slot="head">
-     </Fragment>
-
-  <style>
-    /* Tes styles originaux */
-    .comp-page{padding-top:56px}.container{max-width:1100px;margin:0 auto;padding:0 1.5rem}
-    /* ... reste des styles ... */
-    .nl-input{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:5px;padding:9px 12px;font-size:13px;color:var(--text);margin-bottom:8px;outline:none}.nl-btn{width:100%;background:var(--accent);color:var(--accent-text);font-family:var(--font-display);font-size:11px;font-weight:700;padding:10px;border-radius:5px;border:none;cursor:pointer}
-  </style>
-
   <div class="comp-page">
     <div class="container">
       <nav class="breadcrumb">
@@ -118,18 +108,18 @@ const scoreLabels: { [key: string]: string } = {"autonomie": "Autonomie", "facil
 
       <header class="comp-header">
         <span class="comp-cat-label">Comparatif</span>
-        <h1 class="comp-title">{title}</h1>
-        <p class="comp-subtitle">{description}</p>
+        <h1 class="comp-title">Meilleurs agents IA pour PME<br>— Comparatif outils 2026</h1>
+        <p class="comp-subtitle">Les agents IA vont automatiser 40% des tâches répétitives en entreprise dans les 12 prochains mois — selon les analystes. On a testé les 5 outils les plus accessibles pour les PME françaises.</p>
       </header>
 
       <div class="comp-body">
         <main>
           <div class="tools-list">
-            {tools.map(tool => (
+             {tools.map(tool => (
               <div class={`tool-card${tool.partenaire ? ' is-partenaire' : ''}`} id={tool.slug}>
                 <div class="tool-card-top">
-                   <h2 class="tool-name">{tool.name}</h2>
-                   <p class="tool-desc">{tool.description}</p>
+                  <h2 class="tool-name">{tool.name}</h2>
+                  <p class="tool-desc">{tool.description}</p>
                 </div>
                 <div class="tool-bottom">
                    <a href={tool.lien} class="tool-cta cta-primary">Voir le site →</a>
@@ -143,7 +133,7 @@ const scoreLabels: { [key: string]: string } = {"autonomie": "Autonomie", "facil
           <div class="sidebar-widget">
             <div class="sidebar-widget-title">Classement rapide</div>
             {tools.map(t => (
-              <a href={`#${t.slug}`} class="quick-rank-item">
+              <a href={t.partenaire ? t.lien : `#${t.slug}`} class="quick-rank-item">
                 <span class="qr-name">{t.name}</span>
                 <span class="qr-score">{t.globalScore}</span>
               </a>
@@ -152,18 +142,14 @@ const scoreLabels: { [key: string]: string } = {"autonomie": "Autonomie", "facil
 
           <div class="sidebar-widget">
             <div class="nl-title">Un outil IA par semaine</div>
-            <p class="nl-text">Recevez nos tests par email.</p>
+            <p class="nl-text">La sélection des meilleurs outils IA chaque lundi dans votre boîte mail.</p>
             <form action="https://2224bad4.sibforms.com/serve/MUIFAA5FZ9wsz8jYxQoLCDh0LwleB1JzinLPJ8-XdB2OVm1lXNjNpuVAZxqsMhUxpLQzP4qmL8FdgRRwFog-CWPz4rAQJspvW9Vumzyfg4PvOaNHtUe7pPeOEChXfHsSn58QNgN1bJruhL1EgT5UjU1ub9wi4KPai9kOQOfii2viH8r9IM2YY3c2bdF5kfXolnpmvlJm5dTrmPAlnw==" method="POST">
               <input type="email" name="EMAIL" class="nl-input" placeholder="votre@email.fr" required />
               <button type="submit" class="nl-btn">Je m'abonne</button>
+              <input type="text" name="email_address_check" value="" style="display:none;">
+              <input type="hidden" name="locale" value="fr">
             </form>
           </div>
-
-          <a href="https://get.brevo.com/urdepeizbyxg" target="_blank" class="sidebar-widget" style="display:block; text-decoration:none; border: 1px solid var(--accent);">
-            <div class="sidebar-widget-title" style="color:var(--accent)">RECOMMANDÉ</div>
-            <p class="method-text" style="text-align:center; font-weight:bold;">Gérez vos clients avec Brevo</p>
-            <p style="font-size:12px; text-align:center; color:var(--text-muted)">Le complément idéal de vos agents IA pour envoyer vos emails marketing.</p>
-          </a>
         </aside>
       </div>
     </div>
