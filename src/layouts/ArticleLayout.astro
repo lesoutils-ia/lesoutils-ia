@@ -324,3 +324,39 @@ const categorySlug = category.toLowerCase().replace(/ /g, '-').normalize("NFD").
     });
   });
 </script>
+<script>
+  const newsletterForm = document.getElementById('newsletter-form') as HTMLFormElement;
+  
+  newsletterForm?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = newsletterForm.querySelector('button')!;
+    const originalText = btn.innerText;
+
+    // Feedback visuel
+    btn.innerText = "PATIENTEZ...";
+    btn.disabled = true;
+
+    const formData = new FormData(newsletterForm);
+    
+    try {
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        body: formData
+      });
+
+      if (response.ok) {
+        btn.innerText = "MERCI ! 🚀";
+        btn.style.backgroundColor = "#ffffff";
+        btn.style.color = "#000000";
+        newsletterForm.reset();
+      } else {
+        alert("Oups, une erreur est survenue.");
+        btn.innerText = originalText;
+        btn.disabled = false;
+      }
+    } catch (err) {
+      btn.innerText = originalText;
+      btn.disabled = false;
+    }
+  });
+</script>
