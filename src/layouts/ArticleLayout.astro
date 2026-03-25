@@ -270,12 +270,12 @@ const categorySlug = category.toLowerCase().replace(/ /g, '-').normalize("NFD").
               <span class="sidebar-tool-cta">Essayer</span>
             </a>
           </div>
-          <div class="newsletter-widget" id="newsletter">
-            <div class="newsletter-widget-title">Un outil IA par semaine</div>
-            <p>La sélection des meilleurs outils IA chaque lundi.</p>
-            <input type="email" class="newsletter-input" placeholder="votre@email.fr" />
-            <button class="newsletter-btn">Je m'abonne</button>
-          </div>
+          <form class="newsletter-widget" id="newsletter-form">
+  <div class="newsletter-widget-title">Un outil IA par semaine</div>
+  <p>La sélection des meilleurs outils IA chaque lundi.</p>
+  <input type="email" name="email" id="newsletter-email" class="newsletter-input" placeholder="votre@email.fr" required />
+  <button type="submit" class="newsletter-btn">Je m'abonne</button>
+</form>
         </aside>
       </div>
 
