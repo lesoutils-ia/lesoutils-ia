@@ -186,38 +186,43 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 </div>
 
 <script is:inline>
-  // GESTION GLOBALE DES NEWSLETTERS (Sidebar, Accueil, Page Newsletter)
-  document.addEventListener('submit', async (e) => {
-    const form = e.target;
-    // On cible tous les formulaires Brevo du site
-    if (form && form.action && form.action.includes('sibforms.com')) {
-      e.preventDefault();
-      const btn = form.querySelector('button');
-      if (!btn) return;
+  // SÉCURITÉ : On attend que le DOM soit chargé
+  document.addEventListener('DOMContentLoaded', () => {
+    // On écoute TOUS les clics sur le document
+    document.addEventListener('submit', async (e) => {
+      const form = e.target;
+      
+      // On vérifie si c'est un formulaire qui pointe vers Brevo
+      if (form && form.action && form.action.includes('sibforms.com')) {
+        e.preventDefault();
+        const btn = form.querySelector('button');
+        if (!btn) return;
 
-      const originalText = btn.innerText;
-      btn.innerText = "PATIENTEZ...";
-      btn.disabled = true;
+        const originalText = btn.innerText;
+        btn.innerText = "PATIENTEZ...";
+        btn.disabled = true;
 
-      try {
-        await fetch(form.action, { 
-          method: 'POST', 
-          body: new FormData(form), 
-          mode: 'no-cors' 
-        });
-        
-        // Succès visuel
-        btn.innerText = "MERCI !";
-        btn.style.backgroundColor = "#fff";
-        btn.style.color = "#000";
-        form.reset();
-      } catch (err) {
-        console.error("Erreur inscription:", err);
-        btn.innerText = "ERREUR";
-        btn.disabled = false;
-        setTimeout(() => { btn.innerText = originalText; }, 3000);
+        try {
+          // Envoi des données en arrière-plan
+          await fetch(form.action, { 
+            method: 'POST', 
+            body: new FormData(form), 
+            mode: 'no-cors' 
+          });
+          
+          // Succès visuel sur le bouton
+          btn.innerText = "MERCI !";
+          btn.style.backgroundColor = "#fff";
+          btn.style.color = "#000";
+          form.reset();
+        } catch (err) {
+          console.error("Erreur inscription:", err);
+          btn.innerText = "ERREUR";
+          btn.disabled = false;
+          setTimeout(() => { btn.innerText = originalText; }, 3000);
+        }
       }
-    }
+    });
   });
 </script>
 
