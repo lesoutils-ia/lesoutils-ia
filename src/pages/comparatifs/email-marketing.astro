@@ -1,33 +1,121 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-const title = "Brevo vs Mailchimp vs Sendinblue — Meilleur outil emailing IA 2026";
+
+const title = "Brevo vs Mailchimp vs ActiveCampaign — Meilleur outil emailing IA 2026";
 const description = "Brevo, Mailchimp, ActiveCampaign, Lemlist, HubSpot Email — comparatif complet des meilleurs outils d'email marketing avec IA pour PME françaises en 2026.";
-const tools = [{rank:1,name:"Brevo",slug:"brevo",tagline:"Le champion francais de l'emailing PME",description:"On a migre une liste de 8 000 contacts de Mailchimp vers Brevo pour tester. Resultat : taux d'ouverture passe de 19% a 24% en deux mois. L'IA integree genere des objets d'email, optimise les heures d'envoi. C'est francais, heberge en Europe, RGPD natif. Pour une PME qui envoie entre 1 000 et 100 000 emails par mois, Brevo est difficile a battre sur le rapport qualite-prix.",scores:{"delivrabilite": 4.7, "facilite": 4.6, "rapport": 4.9, "ia": 4.4},globalScore:4.7,prix:"Gratuit (300 emails/jour) / Starter a 7eu/mois",essai:"Gratuit sans CB",lien:"https://brevo.com",partenaire:true,avantages:["Hebergement France / RGPD", "IA objet d email", "Prix tres competitif", "SMS + Email + WhatsApp"],inconvenients:["Interface moins moderne que Mailchimp", "Automatisations limitees sur plan de base"],ideal:"PME francaises, e-commerce, associations"},
-{rank:2,name:"Mailchimp",slug:"mailchimp",tagline:"La reference mondiale, mais de plus en plus chere",description:"Mailchimp c'est l'outil que tout le monde connait. Les tutoriels ne manquent pas, les integrations non plus. L'IA Content Optimizer analyse vos emails et suggere des ameliorations avant envoi. Le probleme c'est le prix : depuis 2023, les tarifs ont significativement augmente. Pour une PME avec une liste de plus de 500 contacts, ca coute rapidement 50 a 100 euros par mois.",scores:{"delivrabilite": 4.6, "facilite": 4.8, "rapport": 3.6, "ia": 4.5},globalScore:4.3,prix:"Gratuit limite / Essentials a partir de 13$/mois",essai:"Gratuit jusqu a 500 contacts",lien:"https://mailchimp.com",partenaire:false,avantages:["Standard du marche", "Milliers d integrations", "IA Content Optimizer", "Templates nombreux"],inconvenients:["Prix en forte hausse", "Gratuit très limite", "Donnees aux USA"],ideal:"PME avec budget emailing, besoin d integrations"},
-{rank:3,name:"ActiveCampaign",slug:"activecampaign",tagline:"L'automatisation email la plus puissante du marche",description:"ActiveCampaign n'est pas un simple outil d'emailing. C'est un CRM plus email marketing plus automatisation dans un seul outil. On a construit une sequence de nurturing de 12 emails avec scoring de leads en une apres-midi. Sur Mailchimp ca aurait pris plusieurs jours. L'IA predit quels contacts sont prets a acheter. La courbe d'apprentissage est reelle : comptez deux semaines avant d'etre vraiment a l'aise.",scores:{"delivrabilite": 4.5, "facilite": 3.8, "rapport": 4.1, "ia": 4.7},globalScore:4.3,prix:"A partir de 15$/mois (500 contacts)",essai:"Essai 14 jours",lien:"https://activecampaign.com",partenaire:false,avantages:["Automatisation tres puissante", "CRM integre", "IA predictive", "Lead scoring natif"],inconvenients:["Courbe d apprentissage importante", "Prix monte vite"],ideal:"PME avec process de vente complexe, B2B"},
-{rank:4,name:"Lemlist",slug:"lemlist-email",tagline:"La prospection par email enfin humaine",description:"Lemlist n'est pas un outil de newsletter : c'est un outil de cold email. Lemlist personnalise chaque email avec le prenom, la photo, le logo de l'entreprise du destinataire. On a teste sur une campagne de 200 contacts : 3% de reponse en Gmail classique, 11% sur Lemlist. L'IA genere les sequences de relance. Pour une PME qui veut prospecter sans passer pour un spammeur, c'est la reference.",scores:{"delivrabilite": 4.6, "facilite": 4.2, "rapport": 4.3, "ia": 4.6},globalScore:4.4,prix:"A partir de 50$/mois",essai:"Essai 14 jours",lien:"https://lemlist.com",partenaire:false,avantages:["Personnalisation visuelle unique", "Taux de reponse eleves", "IA sequences de prospection", "Multi-canal email + LinkedIn"],inconvenients:["Pas adapte aux newsletters", "Prix eleve pour petits volumes"],ideal:"Prospection B2B, equipes commerciales"},
-{rank:5,name:"HubSpot Email Marketing",slug:"hubspot-email",tagline:"L'emailing parfaitement integre au CRM",description:"Si vous utilisez HubSpot CRM, leur module email marketing est le choix le plus logique. Tout est connecte : vos contacts, leur historique, leurs interactions avec votre site. La limite c'est que le module email marketing avance est reserve aux plans payants. HubSpot Marketing Pro a 890 euros par mois c'est un budget serieux. Pour les PME sur le plan gratuit, les fonctions emailing de base suffisent pour demarrer.",scores:{"delivrabilite": 4.4, "facilite": 4.5, "rapport": 3.7, "ia": 4.5},globalScore:4.1,prix:"Basique gratuit / Marketing Hub Pro a 890eu/mois",essai:"Fonctions de base gratuites",lien:"https://hubspot.com",partenaire:false,avantages:["Integration CRM native", "IA personnalisation", "Reporting complet", "Tout en un"],inconvenients:["Tres cher sur les plans avances", "Dependance a l ecosysteme HubSpot"],ideal:"PME deja sur HubSpot CRM"}];
+
+const tools = [
+  {
+    rank: 1,
+    name: "Brevo",
+    slug: "brevo",
+    tagline: "Le champion français de l'emailing PME",
+    description: "On a migré une liste de 8 000 contacts de Mailchimp vers Brevo pour tester. Résultat : taux d'ouverture passé de 19% à 24% en deux mois. L'IA intégrée génère des objets d'email et optimise les heures d'envoi. C'est français, hébergé en Europe, RGPD natif. Pour une PME qui envoie entre 1 000 et 100 000 emails par mois, Brevo est difficile à battre sur le rapport qualité-prix.",
+    scores: {delivrabilite: 4.7, facilite: 4.6, rapport: 4.9, ia: 4.4},
+    globalScore: 4.7,
+    prix: "Gratuit (300 emails/jour) / Starter à 7€/mois",
+    essai: "Gratuit sans CB",
+    lien: "https://get.brevo.com/urdepeizbyxg", // Ton nouveau lien mis à jour
+    partenaire: true,
+    avantages: ["Hébergement France / RGPD", "IA objet d'email", "Prix très compétitif", "SMS + Email + WhatsApp"],
+    inconvenients: ["Interface moins moderne que Mailchimp", "Automatisations limitées sur plan de base"],
+    ideal: "PME françaises, e-commerce, associations"
+  },
+  {
+    rank: 2,
+    name: "Mailchimp",
+    slug: "mailchimp",
+    tagline: "La référence mondiale, mais de plus en plus chère",
+    description: "Mailchimp c'est l'outil que tout le monde connaît. Les tutoriels ne manquent pas, les intégrations non plus. L'IA Content Optimizer analyse vos emails et suggère des améliorations avant envoi. Le problème c'est le prix : depuis 2023, les tarifs ont significativement augmenté. Pour une PME avec une liste de plus de 500 contacts, ça coûte rapidement 50 à 100 euros par mois.",
+    scores: {delivrabilite: 4.6, facilite: 4.8, rapport: 3.6, ia: 4.5},
+    globalScore: 4.3,
+    prix: "Gratuit limité / Essentials à partir de 13$/mois",
+    essai: "Gratuit jusqu'à 500 contacts",
+    lien: "https://mailchimp.com",
+    partenaire: false,
+    avantages: ["Standard du marché", "Milliers d'intégrations", "IA Content Optimizer", "Templates nombreux"],
+    inconvenients: ["Prix en forte hausse", "Gratuit très limité", "Données aux USA"],
+    ideal: "PME avec budget emailing, besoin d'intégrations"
+  },
+  {
+    rank: 3,
+    name: "ActiveCampaign",
+    slug: "activecampaign",
+    tagline: "L'automatisation email la plus puissante du marché",
+    description: "ActiveCampaign n'est pas un simple outil d'emailing. C'est un CRM + email marketing + automatisation. On a construit une séquence de nurturing de 12 emails avec scoring de leads en une après-midi. L'IA prédit quels contacts sont prêts à acheter. La courbe d'apprentissage est réelle : comptez deux semaines avant d'être vraiment à l'aise.",
+    scores: {delivrabilite: 4.5, facilite: 3.8, rapport: 4.1, ia: 4.7},
+    globalScore: 4.3,
+    prix: "À partir de 15$/mois (500 contacts)",
+    essai: "Essai 14 jours",
+    lien: "https://activecampaign.com",
+    partenaire: false,
+    avantages: ["Automatisation très puissante", "CRM intégré", "IA prédictive", "Lead scoring natif"],
+    inconvenients: ["Courbe d'apprentissage importante", "Prix monte vite"],
+    ideal: "PME avec process de vente complexe, B2B"
+  },
+  {
+    rank: 4,
+    name: "Lemlist",
+    slug: "lemlist-email",
+    tagline: "La prospection par email enfin humaine",
+    description: "Lemlist n'est pas un outil de newsletter : c'est un outil de cold email. Il personnalise chaque email avec le prénom, la photo ou le logo du destinataire. On a testé sur 200 contacts : 11% de réponses contre 3% d'habitude. L'IA génère les séquences de relance. Pour une PME qui veut prospecter sans passer pour un spammeur, c'est la référence.",
+    scores: {delivrabilite: 4.6, facilite: 4.2, rapport: 4.3, ia: 4.6},
+    globalScore: 4.4,
+    prix: "À partir de 50$/mois",
+    essai: "Essai 14 jours",
+    lien: "https://lemlist.com",
+    partenaire: false,
+    avantages: ["Personnalisation visuelle unique", "Taux de réponse élevés", "IA séquences de prospection", "Multi-canal email + LinkedIn"],
+    inconvenients: ["Pas adapté aux newsletters", "Prix élevé pour petits volumes"],
+    ideal: "Prospection B2B, équipes commerciales"
+  },
+  {
+    rank: 5,
+    name: "HubSpot Email Marketing",
+    slug: "hubspot-email",
+    tagline: "L'emailing parfaitement intégré au CRM",
+    description: "Si vous utilisez HubSpot CRM, leur module email est le choix logique. Tout est connecté : contacts, historique, interactions. La limite est budgétaire : le module avancé est réservé aux plans Marketing Pro (890€/mois). Pour les PME sur le plan gratuit, les fonctions de base suffisent pour démarrer.",
+    scores: {delivrabilite: 4.4, facilite: 4.5, rapport: 3.7, ia: 4.5},
+    globalScore: 4.1,
+    prix: "Basique gratuit / Marketing Pro à 890€/mois",
+    essai: "Fonctions de base gratuites",
+    lien: "https://hubspot.com",
+    partenaire: false,
+    avantages: ["Intégration CRM native", "IA personnalisation", "Reporting complet", "Tout en un"],
+    inconvenients: ["Très cher sur les plans avancés", "Dépendance à l'écosystème HubSpot"],
+    ideal: "PME déjà sur HubSpot CRM"
+  }
+];
+
 function scoreColor(s: number) {
   if (s >= 4.5) return '#c8f135';
   if (s >= 4.0) return '#a0d020';
   if (s >= 3.5) return '#f0c030';
   return '#f07030';
 }
-const scoreLabels: { [key: string]: string } = {"delivrabilite": "Delivrabilite", "facilite": "Facilite", "rapport": "Rapport Q/P", "ia": "IA integree"};
+const scoreLabels: { [key: string]: string } = {"delivrabilite": "Délivrabilité", "facilite": "Facilité", "rapport": "Rapport Q/P", "ia": "IA intégrée"};
 ---
 <BaseLayout title={title} description={description}>
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"ItemList","name":title,"numberOfItems":tools.length,"itemListElement":tools.map((t,i)=>({'@type':'ListItem','position':i+1,'name':t.name,'url':t.lien}))})} />
     <script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://lesoutils-ia.fr/"},{"@type":"ListItem","position":2,"name":"Comparatifs","item":"https://lesoutils-ia.fr/comparatifs"},{"@type":"ListItem","position":3,"name":"Email marketing IA"}]})} />
   </Fragment>
-  <style>    .comp-page{padding-top:56px}.container{max-width:1100px;margin:0 auto;padding:0 1.5rem}.breadcrumb{padding:1.2rem 0 0;display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-muted);flex-wrap:wrap}.breadcrumb a:hover{color:var(--accent)}.breadcrumb-sep{opacity:.4}.comp-header{padding:2rem 0 2.5rem;border-bottom:1px solid var(--border)}.comp-cat-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);background:var(--accent-dim);padding:4px 10px;border-radius:3px;display:inline-block;margin-bottom:1rem}.comp-title{font-family:var(--font-display);font-size:clamp(26px,4vw,42px);font-weight:800;line-height:1.2;letter-spacing:-.5px;margin-bottom:1rem}.comp-subtitle{font-size:16px;color:var(--text-mid);line-height:1.65;max-width:680px;margin-bottom:1.5rem}.comp-meta{display:flex;align-items:center;gap:1.5rem;font-size:12px;color:var(--text-muted);flex-wrap:wrap}.comp-meta-item{display:flex;align-items:center;gap:6px}.comp-meta-dot{width:4px;height:4px;border-radius:50%;background:var(--accent);display:inline-block}.comp-body{display:grid;grid-template-columns:1fr 280px;gap:3.5rem;padding:2.5rem 0 4rem;align-items:start}@media(max-width:860px){.comp-body{grid-template-columns:1fr;gap:2rem}}.tools-list{display:flex;flex-direction:column;gap:1.5rem}.tool-card{background:var(--bg3);border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:border-color .2s}.tool-card:hover{border-color:var(--border-strong)}.tool-card.is-partenaire{border-color:rgba(200,241,53,.3)}.tool-card-top{padding:1.4rem 1.4rem 0}.tool-rank-row{display:flex;align-items:center;gap:10px;margin-bottom:1rem}.tool-rank{font-family:var(--font-display);font-size:11px;font-weight:700;color:var(--text-muted);background:var(--bg);border:1px solid var(--border);padding:3px 9px;border-radius:3px}.tool-rank.rank-1{color:var(--accent);border-color:rgba(200,241,53,.4);background:var(--accent-dim)}.badge-partenaire{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-text);background:var(--accent);padding:3px 8px;border-radius:3px}.badge-affilie{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);border:1px solid var(--border);padding:3px 8px;border-radius:3px}.tool-name-row{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:.5rem;flex-wrap:wrap}.tool-name{font-family:var(--font-display);font-size:20px;font-weight:800}.tool-global-score{display:flex;align-items:center;gap:6px;flex-shrink:0}.score-number{font-family:var(--font-display);font-size:22px;font-weight:800}.score-max{font-size:12px;color:var(--text-muted);margin-top:4px}.tool-tagline{font-size:13px;color:var(--text-muted);font-style:italic;margin-bottom:.8rem}.tool-desc{font-size:14px;color:var(--text-mid);line-height:1.7;margin-bottom:1.2rem}.scores-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:1rem 1.4rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}@media(max-width:540px){.scores-grid{grid-template-columns:repeat(2,1fr)}}.score-item{text-align:center}.score-label{font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}.score-bar-wrap{height:3px;background:var(--border);border-radius:2px;margin-bottom:4px}.score-bar{height:3px;border-radius:2px}.score-val{font-family:var(--font-display);font-size:13px;font-weight:700}.tool-bottom{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;padding:1.2rem 1.4rem 1.4rem}@media(max-width:640px){.tool-bottom{grid-template-columns:1fr;gap:.8rem}}.pros-cons-title{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:.5rem}.pros-list,.cons-list{list-style:none;display:flex;flex-direction:column;gap:4px}.pros-list li,.cons-list li{font-size:12px;color:var(--text-mid);display:flex;align-items:flex-start;gap:6px;line-height:1.5}.pros-list li::before{content:'+';color:var(--accent);font-weight:700;flex-shrink:0;margin-top:1px}.cons-list li::before{content:'-';color:var(--text-muted);font-weight:700;flex-shrink:0;margin-top:1px}.info-price{font-family:var(--font-display);font-size:14px;font-weight:700;margin-bottom:3px}.info-essai{font-size:12px;color:var(--accent);margin-bottom:8px}.info-ideal-label{font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px}.info-ideal{font-size:12px;color:var(--text-mid);line-height:1.5}.tool-cta-wrap{display:flex;align-items:flex-end}.tool-cta{display:inline-block;width:100%;text-align:center;padding:10px 18px;border-radius:5px;font-family:var(--font-display);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;transition:opacity .15s}.tool-cta.cta-primary{background:var(--accent);color:var(--accent-text)}.tool-cta.cta-secondary{background:var(--bg);border:1px solid var(--border);color:var(--text-mid)}.tool-cta:hover{opacity:.85}.sidebar{position:sticky;top:72px;display:flex;flex-direction:column;gap:1.2rem}@media(max-width:860px){.sidebar{position:static}}.sidebar-widget{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:1.4rem}.sidebar-widget-title{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1rem;text-align:center}.quick-rank-item{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);transition:opacity .15s;text-decoration:none;color:inherit}.quick-rank-item:last-child{border-bottom:none;padding-bottom:0}.quick-rank-item:hover{opacity:.75}.qr-num{font-family:var(--font-display);font-size:11px;font-weight:800;color:var(--text-muted);width:18px;flex-shrink:0}.qr-num.rank-1{color:var(--accent)}.qr-name{font-size:13px;font-weight:600;flex:1}.qr-score{font-family:var(--font-display);font-size:13px;font-weight:700}.method-text{font-size:13px;color:var(--text-mid);line-height:1.7;margin-bottom:1rem}.method-criteria{list-style:none;display:flex;flex-direction:column;gap:6px}.method-criteria li{display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--text-mid);line-height:1.5}.method-criteria li::before{content:'>';color:var(--accent);flex-shrink:0}.nl-title{font-family:var(--font-display);font-size:14px;font-weight:700;margin-bottom:.5rem}.nl-text{font-size:13px;color:var(--text-mid);line-height:1.6;margin-bottom:1rem}.nl-input{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:5px;padding:9px 12px;font-size:13px;color:var(--text);margin-bottom:8px;outline:none;transition:border-color .15s}.nl-input:focus{border-color:var(--accent)}.nl-btn{width:100%;background:var(--accent);color:var(--accent-text);font-family:var(--font-display);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:10px;border-radius:5px;border:none;cursor:pointer}.comp-footer-note{border-top:1px solid var(--border);padding:2rem 0;font-size:12px;color:var(--text-muted);line-height:1.7;max-width:720px}.comp-footer-note a{color:var(--accent)}</style>
+
+  <style>
+    .comp-page{padding-top:56px}.container{max-width:1100px;margin:0 auto;padding:0 1.5rem}.breadcrumb{padding:1.2rem 0 0;display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-muted);flex-wrap:wrap}.breadcrumb a:hover{color:var(--accent)}.breadcrumb-sep{opacity:.4}.comp-header{padding:2rem 0 2.5rem;border-bottom:1px solid var(--border)}.comp-cat-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);background:var(--accent-dim);padding:4px 10px;border-radius:3px;display:inline-block;margin-bottom:1rem}.comp-title{font-family:var(--font-display);font-size:clamp(26px,4vw,42px);font-weight:800;line-height:1.2;letter-spacing:-.5px;margin-bottom:1rem}.comp-subtitle{font-size:16px;color:var(--text-mid);line-height:1.65;max-width:680px;margin-bottom:1.5rem}.comp-meta{display:flex;align-items:center;gap:1.5rem;font-size:12px;color:var(--text-muted);flex-wrap:wrap}.comp-meta-item{display:flex;align-items:center;gap:6px}.comp-meta-dot{width:4px;height:4px;border-radius:50%;background:var(--accent);display:inline-block}.comp-body{display:grid;grid-template-columns:1fr 280px;gap:3.5rem;padding:2.5rem 0 4rem;align-items:start}@media(max-width:860px){.comp-body{grid-template-columns:1fr;gap:2rem}}.tools-list{display:flex;flex-direction:column;gap:1.5rem}.tool-card{background:var(--bg3);border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:border-color .2s}.tool-card:hover{border-color:var(--border-strong)}.tool-card.is-partenaire{border-color:rgba(200,241,53,.3)}.tool-card-top{padding:1.4rem 1.4rem 0}.tool-rank-row{display:flex;align-items:center;gap:10px;margin-bottom:1rem}.tool-rank{font-family:var(--font-display);font-size:11px;font-weight:700;color:var(--text-muted);background:var(--bg);border:1px solid var(--border);padding:3px 9px;border-radius:3px}.tool-rank.rank-1{color:var(--accent);border-color:rgba(200,241,53,.4);background:var(--accent-dim)}.badge-partenaire{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-text);background:var(--accent);padding:3px 8px;border-radius:3px}.badge-affilie{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);border:1px solid var(--border);padding:3px 8px;border-radius:3px}.tool-name-row{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:.5rem;flex-wrap:wrap}.tool-name{font-family:var(--font-display);font-size:20px;font-weight:800}.tool-global-score{display:flex;align-items:center;gap:6px;flex-shrink:0}.score-number{font-family:var(--font-display);font-size:22px;font-weight:800}.score-max{font-size:12px;color:var(--text-muted);margin-top:4px}.tool-tagline{font-size:13px;color:var(--text-muted);font-style:italic;margin-bottom:.8rem}.tool-desc{font-size:14px;color:var(--text-mid);line-height:1.7;margin-bottom:1.2rem}.scores-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:1rem 1.4rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}@media(max-width:540px){.scores-grid{grid-template-columns:repeat(2,1fr)}}.score-item{text-align:center}.score-label{font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}.score-bar-wrap{height:3px;background:var(--border);border-radius:2px;margin-bottom:4px}.score-bar{height:3px;border-radius:2px}.score-val{font-family:var(--font-display);font-size:13px;font-weight:700}.tool-bottom{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;padding:1.2rem 1.4rem 1.4rem}@media(max-width:640px){.tool-bottom{grid-template-columns:1fr;gap:.8rem}}.pros-cons-title{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:.5rem}.pros-list,.cons-list{list-style:none;display:flex;flex-direction:column;gap:4px}.pros-list li,.cons-list li{font-size:12px;color:var(--text-mid);display:flex;align-items:flex-start;gap:6px;line-height:1.5}.pros-list li::before{content:'+';color:var(--accent);font-weight:700;flex-shrink:0;margin-top:1px}.cons-list li::before{content:'-';color:var(--text-muted);font-weight:700;flex-shrink:0;margin-top:1px}.info-price{font-family:var(--font-display);font-size:14px;font-weight:700;margin-bottom:3px}.info-essai{font-size:12px;color:var(--accent);margin-bottom:8px}.info-ideal-label{font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px}.info-ideal{font-size:12px;color:var(--text-mid);line-height:1.5}.tool-cta-wrap{display:flex;align-items:flex-end}.tool-cta{display:inline-block;width:100%;text-align:center;padding:10px 18px;border-radius:5px;font-family:var(--font-display);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;transition:opacity .15s}.tool-cta.cta-primary{background:var(--accent);color:var(--accent-text)}.tool-cta.cta-secondary{background:var(--bg);border:1px solid var(--border);color:var(--text-mid)}.tool-cta:hover{opacity:.85}.sidebar{position:sticky;top:72px;display:flex;flex-direction:column;gap:1.2rem}@media(max-width:860px){.sidebar{position:static}}.sidebar-widget{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:1.4rem}.sidebar-widget-title{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1rem;text-align:center}.quick-rank-item{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);transition:opacity .15s;text-decoration:none;color:inherit}.quick-rank-item:last-child{border-bottom:none;padding-bottom:0}.quick-rank-item:hover{opacity:.75}.qr-num{font-family:var(--font-display);font-size:11px;font-weight:800;color:var(--text-muted);width:18px;flex-shrink:0}.qr-num.rank-1{color:var(--accent)}.qr-name{font-size:13px;font-weight:600;flex:1}.qr-score{font-family:var(--font-display);font-size:13px;font-weight:700}.method-text{font-size:13px;color:var(--text-mid);line-height:1.7;margin-bottom:1rem}.method-criteria{list-style:none;display:flex;flex-direction:column;gap:6px}.method-criteria li{display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--text-mid);line-height:1.5}.method-criteria li::before{content:'→';color:var(--accent);flex-shrink:0}.nl-title{font-family:var(--font-display);font-size:14px;font-weight:700;margin-bottom:.5rem}.nl-text{font-size:13px;color:var(--text-mid);line-height:1.6;margin-bottom:1rem}.nl-input{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:5px;padding:9px 12px;font-size:13px;color:var(--text);margin-bottom:8px;outline:none;transition:border-color .15s}.nl-input:focus{border-color:var(--accent)}.nl-btn{width:100%;background:var(--accent);color:var(--accent-text);font-family:var(--font-display);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:10px;border-radius:5px;border:none;cursor:pointer}.comp-footer-note{border-top:1px solid var(--border);padding:2rem 0;font-size:12px;color:var(--text-muted);line-height:1.7;max-width:720px}.comp-footer-note a{color:var(--accent)}
+  </style>
+
   <div class="comp-page">
     <div class="container">
-      <nav class="breadcrumb"><a href="/">Accueil</a><span class="breadcrumb-sep">&rsaquo;</span><a href="/comparatifs">Comparatifs</a><span class="breadcrumb-sep">&rsaquo;</span><span>Email marketing IA</span></nav>
+      <nav class="breadcrumb">
+        <a href="/">Accueil</a><span class="breadcrumb-sep">›</span>
+        <a href="/comparatifs">Comparatifs</a><span class="breadcrumb-sep">›</span>
+        <span>Email marketing IA</span>
+      </nav>
       <header class="comp-header">
         <span class="comp-cat-label">Comparatif</span>
         <h1 class="comp-title">Brevo vs Mailchimp vs ActiveCampaign<br>— Meilleur emailing IA 2026</h1>
-        <p class="comp-subtitle">On a testé les solutions d'email marketing les plus populaires pour PME : découvrez quel outil offre la meilleure délivrabilité et les meilleures fonctions IA pour automatiser vos ventes.</p>
+        <p class="comp-subtitle">Nous avons testé les meilleures solutions d'email marketing intégrant l'intelligence artificielle. Délivrabilité, automatisation et prix : voici notre classement pour les PME françaises.</p>
         <div class="comp-meta">
           <span class="comp-meta-item"><span class="comp-meta-dot"></span>Mis à jour mars 2026</span>
           <span class="comp-meta-item"><span class="comp-meta-dot"></span>5 outils testés</span>
@@ -42,7 +130,7 @@ const scoreLabels: { [key: string]: string } = {"delivrabilite": "Delivrabilite"
               <div class={`tool-card${tool.partenaire ? ' is-partenaire' : ''}`} id={tool.slug}>
                 <div class="tool-card-top">
                   <div class="tool-rank-row">
-                    <span class={`tool-rank${tool.rank === 1 ? ' rank-1' : ''}`}>N&deg;{tool.rank}</span>
+                    <span class={`tool-rank${tool.rank === 1 ? ' rank-1' : ''}`}>N°{tool.rank}</span>
                     {tool.partenaire && <span class="badge-partenaire">Partenaire</span>}
                     {!tool.partenaire && <span class="badge-affilie">Lien affilié</span>}
                   </div>
@@ -79,7 +167,7 @@ const scoreLabels: { [key: string]: string } = {"delivrabilite": "Delivrabilite"
                     <div class="info-price">{tool.prix}</div>
                     <div class="info-essai">{tool.essai}</div>
                     <div class="tool-cta-wrap">
-                      <a href={tool.lien} target="_blank" rel="nofollow noopener" class={`tool-cta ${tool.partenaire ? 'cta-primary' : 'cta-secondary'}`}>{tool.partenaire ? 'Essayer →' : 'Voir le site →'}</a>
+                      <a href={tool.lien} target="_blank" rel="nofollow noopener" class={`tool-cta ${tool.partenaire ? 'cta-primary' : 'cta-secondary'}`}>{tool.partenaire ? 'Essayer Brevo →' : 'Voir le site →'}</a>
                     </div>
                   </div>
                 </div>
@@ -102,7 +190,7 @@ const scoreLabels: { [key: string]: string } = {"delivrabilite": "Delivrabilite"
           <div class="sidebar-widget">
             <div class="sidebar-widget-title">Notre méthode</div>
             <p class="method-text">4 semaines de test minimum avec de vraies PME françaises sur des cas réels.</p>
-            <ul class="method-criteria"><li>Qualité / puissance</li><li>Facilité de prise en main</li><li>Rapport qualité / prix</li><li>Adapté PME françaises</li></ul>
+            <ul class="method-criteria"><li>Délivrabilité testée</li><li>Facilité de prise en main</li><li>Rapport qualité / prix</li><li>Conformité RGPD</li></ul>
           </div>
           
           <div class="sidebar-widget">
@@ -111,7 +199,6 @@ const scoreLabels: { [key: string]: string } = {"delivrabilite": "Delivrabilite"
             <form action="https://2224bad4.sibforms.com/serve/MUIFAA5FZ9wsz8jYxQoLCDh0LwleB1JzinLPJ8-XdB2OVm1lXNjNpuVAZxqsMhUxpLQzP4qmL8FdgRRwFog-CWPz4rAQJspvW9Vumzyfg4PvOaNHtUe7pPeOEChXfHsSn58QNgN1bJruhL1EgT5UjU1ub9wi4KPai9kOQOfii2viH8r9IM2YY3c2bdF5kfXolnpmvlJm5dTrmPAlnw==" method="POST">
               <input type="email" name="EMAIL" class="nl-input" placeholder="votre@email.fr" required />
               <button type="submit" class="nl-btn">Je m'abonne</button>
-              
               <input type="text" name="email_address_check" value="" style="display:none;">
               <input type="hidden" name="locale" value="fr">
             </form>
