@@ -48,7 +48,8 @@ const recent = sorted.filter(a => a.slug !== featured?.slug).slice(0, 3);
     .comparatif-sidebar { padding: 2rem 0 2rem 2rem; }
     @media (max-width: 900px) { .comparatif-hero { grid-template-columns: 1fr; } .comparatif-main { border-right: none; padding-right: 0; border-bottom: 1px solid var(--border); padding-bottom: 2rem; } .comparatif-sidebar { padding: 2rem 0 0; } }
     .comparatif-label { display: inline-flex; align-items: center; font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; background: var(--accent-dim); padding: 4px 10px; border-radius: 3px; }
-    .comparatif-title { font-family: var(--font-display); font-size: clamp(22px, 3vw, 32px); font-weight: 800; line-height: 1.1; letter-spacing: -1px; margin-bottom: 1rem; }
+    .comparatif-title { font-family: var(--font-display); font-size: clamp(22px, 3vw, 32px); font-weight: 800; line-height: 1.1; letter-spacing: -1px; margin-bottom: 1rem; color: inherit; text-decoration: none; display: block; transition: color 0.2s; }
+    .comparatif-title:hover { color: var(--accent); }
     .comparatif-desc { font-size: 14px; color: var(--text-mid); line-height: 1.7; margin-bottom: 1.5rem; }
     .ranking-row { display: grid; grid-template-columns: 36px 1fr auto; align-items: center; gap: 1rem; padding: 0.9rem 0; border-bottom: 1px solid var(--border); transition: background .15s; text-decoration: none; color: inherit; }
     .ranking-row:last-child { border-bottom: none; }
@@ -147,15 +148,41 @@ const recent = sorted.filter(a => a.slug !== featured?.slug).slice(0, 3);
       <div class="comparatif-hero">
         <div class="comparatif-main">
           <div class="comparatif-label">Mis à jour mars 2026</div>
-          <h2 class="comparatif-title">Meilleur outil IA<br>de rédaction pour PME</h2>
+          <a href="/articles/meilleurs-outils-ia-contenu" class="comparatif-title">
+            <h2>Meilleur outil IA<br>de rédaction pour PME</h2>
+          </a>
           <p class="comparatif-desc">Après 3 mois de tests avec des équipes marketing françaises, notre sélection des 5 meilleurs outils de rédaction IA.</p>
           
-          <div style="display:block;text-decoration:none;color:inherit;">
-            <a href="/articles/meilleurs-outils-ia-contenu" class="ranking-row"><div class="rank-num sponsored">01</div><div><div class="rank-name">Jasper AI</div><div class="rank-desc">Meilleur pour les équipes marketing — templates métiers</div></div><span class="rank-badge badge-sponsored">Sponsorisé</span></a>
-            <a href="/articles/meilleurs-outils-ia-contenu" class="ranking-row"><div class="rank-num">02</div><div><div class="rank-name">Copy.ai</div><div class="rank-desc">Excellent rapport qualité-prix, workflows automatisés</div></div><span class="rank-badge badge-best">Coup de cœur</span></a>
-            <a href="/articles/meilleurs-outils-ia-contenu" class="ranking-row"><div class="rank-num">03</div><div><div class="rank-name">Writesonic</div><div class="rank-desc">Fort sur les articles longs, SEO intégré</div></div><span class="rank-badge badge-free">Essai gratuit</span></a>
-            <a href="/articles/meilleurs-outils-ia-contenu" class="ranking-row"><div class="rank-num">04</div><div><div class="rank-name">Notion AI</div><div class="rank-desc">Parfait si vous utilisez déjà Notion</div></div><span class="rank-badge badge-free">Essai gratuit</span></a>
-            <a href="/articles/meilleurs-outils-ia-contenu" class="ranking-row"><div class="rank-num">05</div><div><div class="rank-name">Mistral le Chat Pro</div><div class="rank-desc">Solution française, RGPD natif</div></div><span class="rank-badge badge-free">Essai gratuit</span></a>
+          <div style="display:block;">
+            <a href="https://www.jasper.ai/" target="_blank" rel="sponsored nofollow" class="ranking-row">
+              <div class="rank-num sponsored">01</div>
+              <div><div class="rank-name">Jasper AI</div><div class="rank-desc">Meilleur pour les équipes marketing — templates métiers</div></div>
+              <span class="rank-badge badge-sponsored">Sponsorisé</span>
+            </a>
+            
+            <a href="https://www.copy.ai/" target="_blank" rel="sponsored nofollow" class="ranking-row">
+              <div class="rank-num">02</div>
+              <div><div class="rank-name">Copy.ai</div><div class="rank-desc">Excellent rapport qualité-prix, workflows automatisés</div></div>
+              <span class="rank-badge badge-best">Coup de cœur</span>
+            </a>
+            
+            <a href="https://writesonic.com/" target="_blank" rel="sponsored nofollow" class="ranking-row">
+              <div class="rank-num">03</div>
+              <div><div class="rank-name">Writesonic</div><div class="rank-desc">Fort sur les articles longs, SEO intégré</div></div>
+              <span class="rank-badge badge-free">Essai gratuit</span>
+            </a>
+            
+            <a href="https://www.notion.so/product/ai" target="_blank" rel="sponsored nofollow" class="ranking-row">
+              <div class="rank-num">04</div>
+              <div><div class="rank-name">Notion AI</div><div class="rank-desc">Parfait si vous utilisez déjà Notion</div></div>
+              <span class="rank-badge badge-free">Essai gratuit</span>
+            </a>
+            
+            <a href="https://chat.mistral.ai/" target="_blank" rel="noopener noreferrer" class="ranking-row">
+              <div class="rank-num">05</div>
+              <div><div class="rank-name">Mistral le Chat Pro</div><div class="rank-desc">Solution française, RGPD natif</div></div>
+              <span class="rank-badge badge-free">Essai gratuit</span>
+            </a>
           </div>
         </div>
         <div class="comparatif-sidebar">
@@ -196,16 +223,16 @@ const recent = sorted.filter(a => a.slug !== featured?.slug).slice(0, 3);
         ))}
       </div>
 
-      <div class="section-header">
+            <div class="section-header">
         <span class="section-title">Outils du moment</span>
         <a href="/outils" class="section-link">Tous les outils →</a>
       </div>
 
       <div class="tools-strip">
-        <a href="/articles/meilleurs-prompts-chatgpt" class="tool-card"><div class="tool-icon">C</div><div><div class="tool-name">ChatGPT Plus</div><div class="tool-desc">IA généraliste pour le travail</div><div class="tool-score">★ 4.9 — 20$/mois</div></div></a>
-        <a href="/articles/meilleurs-outils-ia-contenu" class="tool-card"><div class="tool-icon">J</div><div><div class="tool-name">Jasper AI</div><div class="tool-desc">Rédaction marketing</div><div class="tool-score">★ 4.8 — Dès 39€/mois</div></div></a>
-        <a href="/articles/tarif-outils-ia" class="tool-card"><div class="tool-icon">H</div><div><div class="tool-name">HubSpot AI</div><div class="tool-desc">CRM et automation</div><div class="tool-score">★ 4.5 — Gratuit</div></div></a>
-        <a href="/articles/tarif-outils-ia" class="tool-card"><div class="tool-icon">M</div><div><div class="tool-name">Make.com</div><div class="tool-desc">Workflows</div><div class="tool-score">★ 4.7 — Gratuit</div></div></a>
+        <a href="https://chatgpt.com" target="_blank" rel="noopener noreferrer" class="tool-card"><div class="tool-icon">C</div><div><div class="tool-name">ChatGPT Plus</div><div class="tool-desc">IA généraliste pour le travail</div><div class="tool-score">★ 4.9 — 20$/mois</div></div></a>
+        <a href="https://www.jasper.ai" target="_blank" rel="sponsored nofollow" class="tool-card"><div class="tool-icon">J</div><div><div class="tool-name">Jasper AI</div><div class="tool-desc">Rédaction marketing</div><div class="tool-score">★ 4.8 — Dès 39€/mois</div></div></a>
+        <a href="https://www.hubspot.fr" target="_blank" rel="sponsored nofollow" class="tool-card"><div class="tool-icon">H</div><div><div class="tool-name">HubSpot AI</div><div class="tool-desc">CRM et automation</div><div class="tool-score">★ 4.5 — Gratuit</div></div></a>
+        <a href="https://www.make.com/en/register?pc=lesoutilsia" target="_blank" rel="sponsored nofollow" class="tool-card"><div class="tool-icon">M</div><div><div class="tool-name">Make.com</div><div class="tool-desc">Workflows</div><div class="tool-score">★ 4.7 — Gratuit</div></div></a>
       </div>
 
       <div class="bottom-banner">
