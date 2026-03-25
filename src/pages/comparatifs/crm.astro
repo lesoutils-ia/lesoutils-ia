@@ -103,12 +103,14 @@ const scoreLabels: { [key: string]: string } = {
 ---
 
 <BaseLayout title={title} description={description}>
+
   <Fragment slot="head">
     <meta property="og:type" content="website" />
+
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "ItemList",
-      "name": title,
+      "name": "Meilleurs agents IA pour PME — Comparatif outils 2026",
       "description": description,
       "numberOfItems": tools.length,
       "itemListElement": tools.map((t, i) => ({
@@ -118,12 +120,24 @@ const scoreLabels: { [key: string]: string } = {
         "url": t.lien
       }))
     })} />
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://lesoutils-ia.fr/" },
+        { "@type": "ListItem", "position": 2, "name": "Comparatifs", "item": "https://lesoutils-ia.fr/comparatifs" },
+        { "@type": "ListItem", "position": 3, "name": "Agents IA — Comparatif 2026" }
+      ]
+    })} />
   </Fragment>
 
   <style>
     .comp-page { padding-top: 56px; }
     .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
     .breadcrumb { padding: 1.2rem 0 0; display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text-muted); flex-wrap: wrap; }
+    .breadcrumb a:hover { color: var(--accent); }
+    .breadcrumb-sep { opacity: .4; }
     .comp-header { padding: 2rem 0 2.5rem; border-bottom: 1px solid var(--border); }
     .comp-cat-label { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); background: var(--accent-dim); padding: 4px 10px; border-radius: 3px; display: inline-block; margin-bottom: 1rem; }
     .comp-title { font-family: var(--font-display); font-size: clamp(26px, 4vw, 42px); font-weight: 800; line-height: 1.2; letter-spacing: -0.5px; margin-bottom: 1rem; }
@@ -169,7 +183,7 @@ const scoreLabels: { [key: string]: string } = {
     .info-ideal-label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 3px; }
     .info-ideal { font-size: 12px; color: var(--text-mid); line-height: 1.5; }
     .tool-cta-wrap { display: flex; align-items: flex-end; }
-    .tool-cta { display: inline-block; width: 100%; text-align: center; padding: 10px 18px; border-radius: 5px; font-family: var(--font-display); font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; transition: opacity .15s; text-decoration: none; }
+    .tool-cta { display: inline-block; width: 100%; text-align: center; padding: 10px 18px; border-radius: 5px; font-family: var(--font-display); font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; transition: opacity .15s; }
     .tool-cta.cta-primary { background: var(--accent); color: var(--accent-text); }
     .tool-cta.cta-secondary { background: var(--bg); border: 1px solid var(--border); color: var(--text-mid); }
     .tool-cta:hover { opacity: .85; }
@@ -185,9 +199,13 @@ const scoreLabels: { [key: string]: string } = {
     .qr-name { font-size: 13px; font-weight: 600; flex: 1; }
     .qr-score { font-family: var(--font-display); font-size: 13px; font-weight: 700; }
     .method-text { font-size: 13px; color: var(--text-mid); line-height: 1.7; margin-bottom: 1rem; }
+    .method-criteria { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .method-criteria li { display: flex; align-items: flex-start; gap: 8px; font-size: 12px; color: var(--text-mid); line-height: 1.5; }
+    .method-criteria li::before { content: '→'; color: var(--accent); flex-shrink: 0; }
     .nl-title { font-family: var(--font-display); font-size: 14px; font-weight: 700; margin-bottom: 0.5rem; }
     .nl-text { font-size: 13px; color: var(--text-mid); line-height: 1.6; margin-bottom: 1rem; }
-    .nl-input { width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 5px; padding: 9px 12px; font-size: 13px; color: var(--text); margin-bottom: 8px; outline: none; }
+    .nl-input { width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 5px; padding: 9px 12px; font-size: 13px; color: var(--text); margin-bottom: 8px; outline: none; transition: border-color .15s; }
+    .nl-input:focus { border-color: var(--accent); }
     .nl-btn { width: 100%; background: var(--accent); color: var(--accent-text); font-family: var(--font-display); font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 10px; border-radius: 5px; border: none; cursor: pointer; }
     .comp-footer-note { border-top: 1px solid var(--border); padding: 2rem 0; font-size: 12px; color: var(--text-muted); line-height: 1.7; max-width: 720px; }
     .comp-footer-note a { color: var(--accent); }
@@ -195,20 +213,23 @@ const scoreLabels: { [key: string]: string } = {
 
   <div class="comp-page">
     <div class="container">
+
       <nav class="breadcrumb">
-        <a href="/">Accueil</a> <span class="opacity-40">/</span>
-        <a href="/comparatifs">Comparatifs</a> <span class="opacity-40">/</span>
+        <a href="/">Accueil</a>
+        <span class="breadcrumb-sep">›</span>
+        <a href="/comparatifs">Comparatifs</a>
+        <span class="breadcrumb-sep">›</span>
         <span>Agents IA autonomes</span>
       </nav>
 
       <header class="comp-header">
         <span class="comp-cat-label">Comparatif</span>
         <h1 class="comp-title">Meilleurs agents IA pour PME<br>— Comparatif outils 2026</h1>
-        <p class="comp-subtitle">On a testé les 5 meilleures plateformes d'agents IA en conditions réelles sur des workflows de PME françaises. Voici le verdict pour automatiser intelligemment votre activité.</p>
+        <p class="comp-subtitle">On a testé les 5 meilleures plateformes d'agents IA en conditions réelles sur des workflows de PME françaises. Voici le verdict.</p>
         <div class="comp-meta">
           <span class="comp-meta-item">Mis à jour mars 2026</span>
+          <span class="comp-meta-dot"></span>
           <span class="comp-meta-item">5 solutions testées</span>
-          <span class="comp-meta-item">12 min de lecture</span>
         </div>
       </header>
 
@@ -220,7 +241,11 @@ const scoreLabels: { [key: string]: string } = {
                 <div class="tool-card-top">
                   <div class="tool-rank-row">
                     <span class={`tool-rank ${tool.rank === 1 ? 'rank-1' : ''}`}>N°{tool.rank}</span>
-                    {tool.partenaire ? <span class="badge-partenaire">Partenaire</span> : <span class="badge-affilie">Lien affilié</span>}
+                    {tool.partenaire ? (
+                      <span class="badge-partenaire">Partenaire</span>
+                    ) : (
+                      <span class="badge-affilie">Lien affilié</span>
+                    )}
                   </div>
                   <div class="tool-name-row">
                     <h2 class="tool-name">{tool.name}</h2>
@@ -248,65 +273,74 @@ const scoreLabels: { [key: string]: string } = {
                 <div class="tool-bottom">
                   <div>
                     <div class="pros-cons-title">Points forts</div>
-                    <ul class="pros-list">{tool.avantages.map(a => <li>{a}</li>)}</ul>
+                    <ul class="pros-list">
+                      {tool.avantages.map(a => <li>{a}</li>)}
+                    </ul>
                   </div>
                   <div>
                     <div class="pros-cons-title">Limites</div>
-                    <ul class="cons-list">{tool.inconvenients.map(i => <li>{i}</li>)}</ul>
-                    <div style="margin-top: 1rem;">
-                      <div class="info-ideal-label">Idéal pour</div>
-                      <div class="info-ideal">{tool.ideal}</div>
-                    </div>
+                    <ul class="cons-list">
+                      {tool.inconvenients.map(i => <li>{i}</li>)}
+                    </ul>
                   </div>
                   <div class="tool-cta-wrap">
                     <div class="info-price">{tool.prix}</div>
                     <div class="info-essai">{tool.essai}</div>
                     <a href={tool.lien} target="_blank" rel="nofollow noopener" class={`tool-cta ${tool.partenaire ? 'cta-primary' : 'cta-secondary'}`}>
-                      {tool.slug === 'make-ia' ? 'Essayer Make IA →' : 'Voir le site →'}
+                      Voir le site →
                     </a>
                   </div>
+                </div>
+                <div style="padding: 0 1.4rem 1.4rem;">
+                   <div class="info-ideal-label">Idéal pour</div>
+                   <div class="info-ideal">{tool.ideal}</div>
                 </div>
               </div>
             ))}
           </div>
-          
-          <div class="comp-footer-note">
-            <strong>Note éditoriale</strong> — Ce comparatif est basé sur nos tests réels. Certains liens sont affiliés, mais cela n'influence en rien notre classement indépendant. <a href="/mentions-legales">En savoir plus</a>.
-          </div>
         </main>
 
         <aside class="sidebar">
-  <div class="sidebar-widget">
-    <div class="sidebar-widget-title">Classement rapide</div>
-    {tools.map(t => (
-      <a href={(t.partenaire || t.slug === 'relevance-ai') ? t.lien : `#$ {t.slug}`}
-         target={(t.partenaire || t.slug === 'relevance-ai') ? "_blank" : "_self"}
-         rel={(t.partenaire || t.slug === 'relevance-ai') ? "nofollow noopener" : ""}
-         class="quick-rank-item">
-        <span class={`qr-num $ {t.rank === 1 ? 'rank-1' : ''}`}>{`#$ {t.rank}`}</span>
-        <span class="qr-name">{t.name}</span>
-        <span class="qr-score" style={`color: ${scoreColor(t.globalScore)}`}>
-          {t.globalScore.toFixed(1)}
-        </span>
-      </a>
-    ))}
+          <div class="sidebar-widget">
+            <div class="sidebar-widget-title">Classement rapide</div>
+            {tools.map(t => (
+              <a href={(t.partenaire || t.slug === 'relevance-ai') ? t.lien : `#${t.slug}`} 
+                 target={(t.partenaire || t.slug === 'relevance-ai') ? "_blank" : "_self"} 
+                 rel={(t.partenaire || t.slug === 'relevance-ai') ? "nofollow noopener" : ""} 
+                 class="quick-rank-item">
+                <span class={`qr-num ${t.rank === 1 ? 'rank-1' : ''}`}>{`#${t.rank}`}</span>
+                <span class="qr-name">{t.name}</span>
+                <span class="qr-score" style={`color:${scoreColor(t.globalScore)}`}>{t.globalScore.toFixed(1)}</span>
+              </a>
+            ))}
+          </div>
+
+          <div class="sidebar-widget">
+            <div class="sidebar-widget-title">Notre méthode</div>
+            <p class="method-text">Chaque agent IA testé sur 10 workflows métiers réels dans des PME françaises.</p>
+            <ul class="method-criteria">
+              <li>Autonomie réelle mesurée</li>
+              <li>Facilité de configuration</li>
+              <li>Fiabilité des résultats</li>
+              <li>Rapport qualité / prix</li>
+            </ul>
+          </div>
+
+          <div class="sidebar-widget">
+            <div class="nl-title">Newsletter IA</div>
+            <p class="nl-text">Les meilleurs outils chaque lundi dans votre boîte mail.</p>
+            <form action="https://2224bad4.sibforms.com/serve/MUIFAA..." method="POST">
+              <input type="email" name="EMAIL" class="nl-input" placeholder="votre@email.fr" required />
+              <button type="submit" class="nl-btn">S'abonner</button>
+            </form>
+          </div>
+        </aside>
+      </div>
+
+      <div class="comp-footer-note">
+        <strong>Note éditoriale</strong> — Ce comparatif est basé sur nos tests réels. Certains liens sont affiliés, mais cela n'influence en rien notre classement indépendant. <a href="/mentions-legales">En savoir plus</a>.
+      </div>
+
+    </div>
   </div>
-
-  <div class="sidebar-widget">
-    <div class="sidebar-widget-title">Notre méthode</div>
-  <p class="method-text">Chaque agent IA testé sur 10 workflows métiers réels dans des PME françaises — qualification de leads, suivi client, reporting automatique.</p>
-</div>
-
-<div class="sidebar-widget">
-  <div class="nl-title">Newsletter IA</div>
-  <p class="nl-text">La sélection des meilleurs outils IA chaque lundi dans votre boîte mail.</p>
-  <form action="https://2224bad4.sibforms.com/serve/MUIFAA..." method="POST">
-    <input type="email" name="EMAIL" class="nl-input" placeholder="votre@email.fr" required />
-    <button type="submit" class="nl-btn">S'abonner</button>
-  </form>
-</div>
-</aside>
-</div>
-</div>
-</div>
 </BaseLayout>
