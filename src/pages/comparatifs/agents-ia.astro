@@ -194,7 +194,7 @@ const scoreLabels: { [key: string]: string } = {"autonomie": "Autonomie", "facil
           </div>
           <div class="comp-footer-note"><strong>Note éditoriale</strong> — Comparatif mis à jour régulièrement. Certains liens sont affiliés. Classement basé sur nos tests indépendants. Les outils "Partenaire" bénéficient d'une mise en avant commerciale. <a href="/mentions-legales">En savoir plus</a>.</div>
         </main>
-        <aside class="sidebar">
+                <aside class="sidebar">
           <div class="sidebar-widget">
             <div class="sidebar-widget-title">Classement rapide</div>
             {tools.map(t => (
@@ -205,21 +205,28 @@ const scoreLabels: { [key: string]: string } = {"autonomie": "Autonomie", "facil
               </a>
             ))}
           </div>
+
           <div class="sidebar-widget">
-            <div class="sidebar-widget-title">Notre méthode</div>
-            <p class="method-text">Chaque agent IA testé sur 10 workflows métiers réels dans des PME françaises — qualification de leads, suivi client, reporting automatique.</p>
-            <ul class="method-criteria">
-              <li>Autonomie réelle mesurée</li>
-              <li>Facilité de configuration</li>
-              <li>Fiabilité des résultats</li>
-              <li>Rapport qualité / prix</li>
-            </ul>
+            <div class="nl-title">Newsletter <span>IA PME</span></div>
+            <p class="nl-text">Chaque lundi, le condensé des nouveaux outils et cas d'usage réels pour votre entreprise.</p>
+            
+            <form action="https://2224bad4.sibforms.com/serve/MUIFAA5FZ9wsz8jYxQoLCDh0LwleB1JzinLPJ8-XdB2OVm1lXNjNpuVAZxqsMhUxpLQzP4qmL8FdgRRwFog-CWPz4rAQJspvW9Vumzyfg4PvOaNHtUe7pPeOEChXfHsSn58QNgN1bJruhL1EgT5UjU1ub9wi4KPai9kOQOfii2viH8r9IM2YY3c2bdF5kfXolnpmvlJm5dTrmPAlnw==" method="POST">
+              <input type="email" name="EMAIL" class="nl-input" placeholder="votre@email.fr" required />
+              <button type="submit" class="nl-btn">S'abonner gratuitement</button>
+              
+              <input type="text" name="email_address_check" value="" style="display:none;">
+              <input type="hidden" name="locale" value="fr">
+            </form>
           </div>
+
           <div class="sidebar-widget">
-            <div class="nl-title">Un outil IA par semaine</div>
-            <p class="nl-text">La sélection des meilleurs outils IA chaque lundi dans votre boîte mail.</p>
-            <input type="email" class="nl-input" placeholder="votre@email.fr" />
-            <button class="nl-btn">Je m'abonne</button>
+            <div class="sidebar-widget-title">Méthodologie</div>
+            <p class="method-text">Nos comparatifs sont basés sur des tests réels en entreprise :</p>
+            <ul class="method-criteria">
+              <li>Tests sur workflows réels</li>
+              <li>Analyse des coûts cachés</li>
+              <li>Vérification RGPD / France</li>
+            </ul>
           </div>
         </aside>
       </div>
