@@ -265,10 +265,7 @@ const scoreLabels: { [key: string]: string } = {
           <div class="sidebar-widget">
             <div class="sidebar-widget-title">Classement rapide</div>
             {tools.map(t => (
-              <a href={(t.partenaire || t.slug === 'relevance-ai') ? t.lien : `#${t.slug}`} 
-                 target={(t.partenaire || t.slug === 'relevance-ai') ? "_blank" : "_self"} 
-                 rel={(t.partenaire || t.slug === 'relevance-ai') ? "nofollow noopener" : ""} 
-                 class="quick-rank-item">
+              <a href={t.partenaire ? t.lien : `#${t.slug}`} target={t.partenaire ? "_blank" : "_self"} rel={t.partenaire ? "nofollow noopener" : ""} class="quick-rank-item">
                 <span class={`qr-num ${t.rank === 1 ? 'rank-1' : ''}`}>{`#${t.rank}`}</span>
                 <span class="qr-name">{t.name}</span>
                 <span class="qr-score" style={`color:${scoreColor(t.globalScore)}`}>{t.globalScore.toFixed(1)}</span>
@@ -290,7 +287,8 @@ const scoreLabels: { [key: string]: string } = {
           <div class="sidebar-widget">
             <div class="nl-title">Un outil IA par semaine</div>
             <p class="nl-text">La sélection des meilleurs outils IA chaque lundi dans votre boîte mail.</p>
-            <form action="https://2224bad4.sibforms.com/serve/MUIFAA..." method="POST">
+            
+            <form action="https://2224bad4.sibforms.com/serve/MUIFAA5FZ9wsz8jYxQoLCDh0LwleB1JzinLPJ8-XdB2OVm1lXNjNpuVAZxqsMhUxpLQzP4qmL8FdgRRwFog-CWPz4rAQJspvW9Vumzyfg4PvOaNHtUe7pPeOEChXfHsSn58QNgN1bJruhL1EgT5UjU1ub9wi4KPai9kOQOfii2viH8r9IM2YY3c2bdF5kfXolnpmvlJm5dTrmPAlnw==" method="POST">
               <input type="email" name="EMAIL" class="nl-input" placeholder="votre@email.fr" required />
               <button type="submit" class="nl-btn">S'abonner</button>
             </form>
