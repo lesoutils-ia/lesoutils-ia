@@ -270,12 +270,43 @@ const categorySlug = category.toLowerCase().replace(/ /g, '-').normalize("NFD").
               <span class="sidebar-tool-cta">Essayer</span>
             </a>
           </div>
-          <form class="newsletter-widget" id="newsletter-form">
-  <div class="newsletter-widget-title">Un outil IA par semaine</div>
-  <p>La sélection des meilleurs outils IA chaque lundi.</p>
-  <input type="email" name="email" id="newsletter-email" class="newsletter-input" placeholder="votre@email.fr" required />
-  <button type="submit" class="newsletter-btn">Je m'abonne</button>
-</form>
+          <script is:inline>
+  const newsletterForm = document.getElementById('newsletter-form');
+  
+  newsletterForm?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = newsletterForm.querySelector('button');
+    const originalText = btn.innerText;
+
+    // Feedback visuel immédiat
+    btn.innerText = "PATIENTEZ...";
+    btn.disabled = true;
+
+    const formData = new FormData(newsletterForm);
+    
+    try {
+      // On envoie vers l'URL Brevo
+      await fetch(newsletterForm.action, {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors' // Crucial pour que ça marche en statique
+      });
+
+      // Succès : On change le look du bouton
+      btn.innerText = "MERCI !";
+      btn.style.backgroundColor = "#ffffff";
+      btn.style.color = "#000000";
+      newsletterForm.reset();
+
+    } catch (err) {
+      console.error("Erreur:", err);
+      btn.innerText = originalText;
+      btn.disabled = false;
+      alert("Une petite erreur est survenue, réessayez !");
+    }
+  });
+</script>
+
         </aside>
       </div>
 
@@ -304,59 +335,39 @@ const categorySlug = category.toLowerCase().replace(/ /g, '-').normalize("NFD").
   </div>
 </BaseLayout>
 
-<script>
-  const progress = document.getElementById('progress');
-  if (progress) {
-    window.addEventListener('scroll', () => {
-      const h = document.documentElement.scrollHeight - window.innerHeight;
-      progress.style.width = (window.scrollY / h * 100) + '%';
-    });
-  }
-  const tocLinks = document.querySelectorAll('.toc-list a');
-  const headings = document.querySelectorAll('article [id]');
-  window.addEventListener('scroll', () => {
-    let current = '';
-    headings.forEach(h => {
-      if (window.scrollY >= (h as HTMLElement).offsetTop - 100) current = h.id;
-    });
-    tocLinks.forEach(a => {
-      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
-    });
-  });
-</script>
-<script>
-  const newsletterForm = document.getElementById('newsletter-form') as HTMLFormElement;
+<script is:inline>
+  const newsletterForm = document.getElementById('newsletter-form');
   
   newsletterForm?.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const btn = newsletterForm.querySelector('button')!;
+    const btn = newsletterForm.querySelector('button');
     const originalText = btn.innerText;
 
-    // Feedback visuel
+    // Feedback visuel immédiat
     btn.innerText = "PATIENTEZ...";
     btn.disabled = true;
 
     const formData = new FormData(newsletterForm);
     
     try {
-      const response = await fetch('/api/subscribe', {
+      // On envoie vers l'URL Brevo
+      await fetch(newsletterForm.action, {
         method: 'POST',
-        body: formData
+        body: formData,
+        mode: 'no-cors' // Crucial pour que ça marche en statique
       });
 
-      if (response.ok) {
-        btn.innerText = "MERCI ! 🚀";
-        btn.style.backgroundColor = "#ffffff";
-        btn.style.color = "#000000";
-        newsletterForm.reset();
-      } else {
-        alert("Oups, une erreur est survenue.");
-        btn.innerText = originalText;
-        btn.disabled = false;
-      }
+      // Succès : On change le look du bouton
+      btn.innerText = "MERCI !";
+      btn.style.backgroundColor = "#ffffff";
+      btn.style.color = "#000000";
+      newsletterForm.reset();
+
     } catch (err) {
+      console.error("Erreur:", err);
       btn.innerText = originalText;
       btn.disabled = false;
+      alert("Une petite erreur est survenue, réessayez !");
     }
   });
 </script>
