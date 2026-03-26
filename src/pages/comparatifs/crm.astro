@@ -113,7 +113,6 @@ const scoreLabels: { [key: string]: string } = {
     .comp-subtitle { font-size: 16px; color: var(--text-mid); line-height: 1.65; max-width: 680px; margin-bottom: 1.5rem; }
     .comp-meta { display: flex; align-items: center; gap: 1.5rem; font-size: 12px; color: var(--text-muted); flex-wrap: wrap; }
     .comp-meta-item { display: flex; align-items: center; gap: 6px; }
-    .comp-meta-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--accent); display: inline-block; }
     .comp-body { display: grid; grid-template-columns: 1fr 280px; gap: 3.5rem; padding: 2.5rem 0 4rem; align-items: start; }
     @media (max-width: 860px) { .comp-body { grid-template-columns: 1fr; gap: 2rem; } }
     .tools-list { display: flex; flex-direction: column; gap: 1.5rem; }
@@ -140,22 +139,29 @@ const scoreLabels: { [key: string]: string } = {
     .score-bar-wrap { height: 3px; background: var(--border); border-radius: 2px; margin-bottom: 4px; }
     .score-bar { height: 3px; border-radius: 2px; }
     .score-val { font-family: var(--font-display); font-size: 13px; font-weight: 700; }
-    .tool-bottom { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; padding: 1.2rem 1.4rem 1.4rem; }
-    @media (max-width: 640px) { .tool-bottom { grid-template-columns: 1fr; gap: 0.8rem; } }
+    
+    /* CORRECTION ICI : Structure identique à agents-ia.astro */
+    .tool-bottom { display: grid; grid-template-columns: 1fr 1fr 200px; gap: 1.5rem; padding: 1.2rem 1.4rem 1.4rem; }
+    @media (max-width: 640px) { .tool-bottom { grid-template-columns: 1fr; gap: 1.2rem; } }
+    
     .pros-cons-title { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.5rem; }
     .pros-list, .cons-list { list-style: none; display: flex; flex-direction: column; gap: 4px; }
     .pros-list li, .cons-list li { font-size: 12px; color: var(--text-mid); display: flex; align-items: flex-start; gap: 6px; line-height: 1.5; }
     .pros-list li::before { content: '+'; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
     .cons-list li::before { content: '−'; color: var(--text-muted); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    
     .info-price { font-family: var(--font-display); font-size: 14px; font-weight: 700; margin-bottom: 3px; }
-    .info-essai { font-size: 12px; color: var(--accent); margin-bottom: 8px; }
+    .info-essai { font-size: 12px; color: var(--accent); margin-bottom: 12px; }
     .info-ideal-label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 3px; }
     .info-ideal { font-size: 12px; color: var(--text-mid); line-height: 1.5; }
-    .tool-cta-wrap { display: flex; align-items: flex-end; }
+    
+    /* Le bouton s'affiche bien sous les infos */
+    .tool-cta-column { display: flex; flex-direction: column; justify-content: flex-end; }
     .tool-cta { display: inline-block; width: 100%; text-align: center; padding: 10px 18px; border-radius: 5px; font-family: var(--font-display); font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; transition: opacity .15s; text-decoration: none; }
     .tool-cta.cta-primary { background: var(--accent); color: var(--accent-text); }
     .tool-cta.cta-secondary { background: var(--bg); border: 1px solid var(--border); color: var(--text-mid); }
     .tool-cta:hover { opacity: .85; }
+
     .sidebar { position: sticky; top: 72px; display: flex; flex-direction: column; gap: 1.2rem; }
     @media (max-width: 860px) { .sidebar { position: static; } }
     .sidebar-widget { background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; padding: 1.4rem; }
@@ -244,7 +250,7 @@ const scoreLabels: { [key: string]: string } = {
                       <div class="info-ideal">{tool.ideal}</div>
                     </div>
                   </div>
-                  <div class="tool-cta-wrap">
+                  <div class="tool-cta-column">
                     <div class="info-price">{tool.prix}</div>
                     <div class="info-essai">{tool.essai}</div>
                     <a href={tool.lien} target="_blank" rel="nofollow noopener" class={`tool-cta ${tool.partenaire ? 'cta-primary' : 'cta-secondary'}`}>
@@ -265,7 +271,10 @@ const scoreLabels: { [key: string]: string } = {
           <div class="sidebar-widget">
             <div class="sidebar-widget-title">Classement rapide</div>
             {tools.map(t => (
-              <a href={t.lien} target="_blank" rel="nofollow noopener" class="quick-rank-item">
+              <a href={(t.partenaire || t.slug === 'relevance-ai') ? t.lien : `#${t.slug}`} 
+                 target={(t.partenaire || t.slug === 'relevance-ai') ? "_blank" : "_self"} 
+                 rel={(t.partenaire || t.slug === 'relevance-ai') ? "nofollow noopener" : ""} 
+                 class="quick-rank-item">
                 <span class={`qr-num ${t.rank === 1 ? 'rank-1' : ''}`}>{`#${t.rank}`}</span>
                 <span class="qr-name">{t.name}</span>
                 <span class="qr-score" style={`color:${scoreColor(t.globalScore)}`}>{t.globalScore.toFixed(1)}</span>
@@ -287,7 +296,6 @@ const scoreLabels: { [key: string]: string } = {
           <div class="sidebar-widget">
             <div class="nl-title">Un outil IA par semaine</div>
             <p class="nl-text">La sélection des meilleurs outils IA chaque lundi dans votre boîte mail.</p>
-            
             <form action="https://2224bad4.sibforms.com/serve/MUIFAA5FZ9wsz8jYxQoLCDh0LwleB1JzinLPJ8-XdB2OVm1lXNjNpuVAZxqsMhUxpLQzP4qmL8FdgRRwFog-CWPz4rAQJspvW9Vumzyfg4PvOaNHtUe7pPeOEChXfHsSn58QNgN1bJruhL1EgT5UjU1ub9wi4KPai9kOQOfii2viH8r9IM2YY3c2bdF5kfXolnpmvlJm5dTrmPAlnw==" method="POST">
               <input type="email" name="EMAIL" class="nl-input" placeholder="votre@email.fr" required />
               <button type="submit" class="nl-btn">S'abonner</button>
