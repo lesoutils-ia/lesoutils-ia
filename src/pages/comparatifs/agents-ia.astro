@@ -31,7 +31,7 @@ const tools = [
     globalScore: 4.3,
     prix: "Gratuit (auto-hébergé) / 20€/mois",
     essai: "100% gratuit en self-hosted",
-    lien: "https://n8n.io",
+    lien: "https://n8n.partnerlinks.io/tq6td0outnve",
     partenaire: false,
     avantages: ["Pas de limite de workflows", "Données restent chez vous", "Noeuds IA très puissants", "Communauté active"],
     inconvenients: ["Courbe d'apprentissage élevée", "Setup technique initial"],
@@ -49,7 +49,6 @@ const tools = [
     essai: "Essai gratuit avec crédits",
     lien: "https://relevanceai.com/?via=lesoutils-ia",
     partenaire: false,
-    isAffiliate: true, // Pour activer le lien direct dans la sidebar
     avantages: ["Interface 'Agent-first'", "Multi-agents qui collaborent", "Très rapide à lancer", "Rendu visuel moderne"],
     inconvenients: ["Prix au crédit complexe", "Moins d'intégrations que Zapier"],
     ideal: "PME qui veulent des agents autonomes complexes rapidement"
@@ -248,7 +247,7 @@ const scoreLabels: { [key: string]: string } = {
                     <div class="info-price">{tool.prix}</div>
                     <div class="info-essai">{tool.essai}</div>
                     <a href={tool.lien} target="_blank" rel="nofollow noopener" class={`tool-cta ${tool.partenaire ? 'cta-primary' : 'cta-secondary'}`}>
-                      {tool.slug === 'make-ia' ? 'Essayer Make IA →' : 'Voir le site →'}
+                      Voir le site →
                     </a>
                   </div>
                 </div>
@@ -265,9 +264,9 @@ const scoreLabels: { [key: string]: string } = {
           <div class="sidebar-widget">
             <div class="sidebar-widget-title">Classement rapide</div>
             {tools.map(t => (
-              <a href={(t.partenaire || t.isAffiliate) ? t.lien : `#${t.slug}`} 
-                 target={(t.partenaire || t.isAffiliate) ? "_blank" : "_self"} 
-                 rel={(t.partenaire || t.isAffiliate) ? "nofollow noopener" : ""} 
+              <a href={(t.partenaire || t.slug === 'relevance-ai' || t.slug === 'n8n-ai') ? t.lien : `#${t.slug}`} 
+                 target={(t.partenaire || t.slug === 'relevance-ai' || t.slug === 'n8n-ai') ? "_blank" : "_self"} 
+                 rel={(t.partenaire || t.slug === 'relevance-ai' || t.slug === 'n8n-ai') ? "nofollow noopener" : ""} 
                  class="quick-rank-item">
                 <span class={`qr-num ${t.rank === 1 ? 'rank-1' : ''}`}>{`#${t.rank}`}</span>
                 <span class="qr-name">{t.name}</span>
