@@ -17,73 +17,74 @@ const tools = [
     essai: "Plan gratuit Make disponible",
     lien: "https://www.make.com/en/register?pc=lesoutilsia",
     partenaire: true,
-    avantages: ["Très fiable en production", "Contrôle total", "Intégration facile", "Coût maîtrisé"],
-    inconvenients: ["Configuration initiale demande du temps", "Nécessite Make + API IA"],
-    ideal: "PME qui veulent des agents fiables et contrôlés"
+    avantages: ["Très stable", "Coût maîtrisé", "Intégration CRM totale", "Zéro hallucination"],
+    inconvenients: ["Nécessite de l'expérience Make", "Pas 'clic-and-play'"],
+    ideal: "PME qui veulent des agents IA fiables et prévisibles"
   },
   {
     rank: 2,
-    name: "Relevance AI",
-    slug: "relevance-ai",
-    tagline: "Créer des agents IA sans code, vraiment",
-    description: "Relevance AI est probablement l'outil le plus avancé pour créer des agents IA sans écrire une ligne de code. Interface visuelle, bibliothèque de templates d'agents prêts à l'emploi — prospection, qualification de leads, réponse aux emails, analyse de documents. On a déployé un agent de qualification de leads pour une PME B2B en 3 heures. Il lit les emails entrants, recherche des informations sur l'expéditeur, et rédige une réponse personnalisée pour validation humaine avant envoi. Le prix est élevé mais les cas d'usage sont concrets.",
-    scores: {autonomie: 4.7, facilite: 4.6, fiabilite: 4.5, rapport: 3.8},
-    globalScore: 4.4,
-    prix: "À partir de 19$/mois",
-    essai: "Plan gratuit limité",
-    lien: "https://relevanceai.com",
+    name: "n8n AI Agents",
+    slug: "n8n-ai",
+    tagline: "La puissance de l'IA avec la liberté de l'open source",
+    description: "Si vous avez un profil un peu technique en interne, n8n est incroyable. Leur nouveau 'AI Agent node' permet de construire des agents qui ont accès à vos bases de données SQL, vos fichiers et vos outils métiers. On a testé un agent de support client qui lit les tickets entrants, va chercher la réponse dans la documentation technique sur Notion, et rédige un brouillon de réponse. Gain de temps massif pour l'équipe support. C'est l'outil qui donne le plus de contrôle sur ce que l'agent peut ou ne peut pas faire.",
+    scores: {autonomie: 4.6, facilite: 3.2, fiabilite: 4.4, rapport: 4.9},
+    globalScore: 4.3,
+    prix: "Gratuit (auto-hébergé) / 20€/mois",
+    essai: "100% gratuit en self-hosted",
+    lien: "https://n8n.io",
     partenaire: false,
-    avantages: ["Sans code vraiment", "Templates d'agents prêts", "Multi-modèles IA", "Cas d'usage business clairs"],
-    inconvenients: ["Tarif élevé rapidement", "Outil en anglais", "Moins connu en France"],
-    ideal: "PME qui veulent des agents clé en main"
+    avantages: ["Pas de limite de workflows", "Données restent chez vous", "Noeuds IA très puissants", "Communauté active"],
+    inconvenients: ["Courbe d'apprentissage élevée", "Setup technique initial"],
+    ideal: "Startups, PME avec un profil tech/dev"
   },
   {
     rank: 3,
-    name: "n8n + IA",
-    slug: "n8n-ia",
-    tagline: "La puissance des agents IA open source, auto-hébergés",
-    description: "n8n avec les nœuds IA natifs est devenu l'une des meilleures plateformes pour construire des agents IA en 2026. Les nœuds OpenAI, Anthropic et Mistral sont intégrés directement. On peut construire des workflows où l'IA prend des décisions à chaque étape — lire un email, décider s'il faut répondre, rédiger la réponse, l'envoyer ou escalader à un humain. Auto-hébergeable donc zéro frais de licence. Pour les équipes techniques c'est le meilleur rapport puissance/prix du marché.",
-    scores: {autonomie: 4.8, facilite: 3.2, fiabilite: 4.6, rapport: 4.9},
-    globalScore: 4.4,
-    prix: "Gratuit (auto-hébergé) / Cloud à 20€/mois",
-    essai: "Gratuit en local",
-    lien: "https://n8n.io",
+    name: "Relevance AI",
+    slug: "relevance-ai",
+    tagline: "Plateforme tout-en-un pour agents IA autonomes",
+    description: "Relevance AI est l'outil le plus moderne de cette liste. Contrairement à Make qui est un outil d'automatisation généraliste, Relevance a été conçu uniquement pour les agents. L'interface est pensée pour donner des 'outils' à votre IA (chercher sur Google, lire un PDF, envoyer un mail). On l'a utilisé pour créer un agent de recherche de marché : il scanne 50 sites concurrents et en sort un tableau Excel comparatif. Impressionnant de facilité, mais attention à la consommation de crédits qui peut vite grimper.",
+    scores: {autonomie: 4.9, facilite: 4.1, fiabilite: 4.0, rapport: 3.8},
+    globalScore: 4.2,
+    prix: "À partir de 19$/mois",
+    essai: "Essai gratuit avec crédits",
+    lien: "https://relevanceai.com/?via=lesoutils-ia",
     partenaire: false,
-    avantages: ["Agents très puissants", "Open source gratuit", "Nœuds IA natifs", "Contrôle total des données"],
-    inconvenients: ["Profil technique requis", "Setup initial long"],
-    ideal: "Équipes avec développeur, budget zéro"
+    isAffiliate: true, // Pour activer le lien direct dans la sidebar
+    avantages: ["Interface 'Agent-first'", "Multi-agents qui collaborent", "Très rapide à lancer", "Rendu visuel moderne"],
+    inconvenients: ["Prix au crédit complexe", "Moins d'intégrations que Zapier"],
+    ideal: "PME qui veulent des agents autonomes complexes rapidement"
   },
   {
     rank: 4,
-    name: "Zapier AI (Copilot)",
-    slug: "zapier-ai",
-    tagline: "Créer des automatisations IA par langage naturel",
-    description: "Zapier a intégré une IA qui crée des workflows entiers à partir d'une description en langage naturel. 'Quand je reçois un email de prospect, analyse-le, recherche l'entreprise sur LinkedIn et ajoute le contact dans HubSpot avec un résumé' — vous décrivez ça en français, Zapier construit le workflow. Ce n'est pas encore parfait, les workflows générés demandent souvent des ajustements. Mais pour une PME qui ne veut pas passer du temps à apprendre l'outil, c'est une approche intéressante.",
-    scores: {autonomie: 4.2, facilite: 4.8, fiabilite: 4.2, rapport: 3.9},
-    globalScore: 4.2,
-    prix: "Plans Zapier à partir de 19,99$/mois",
+    name: "Zapier Central",
+    slug: "zapier-central",
+    tagline: "Le plus simple pour transformer vos Zaps en agents",
+    description: "Si vous utilisez déjà Zapier, Central est leur réponse aux agents IA. C'est un espace où vous 'éduquez' une IA avec vos données (PDF, Google Docs) et où vous l'autorisez à déclencher des Zaps. C'est parfait pour les petites tâches du quotidien. Par exemple : un agent qui surveille un canal Slack et crée une tâche dans Trello si un message mentionne un problème client. C'est très simple, peut-être trop pour des processus métiers critiques, mais pour une TPE, c'est la porte d'entrée idéale.",
+    scores: {autonomie: 4.0, facilite: 4.9, fiabilite: 4.1, rapport: 3.5},
+    globalScore: 4.1,
+    prix: "Inclus dans certains plans Zapier",
     essai: "Plan gratuit limité",
-    lien: "https://zapier.com",
+    lien: "https://zapier.com/central",
     partenaire: false,
-    avantages: ["Création par langage naturel", "Interface la plus simple", "6000+ intégrations", "Fiable en production"],
-    inconvenients: ["Agents moins puissants que Make", "Prix élevé à volume", "Autonomie limitée"],
-    ideal: "PME qui veulent commencer simplement"
+    avantages: ["Configuration en 2 minutes", "6000+ intégrations", "Pas besoin de comprendre l'IA", "Interface familière"],
+    inconvenients: ["Prix des plans Zapier élevés", "Moins de contrôle granulaire"],
+    ideal: "TPE, indépendants, débutants complets"
   },
   {
     rank: 5,
-    name: "AutoGPT / AgentGPT",
+    name: "AutoGPT (Open Source)",
     slug: "autogpt",
-    tagline: "Les agents IA autonomes open source — encore trop tôt pour les PME",
-    description: "AutoGPT a fait énormément de bruit in 2023. L'idée est séduisante : un agent IA vraiment autonome qui se donne ses propres sous-tâches pour atteindre un objectif. La réalité en 2026 c'est que c'est encore trop instable pour un usage en production dans une PME. Les résultats sont imprévisibles, l'agent part parfois dans des boucles infinies, et le coût en tokens API peut exploser si on ne surveille pas. On le mentionne parce que c'est la direction où va l'IA — mais on ne le recommande pas pour un usage business critique aujourd'hui.",
-    scores: {autonomie: 4.9, facilite: 2.5, fiabilite: 3.2, rapport: 4.2},
-    globalScore: 3.7,
-    prix: "Gratuit (open source) + coût API",
-    essai: "Open source gratuit",
-    lien: "https://agentgpt.reworkd.ai",
+    tagline: "Le pionnier des agents IA, pour l'expérimentation",
+    description: "On ne pouvait pas faire ce classement sans AutoGPT. C'est celui qui a tout lancé. C'est un agent 'pur' : vous lui donnez un objectif et il se débrouille. Problème : en conditions réelles de PME, c'est encore trop instable. Il peut tourner en boucle ou 'halluciner' des étapes. On le recommande uniquement pour de la R&D interne ou pour des tâches de recherche pure où l'erreur n'est pas grave. Pour automatiser votre facturation ou votre service client, oubliez pour l'instant.",
+    scores: {autonomie: 5.0, facilite: 2.1, fiabilite: 2.5, rapport: 4.5},
+    globalScore: 3.5,
+    prix: "Gratuit (Open Source)",
+    essai: "GitHub / Docker gratuit",
+    lien: "https://github.com/Significant-Gravitas/AutoGPT",
     partenaire: false,
-    avantages: ["Autonomie maximale", "Open source gratuit", "Direction future de l'IA"],
-    inconvenients: ["Trop instable pour la production", "Résultats imprévisibles", "Coût API difficile à maîtriser"],
-    ideal: "Expérimentation, veille technologique uniquement"
+    avantages: ["Totalement autonome", "Gratuit", "Inspirationnel", "Dernières technos IA"],
+    inconvenients: ["Très instable", "Nécessite Python/Docker", "Consomme beaucoup d'API"],
+    ideal: "Développeurs, passionnés de tech, veille R&D"
   }
 ];
 
@@ -94,78 +95,142 @@ function scoreColor(score: number) {
   return '#f07030';
 }
 
-const scoreLabels: { [key: string]: string } = {"autonomie": "Autonomie", "facilite": "Facilité", "fiabilite": "Fiabilité", "rapport": "Rapport Q/P"};
+const scoreLabels: { [key: string]: string } = {
+  autonomie: 'Autonomie',
+  facilite: 'Facilité',
+  fiabilite: 'Fiabilité',
+  rapport: 'Rapport Q/P'
+};
 ---
 
 <BaseLayout title={title} description={description}>
-  <Fragment slot="head">
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "name": "Meilleurs agents IA pour PME — Comparatif outils 2026",
-      "numberOfItems": tools.length,
-      "itemListElement": tools.map((t, i) => ({ "@type": "ListItem", "position": i + 1, "name": t.name, "url": t.lien }))
-    })} />
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://lesoutils-ia.fr/" },
-        { "@type": "ListItem", "position": 2, "name": "Comparatifs", "item": "https://lesoutils-ia.fr/comparatifs" },
-        { "@type": "ListItem", "position": 3, "name": "Agents IA pour PME" }
-      ]
-    })} />
-  </Fragment>
-  <style>.comp-page{padding-top:56px}.container{max-width:1100px;margin:0 auto;padding:0 1.5rem}.breadcrumb{padding:1.2rem 0 0;display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-muted);flex-wrap:wrap}.breadcrumb a:hover{color:var(--accent)}.breadcrumb-sep{opacity:.4}.comp-header{padding:2rem 0 2.5rem;border-bottom:1px solid var(--border)}.comp-cat-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);background:var(--accent-dim);padding:4px 10px;border-radius:3px;display:inline-block;margin-bottom:1rem}.comp-title{font-family:var(--font-display);font-size:clamp(26px,4vw,42px);font-weight:800;line-height:1.2;letter-spacing:-.5px;margin-bottom:1rem}.comp-subtitle{font-size:16px;color:var(--text-mid);line-height:1.65;max-width:680px;margin-bottom:1.5rem}.comp-meta{display:flex;align-items:center;gap:1.5rem;font-size:12px;color:var(--text-muted);flex-wrap:wrap}.comp-meta-item{display:flex;align-items:center;gap:6px}.comp-meta-dot{width:4px;height:4px;border-radius:50%;background:var(--accent);display:inline-block}.comp-body{display:grid;grid-template-columns:1fr 280px;gap:3.5rem;padding:2.5rem 0 4rem;align-items:start}@media(max-width:860px){.comp-body{grid-template-columns:1fr;gap:2rem}}.tools-list{display:flex;flex-direction:column;gap:1.5rem}.tool-card{background:var(--bg3);border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:border-color .2s}.tool-card:hover{border-color:var(--border-strong)}.tool-card.is-partenaire{border-color:rgba(200,241,53,.3)}.tool-card-top{padding:1.4rem 1.4rem 0}.tool-rank-row{display:flex;align-items:center;gap:10px;margin-bottom:1rem}.tool-rank{font-family:var(--font-display);font-size:11px;font-weight:700;color:var(--text-muted);background:var(--bg);border:1px solid var(--border);padding:3px 9px;border-radius:3px}.tool-rank.rank-1{color:var(--accent);border-color:rgba(200,241,53,.4);background:var(--accent-dim)}.badge-partenaire{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-text);background:var(--accent);padding:3px 8px;border-radius:3px}.badge-affilie{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);border:1px solid var(--border);padding:3px 8px;border-radius:3px}.tool-name-row{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:.5rem;flex-wrap:wrap}.tool-name{font-family:var(--font-display);font-size:20px;font-weight:800}.tool-global-score{display:flex;align-items:center;gap:6px;flex-shrink:0}.score-number{font-family:var(--font-display);font-size:22px;font-weight:800}.score-max{font-size:12px;color:var(--text-muted);margin-top:4px}.tool-tagline{font-size:13px;color:var(--text-muted);font-style:italic;margin-bottom:.8rem}.tool-desc{font-size:14px;color:var(--text-mid);line-height:1.7;margin-bottom:1.2rem}.scores-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:1rem 1.4rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}@media(max-width:540px){.scores-grid{grid-template-columns:repeat(2,1fr)}}.score-item{text-align:center}.score-label{font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}.score-bar-wrap{height:3px;background:var(--border);border-radius:2px;margin-bottom:4px}.score-bar{height:3px;border-radius:2px}.score-val{font-family:var(--font-display);font-size:13px;font-weight:700}.tool-bottom{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;padding:1.2rem 1.4rem 1.4rem}@media(max-width:640px){.tool-bottom{grid-template-columns:1fr;gap:.8rem}}.pros-cons-title{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:.5rem}.pros-list,.cons-list{list-style:none;display:flex;flex-direction:column;gap:4px}.pros-list li,.cons-list li{font-size:12px;color:var(--text-mid);display:flex;align-items:flex-start;gap:6px;line-height:1.5}.pros-list li::before{content:'+';color:var(--accent);font-weight:700;flex-shrink:0;margin-top:1px}.cons-list li::before{content:'−';color:var(--text-muted);font-weight:700;flex-shrink:0;margin-top:1px}.info-price{font-family:var(--font-display);font-size:14px;font-weight:700;margin-bottom:3px}.info-essai{font-size:12px;color:var(--accent);margin-bottom:8px}.info-ideal-label{font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px}.info-ideal{font-size:12px;color:var(--text-mid);line-height:1.5}.tool-cta-wrap{display:flex;align-items:flex-end}.tool-cta{display:inline-block;width:100%;text-align:center;padding:10px 18px;border-radius:5px;font-family:var(--font-display);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;transition:opacity .15s}.tool-cta.cta-primary{background:var(--accent);color:var(--accent-text)}.tool-cta.cta-secondary{background:var(--bg);border:1px solid var(--border);color:var(--text-mid)}.tool-cta:hover{opacity:.85}.sidebar{position:sticky;top:72px;display:flex;flex-direction:column;gap:1.2rem}@media(max-width:860px){.sidebar{position:static}}.sidebar-widget{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:1.4rem}.sidebar-widget-title{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1rem;text-align:center}.quick-rank-item{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);transition:opacity .15s;text-decoration:none;color:inherit}.quick-rank-item:last-child{border-bottom:none;padding-bottom:0}.quick-rank-item:hover{opacity:.75}.qr-num{font-family:var(--font-display);font-size:11px;font-weight:800;color:var(--text-muted);width:18px;flex-shrink:0}.qr-num.rank-1{color:var(--accent)}.qr-name{font-size:13px;font-weight:600;flex:1}.qr-score{font-family:var(--font-display);font-size:13px;font-weight:700}.method-text{font-size:13px;color:var(--text-mid);line-height:1.7;margin-bottom:1rem}.method-criteria{list-style:none;display:flex;flex-direction:column;gap:6px}.method-criteria li{display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--text-mid);line-height:1.5}.method-criteria li::before{content:'→';color:var(--accent);flex-shrink:0}.nl-title{font-family:var(--font-display);font-size:14px;font-weight:700;margin-bottom:.5rem}.nl-text{font-size:13px;color:var(--text-mid);line-height:1.6;margin-bottom:1rem}.nl-input{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:5px;padding:9px 12px;font-size:13px;color:var(--text);margin-bottom:8px;outline:none;transition:border-color .15s}.nl-input:focus{border-color:var(--accent)}.nl-btn{width:100%;background:var(--accent);color:var(--accent-text);font-family:var(--font-display);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:10px;border-radius:5px;border:none;cursor:pointer}.comp-footer-note{border-top:1px solid var(--border);padding:2rem 0;font-size:12px;color:var(--text-muted);line-height:1.7;max-width:720px}.comp-footer-note a{color:var(--accent)}</style>
+  <style>
+    .comp-page { padding-top: 56px; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+    .breadcrumb { padding: 1.2rem 0 0; display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text-muted); flex-wrap: wrap; }
+    .comp-header { padding: 2rem 0 2.5rem; border-bottom: 1px solid var(--border); }
+    .comp-cat-label { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); background: var(--accent-dim); padding: 4px 10px; border-radius: 3px; display: inline-block; margin-bottom: 1rem; }
+    .comp-title { font-family: var(--font-display); font-size: clamp(26px, 4vw, 42px); font-weight: 800; line-height: 1.2; letter-spacing: -0.5px; margin-bottom: 1rem; }
+    .comp-subtitle { font-size: 16px; color: var(--text-mid); line-height: 1.65; max-width: 680px; margin-bottom: 1.5rem; }
+    .comp-meta { display: flex; align-items: center; gap: 1.5rem; font-size: 12px; color: var(--text-muted); flex-wrap: wrap; }
+    .comp-meta-item { display: flex; align-items: center; gap: 6px; }
+    .comp-body { display: grid; grid-template-columns: 1fr 280px; gap: 3.5rem; padding: 2.5rem 0 4rem; align-items: start; }
+    @media (max-width: 860px) { .comp-body { grid-template-columns: 1fr; gap: 2rem; } }
+    .tools-list { display: flex; flex-direction: column; gap: 1.5rem; }
+    .tool-card { background: var(--bg3); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; transition: border-color .2s; }
+    .tool-card:hover { border-color: var(--border-strong); }
+    .tool-card.is-partenaire { border-color: rgba(200,241,53,0.3); }
+    .tool-card-top { padding: 1.4rem 1.4rem 0; }
+    .tool-rank-row { display: flex; align-items: center; gap: 10px; margin-bottom: 1rem; }
+    .tool-rank { font-family: var(--font-display); font-size: 11px; font-weight: 700; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); padding: 3px 9px; border-radius: 3px; }
+    .tool-rank.rank-1 { color: var(--accent); border-color: rgba(200,241,53,0.4); background: var(--accent-dim); }
+    .badge-partenaire { font-size: 9px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-text); background: var(--accent); padding: 3px 8px; border-radius: 3px; }
+    .badge-affilie { font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); border: 1px solid var(--border); padding: 3px 8px; border-radius: 3px; }
+    .tool-name-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
+    .tool-name { font-family: var(--font-display); font-size: 20px; font-weight: 800; }
+    .tool-global-score { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+    .score-number { font-family: var(--font-display); font-size: 22px; font-weight: 800; }
+    .score-max { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+    .tool-tagline { font-size: 13px; color: var(--text-muted); font-style: italic; margin-bottom: 0.8rem; }
+    .tool-desc { font-size: 14px; color: var(--text-mid); line-height: 1.7; margin-bottom: 1.2rem; }
+    .scores-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; padding: 1rem 1.4rem; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    @media (max-width: 540px) { .scores-grid { grid-template-columns: repeat(2, 1fr); } }
+    .score-item { text-align: center; }
+    .score-label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
+    .score-bar-wrap { height: 3px; background: var(--border); border-radius: 2px; margin-bottom: 4px; }
+    .score-bar { height: 3px; border-radius: 2px; }
+    .score-val { font-family: var(--font-display); font-size: 13px; font-weight: 700; }
+    .tool-bottom { display: grid; grid-template-columns: 1fr 1fr 200px; gap: 1.5rem; padding: 1.2rem 1.4rem 1.4rem; }
+    @media (max-width: 640px) { .tool-bottom { grid-template-columns: 1fr; gap: 1.2rem; } }
+    .pros-cons-title { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.5rem; }
+    .pros-list, .cons-list { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+    .pros-list li, .cons-list li { font-size: 12px; color: var(--text-mid); display: flex; align-items: flex-start; gap: 6px; line-height: 1.5; }
+    .pros-list li::before { content: '+'; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .cons-list li::before { content: '−'; color: var(--text-muted); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .info-price { font-family: var(--font-display); font-size: 14px; font-weight: 700; margin-bottom: 3px; }
+    .info-essai { font-size: 12px; color: var(--accent); margin-bottom: 12px; }
+    .info-ideal-label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 3px; }
+    .info-ideal { font-size: 12px; color: var(--text-mid); line-height: 1.5; }
+    .tool-cta-column { display: flex; flex-direction: column; justify-content: flex-end; }
+    .tool-cta { display: inline-block; width: 100%; text-align: center; padding: 10px 18px; border-radius: 5px; font-family: var(--font-display); font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; transition: opacity .15s; text-decoration: none; }
+    .tool-cta.cta-primary { background: var(--accent); color: var(--accent-text); }
+    .tool-cta.cta-secondary { background: var(--bg); border: 1px solid var(--border); color: var(--text-mid); }
+    .tool-cta:hover { opacity: .85; }
+    .sidebar { position: sticky; top: 72px; display: flex; flex-direction: column; gap: 1.2rem; }
+    @media (max-width: 860px) { .sidebar { position: static; } }
+    .sidebar-widget { background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; padding: 1.4rem; }
+    .sidebar-widget-title { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; text-align: center; }
+    .quick-rank-item { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border); cursor: pointer; transition: opacity .15s; text-decoration: none; color: inherit; }
+    .quick-rank-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .quick-rank-item:hover { opacity: .75; }
+    .qr-num { font-family: var(--font-display); font-size: 11px; font-weight: 800; color: var(--text-muted); width: 18px; flex-shrink: 0; }
+    .qr-num.rank-1 { color: var(--accent); }
+    .qr-name { font-size: 13px; font-weight: 600; flex: 1; }
+    .qr-score { font-family: var(--font-display); font-size: 13px; font-weight: 700; }
+    .method-text { font-size: 13px; color: var(--text-mid); line-height: 1.7; margin-bottom: 1rem; }
+    .method-criteria { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .method-criteria li { display: flex; align-items: flex-start; gap: 8px; font-size: 12px; color: var(--text-mid); line-height: 1.5; }
+    .method-criteria li::before { content: '→'; color: var(--accent); flex-shrink: 0; }
+    .nl-title { font-family: var(--font-display); font-size: 14px; font-weight: 700; margin-bottom: 0.5rem; }
+    .nl-text { font-size: 13px; color: var(--text-mid); line-height: 1.6; margin-bottom: 1rem; }
+    .nl-input { width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 5px; padding: 9px 12px; font-size: 13px; color: var(--text); margin-bottom: 8px; outline: none; }
+    .nl-btn { width: 100%; background: var(--accent); color: var(--accent-text); font-family: var(--font-display); font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 10px; border-radius: 5px; border: none; cursor: pointer; }
+    .comp-footer-note { border-top: 1px solid var(--border); padding: 2rem 0; font-size: 12px; color: var(--text-muted); line-height: 1.7; max-width: 720px; }
+    .comp-footer-note a { color: var(--accent); }
+  </style>
 
   <div class="comp-page">
     <div class="container">
       <nav class="breadcrumb">
-        <a href="/">Accueil</a><span class="breadcrumb-sep">›</span>
-        <a href="/comparatifs">Comparatifs</a><span class="breadcrumb-sep">›</span>
-        <span>Agents IA pour PME</span>
+        <a href="/">Accueil</a> <span class="opacity-40">/</span>
+        <a href="/comparatifs">Comparatifs</a> <span class="opacity-40">/</span>
+        <span>Agents IA autonomes</span>
       </nav>
+
       <header class="comp-header">
         <span class="comp-cat-label">Comparatif</span>
         <h1 class="comp-title">Meilleurs agents IA pour PME<br>— Comparatif outils 2026</h1>
-        <p class="comp-subtitle">Les agents IA vont automatiser 40% des tâches répétitives en entreprise dans les 12 prochains mois — selon les analystes. On a testé les 5 outils les plus accessibles pour les PME françaises. Ce qui marche vraiment, ce qui est encore trop tôt, et comment commencer sans se planter.</p>
+        <p class="comp-subtitle">On a testé les 5 meilleures plateformes d'agents IA en conditions réelles sur des workflows de PME françaises. Voici le verdict pour automatiser intelligemment votre activité.</p>
         <div class="comp-meta">
-          <span class="comp-meta-item"><span class="comp-meta-dot"></span>Mis à jour mars 2026</span>
-          <span class="comp-meta-item"><span class="comp-meta-dot"></span>5 outils testés</span>
-          <span class="comp-meta-item"><span class="comp-meta-dot"></span>4 critères notés</span>
-          <span class="comp-meta-item"><span class="comp-meta-dot"></span>10 min de lecture</span>
+          <span class="comp-meta-item">Mis à jour mars 2026</span>
+          <span class="comp-meta-item">5 solutions testées</span>
+          <span class="comp-meta-item">12 min de lecture</span>
         </div>
       </header>
+
       <div class="comp-body">
         <main>
           <div class="tools-list">
             {tools.map(tool => (
-              <div class={`tool-card${tool.partenaire ? ' is-partenaire' : ''}`} id={tool.slug}>
+              <div class={`tool-card ${tool.partenaire ? 'is-partenaire' : ''}`} id={tool.slug}>
                 <div class="tool-card-top">
                   <div class="tool-rank-row">
-                    <span class={`tool-rank${tool.rank === 1 ? ' rank-1' : ''}`}>N°{tool.rank}</span>
-                    {tool.partenaire && <span class="badge-partenaire">Partenaire</span>}
-                    {!tool.partenaire && <span class="badge-affilie">Lien affilié</span>}
+                    <span class={`tool-rank ${tool.rank === 1 ? 'rank-1' : ''}`}>N°{tool.rank}</span>
+                    {tool.partenaire ? <span class="badge-partenaire">Partenaire</span> : <span class="badge-affilie">Lien affilié</span>}
                   </div>
                   <div class="tool-name-row">
                     <h2 class="tool-name">{tool.name}</h2>
                     <div class="tool-global-score">
-                      <span class="score-number" style={`color:${scoreColor(tool.globalScore)}`}>{tool.globalScore.toFixed(1)}</span>
+                      <span class="score-number" style={`color: ${scoreColor(tool.globalScore)}`}>{tool.globalScore.toFixed(1)}</span>
                       <span class="score-max">/5</span>
                     </div>
                   </div>
                   <p class="tool-tagline">{tool.tagline}</p>
                   <p class="tool-desc">{tool.description}</p>
                 </div>
+
                 <div class="scores-grid">
                   {Object.entries(tool.scores).map(([key, val]) => (
                     <div class="score-item">
-                      <div class="score-label">{scoreLabels[key] || key}</div>
-                      <div class="score-bar-wrap"><div class="score-bar" style={`width:${(val/5)*100}%;background:${scoreColor(val)}`}></div></div>
-                      <div class="score-val" style={`color:${scoreColor(val)}`}>{val.toFixed(1)}</div>
+                      <div class="score-label">{scoreLabels[key]}</div>
+                      <div class="score-bar-wrap">
+                        <div class="score-bar" style={`width: ${(val/5)*100}%; background: ${scoreColor(val)}`}></div>
+                      </div>
+                      <div class="score-val" style={`color: ${scoreColor(val)}`}>{val.toFixed(1)}</div>
                     </div>
                   ))}
                 </div>
+
                 <div class="tool-bottom">
                   <div>
                     <div class="pros-cons-title">Points forts</div>
@@ -174,37 +239,43 @@ const scoreLabels: { [key: string]: string } = {"autonomie": "Autonomie", "facil
                   <div>
                     <div class="pros-cons-title">Limites</div>
                     <ul class="cons-list">{tool.inconvenients.map(i => <li>{i}</li>)}</ul>
-                    <div style="margin-top:1rem">
+                    <div style="margin-top: 1rem;">
                       <div class="info-ideal-label">Idéal pour</div>
                       <div class="info-ideal">{tool.ideal}</div>
                     </div>
                   </div>
-                  <div>
+                  <div class="tool-cta-column">
                     <div class="info-price">{tool.prix}</div>
                     <div class="info-essai">{tool.essai}</div>
-                    <div class="tool-cta-wrap">
-                      <a href={tool.lien} target="_blank" rel="nofollow noopener" class={`tool-cta ${tool.partenaire ? 'cta-primary' : 'cta-secondary'}`}>
-                        {tool.partenaire ? 'Essayer Make →' : 'Voir le site →'}
-                      </a>
-                    </div>
+                    <a href={tool.lien} target="_blank" rel="nofollow noopener" class={`tool-cta ${tool.partenaire ? 'cta-primary' : 'cta-secondary'}`}>
+                      {tool.slug === 'make-ia' ? 'Essayer Make IA →' : 'Voir le site →'}
+                    </a>
                   </div>
                 </div>
               </div>
             ))}
           </div>
-          <div class="comp-footer-note"><strong>Note éditoriale</strong> — Comparatif mis à jour régulièrement. Certains liens sont affiliés. Classement basé sur nos tests indépendants. Les outils "Partenaire" bénéficient d'une mise en avant commerciale. <a href="/mentions-legales">En savoir plus</a>.</div>
+          
+          <div class="comp-footer-note">
+            <strong>Note éditoriale</strong> — Ce comparatif est basé sur nos tests réels. Certains liens sont affiliés, mais cela n'influence en rien notre classement indépendant. <a href="/mentions-legales">En savoir plus</a>.
+          </div>
         </main>
+
         <aside class="sidebar">
           <div class="sidebar-widget">
             <div class="sidebar-widget-title">Classement rapide</div>
             {tools.map(t => (
-              <a href={t.partenaire ? t.lien : `#${t.slug}`} target={t.partenaire ? "_blank" : "_self"} rel={t.partenaire ? "nofollow noopener" : ""} class="quick-rank-item">
-                <span class={`qr-num${t.rank === 1 ? ' rank-1' : ''}`}>{`#${t.rank}`}</span>
+              <a href={(t.partenaire || t.isAffiliate) ? t.lien : `#${t.slug}`} 
+                 target={(t.partenaire || t.isAffiliate) ? "_blank" : "_self"} 
+                 rel={(t.partenaire || t.isAffiliate) ? "nofollow noopener" : ""} 
+                 class="quick-rank-item">
+                <span class={`qr-num ${t.rank === 1 ? 'rank-1' : ''}`}>{`#${t.rank}`}</span>
                 <span class="qr-name">{t.name}</span>
                 <span class="qr-score" style={`color:${scoreColor(t.globalScore)}`}>{t.globalScore.toFixed(1)}</span>
               </a>
             ))}
           </div>
+
           <div class="sidebar-widget">
             <div class="sidebar-widget-title">Notre méthode</div>
             <p class="method-text">Chaque agent IA testé sur 10 workflows métiers réels dans des PME françaises — qualification de leads, suivi client, reporting automatique.</p>
@@ -215,14 +286,13 @@ const scoreLabels: { [key: string]: string } = {"autonomie": "Autonomie", "facil
               <li>Rapport qualité / prix</li>
             </ul>
           </div>
+
           <div class="sidebar-widget">
             <div class="nl-title">Un outil IA par semaine</div>
             <p class="nl-text">La sélection des meilleurs outils IA chaque lundi dans votre boîte mail.</p>
             <form action="https://2224bad4.sibforms.com/serve/MUIFAA5FZ9wsz8jYxQoLCDh0LwleB1JzinLPJ8-XdB2OVm1lXNjNpuVAZxqsMhUxpLQzP4qmL8FdgRRwFog-CWPz4rAQJspvW9Vumzyfg4PvOaNHtUe7pPeOEChXfHsSn58QNgN1bJruhL1EgT5UjU1ub9wi4KPai9kOQOfii2viH8r9IM2YY3c2bdF5kfXolnpmvlJm5dTrmPAlnw==" method="POST">
               <input type="email" name="EMAIL" class="nl-input" placeholder="votre@email.fr" required />
-              <button type="submit" class="nl-btn">Je m'abonne</button>
-              <input type="text" name="email_address_check" value="" style="display:none;">
-              <input type="hidden" name="locale" value="fr">
+              <button type="submit" class="nl-btn">S'abonner</button>
             </form>
           </div>
         </aside>
