@@ -18,72 +18,72 @@ const tools = [
     lien: "https://chat.openai.com",
     partenaire: true,
     avantages: ["GPT-4o inclus gratuit", "Aucune carte bancaire", "Polyvalent", "Interface mobile"],
-    inconvenients: ["Limites d'usage quotidien", "Pas de mémoire longue durée gratuit"],
-    ideal: "Toute PME qui démarre avec l'IA"
+    inconvenients: ["Limites de messages", "Confidentialité standard"],
+    ideal: "Tester l'IA sans dépenser 1€"
   },
   {
     rank: 2,
-    name: "Mistral AI (Le Chat)",
-    slug: "mistral",
-    tagline: "Le meilleur outil IA gratuit made in France",
-    description: "On a fait un test simple : le même brief de rédaction envoyé à ChatGPT et à Mistral Le Chat. Sur des textes professionnels en français — emails commerciaux, comptes-rendus, argumentaires — Mistral s'en sort mieux. Plus naturel, moins de tournures anglaises qui passent mal en français. Et c'est gratuit, sans limite annoncée, hébergé en Europe. Pour une PME française qui s'inquiète de savoir où partent ses données clients, c'est l'argument qui fait la différence.",
-    scores: { puissance: 4.4, facilite: 4.7, gratuit: 4.9, pme: 4.6 },
+    name: "Mistral Le Chat (Gratuit)",
+    slug: "mistral-chat",
+    tagline: "L'alternative française souveraine et gratuite",
+    description: "Mistral AI propose 'Le Chat' qui donne accès gratuitement à leurs meilleurs modèles (Large, Pi, etc.). C'est l'option préférée des entreprises qui cherchent une alternative européenne. L'interface est épurée, sans fioritures, et les performances sur le français sont souvent supérieures à ChatGPT sur des tâches de rédaction complexe. C'est un excellent choix pour les PME qui veulent garder un pied en Europe tout en profitant du top de l'IA mondiale.",
+    scores: { puissance: 4.5, facilite: 4.7, gratuit: 4.8, pme: 4.3 },
     globalScore: 4.5,
-    prix: "100% gratuit / Pro à 14,99€/mois",
-    essai: "Gratuit sans limite",
+    prix: "Totalement gratuit",
+    essai: "Accès libre immédiat",
     lien: "https://chat.mistral.ai",
     partenaire: false,
-    avantages: ["100% français & RGPD", "Gratuit sans limite", "Excellent en français", "Hébergement EU"],
-    inconvenients: ["Moins connu que ChatGPT", "Écosystème plus limité"],
-    ideal: "PME françaises, secteurs réglementés"
+    avantages: ["Souveraineté européenne", "Modèle Large disponible", "Excellent en français", "Très rapide"],
+    inconvenients: ["Moins d'outils annexes", "Pas d'app mobile native"],
+    ideal: "Entreprises soucieuses de la souveraineté"
   },
   {
     rank: 3,
-    name: "HubSpot CRM gratuit",
-    slug: "hubspot-gratuit",
-    tagline: "Le CRM IA le plus complet à zéro euro",
-    description: "La plupart des CRM gratuits sont des plans d'appel avec des murs partout. HubSpot CRM gratuit, c'est différent. Contacts illimités. Pipeline de vente. Emails de suivi. Formulaires sur votre site. Live chat. Tout ça sans payer un euro. On l'a installé pour une PME de 3 commerciaux — en deux heures ils avaient leurs 400 contacts importés, un pipeline configuré et leurs premiers emails de relance programmés. Les fonctions IA basiques sont là aussi : résumé d'appel, suggestion de follow-up. Suffisant pour démarrer.",
-    scores: { puissance: 4.3, facilite: 4.6, gratuit: 4.8, pme: 4.7 },
-    globalScore: 4.4,
-    prix: "Gratuit à vie / Pro à 90€/mois",
-    essai: "Gratuit sans limite de temps",
-    lien: "https://hubspot.com",
+    name: "Notion AI (Plan Free)",
+    slug: "notion-ai-free",
+    tagline: "L'IA intégrée là où vous travaillez déjà",
+    description: "Notion est déjà utilisé par énormément de PME pour la gestion de projet. Leur IA permet de résumer des comptes-rendus de réunion, corriger des textes ou générer des idées directement dans vos pages. Le plan gratuit est limité (nombre de réponses IA), mais il est extrêmement utile pour voir comment l'IA peut s'insérer dans votre flux de travail quotidien sans changer d'onglet.",
+    scores: { puissance: 4.0, facilite: 5.0, gratuit: 3.5, pme: 4.8 },
+    globalScore: 4.3,
+    prix: "Inclus avec limites / 10€/mois",
+    essai: "Quelques réponses offertes",
+    lien: "https://notion.so",
     partenaire: false,
-    avantages: ["CRM complet gratuit", "Contacts illimités", "Email + pipeline inclus", "IA basique incluse"],
-    inconvenients: ["Fonctions IA avancées payantes", "Logo HubSpot sur les outils gratuits"],
-    ideal: "PME < 5 commerciaux, démarrage CRM"
+    avantages: ["Intégration parfaite", "Pas d'outil en plus", "Gain de temps rédactionnel", "Contextuel"],
+    inconvenients: ["Vite limité en gratuit", "IA moins 'intelligente'"],
+    ideal: "PME utilisant déjà Notion"
   },
   {
     rank: 4,
-    name: "Make.com (plan gratuit)",
-    slug: "make-gratuit",
-    tagline: "Automatisez vos premiers workflows sans payer",
-    description: "1 000 opérations par mois, c'est moins que ça en a l'air — mais ça permet de faire tourner 2 ou 3 automatisations simples sans payer. Un formulaire de contact qui s'envoie dans HubSpot, une commande qui met à jour un Google Sheets, une alerte Slack quand un client répond à un email. On a testé pendant un mois avec ce plan gratuit : largement suffisant pour comprendre si l'automatisation apporte de la valeur dans votre contexte, avant de passer au plan payant à 9€.",
-    scores: { puissance: 4.2, facilite: 4.3, gratuit: 4.5, pme: 4.4 },
-    globalScore: 4.3,
-    prix: "Gratuit (1 000 ops/mois) / Pro à 9$/mois",
-    essai: "Gratuit sans CB",
-    lien: "https://www.make.com/en/register?pc=lesoutilsia",
+    name: "HubSpot AI (Free Tools)",
+    slug: "hubspot-ai-free",
+    tagline: "Le CRM gratuit dopé à l'intelligence artificielle",
+    description: "HubSpot a intégré l'IA partout dans sa version gratuite. Génération de brouillons d'emails commerciaux, aide à la rédaction de blogs, et surtout nettoyage automatique de votre base de données. Pour une PME qui veut un CRM structuré sans payer des milliers d'euros de licence, c'est l'outil le plus complet du marché aujourd'hui.",
+    scores: { puissance: 3.8, facilite: 4.2, gratuit: 4.5, pme: 4.6 },
+    globalScore: 4.1,
+    prix: "Outils CRM gratuits",
+    essai: "Gratuit à vie",
+    lien: "https://hubspot.com",
     partenaire: false,
-    avantages: ["1 000 opérations gratuites", "1 500+ intégrations", "Sans code", "Upgrade progressif"],
-    inconvenients: ["1 000 ops vite atteintes", "Courbe d'apprentissage"],
-    ideal: "PME qui veulent tester l'automatisation"
+    avantages: ["CRM très puissant", "Aide à la vente réelle", "Marketing automation", "Support client IA"],
+    inconvenients: ["Configuration complexe", "Ventes agressives d'upsell"],
+    ideal: "Équipes commerciales en PME"
   },
   {
     rank: 5,
-    name: "Notion AI (essai gratuit)",
-    slug: "notion-ai-gratuit",
-    tagline: "L'IA intégrée à votre espace de travail, 20 essais offerts",
-    description: "20 utilisations gratuites, c'est vite fait. Mais c'est suffisant pour comprendre si Notion AI va vous changer la vie ou pas. Résumez une réunion de 45 minutes en 3 points clés. Reformulez un email trop agressif avant de l'envoyer. Générez un plan d'article à partir de quelques notes. Si vous utilisez déjà Notion tous les jours, l'IA est à portée d'un raccourci clavier — pas besoin d'ouvrir un nouvel onglet. C'est souvent comme ça qu'on commence à vraiment utiliser l'IA : par le plus petit chemin de résistance.",
-    scores: { puissance: 3.9, facilite: 4.9, gratuit: 3.8, pme: 4.2 },
+    name: "Make.com (Plan Free)",
+    slug: "make-gratuit",
+    tagline: "Automatisez tout gratuitement (ou presque)",
+    description: "Make permet de connecter vos outils entre eux. Le plan gratuit offre 1000 opérations par mois, ce qui est suffisant pour des automatisations simples : par exemple, envoyer un mail automatique quand un formulaire est rempli, ou sauvegarder vos factures reçues dans Google Drive. C'est l'outil 'cerveau' de votre entreprise qui travaille pendant que vous dormez.",
+    scores: { puissance: 4.9, facilite: 3.0, gratuit: 4.0, pme: 4.4 },
     globalScore: 4.0,
-    prix: "20 essais gratuits / IA à 10$/mois",
-    essai: "20 requêtes offertes",
-    lien: "https://notion.so",
-    partenaire: false,
-    avantages: ["Intégré à Notion", "Zéro friction", "Interface simple", "Résumé de documents"],
-    inconvenients: ["Seulement 20 essais gratuits", "Nécessite Notion"],
-    ideal: "Équipes déjà sur Notion"
+    prix: "Gratuit jusqu'à 1000 ops",
+    essai: "Plan Free à vie",
+    lien: "https://www.make.com/en/register?pc=lesoutilsia",
+    partenaire: true,
+    avantages: ["Possibilités infinies", "Connecte 1000+ outils", "Logique visuelle", "Fiabilité"],
+    inconvenients: ["Courbe d'apprentissage", "Terminologie technique"],
+    ideal: "Automatiser les tâches répétitives"
   }
 ];
 
@@ -98,53 +98,21 @@ const scoreLabels: { [key: string]: string } = {
   puissance: 'Puissance',
   facilite: 'Facilité',
   gratuit: 'Gratuité',
-  pme: 'Adapté PME'
+  pme: 'Usage PME'
 };
 ---
 
 <BaseLayout title={title} description={description}>
-
-  <Fragment slot="head">
-    <meta property="og:type" content="website" />
-
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "name": "Meilleurs outils IA gratuits pour PME 2026",
-      "description": description,
-      "numberOfItems": tools.length,
-      "itemListElement": tools.map((t, i) => ({
-        "@type": "ListItem",
-        "position": i + 1,
-        "name": t.name,
-        "url": t.lien
-      }))
-    })} />
-
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://lesoutils-ia.fr/" },
-        { "@type": "ListItem", "position": 2, "name": "Comparatifs", "item": "https://lesoutils-ia.fr/comparatifs" },
-        { "@type": "ListItem", "position": 3, "name": "IA gratuit pour PME" }
-      ]
-    })} />
-  </Fragment>
-
   <style>
     .comp-page { padding-top: 56px; }
     .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
     .breadcrumb { padding: 1.2rem 0 0; display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text-muted); flex-wrap: wrap; }
-    .breadcrumb a:hover { color: var(--accent); }
-    .breadcrumb-sep { opacity: .4; }
     .comp-header { padding: 2rem 0 2.5rem; border-bottom: 1px solid var(--border); }
     .comp-cat-label { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); background: var(--accent-dim); padding: 4px 10px; border-radius: 3px; display: inline-block; margin-bottom: 1rem; }
     .comp-title { font-family: var(--font-display); font-size: clamp(26px, 4vw, 42px); font-weight: 800; line-height: 1.2; letter-spacing: -0.5px; margin-bottom: 1rem; }
     .comp-subtitle { font-size: 16px; color: var(--text-mid); line-height: 1.65; max-width: 680px; margin-bottom: 1.5rem; }
     .comp-meta { display: flex; align-items: center; gap: 1.5rem; font-size: 12px; color: var(--text-muted); flex-wrap: wrap; }
     .comp-meta-item { display: flex; align-items: center; gap: 6px; }
-    .comp-meta-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--accent); display: inline-block; }
     .comp-body { display: grid; grid-template-columns: 1fr 280px; gap: 3.5rem; padding: 2.5rem 0 4rem; align-items: start; }
     @media (max-width: 860px) { .comp-body { grid-template-columns: 1fr; gap: 2rem; } }
     .tools-list { display: flex; flex-direction: column; gap: 1.5rem; }
@@ -171,19 +139,19 @@ const scoreLabels: { [key: string]: string } = {
     .score-bar-wrap { height: 3px; background: var(--border); border-radius: 2px; margin-bottom: 4px; }
     .score-bar { height: 3px; border-radius: 2px; }
     .score-val { font-family: var(--font-display); font-size: 13px; font-weight: 700; }
-    .tool-bottom { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; padding: 1.2rem 1.4rem 1.4rem; }
-    @media (max-width: 640px) { .tool-bottom { grid-template-columns: 1fr; gap: 0.8rem; } }
+    .tool-bottom { display: grid; grid-template-columns: 1fr 1fr 200px; gap: 1.5rem; padding: 1.2rem 1.4rem 1.4rem; }
+    @media (max-width: 640px) { .tool-bottom { grid-template-columns: 1fr; gap: 1.2rem; } }
     .pros-cons-title { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.5rem; }
     .pros-list, .cons-list { list-style: none; display: flex; flex-direction: column; gap: 4px; }
     .pros-list li, .cons-list li { font-size: 12px; color: var(--text-mid); display: flex; align-items: flex-start; gap: 6px; line-height: 1.5; }
     .pros-list li::before { content: '+'; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
     .cons-list li::before { content: '−'; color: var(--text-muted); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
     .info-price { font-family: var(--font-display); font-size: 14px; font-weight: 700; margin-bottom: 3px; }
-    .info-essai { font-size: 12px; color: var(--accent); margin-bottom: 8px; }
+    .info-essai { font-size: 12px; color: var(--accent); margin-bottom: 12px; }
     .info-ideal-label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 3px; }
     .info-ideal { font-size: 12px; color: var(--text-mid); line-height: 1.5; }
-    .tool-cta-wrap { display: flex; align-items: flex-end; }
-    .tool-cta { display: inline-block; width: 100%; text-align: center; padding: 10px 18px; border-radius: 5px; font-family: var(--font-display); font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; transition: opacity .15s; }
+    .tool-cta-column { display: flex; flex-direction: column; justify-content: flex-end; }
+    .tool-cta { display: inline-block; width: 100%; text-align: center; padding: 10px 18px; border-radius: 5px; font-family: var(--font-display); font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; transition: opacity .15s; text-decoration: none; }
     .tool-cta.cta-primary { background: var(--accent); color: var(--accent-text); }
     .tool-cta.cta-secondary { background: var(--bg); border: 1px solid var(--border); color: var(--text-mid); }
     .tool-cta:hover { opacity: .85; }
@@ -191,7 +159,7 @@ const scoreLabels: { [key: string]: string } = {
     @media (max-width: 860px) { .sidebar { position: static; } }
     .sidebar-widget { background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; padding: 1.4rem; }
     .sidebar-widget-title { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; text-align: center; }
-    .quick-rank-item { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border); transition: opacity .15s; text-decoration: none; color: inherit; }
+    .quick-rank-item { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border); cursor: pointer; transition: opacity .15s; text-decoration: none; color: inherit; }
     .quick-rank-item:last-child { border-bottom: none; padding-bottom: 0; }
     .quick-rank-item:hover { opacity: .75; }
     .qr-num { font-family: var(--font-display); font-size: 11px; font-weight: 800; color: var(--text-muted); width: 18px; flex-shrink: 0; }
@@ -204,8 +172,7 @@ const scoreLabels: { [key: string]: string } = {
     .method-criteria li::before { content: '→'; color: var(--accent); flex-shrink: 0; }
     .nl-title { font-family: var(--font-display); font-size: 14px; font-weight: 700; margin-bottom: 0.5rem; }
     .nl-text { font-size: 13px; color: var(--text-mid); line-height: 1.6; margin-bottom: 1rem; }
-    .nl-input { width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 5px; padding: 9px 12px; font-size: 13px; color: var(--text); margin-bottom: 8px; outline: none; transition: border-color .15s; }
-    .nl-input:focus { border-color: var(--accent); }
+    .nl-input { width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 5px; padding: 9px 12px; font-size: 13px; color: var(--text); margin-bottom: 8px; outline: none; }
     .nl-btn { width: 100%; background: var(--accent); color: var(--accent-text); font-family: var(--font-display); font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 10px; border-radius: 5px; border: none; cursor: pointer; }
     .comp-footer-note { border-top: 1px solid var(--border); padding: 2rem 0; font-size: 12px; color: var(--text-muted); line-height: 1.7; max-width: 720px; }
     .comp-footer-note a { color: var(--accent); }
@@ -213,24 +180,20 @@ const scoreLabels: { [key: string]: string } = {
 
   <div class="comp-page">
     <div class="container">
-
       <nav class="breadcrumb">
-        <a href="/">Accueil</a>
-        <span class="breadcrumb-sep">›</span>
-        <a href="/comparatifs">Comparatifs</a>
-        <span class="breadcrumb-sep">›</span>
-        <span>IA gratuit pour PME</span>
+        <a href="/">Accueil</a> <span class="opacity-40">/</span>
+        <a href="/comparatifs">Comparatifs</a> <span class="opacity-40">/</span>
+        <span>Outils IA gratuits</span>
       </nav>
 
       <header class="comp-header">
         <span class="comp-cat-label">Comparatif</span>
-        <h1 class="comp-title">Meilleurs outils IA gratuits<br>pour PME — 2026</h1>
-        <p class="comp-subtitle">ChatGPT, Mistral, HubSpot CRM, Make.com, Notion AI — les 5 meilleurs outils IA disponibles gratuitement pour une PME française en 2026. Ce qui est vraiment gratuit, ce que ça fait, et à quel moment passer à la version payante.</p>
+        <h1 class="comp-title">Meilleurs outils IA gratuits pour PME<br>— Comparatif 2026</h1>
+        <p class="comp-subtitle">On a testé les plans gratuits des meilleures solutions IA. Voici ce qui est vraiment utilisable en entreprise sans sortir la carte bleue.</p>
         <div class="comp-meta">
-          <span class="comp-meta-item"><span class="comp-meta-dot"></span> Mis à jour mars 2026</span>
-          <span class="comp-meta-item"><span class="comp-meta-dot"></span> 5 outils testés</span>
-          <span class="comp-meta-item"><span class="comp-meta-dot"></span> 4 critères notés</span>
-          <span class="comp-meta-item"><span class="comp-meta-dot"></span> 9 min de lecture</span>
+          <span class="comp-meta-item">Mis à jour mars 2026</span>
+          <span class="comp-meta-item">5 solutions retenues</span>
+          <span class="comp-meta-item">8 min de lecture</span>
         </div>
       </header>
 
@@ -238,12 +201,11 @@ const scoreLabels: { [key: string]: string } = {
         <main>
           <div class="tools-list">
             {tools.map(tool => (
-              <div class={`tool-card${tool.partenaire ? ' is-partenaire' : ''}`} id={tool.slug}>
+              <div class={`tool-card ${tool.partenaire ? 'is-partenaire' : ''}`} id={tool.slug}>
                 <div class="tool-card-top">
                   <div class="tool-rank-row">
-                    <span class={`tool-rank${tool.rank === 1 ? ' rank-1' : ''}`}>N°{tool.rank}</span>
-                    {tool.partenaire && <span class="badge-partenaire">Partenaire</span>}
-                    {!tool.partenaire && <span class="badge-affilie">Lien affilié</span>}
+                    <span class={`tool-rank ${tool.rank === 1 ? 'rank-1' : ''}`}>N°{tool.rank}</span>
+                    {tool.partenaire ? <span class="badge-partenaire">Partenaire</span> : <span class="badge-affilie">Lien affilié</span>}
                   </div>
                   <div class="tool-name-row">
                     <h2 class="tool-name">{tool.name}</h2>
@@ -259,7 +221,7 @@ const scoreLabels: { [key: string]: string } = {
                 <div class="scores-grid">
                   {Object.entries(tool.scores).map(([key, val]) => (
                     <div class="score-item">
-                      <div class="score-label">{scoreLabels[key] || key}</div>
+                      <div class="score-label">{scoreLabels[key]}</div>
                       <div class="score-bar-wrap">
                         <div class="score-bar" style={`width: ${(val/5)*100}%; background: ${scoreColor(val)}`}></div>
                       </div>
@@ -271,45 +233,42 @@ const scoreLabels: { [key: string]: string } = {
                 <div class="tool-bottom">
                   <div>
                     <div class="pros-cons-title">Points forts</div>
-                    <ul class="pros-list">
-                      {tool.avantages.map(a => <li>{a}</li>)}
-                    </ul>
+                    <ul class="pros-list">{tool.avantages.map(a => <li>{a}</li>)}</ul>
                   </div>
                   <div>
                     <div class="pros-cons-title">Limites</div>
-                    <ul class="cons-list">
-                      {tool.inconvenients.map(i => <li>{i}</li>)}
-                    </ul>
+                    <ul class="cons-list">{tool.inconvenients.map(i => <li>{i}</li>)}</ul>
                     <div style="margin-top: 1rem;">
                       <div class="info-ideal-label">Idéal pour</div>
                       <div class="info-ideal">{tool.ideal}</div>
                     </div>
                   </div>
-                  <div>
+                  <div class="tool-cta-column">
                     <div class="info-price">{tool.prix}</div>
                     <div class="info-essai">{tool.essai}</div>
-                    <div class="tool-cta-wrap">
-                      <a href={tool.lien} target="_blank" rel="nofollow noopener" class={`tool-cta ${tool.partenaire ? 'cta-primary' : 'cta-secondary'}`}>
-                        {tool.partenaire ? 'Essayer gratuitement →' : 'Voir le site →'}
-                      </a>
-                    </div>
+                    <a href={tool.lien} target="_blank" rel="nofollow noopener" class={`tool-cta ${tool.partenaire ? 'cta-primary' : 'cta-secondary'}`}>
+                      Voir le site →
+                    </a>
                   </div>
                 </div>
               </div>
             ))}
           </div>
-
+          
           <div class="comp-footer-note">
-            <strong>Note éditoriale</strong> — Comparatif mis à jour régulièrement. Certains liens sont affiliés. Le classement reflète nos tests indépendants. Les outils marqués "Partenaire" bénéficient d'une mise en avant commerciale mais leur position tient compte de leur performance réelle. <a href="/mentions-legales">En savoir plus</a>.
+            <strong>Note éditoriale</strong> — Ce comparatif met en avant les solutions offrant une réelle valeur en version gratuite. Certains liens sont affiliés. <a href="/mentions-legales">En savoir plus</a>.
           </div>
         </main>
 
-                <aside class="sidebar">
+        <aside class="sidebar">
           <div class="sidebar-widget">
             <div class="sidebar-widget-title">Classement rapide</div>
             {tools.map(t => (
-              <a href={t.partenaire ? t.lien : `#${t.slug}`} target={t.partenaire ? "_blank" : "_self"} rel={t.partenaire ? "nofollow noopener" : ""} class="quick-rank-item">
-                <span class={`qr-num${t.rank === 1 ? ' rank-1' : ''}`}>{`#${t.rank}`}</span>
+              <a href={t.partenaire ? t.lien : `#${t.slug}`} 
+                 target={t.partenaire ? "_blank" : "_self"} 
+                 rel={t.partenaire ? "nofollow noopener" : ""} 
+                 class="quick-rank-item">
+                <span class={`qr-num ${t.rank === 1 ? 'rank-1' : ''}`}>{`#${t.rank}`}</span>
                 <span class="qr-name">{t.name}</span>
                 <span class="qr-score" style={`color:${scoreColor(t.globalScore)}`}>{t.globalScore.toFixed(1)}</span>
               </a>
@@ -332,9 +291,11 @@ const scoreLabels: { [key: string]: string } = {
             <p class="nl-text">La sélection des meilleurs outils IA chaque lundi dans votre boîte mail.</p>
             <form action="https://2224bad4.sibforms.com/serve/MUIFAA5FZ9wsz8jYxQoLCDh0LwleB1JzinLPJ8-XdB2OVm1lXNjNpuVAZxqsMhUxpLQzP4qmL8FdgRRwFog-CWPz4rAQJspvW9Vumzyfg4PvOaNHtUe7pPeOEChXfHsSn58QNgN1bJruhL1EgT5UjU1ub9wi4KPai9kOQOfii2viH8r9IM2YY3c2bdF5kfXolnpmvlJm5dTrmPAlnw==" method="POST">
               <input type="email" name="EMAIL" class="nl-input" placeholder="votre@email.fr" required />
-              <button type="submit" class="nl-btn">Je m'abonne</button>
-              <input type="text" name="email_address_check" value="" style="display:none;">
-              <input type="hidden" name="locale" value="fr">
+              <button type="submit" class="nl-btn">S'abonner</button>
             </form>
           </div>
         </aside>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
