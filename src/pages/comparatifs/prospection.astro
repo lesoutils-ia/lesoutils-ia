@@ -1,8 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-const title = "Lemlist vs Waalaxy — Meilleur outil prospection IA 2026";
-const description = "Lemlist, Waalaxy, Hunter, Apollo, Magileads — comparatif des meilleurs outils de prospection IA pour PME françaises. Taux de réponse réels, prix, verdict honnête.";
+const title = "Lemlist vs Magileads — Meilleur outil prospection IA 2026";
+const description = "Lemlist, Magileads, Waalaxy, Apollo, Hunter — comparatif des meilleurs outils de prospection IA pour PME françaises. Taux de réponse réels, prix, verdict honnête.";
 
 const tools = [
   {
@@ -23,6 +23,22 @@ const tools = [
   },
   {
     rank: 2,
+    name: "Magileads",
+    slug: "magileads",
+    tagline: "L'intelligence artificielle au service de la donnée B2B",
+    description: "Magileads est une plateforme d'acquisition 'Data-First'. Sa force réside dans sa base de données native de 20 millions de contacts B2B français. L'IA analyse vos meilleurs clients pour identifier des 'jumeaux statistiques' (Lookalike) dans sa base. Pour une PME qui veut prospecter sans acheter de fichiers à part, c'est la solution la plus intégrée du marché français.",
+    scores: {reponse: 4.7, ia: 4.8, delivra: 4.6, rapport: 4.5},
+    globalScore: 4.6,
+    prix: "Sur devis (ROI élevé)",
+    essai: "Démo personnalisée",
+    lien: "https://magileads.com",
+    partenaire: false,
+    avantages: ["Base de données 20M contacts", "IA de ciblage prédictif", "Solution tout-en-un française", "Accompagnement expert"],
+    inconvenients: ["Interface très complète", "Nécessite une stratégie claire"],
+    ideal: "PME, Startups, Directions Commerciales"
+  },
+  {
+    rank: 3,
     name: "Waalaxy",
     slug: "waalaxy",
     tagline: "L'outil LinkedIn le plus simple du marché",
@@ -38,7 +54,7 @@ const tools = [
     ideal: "Freelances, petites PME, débutants"
   },
   {
-    rank: 3,
+    rank: 4,
     name: "Apollo.io",
     slug: "apollo",
     tagline: "La base de données et l'outil d'envoi tout-en-un",
@@ -54,7 +70,7 @@ const tools = [
     ideal: "Équipes Sales, Export, Growth Marketers"
   },
   {
-    rank: 4,
+    rank: 5,
     name: "Hunter.io",
     slug: "hunter",
     tagline: "Le spécialiste de la délivrabilité et de la donnée propre",
@@ -68,22 +84,6 @@ const tools = [
     avantages: ["Délivrabilité parfaite", "Données ultra-fiables", "Simple et efficace", "Extension Chrome utile"],
     inconvenients: ["Moins de fonctions IA créatives", "Pas de LinkedIn natif", "Limité en volume gratuit"],
     ideal: "Prospection email pure, besoins de fiabilité"
-  },
-  {
-    rank: 5,
-    name: "Magileads",
-    slug: "magileads",
-    tagline: "L'intelligence artificielle au service de la donnée B2B",
-    description: "Magileads est une plateforme d'acquisition 'Data-First'. Sa force réside dans sa base de données native de 20 millions de contacts B2B français. L'IA analyse vos meilleurs clients pour identifier des 'jumeaux statistiques' (Lookalike) dans sa base. Pour une PME qui veut prospecter sans acheter de fichiers à part, c'est la solution la plus intégrée du marché français.",
-    scores: {reponse: 4.7, ia: 4.8, delivra: 4.6, rapport: 4.5},
-    globalScore: 4.6,
-    prix: "Sur devis (ROI élevé)",
-    essai: "Démo personnalisée",
-    lien: "https://magileads.com",
-    partenaire: false,
-    avantages: ["Base de données 20M contacts", "IA de ciblage prédictif", "Solution tout-en-un française", "Accompagnement expert"],
-    inconvenients: ["Interface très complète", "Nécessite une stratégie claire"],
-    ideal: "PME, Startups, Directions Commerciales"
   }
 ];
 
@@ -102,7 +102,7 @@ const scoreLabels: { [key: string]: string } = {"reponse": "Taux réponse", "ia"
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "ItemList",
-      "name": "Lemlist vs Waalaxy — Meilleur outil prospection IA 2026",
+      "name": "Lemlist vs Magileads — Meilleur outil prospection IA 2026",
       "numberOfItems": tools.length,
       "itemListElement": tools.map((t, i) => ({ "@type": "ListItem", "position": i + 1, "name": t.name, "url": t.lien }))
     })} />
@@ -130,8 +130,8 @@ const scoreLabels: { [key: string]: string } = {"reponse": "Taux réponse", "ia"
       </nav>
       <header class="comp-header">
         <span class="comp-cat-label">Comparatif</span>
-        <h1 class="comp-title">Lemlist vs Waalaxy vs Magileads<br>— Meilleur outil prospection IA 2026</h1>
-        <p class="comp-subtitle">Lemlist, Waalaxy, Apollo, Hunter, Magileads — cinq outils de prospection IA testés en conditions réelles. Taux de réponse mesurés, qualité de personnalisation, et le verdict final pour votre acquisition B2B.</p>
+        <h1 class="comp-title">Lemlist vs Magileads vs Waalaxy<br>— Meilleur outil prospection IA 2026</h1>
+        <p class="comp-subtitle">Lemlist, Magileads, Waalaxy, Apollo, Hunter — cinq outils de prospection IA testés en conditions réelles. Taux de réponse mesurés, qualité de personnalisation, et le verdict final pour votre acquisition B2B.</p>
         <div class="comp-meta">
           <span class="comp-meta-item"><span class="comp-meta-dot"></span>Mis à jour mars 2026</span>
           <span class="comp-meta-item"><span class="comp-meta-dot"></span>5 outils testés</span>
@@ -225,7 +225,7 @@ const scoreLabels: { [key: string]: string } = {"reponse": "Taux réponse", "ia"
           <div class="sidebar-widget">
             <div class="nl-title">Un outil IA par semaine</div>
             <p class="nl-text">La sélection des meilleurs outils IA chaque lundi dans votre boîte mail.</p>
-            <form action="https://2224bad4.sibforms.com/serve/..." method="POST">
+            <form action="https://2224bad4.sibforms.com/serve/MUIFAA5FZ9wsz8jYxQoLCDh0LwleB1JzinLPJ8-XdB2OVm1lXNjNpuVAZxqsMhUxpLQzP4qmL8FdgRRwFog-CWPz4rAQJspvW9Vumzyfg4PvOaNHtUe7pPeOEChXfHsSn58QNgN1bJruhL1EgT5UjU1ub9wi4KPai9kOQOfii2viH8r9IM2YY3c2bdF5kfXolnpmvlJm5dTrmPAlnw==" method="POST">
               <input type="email" name="EMAIL" class="nl-input" placeholder="votre@email.fr" required />
               <button type="submit" class="nl-btn">Je m'abonne</button>
               <input type="text" name="email_address_check" value="" style="display:none;">
