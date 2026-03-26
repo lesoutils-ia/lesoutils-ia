@@ -52,6 +52,38 @@ const tools = [
     avantages: ["Hébergement possible en France", "Open-source", "Noeuds IA très avancés", "Pas de coût à l'exécution"],
     inconvenients: ["Nécessite des bases techniques", "Interface moins 'grand public'"],
     ideal: "PME avec profil technique ou gros besoins en sécurité."
+  },
+  {
+    rank: 4,
+    name: "Activepieces",
+    slug: "activepieces",
+    tagline: "L'alternative Make.com 100% open source",
+    description: "Activepieces est l'étoile montante du no-code open source. L'interface ressemble énormément à celle de Make — même logique de blocs et d'éditeur visuel — mais avec une philosophie plus ouverte. Pour l'instant, il y a moins de connecteurs que chez les géants, mais les essentiels (Gmail, Slack, OpenAI) sont là. C'est l'option parfaite pour ceux qui cherchent un juste milieu entre la facilité d'un outil cloud et la liberté de l'auto-hébergement.",
+    scores: { puissance: 4.1, facilite: 4.2, rapport: 4.8, fiabilite: 4.0 },
+    globalScore: 4.1,
+    prix: "Gratuit (self-hosted) / 15$/mois",
+    essai: "Gratuit en auto-hébergement",
+    lien: "https://activepieces.com",
+    partenaire: false,
+    avantages: ["Open source", "Interface familière", "Auto-hébergeable", "Communauté active"],
+    inconvenients: ["Moins de connecteurs", "Encore jeune"],
+    ideal: "Alternative budget à Make pour équipes tech."
+  },
+  {
+    rank: 5,
+    name: "Power Automate",
+    slug: "power-automate",
+    tagline: "Le choix naturel pour l'écosystème Microsoft",
+    description: "Si votre PME tourne déjà sous Microsoft 365, Power Automate est souvent déjà inclus dans votre abonnement. C'est un outil massif, ultra-robuste, mais avec une interface beaucoup plus 'entreprise' et moins sexy que Make ou Zapier. Son point fort imbattable : l'intégration native avec Excel, Teams et SharePoint. Avec l'arrivée de Copilot, on peut désormais créer des flux simplement en les décrivant en français.",
+    scores: { puissance: 4.3, facilite: 3.9, rapport: 4.4, fiabilite: 4.5 },
+    globalScore: 4.0,
+    prix: "Inclus dans M365 Business",
+    essai: "Inclus dans Microsoft 365",
+    lien: "https://powerautomate.microsoft.com",
+    partenaire: false,
+    avantages: ["Intégration Microsoft native", "Inclus dans M365", "Sécurité entreprise", "Copilot IA intégré"],
+    inconvenients: ["Interface rigide", "Limité hors Microsoft"],
+    ideal: "PME équipées à 100% chez Microsoft."
   }
 ];
 
@@ -157,11 +189,11 @@ const scoreLabels: { [key: string]: string } = {
       <header class="comp-header">
         <span class="comp-cat-label">Comparatif Automatisation</span>
         <h1 class="comp-title">Make.com vs Zapier — Quel outil d'automatisation IA choisir en 2026 ?</h1>
-        <p class="comp-subtitle">On a comparé les 3 leaders de l'automatisation pour les PME. Puissance, prix et facilité d'usage — voici notre verdict sans langue de bois.</p>
+        <p class="comp-subtitle">On a comparé les 5 leaders de l'automatisation pour les PME. Puissance, prix et facilité d'usage — voici notre verdict sans langue de bois.</p>
         <div class="comp-meta">
           <span class="comp-meta-item">Dossier mis à jour mars 2026</span>
-          <span class="comp-meta-item">3 plateformes testées</span>
-          <span class="comp-meta-item">15 min de lecture</span>
+          <span class="comp-meta-item">5 plateformes testées</span>
+          <span class="comp-meta-item">18 min de lecture</span>
         </div>
       </header>
 
