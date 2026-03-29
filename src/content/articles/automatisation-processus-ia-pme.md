@@ -69,8 +69,21 @@ Pour aller plus loin et choisir les bons partenaires de formation, consultez not
 Pas forcément. Comme indiqué dans notre guide tarifaire, un solo peut démarrer avec un budget de 20€ à 39€/mois. Pour une PME, le retour sur investissement est généralement atteint en moins de 3 mois grâce au temps gagné.
 
 **Faut-il savoir coder pour automatiser sa boîte ?**
-Non. Les outils "No-Code" comme Make ou Zapier sont conçus pour être utilisés par des profils métiers (RH, Marketing, Sales). Une logique rigoureuse est plus importante que des compétences en programmation.
+Non. Les outils "No-Code" comme Make ou Zapier sont coups pour être utilisés par des profils métiers (RH, Marketing, Sales). Une logique rigoureuse est plus importante que des compétences en programmation.
 
 **L'IA va-t-elle remplacer mes employés ?**
 Elle va remplacer leurs tâches les plus ennuyeuses. L'expérience montre que l'automatisation permet souvent aux employés de monter en compétences et de se concentrer sur des missions plus gratifiantes, réduisant ainsi le turnover.
 
+---
+
+### Passez à l'action : Confiez votre automatisation à un expert
+
+Vous souhaitez mettre en place l'un des workflows cités dans ce guide ou auditer vos processus actuels ?
+
+**Florian Lahor**, fondateur de **Les Outils IA** et consultant expert en solutions No-Code (**Make**, **Albato**, **Relay**), accompagne les dirigeants dans leur transition vers une structure "IA-native".
+
+* Audit personnalisé de vos tâches chronophages.
+* Déploiement de workflows sécurisés et RGPD.
+* Ancrage de données (Grounding) pour des IA sans hallucinations.
+
+👉 **[Consulter mes disponibilités et réserver une mission sur Malt](https://www.malt.fr/profile/florianlahor)**
