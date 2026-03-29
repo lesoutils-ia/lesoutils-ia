@@ -79,7 +79,7 @@ const tools = [
     globalScore: 4.3,
     prix: "À partir de 18$/mois",
     essai: "Essai gratuit disponible",
-    lien: "https://www.relay.app",
+    lien: "https://www.relay.app/?via=Lesoutilsia",
     partenaire: false,
     avantages: ["Validation humaine native", "Interface utilisateur moderne", "IA profondément intégrée", "Idéal pour les flux critiques"],
     inconvenients: ["Écosystème encore jeune", "Moins d'apps que le leader Zapier"],
@@ -264,9 +264,9 @@ const scoreLabels: { [key: string]: string } = {
           <div class="sidebar-widget">
             <div class="sidebar-widget-title">Classement rapide</div>
             {tools.map(t => (
-              <a href={(t.partenaire || t.slug === 'n8n' || t.slug === 'albato') ? t.lien : `#${t.slug}`} 
-                 target={(t.partenaire || t.slug === 'n8n' || t.slug === 'albato') ? "_blank" : "_self"} 
-                 rel={(t.partenaire || t.slug === 'n8n' || t.slug === 'albato') ? "nofollow noopener" : ""} 
+              <a href={(t.partenaire || t.slug === 'n8n' || t.slug === 'albato' || t.slug === 'relay-app') ? t.lien : `#${t.slug}`} 
+                 target={(t.partenaire || t.slug === 'n8n' || t.slug === 'albato' || t.slug === 'relay-app') ? "_blank" : "_self"} 
+                 rel={(t.partenaire || t.slug === 'n8n' || t.slug === 'albato' || t.slug === 'relay-app') ? "nofollow noopener" : ""} 
                  class="quick-rank-item">
                 <span class={`qr-num ${t.rank === 1 ? 'rank-1' : ''}`}>{`#${t.rank}`}</span>
                 <span class="qr-name">{t.name}</span>
