@@ -2,19 +2,17 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
-// On récupère tous les articles qui ne sont pas en brouillon
-const articles = await getCollection('articles', ({ data }) => !data.draft);
+// 1. On récupère tous les fichiers dans le dossier "articles"
+const allArticles = await getCollection('articles', ({ data }) => !data.draft);
 
-// On filtre pour ne garder que ceux qui contiennent "formation" dans leur catégorie
-const filtered = articles.filter(a => 
-  a.data.category && a.data.category.toLowerCase().includes('formation')
-);
+// 2. On filtre pour ne garder que ceux qui ont EXACTEMENT "Formation" dans le champ category du Markdown
+const formationArticles = allArticles.filter(article => {
+  // On passe en minuscule pour éviter les erreurs si tu écris "formation" ou "Formation"
+  return article.data.category && article.data.category.toLowerCase() === 'formation';
+});
 ---
 
-<BaseLayout 
-  title="Formations IA pour PME — Apprendre l'IA en 2026" 
-  description="Retrouvez nos analyses et guides sur les meilleures formations IA : financements CPF, programmes pour dirigeants et coaching automatisation."
->
+<BaseLayout title="Formations IA — lesoutils-ia.fr">
   <style>
     .page { padding-top: 56px; }
     .page-header { padding: 3rem 0 2rem; border-bottom: 1px solid var(--border); }
@@ -30,27 +28,21 @@ const filtered = articles.filter(a =>
     .article-row-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
     .article-row-meta { font-size: 12px; color: var(--text-muted); white-space: nowrap; }
     .empty-state { padding: 4rem 0; text-align: center; color: var(--text-muted); font-size: 15px; }
-    
-    /* Petit badge pour mettre en avant le CPF si besoin */
-    .highlight-badge { font-size: 9px; background: var(--accent-dim); color: var(--accent); padding: 2px 6px; border-radius: 4px; margin-left: 8px; vertical-align: middle; }
   </style>
 
   <div class="page">
     <div class="wrap">
       <div class="page-header">
         <div class="page-label">Apprentissage</div>
-        <h1 class="page-title">Formations & Montée en compétences</h1>
-        <p class="page-desc">Découvrez comment former vos équipes aux outils IA. Du financement CPF au coaching sur-mesure pour dirigeants.</p>
+        <h1 class="page-title">Formations IA</h1>
+        <p class="page-desc">Retrouvez tous nos articles répertoriés dans la catégorie Formation.</p>
       </div>
 
       <div class="articles-list">
-        {filtered.length > 0 ? filtered.map(a => (
+        {formationArticles.length > 0 ? formationArticles.map(a => (
           <a href={`/articles/${a.slug}`} class="article-row">
             <div>
-              <div class="article-row-cat">
-                {a.data.category}
-                {a.data.tags && a.data.tags.includes('CPF') && <span class="highlight-badge">Éligible CPF</span>}
-              </div>
+              <div class="article-row-cat">{a.data.category}</div>
               <div class="article-row-title">{a.data.title}</div>
               <div class="article-row-desc">{a.data.description}</div>
             </div>
@@ -58,12 +50,10 @@ const filtered = articles.filter(a =>
           </a>
         )) : (
           <div class="empty-state">
-            <p>Nos analyses de formations arrivent très bientôt.</p>
-            <p style="font-size: 13px; margin-top: 10px;">En attendant, consultez nos guides pratiques pour débuter seul.</p>
+            Aucun article trouvé avec la catégorie "Formation" dans le dossier articles.
           </div>
         )}
       </div>
     </div>
   </div>
 </BaseLayout>
-
