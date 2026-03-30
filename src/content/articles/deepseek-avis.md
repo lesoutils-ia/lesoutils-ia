@@ -1,7 +1,7 @@
 ---
 title: "Deepseek avis — test complet de l'IA chinoise 2026"
 description: "Notre test complet de Deepseek après 4 semaines d'utilisation intensive. L'IA chinoise qui a secoué le marché vaut-elle vraiment ChatGPT ? Verdict sans concession."
-category: "Comparatif"
+category: "Comparatifs"
 tags: ["deepseek avis", "Deepseek", "comparatif IA", "ChatGPT alternative"]
 author: "Équipe lesoutils-ia"
 authorInitials: "LI"
