@@ -156,7 +156,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         <li><a href="/comparatifs/ia-comptabilite">Comptabilité IA</a></li>
         <li><a href="/comparatifs/agents-ia">Agents IA pour PME</a></li>
         <li><a href="/comparatifs/ia-service-client">Service client IA</a></li>
-        <li><a href="/comparatifs/formation-ia">Formations IA — CPF</a></li>
+        <li><a href="/formation">Formations IA — CPF</a></li>
         <li><a href="/comparatifs/redaction-ia">Rédaction IA</a></li>
         <li><a href="/comparatifs/ia-pour-pme">IA gratuit pour PME</a></li>
       </ul>
@@ -166,7 +166,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       <ul class="footer-links">
         <li><a href="/guides">Guides pratiques</a></li>
         <li><a href="/actualites">Actualités IA</a></li>
-<li><a href="/actualites">Formation</a></li>
+        <li><a href="/formation">Formation</a></li>
         <li><a href="/newsletter">Newsletter</a></li>
       </ul>
     </div>
@@ -187,13 +187,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 </div>
 
 <script is:inline>
-  // SÉCURITÉ : On attend que le DOM soit chargé
   document.addEventListener('DOMContentLoaded', () => {
-    // On écoute TOUS les clics sur le document
     document.addEventListener('submit', async (e) => {
       const form = e.target;
-      
-      // On vérifie si c'est un formulaire qui pointe vers Brevo
       if (form && form.action && form.action.includes('sibforms.com')) {
         e.preventDefault();
         const btn = form.querySelector('button');
@@ -204,14 +200,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         btn.disabled = true;
 
         try {
-          // Envoi des données en arrière-plan
           await fetch(form.action, { 
             method: 'POST', 
             body: new FormData(form), 
             mode: 'no-cors' 
           });
-          
-          // Succès visuel sur le bouton
           btn.innerText = "MERCI !";
           btn.style.backgroundColor = "#fff";
           btn.style.color = "#000";
