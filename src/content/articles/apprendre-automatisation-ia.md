@@ -1,7 +1,7 @@
 ---
 title: "Apprendre l'automatisation IA — guide PME 2026"
 description: "Comment apprendre l'automatisation IA quand on n'est pas développeur. Les outils, les méthodes et les premiers workflows à mettre en place dans votre PME."
-category: "Guide"
+category: "Guides"
 tags: ["apprendre automatisation IA", "automatisation IA PME", "Make.com", "workflow IA", "no-code"]
 author: "Équipe lesoutils-ia"
 authorInitials: "LI"
