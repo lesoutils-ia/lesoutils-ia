@@ -23,35 +23,35 @@ const tools = [
   },
   {
     rank: 2,
-    name: "DALL-E 3 (ChatGPT)",
-    slug: "dalle",
-    tagline: "Le plus simple : l'IA qui comprend enfin ce que vous dites",
-    description: "DALL-E 3 a une force : il comprend le langage naturel. Pas besoin de connaître des codes techniques ou des paramètres complexes. Vous lui parlez comme à un humain dans ChatGPT, et il dessine. C'est l'outil parfait pour ceux qui ne veulent pas apprendre le 'prompt engineering'. La qualité est excellente pour les illustrations et le marketing, même si elle reste un cran en dessous de Leonardo pour le photoréalisme pur.",
-    scores: {qualite: 4.5, facilite: 4.9, droits: 4.5, rapport: 4.2},
-    globalScore: 4.5,
-    prix: "Inclus dans ChatGPT Plus (20$/mois)",
-    essai: "Via Bing Image Creator",
-    lien: "https://openai.com/dall-e-3",
+    name: "Kittl",
+    slug: "kittl",
+    tagline: "Le moteur de design IA tout-en-un pour le branding",
+    description: "Kittl n'est pas seulement un générateur d'images, c'est une plateforme de design complète propulsée par l'IA. Sa force réside dans sa capacité à intégrer des générations d'images directement dans des compositions complexes (logos, étiquettes, t-shirts). L'outil propose des fonctions de vectorisation automatique et de remplacement de texte via IA qui font gagner un temps précieux aux graphistes. Pour le branding et le e-commerce, Kittl est aujourd'hui supérieur à la simple génération brute.",
+    scores: {qualite: 4.5, facilite: 4.8, droits: 4.6, rapport: 4.5},
+    globalScore: 4.6,
+    prix: "Gratuit / Pro dès 10$/mois",
+    essai: "Utilisation gratuite disponible",
+    lien: "https://kittl.pxf.io/k44AGn",
     partenaire: false,
-    avantages: ["Compréhension du langage naturel", "Inclus dans ChatGPT", "Rapidité de génération", "Respect strict des consignes"],
-    inconvenients: ["Moins de contrôle technique", "Style parfois trop 'lisse'", "Nécessite ChatGPT Plus"],
-    ideal: "Débutants, Réseaux sociaux, Blogueurs"
+    avantages: ["Éditeur de design intégré", "Vectorisation IA immédiate", "Modèles de templates pros", "Export haute résolution"],
+    inconvenients: ["Focus plus design que photo", "Certains actifs sont payants"],
+    ideal: "E-commerçants, Graphistes, Créateurs de marques"
   },
   {
     rank: 3,
-    name: "Adobe Firefly",
-    slug: "firefly",
-    tagline: "L'IA sécurisée pour les entreprises et le print",
-    description: "Adobe a frappé fort avec Firefly en garantissant que toutes les images sont générées à partir de données libres de droits (Adobe Stock). C'est le seul outil qui offre une sécurité juridique totale pour les grandes entreprises. Son intégration directe dans Photoshop est révolutionnaire : vous pouvez étendre une image ou changer un vêtement en 3 secondes. Pour les pros de l'image, c'est un gain de temps massif au quotidien.",
-    scores: {qualite: 4.3, facilite: 4.5, droits: 4.9, rapport: 4.0},
+    name: "Imagine.art",
+    slug: "imagine-art",
+    tagline: "La polyvalence et le rendu artistique simplifié",
+    description: "Imagine.art se distingue par sa galerie communautaire inspirante et ses outils de retouche d'image accessibles. C'est l'outil idéal pour les entreprises qui cherchent à produire des visuels marketing esthétiques sans manipuler des paramètres d'experts. Sa gestion des styles artistiques est bluffante de précision. On apprécie particulièrement sa fonction d'Inpainting qui permet de modifier une zone précise d'une image générée en un clic, rendant la création fluide et moins frustrante.",
+    scores: {qualite: 4.4, facilite: 4.6, droits: 4.3, rapport: 4.4},
     globalScore: 4.4,
-    prix: "Inclus dans Adobe CC / 5€/mois",
-    essai: "25 crédits gratuits / mois",
-    lien: "https://adobe.com/firefly",
+    prix: "Gratuit / Premium abordable",
+    essai: "Crédits quotidiens offerts",
+    lien: "https://www.imagine.art",
     partenaire: false,
-    avantages: ["Sécurité juridique totale", "Intégration Photoshop/Illustrator", "Remplissage génératif bluffant", "Interface en français"],
-    inconvenients: ["Moins performant sur les visages", "Moins de liberté artistique", "Abonnement Adobe requis"],
-    ideal: "Graphistes, Agences, Grandes entreprises"
+    avantages: ["Galerie de prompts riche", "Outils de retouche simples", "Styles variés et modernes", "Rapport qualité/prix excellent"],
+    inconvenients: ["Moins de contrôle technique", "Publicités en version gratuite"],
+    ideal: "Créateurs de contenu, Blogueurs, Petites entreprises"
   },
   {
     rank: 4,
@@ -130,7 +130,7 @@ const scoreLabels: { [key: string]: string } = {"qualite": "Qualité Visuelle", 
       </nav>
       <header class="comp-header">
         <span class="comp-cat-label">Comparatif</span>
-        <h1 class="comp-title">Leonardo.ai vs DALL-E vs Firefly — Meilleur générateur image IA 2026</h1>
+        <h1 class="comp-title">Leonardo.ai vs Kittl vs Imagine.art — Meilleur générateur image IA 2026</h1>
         <p class="comp-subtitle">Nous avons testé les 5 leaders du marché pour la création d'images par intelligence artificielle. Qualité artistique, respect des prompts et droits commerciaux : voici notre verdict pour les pros.</p>
         <div class="comp-meta">
           <span class="comp-meta-item"><span class="comp-meta-dot"></span>Mis à jour mars 2026</span>
@@ -204,7 +204,7 @@ const scoreLabels: { [key: string]: string } = {"qualite": "Qualité Visuelle", 
           <div class="sidebar-widget">
             <div class="sidebar-widget-title">Classement rapide</div>
             {tools.map(t => (
-              <a href={`#${t.slug}`} class="quick-rank-item">
+              <a href={t.slug === 'kittl' ? t.lien : `#${t.slug}`} class="quick-rank-item">
                 <span class={`qr-num${t.rank === 1 ? ' rank-1' : ''}`}>{`#${t.rank}`}</span>
                 <span class="qr-name">{t.name}</span>
                 <span class="qr-score" style={`color:${scoreColor(t.globalScore)}`}>{t.globalScore.toFixed(1)}</span>
