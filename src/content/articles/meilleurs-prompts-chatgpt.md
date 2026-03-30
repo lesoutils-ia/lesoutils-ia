@@ -1,7 +1,7 @@
 ---
 title: "Les meilleurs prompts ChatGPT pour les professionnels (2026)"
 description: "50 prompts ChatGPT testés et optimisés pour les équipes marketing, les dirigeants et les commerciaux. Copiez-collez et gagnez 2h par jour."
-category: "Guide ChatGPT"
+category: "Guides"
 tags: ["prompt chatgpt", "ChatGPT", "productivité", "marketing IA", "PME"]
 author: "Équipe lesoutils-ia"
 authorInitials: "LI"
