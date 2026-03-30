@@ -2,23 +2,27 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
-// 1. On récupère tous les fichiers dans le dossier "articles"
+// 1. Récupérer tous les articles du dossier content/articles/
 const allArticles = await getCollection('articles', ({ data }) => !data.draft);
 
-// 2. On filtre pour ne garder que ceux qui ont EXACTEMENT "Formation" dans le champ category du Markdown
+// 2. FILTRE STRICT : On ne garde que ceux dont la catégorie est "Formation"
+// On utilise .toLowerCase() pour être sûr que ça marche même si tu écris "formation" ou "Formation"
 const formationArticles = allArticles.filter(article => {
-  // On passe en minuscule pour éviter les erreurs si tu écris "formation" ou "Formation"
   return article.data.category && article.data.category.toLowerCase() === 'formation';
 });
 ---
 
-<BaseLayout title="Formations IA — lesoutils-ia.fr">
+<BaseLayout 
+  title="Formations IA & Montée en compétences — lesoutils-ia.fr"
+  description="Retrouvez nos guides et analyses sur les meilleures formations en intelligence artificielle pour PME et indépendants."
+>
   <style>
     .page { padding-top: 56px; }
     .page-header { padding: 3rem 0 2rem; border-bottom: 1px solid var(--border); }
     .page-label { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.8rem; }
     .page-title { font-family: var(--font-display); font-size: clamp(28px, 4vw, 48px); font-weight: 800; line-height: 1.2; letter-spacing: -1px; margin-bottom: 0.8rem; }
     .page-desc { font-size: 16px; color: var(--text-muted); line-height: 1.7; max-width: 600px; }
+    
     .articles-list { padding: 2rem 0; }
     .article-row { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2rem; padding: 1.5rem 0; border-bottom: 1px solid var(--border); text-decoration: none; color: inherit; }
     .article-row:last-child { border-bottom: none; }
@@ -27,7 +31,9 @@ const formationArticles = allArticles.filter(article => {
     .article-row:hover .article-row-title { color: var(--accent); }
     .article-row-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
     .article-row-meta { font-size: 12px; color: var(--text-muted); white-space: nowrap; }
+    
     .empty-state { padding: 4rem 0; text-align: center; color: var(--text-muted); font-size: 15px; }
+    .empty-state a { color: var(--accent); text-decoration: underline; }
   </style>
 
   <div class="page">
@@ -35,22 +41,27 @@ const formationArticles = allArticles.filter(article => {
       <div class="page-header">
         <div class="page-label">Apprentissage</div>
         <h1 class="page-title">Formations IA</h1>
-        <p class="page-desc">Retrouvez tous nos articles répertoriés dans la catégorie Formation.</p>
+        <p class="page-desc">Découvrez nos ressources pour maîtriser l'IA : tutoriels, financements CPF et sélections des meilleurs programmes.</p>
       </div>
 
       <div class="articles-list">
-        {formationArticles.length > 0 ? formationArticles.map(a => (
-          <a href={`/articles/${a.slug}`} class="article-row">
-            <div>
-              <div class="article-row-cat">{a.data.category}</div>
-              <div class="article-row-title">{a.data.title}</div>
-              <div class="article-row-desc">{a.data.description}</div>
-            </div>
-            <div class="article-row-meta">{a.data.readTime}</div>
-          </a>
-        )) : (
+        {formationArticles.length > 0 ? (
+          formationArticles.map(a => (
+            <a href={`/articles/${a.slug}`} class="article-row">
+              <div>
+                <div class="article-row-cat">{a.data.category}</div>
+                <div class="article-row-title">{a.data.title}</div>
+                <div class="article-row-desc">{a.data.description}</div>
+              </div>
+              <div class="article-row-meta">
+                {a.data.readTime} • {new Date(a.data.publishDate).toLocaleDateString('fr-FR')}
+              </div>
+            </a>
+          ))
+        ) : (
           <div class="empty-state">
-            Aucun article trouvé avec la catégorie "Formation" dans le dossier articles.
+            <p>Aucun article trouvé dans la catégorie "Formation".</p>
+            <p style="margin-top:10px; font-size:13px;">Vérifiez que vos fichiers Markdown ont bien <code style="color:var(--accent)">category: "Formation"</code> dans leur en-tête.</p>
           </div>
         )}
       </div>
