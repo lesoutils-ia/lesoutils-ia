@@ -1,0 +1,26 @@
+# lesoutils-ia.fr
+
+> Média B2B indépendant de référence sur les outils d'intelligence artificielle pour les entreprises françaises.
+
+lesoutils-ia.fr publie des comparatifs, tests, guides pratiques et actualités sur les outils IA à destination des PME et équipes professionnelles en France. Le site couvre les outils de rédaction IA, d'automatisation, de CRM, de marketing et de productivité.
+
+## Contenus disponibles
+
+- [Résumer un PDF avec ChatGPT](https://lesoutils-ia.fr/articles/resumer-pdf-chatgpt)
+- [Les meilleurs prompts ChatGPT pour les professionnels](https://lesoutils-ia.fr/articles/meilleurs-prompts-chatgpt)
+- [Comment utiliser ChatGPT — guide complet débutants](https://lesoutils-ia.fr/articles/comment-utiliser-chatgpt)
+- [Tarif outils IA — guide complet des prix 2026](https://lesoutils-ia.fr/articles/tarif-outils-ia)
+- [Meilleurs outils IA pour créer du contenu](https://lesoutils-ia.fr/articles/meilleurs-outils-ia-contenu)
+- [IA marketing outils — top 10 pour votre équipe](https://lesoutils-ia.fr/articles/ia-marketing-outils)
+- [Formation IA finançable CPF — guide complet 2026](https://lesoutils-ia.fr/articles/formation-ia-cpf)
+- [Formation Midjourney — guide complet débutants](https://lesoutils-ia.fr/articles/formation-midjourney)
+- [Apprendre l'automatisation IA — guide PME](https://lesoutils-ia.fr/articles/apprendre-automatisation-ia)
+- [Deepseek avis — test complet de l'IA chinoise](https://lesoutils-ia.fr/articles/deepseek-avis)
+
+## Informations
+
+- Langue : Français
+- Audience : PME françaises, dirigeants, équipes marketing et commerciales
+- Modèle : Média indépendant, comparatifs sans publicité cachée
+- Contact : contact@lesoutils-ia.fr
+- Sitemap : https://lesoutils-ia.fr/sitemap.xml
