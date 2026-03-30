@@ -1,7 +1,7 @@
 ---
 title: "IA marketing outils — top 10 pour votre équipe 2026"
 description: "Les 10 meilleurs outils IA pour le marketing en 2026, testés avec des équipes françaises. De la rédaction à l'automatisation — ce qui vaut vraiment le coup."
-category: "Comparatif"
+category: "Comparatifs"
 tags: ["IA marketing outils", "outils IA marketing", "marketing IA PME", "automatisation marketing", "contenu IA"]
 author: "Équipe lesoutils-ia"
 authorInitials: "LI"
