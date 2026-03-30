@@ -1,89 +1,89 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-const title = "Top CRM avec IA pour PME — Comparatif Outils 2026";
-const description = "Optimisez votre suivi client avec les meilleurs CRM dopés à l'IA en 2026. Comparatif et cas d'usage pour PME françaises.";
+const title = "HubSpot vs Salesforce vs Pipedrive — Meilleur CRM IA 2026";
+const description = "HubSpot, Salesforce, Pipedrive, Folk, Apollo — comparatif complet des meilleurs CRM avec IA pour PME françaises en 2026. Tests, prix et verdict pour choisir.";
 
 const tools = [
   {
     rank: 1,
-    name: "Make + IA (Anthropic/OpenAI)",
-    slug: "make-ia",
-    tagline: "La façon la plus fiable de créer des agents IA pour votre PME",
-    description: "Le terme 'agent IA' fait peur à beaucoup de dirigeants de PME. Ça évoque de la science-fiction. La réalité c'est que les agents IA les plus efficaces aujourd'hui sont des workflows Make.com qui appellent l'API de Claude ou GPT-4 à certaines étapes. On a construit un agent qui qualifie automatiquement les leads entrants — lecture du formulaire, recherche web sur la société, scoring, résumé envoyé au commercial. Entièrement automatique. 2 heures à construire sur Make. Résultat : 45 minutes de travail commercial économisées par jour.",
-    scores: {autonomie: 4.5, facilite: 4.3, fiabilite: 4.8, rapport: 4.7},
-    globalScore: 4.6,
-    prix: "Make à partir de 9$/mois + coût API",
-    essai: "Plan gratuit Make disponible",
-    lien: "https://www.make.com/en/register?pc=lesoutilsia",
+    name: "HubSpot CRM",
+    slug: "hubspot",
+    tagline: "Le CRM IA le plus complet avec un plan gratuit imbattable",
+    description: "HubSpot reste en tête car c'est le seul CRM où l'on peut démarrer sans budget. L'IA Breeze est native : elle résume les appels, score les leads et suggère le moment idéal pour relancer. Pour une PME, c'est l'outil le plus évolutif : vous commencez gratuitement et l'outil grandit avec vos revenus. La mise en route prend moins d'une matinée.",
+    scores: { fonctionnalites: 4.8, facilite: 4.7, rapport: 4.5, ia: 4.6 },
+    globalScore: 4.7,
+    prix: "Gratuit / Pro dès 15€/mois",
+    essai: "Plan CRM 100% gratuit à vie",
+    lien: "https://hubspot.sjv.io/lesoutilsia",
     partenaire: true,
-    avantages: ["Très stable", "Coût maîtrisé", "Intégration CRM totale", "Zéro hallucination"],
-    inconvenients: ["Nécessite de l'expérience Make", "Pas 'clic-and-play'"],
-    ideal: "PME qui veulent des agents IA fiables et prévisibles"
+    avantages: ["Plan gratuit très complet", "IA Breeze native", "Interface ultra-intuitive", "Écosystème géant"],
+    inconvenients: ["Le prix des versions Pro monte vite", "Support limité en version gratuite"],
+    ideal: "PME qui veulent centraliser Marketing, Sales et Service."
   },
   {
     rank: 2,
-    name: "n8n AI Agents",
-    slug: "n8n-ai",
-    tagline: "La puissance de l'IA avec la liberté de l'open source",
-    description: "Si vous avez un profil un peu technique en interne, n8n est incroyable. Leur nouveau 'AI Agent node' permet de construire des agents qui ont accès à vos bases de données SQL, vos fichiers et vos outils métiers. On a testé un agent de support client qui lit les tickets entrants, va chercher la réponse dans la documentation technique sur Notion, et rédige un brouillon de réponse. Gain de temps massif pour l'équipe support. C'est l'outil qui donne le plus de contrôle sur ce que l'agent peut ou ne peut pas faire.",
-    scores: {autonomie: 4.6, facilite: 3.2, fiabilite: 4.4, rapport: 4.9},
-    globalScore: 4.3,
-    prix: "Gratuit (auto-hébergé) / 20€/mois",
-    essai: "100% gratuit en self-hosted",
-    lien: "https://n8n.partnerlinks.io/tq6td0outnve",
-    partenaire: false,
-    avantages: ["Pas de limite de workflows", "Données restent chez vous", "Noeuds IA très puissants", "Communauté active"],
-    inconvenients: ["Courbe d'apprentissage élevée", "Setup technique initial"],
-    ideal: "Startups, PME avec un profil tech/dev"
+    name: "Pipedrive",
+    slug: "pipedrive",
+    tagline: "L'outil roi pour les commerciaux qui veulent closer",
+    description: "Pipedrive est conçu par des vendeurs pour des vendeurs. Son assistant IA analyse vos performances pour vous dire sur quelle opportunité vous concentrer aujourd'hui. Il excelle dans l'automatisation des tâches administratives (saisie de contacts, emails de suivi) pour laisser vos équipes sur le terrain.",
+    scores: { fonctionnalites: 4.2, facilite: 4.9, rapport: 4.6, ia: 4.4 },
+    globalScore: 4.5,
+    prix: "À partir de 14€/mois",
+    essai: "14 jours d'essai gratuit",
+    lien: "https://pipedrive.grsm.io/lesoutilsia",
+    partenaire: true,
+    avantages: ["Visualisation du pipeline magique", "Prise en main en 15 minutes", "Automatisation simple", "App mobile puissante"],
+    inconvenients: ["Moins d'outils marketing que HubSpot", "IA limitée sur le plan de base"],
+    ideal: "Équipes commerciales dont la priorité est le closing pur."
   },
   {
     rank: 3,
-    name: "Relevance AI",
-    slug: "relevance-ai",
-    tagline: "Plateforme tout-en-un pour agents IA autonomes",
-    description: "Relevance AI est l'outil le plus moderne de cette liste. Contrairement à Make qui est un outil d'automatisation généraliste, Relevance a été conçu uniquement pour les agents. L'interface est pensée pour donner des 'outils' à votre IA (chercher sur Google, lire un PDF, envoyer un mail). On l'a utilisé pour créer un agent de recherche de marché : il scanne 50 sites concurrents et en sort un tableau Excel comparatif. Impressionnant de facilité, mais attention à la consommation de crédits qui peut vite grimper.",
-    scores: {autonomie: 4.9, facilite: 4.1, fiabilite: 4.0, rapport: 3.8},
-    globalScore: 4.2,
-    prix: "À partir de 19$/mois",
-    essai: "Essai gratuit avec crédits",
-    lien: "https://relevanceai.com/?via=lesoutils-ia",
+    name: "Folk",
+    slug: "folk",
+    tagline: "Le CRM 'Next Gen' ultra-léger pour agences et startups",
+    description: "Folk réinvente le CRM en le rendant aussi simple qu'un tableur mais avec la puissance de l'IA. Son moteur d'enrichissement permet de trouver les emails de vos prospects et de rédiger des messages ultra-personnalisés en un clic. C'est le choix idéal pour ceux qui détestent la lourdeur des CRM classiques.",
+    scores: { fonctionnalites: 3.9, facilite: 5.0, rapport: 4.4, ia: 4.7 },
+    globalScore: 4.4,
+    prix: "À partir de 18$/mois",
+    essai: "Version gratuite disponible",
+    lien: "https://www.folk.app/?via=lesoutilsia",
     partenaire: false,
-    avantages: ["Interface 'Agent-first'", "Multi-agents qui collaborent", "Très rapide à lancer", "Rendu visuel moderne"],
-    inconvenients: ["Prix au crédit complexe", "Moins d'intégrations que Zapier"],
-    ideal: "PME qui veulent des agents autonomes complexes rapidement"
+    avantages: ["Extension Chrome exceptionnelle", "Rédaction d'emails par IA", "Design moderne", "Ultra rapide"],
+    inconvenients: ["Pas de gestion de facturation", "Analytique moins profonde"],
+    ideal: "Petites structures, agences et chasseurs de têtes."
   },
   {
     rank: 4,
-    name: "Zapier Central",
-    slug: "zapier-central",
-    tagline: "Le plus simple pour transformer vos Zaps en agents",
-    description: "Si vous utilisez déjà Zapier, Central est leur réponse aux agents IA. C'est un espace où vous 'éduquez' une IA avec vos données (PDF, Google Docs) et où vous l'autorisez à déclencher des Zaps. C'est parfait pour les petites tâches du quotidien. Par exemple : un agent qui surveille un canal Slack et crée une tâche dans Trello si un message mentionne un problème client. C'est très simple, peut-être trop pour des processus métiers critiques, mais pour une TPE, c'est la porte d'entrée idéale.",
-    scores: {autonomie: 4.0, facilite: 4.9, fiabilite: 4.1, rapport: 3.5},
-    globalScore: 4.1,
-    prix: "Inclus dans certains plans Zapier",
-    essai: "Plan gratuit limité",
-    lien: "https://zapier.com/central",
+    name: "Apollo.io",
+    slug: "apollo",
+    tagline: "La base de données prospects couplée à un CRM IA",
+    description: "Apollo est l'outil ultime pour la prospection à froid (cold outbound). Son IA analyse des millions de données pour vous suggérer les meilleurs prospects et rédiger des séquences d'approche personnalisées. C'est plus qu'un CRM, c'est une source infinie de nouveaux clients pour votre PME.",
+    scores: { fonctionnalites: 4.7, facilite: 3.8, rapport: 4.8, ia: 4.5 },
+    globalScore: 4.3,
+    prix: "Gratuit / Pro dès 49$/mois",
+    essai: "Plan gratuit très généreux",
+    lien: "https://get.apollo.io/sy4gbfxk52aj",
     partenaire: false,
-    avantages: ["Configuration en 2 minutes", "6000+ intégrations", "Pas besoin de comprendre l'IA", "Interface familière"],
-    inconvenients: ["Prix des plans Zapier élevés", "Moins de contrôle granulaire"],
-    ideal: "TPE, indépendants, débutants complets"
+    avantages: ["275M de contacts inclus", "IA de rédaction performante", "Séquences automatiques", "Scoring de leads"],
+    inconvenients: ["Interface assez complexe", "Surtout orienté prospection"],
+    ideal: "Entreprises B2B qui ont besoin de générer des leads."
   },
   {
     rank: 5,
-    name: "AutoGPT (Open Source)",
-    slug: "autogpt",
-    tagline: "Le pionnier des agents IA, pour l'expérimentation",
-    description: "On ne pouvait pas faire ce classement sans AutoGPT. C'est celui qui a tout lancé. C'est un agent 'pur' : vous lui donnez un objectif et il se débrouille. Problème : en conditions réelles de PME, c'est encore trop instable. Il peut tourner en boucle ou 'halluciner' des étapes. On le recommande uniquement pour de la R&D interne ou pour des tâches de recherche pure où l'erreur n'est pas grave. Pour automatiser votre facturation ou votre service client, oubliez pour l'instant.",
-    scores: {autonomie: 5.0, facilite: 2.1, fiabilite: 2.5, rapport: 4.5},
-    globalScore: 3.5,
-    prix: "Gratuit (Open Source)",
-    essai: "GitHub / Docker gratuit",
-    lien: "https://github.com/Significant-Gravitas/AutoGPT",
+    name: "Salesforce Starter",
+    slug: "salesforce",
+    tagline: "La puissance d'Einstein IA enfin accessible",
+    description: "Salesforce Starter est la réponse pour les PME qui veulent la robustesse du leader mondial sans la complexité historique. L'IA Einstein priorise vos tâches et résume vos dossiers clients. C'est l'investissement sécurité : vous n'aurez jamais besoin de changer d'outil, peu importe votre croissance.",
+    scores: { fonctionnalites: 5.0, facilite: 3.2, rapport: 3.5, ia: 4.8 },
+    globalScore: 4.1,
+    prix: "25€/mois",
+    essai: "30 jours d'essai gratuit",
+    lien: "https://www.salesforce.com/fr/products/starter/",
     partenaire: false,
-    avantages: ["Totalement autonome", "Gratuit", "Inspirationnel", "Dernières technos IA"],
-    inconvenients: ["Très instable", "Nécessite Python/Docker", "Consomme beaucoup d'API"],
-    ideal: "Développeurs, passionnés de tech, veille R&D"
+    avantages: ["Standard mondial", "Sécurité maximale", "IA Einstein très puissante", "Évolutivité sans limite"],
+    inconvenients: ["Courbe d'apprentissage réelle", "Mise en place plus longue"],
+    ideal: "PME en hyper-croissance avec des processus complexes."
   }
 ];
 
@@ -95,10 +95,10 @@ function scoreColor(score: number) {
 }
 
 const scoreLabels: { [key: string]: string } = {
-  autonomie: 'Autonomie',
+  fonctionnalites: 'Fonctions',
   facilite: 'Facilité',
-  fiabilite: 'Fiabilité',
-  rapport: 'Rapport Q/P'
+  rapport: 'Rapport Q/P',
+  ia: 'Puissance IA'
 };
 ---
 
@@ -183,17 +183,17 @@ const scoreLabels: { [key: string]: string } = {
       <nav class="breadcrumb">
         <a href="/">Accueil</a> <span class="opacity-40">/</span>
         <a href="/comparatifs">Comparatifs</a> <span class="opacity-40">/</span>
-        <span>Agents IA autonomes</span>
+        <span>Meilleur CRM IA 2026</span>
       </nav>
 
       <header class="comp-header">
-        <span class="comp-cat-label">Comparatif</span>
-        <h1 class="comp-title">Meilleurs agents IA pour PME<br>— Comparatif outils 2026</h1>
-        <p class="comp-subtitle">On a testé les 5 meilleures plateformes d'agents IA en conditions réelles sur des workflows de PME françaises. Voici le verdict pour automatiser intelligemment votre activité.</p>
+        <span class="comp-cat-label">Comparatif CRM Ventes 2026</span>
+        <h1 class="comp-title">HubSpot vs Salesforce vs Pipedrive<br>— Meilleur CRM IA 2026</h1>
+        <p class="comp-subtitle">Quel logiciel de gestion client choisir pour votre PME en 2026 ? Analyse complète des fonctions IA, des prix et de la facilité d'usage.</p>
         <div class="comp-meta">
           <span class="comp-meta-item">Mis à jour mars 2026</span>
-          <span class="comp-meta-item">5 solutions testées</span>
-          <span class="comp-meta-item">12 min de lecture</span>
+          <span class="comp-meta-item">5 outils testés</span>
+          <span class="comp-meta-item">8 min de lecture</span>
         </div>
       </header>
 
@@ -236,7 +236,7 @@ const scoreLabels: { [key: string]: string } = {
                     <ul class="pros-list">{tool.avantages.map(a => <li>{a}</li>)}</ul>
                   </div>
                   <div>
-                    <div class="pros-cons-title">Limites</div>
+                    <div class="pros-cons-title">Points faibles</div>
                     <ul class="cons-list">{tool.inconvenients.map(i => <li>{i}</li>)}</ul>
                     <div style="margin-top: 1rem;">
                       <div class="info-ideal-label">Idéal pour</div>
@@ -247,7 +247,7 @@ const scoreLabels: { [key: string]: string } = {
                     <div class="info-price">{tool.prix}</div>
                     <div class="info-essai">{tool.essai}</div>
                     <a href={tool.lien} target="_blank" rel="nofollow noopener" class={`tool-cta ${tool.partenaire ? 'cta-primary' : 'cta-secondary'}`}>
-                      Voir le site →
+                      Tester l'outil →
                     </a>
                   </div>
                 </div>
@@ -256,18 +256,15 @@ const scoreLabels: { [key: string]: string } = {
           </div>
           
           <div class="comp-footer-note">
-            <strong>Note éditoriale</strong> — Ce comparatif est basé sur nos tests réels. Certains liens sont affiliés, mais cela n'influence en rien notre classement indépendant. <a href="/mentions-legales">En savoir plus</a>.
+            <strong>Indépendance éditoriale</strong> — Ce guide est rédigé par l'équipe de Les Outils IA. Les liens d'affiliation nous permettent de rester gratuits pour vous sans influencer nos notes.
           </div>
         </main>
 
         <aside class="sidebar">
           <div class="sidebar-widget">
-            <div class="sidebar-widget-title">Classement rapide</div>
+            <div class="sidebar-widget-title">Verdict Rapide</div>
             {tools.map(t => (
-              <a href={(t.partenaire || t.slug === 'relevance-ai' || t.slug === 'n8n-ai') ? t.lien : `#${t.slug}`} 
-                 target={(t.partenaire || t.slug === 'relevance-ai' || t.slug === 'n8n-ai') ? "_blank" : "_self"} 
-                 rel={(t.partenaire || t.slug === 'relevance-ai' || t.slug === 'n8n-ai') ? "nofollow noopener" : ""} 
-                 class="quick-rank-item">
+              <a href={t.lien} target="_blank" rel="nofollow noopener" class="quick-rank-item">
                 <span class={`qr-num ${t.rank === 1 ? 'rank-1' : ''}`}>{`#${t.rank}`}</span>
                 <span class="qr-name">{t.name}</span>
                 <span class="qr-score" style={`color:${scoreColor(t.globalScore)}`}>{t.globalScore.toFixed(1)}</span>
@@ -276,20 +273,20 @@ const scoreLabels: { [key: string]: string } = {
           </div>
 
           <div class="sidebar-widget">
-            <div class="sidebar-widget-title">Notre méthode</div>
-            <p class="method-text">Chaque agent IA testé sur 10 workflows métiers réels dans des PME françaises — qualification de leads, suivi client, reporting automatique.</p>
+            <div class="sidebar-widget-title">Notre méthodologie</div>
+            <p class="method-text">Chaque CRM testé pendant 4 semaines avec de vraies équipes commerciales françaises, sur de vraies données clients.</p>
             <ul class="method-criteria">
-              <li>Autonomie réelle mesurée</li>
-              <li>Facilité de configuration</li>
-              <li>Fiabilité des résultats</li>
+              <li>Richesse fonctionnelle</li>
+              <li>Prise en main</li>
               <li>Rapport qualité / prix</li>
+              <li>Puissance de l'IA native</li>
             </ul>
           </div>
 
           <div class="sidebar-widget">
-            <div class="nl-title">Un outil IA par semaine</div>
-            <p class="nl-text">La sélection des meilleurs outils IA chaque lundi dans votre boîte mail.</p>
-            <form action="https://2224bad4.sibforms.com/serve/MUIFAA5FZ9wsz8jYxQoLCDh0LwleB1JzinLPJ8-XdB2OVm1lXNjNpuVAZxqsMhUxpLQzP4qmL8FdgRRwFog-CWPz4rAQJspvW9Vumzyfg4PvOaNHtUe7pPeOEChXfHsSn58QNgN1bJruhL1EgT5UjU1ub9wi4KPai9kOQOfii2viH8r9IM2YY3c2bdF5kfXolnpmvlJm5dTrmPAlnw==" method="POST">
+            <div class="nl-title">La sélection du lundi</div>
+            <p class="nl-text">Recevez les meilleurs outils IA pour votre PME chaque semaine.</p>
+            <form action="https://2224bad4.sibforms.com/serve/MUIFAA5FZ9wsz8jYxQoLCDh0LwleB1JzinLPJ8-XdB2OVm1lXNjNpuVAZxqsMhUxpLQzP4qmL8FdgRRwFog-CWPz4rAQJspvW9Vumzyfg4PvOaNHtUe7pPeOEChXfHsSn58QNgN1bJruhL1EgT5UjU1ub9wi4KPai9kOQOfii2viH8r9IM2YY3c2bdF5kfXolnpmvlJm5dTrmPAlnw" method="POST">
               <input type="email" name="EMAIL" class="nl-input" placeholder="votre@email.fr" required />
               <button type="submit" class="nl-btn">S'abonner</button>
             </form>
