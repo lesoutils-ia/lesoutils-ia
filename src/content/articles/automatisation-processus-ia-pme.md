@@ -1,7 +1,7 @@
 ---
 title: "L'IA et l'automatisation des processus métiers — le guide PME 2026"
 description: "Comment l'IA transforme concrètement la productivité des PME françaises ? Stratégies, exemples de workflows et conseils pour automatiser vos processus métiers sans coder."
-category: "Guide"
+category: "Guides"
 tags: ["automatisation processus entreprise", "IA PME", "productivité IA", "exemples automatisation"]
 author: "Équipe lesoutils-ia"
 authorInitials: "LI"
