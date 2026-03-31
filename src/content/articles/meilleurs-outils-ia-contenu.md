@@ -1,5 +1,5 @@
 ---
-title: "Meilleurs outils IA pour créer du contenu en 2026"
+title: "Outils IA Contenu 2026 : Notre sélection pour les PME"
 description: "Notre sélection des meilleurs outils IA pour créer du contenu marketing en 2026. Comparatif complet testé avec des équipes françaises."
 category: "Comparatifs"
 tags: ["outils IA marketing", "outils IA contenu", "rédaction IA", "marketing IA PME"]
