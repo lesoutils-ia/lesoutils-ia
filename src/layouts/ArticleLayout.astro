@@ -15,7 +15,7 @@ export interface Props {
 }
 
 const { title, description, category, tags, author, authorInitials, updateDate, publishDate, readTime, headings } = Astro.props;
-const pageTitle = `${title} — lesoutils-ia.fr`;
+const pageTitle = title;
 const h2headings = headings.filter(h => h.depth === 2 || h.depth === 3);
 const categorySlug = category.toLowerCase().replace(/ /g, '-').normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 ---
