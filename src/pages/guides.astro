@@ -6,7 +6,10 @@ const articles = await getCollection('articles', ({ data }) => !data.draft);
 const filtered = articles.filter(a => a.data.category.toLowerCase().includes('guide'));
 ---
 
-<BaseLayout title="Guides pratiques IA — lesoutils-ia.fr">
+<BaseLayout 
+  title="Guides IA Pratiques : Tutoriels & Stratégies pour PME (2026)"
+  description="Maîtrisez l'intelligence artificielle pas à pas. Découvrez nos guides complets pour intégrer l'IA dans vos processus métier et gagner en efficacité."
+>
   <style>
     .page { padding-top: 56px; }
     .page-header { padding: 3rem 0 2rem; border-bottom: 1px solid var(--border); }
