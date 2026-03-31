@@ -1,6 +1,6 @@
 ---
-title: "Comment utiliser ChatGPT — guide complet débutants 2026"
-description: "Tout ce qu'il faut savoir pour utiliser ChatGPT efficacement dès aujourd'hui. Création de compte, premiers prompts, astuces pratiques pour les professionnels."
+title: "Comment utiliser ChatGPT : Guide complet et astuces Pro 2026"
+description: "Maîtrisez ChatGPT : de la création de compte à l'écriture de prompts complexes. Guide pratique pour gagner du temps et booster votre productivité en PME."
 category: "Guides"
 tags: ["comment utiliser chatgpt", "ChatGPT", "guide débutant", "productivité IA", "PME"]
 author: "Équipe lesoutils-ia"
