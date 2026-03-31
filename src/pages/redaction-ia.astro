@@ -6,7 +6,10 @@ const articles = await getCollection('articles', ({ data }) => !data.draft);
 const filtered = articles.filter(a => a.data.category.toLowerCase().includes('rédaction') || a.data.category.toLowerCase().includes('redaction'));
 ---
 
-<BaseLayout title="Rédaction IA pour PME — lesoutils-ia.fr">
+<BaseLayout 
+  title="Rédaction IA & Content Marketing : Le Guide pour PME (2026)"
+  description="Jasper, Copy.ai ou Writesonic ? Découvrez nos comparatifs des meilleurs outils de rédaction IA pour créer vos contenus marketing plus vite et sans faute."
+>
   <style>
     .page { padding-top: 56px; }
     .page-header { padding: 3rem 0 2rem; border-bottom: 1px solid var(--border); }
