@@ -6,7 +6,7 @@ const articles = await getCollection('articles', ({ data }) => !data.draft);
 const filtered = articles.filter(a => a.data.category.toLowerCase().includes('pme') || a.data.category.toLowerCase().includes('ia pour'));
 ---
 
-<BaseLayout title="IA pour PME — lesoutils-ia.fr">
+<BaseLayout title="IA pour PME : Guide & Outils pour Entreprises — lesoutils-ia.fr">
   <style>
     .page { padding-top: 56px; }
     .page-header { padding: 3rem 0 2rem; border-bottom: 1px solid var(--border); }
