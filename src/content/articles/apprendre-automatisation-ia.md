@@ -1,5 +1,5 @@
 ---
-title: "Apprendre l'automatisation IA : Guide No-Code PME 2026"
+title: "Apprendre l'automatisation IA - Guide No-Code PME 2026"
 description: "Devenez autonome sur l'automatisation IA sans savoir coder. Découvrez les outils, méthodes et workflows prioritaires pour booster votre PME en 2026."
 category: "Guides"
 tags: ["apprendre automatisation IA", "automatisation IA PME", "Make.com", "workflow IA", "no-code"]
