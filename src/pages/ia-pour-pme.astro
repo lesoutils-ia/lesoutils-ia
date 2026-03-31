@@ -6,7 +6,10 @@ const articles = await getCollection('articles', ({ data }) => !data.draft);
 const filtered = articles.filter(a => a.data.category.toLowerCase().includes('pme') || a.data.category.toLowerCase().includes('ia pour'));
 ---
 
-<BaseLayout title="IA pour PME : Guide & Outils pour Entreprises — lesoutils-ia.fr">
+<BaseLayout 
+  title="IA pour PME : Intégrer l'Intelligence Artificielle en 2026"
+  description="Comment utiliser l'IA dans votre PME ? Découvrez nos guides pratiques, outils accessibles et cas d'usage réels pour booster votre entreprise sans gros budget."
+>
   <style>
     .page { padding-top: 56px; }
     .page-header { padding: 3rem 0 2rem; border-bottom: 1px solid var(--border); }
