@@ -6,7 +6,11 @@ const articles = await getCollection('articles', ({ data }) => !data.draft);
 const sorted = articles.sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime());
 ---
 
-<BaseLayout title="Actualités IA — lesoutils-ia.fr">
+<BaseLayout 
+  title="Actualités IA pour Entreprises & PME : Le Guide 2026"
+  description="Restez à jour sur l'intelligence artificielle : nouveaux outils, mises à jour majeures et conseils concrets pour booster la productivité de votre entreprise."
+>
+
   <style>
     .page { padding-top: 56px; }
     .page-header { padding: 3rem 0 2rem; border-bottom: 1px solid var(--border); }
