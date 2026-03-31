@@ -1,0 +1,203 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "Guide 2026 : Meilleurs Outils de Sondages & Feedback IA";
+const description = "Découvrez notre comparatif 2026 des meilleurs outils de questionnaires (SurveyMonkey, Typeform, Jotform) pour analyser vos données clients avec l'IA.";
+
+const tools = [
+  {
+    rank: 1,
+    name: "SurveyMonkey",
+    slug: "surveymonkey",
+    tagline: "Le standard mondial de l'analyse de données client boosté à l'IA",
+    description: "SurveyMonkey reste la référence absolue pour les PME qui cherchent de la donnée fiable. Leur nouvelle suite 'Genius' utilise l'IA pour prédire le succès de vos sondages avant même l'envoi. On a testé l'outil sur une enquête de satisfaction de 500 clients : l'IA a automatiquement segmenté les réponses par sentiment et nous a généré un rapport de synthèse prêt à présenter en réunion. C'est l'outil le plus robuste pour transformer des avis bruts en décisions stratégiques.",
+    scores: {analyse: 4.9, facilite: 4.5, fiabilite: 4.8, rapport: 4.2},
+    globalScore: 4.6,
+    prix: "À partir de 30€/mois",
+    essai: "Version gratuite disponible",
+    lien: "https://get.surveymonkey.com/tky8d8lpa2w1",
+    partenaire: true,
+    avantages: ["Analyse de sentiment automatique", "Modèles de questions certifiés", "Reporting ultra-complet", "Sécurité des données de niveau entreprise"],
+    inconvenients: ["Version gratuite très limitée", "Interface parfois dense"],
+    ideal: "PME et services Marketing cherchant des analyses statistiques poussées"
+  },
+  {
+    rank: 2,
+    name: "Typeform",
+    slug: "typeform",
+    tagline: "L'IA conversationnelle pour un taux de réponse record",
+    description: "Typeform a révolutionné le sondage avec 'Formless'. Au lieu de remplir un formulaire statique, vos clients discutent avec une IA qui pose les questions de manière fluide. Le résultat est bluffant : on a constaté une augmentation de 35% du taux de complétion sur nos tests. L'IA extrait ensuite les données structurées de la conversation. C'est le choix numéro 1 pour l'image de marque et l'expérience utilisateur moderne.",
+    scores: {analyse: 4.2, facilite: 4.8, fiabilite: 4.4, rapport: 4.0},
+    globalScore: 4.4,
+    prix: "Dès 21€/mois",
+    essai: "Plan gratuit disponible",
+    lien: "https://www.typeform.com",
+    partenaire: false,
+    avantages: ["Design magnifique", "IA conversationnelle fluide", "Taux de réponse très élevé", "Intégrations nombreuses"],
+    inconvenients: ["Coût élevé par réponse", "Moins puissant pour les stats pures"],
+    ideal: "Marques D2C, Startups, UX Designers"
+  },
+  {
+    rank: 3,
+    name: "Jotform",
+    slug: "jotform",
+    tagline: "L'automatisation totale, du formulaire au workflow",
+    description: "Jotform est le couteau suisse du secteur. Son générateur IA permet de créer un formulaire complexe (avec paiements, signatures électroniques et PDF) en un seul prompt. C'est l'outil idéal si vous voulez que le sondage déclenche une action réelle : par exemple, générer automatiquement un reçu basé sur les réponses. Pour une PME qui veut automatiser ses processus métiers, c'est un gain de temps massif.",
+    scores: {analyse: 4.0, facilite: 4.6, fiabilite: 4.5, rapport: 4.7},
+    globalScore: 4.3,
+    prix: "Dès 34$/mois",
+    essai: "5 formulaires gratuits",
+    lien: "https://www.jotform.com",
+    partenaire: false,
+    avantages: ["Création par prompt IA", "Plus de 100 intégrations", "Gestion des paiements incluse", "Très flexible"],
+    inconvenients: ["Design moins 'premium' que Typeform", "Courbe d'apprentissage sur les fonctions avancées"],
+    ideal: "Indépendants et PME ayant des besoins d'automatisation complexes"
+  }
+];
+
+function scoreColor(score: number) {
+  if (score >= 4.5) return '#c8f135';
+  if (score >= 4.0) return '#a0d020';
+  if (score >= 3.5) return '#f0c030';
+  return '#f07030';
+}
+
+const scoreLabels: { [key: string]: string } = {
+  analyse: 'Analyse IA',
+  facilite: 'Facilité',
+  fiabilite: 'Fiabilité',
+  rapport: 'Rapport Q/P'
+};
+---
+
+<BaseLayout title={title} description={description}>
+  <style>
+    /* Intégration de tes styles habituels */
+    .comp-page { background: #000; color: #fff; padding-bottom: 80px; min-height: 100vh; font-family: 'Inter', sans-serif; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .breadcrumb { padding: 24px 0; font-size: 14px; display: flex; gap: 8px; align-items: center; }
+    .breadcrumb a { color: #fff; text-decoration: none; opacity: 0.6; transition: opacity 0.2s; }
+    .breadcrumb a:hover { opacity: 1; }
+    .comp-header { margin-bottom: 40px; }
+    .comp-cat-label { background: #c8f135; color: #000; padding: 4px 12px; border-radius: 100px; font-size: 12px; font-weight: 700; text-transform: uppercase; margin-bottom: 16px; display: inline-block; }
+    .comp-title { font-size: 48px; font-weight: 800; line-height: 1.1; margin-bottom: 20px; letter-spacing: -0.02em; }
+    .comp-subtitle { font-size: 18px; opacity: 0.6; max-width: 600px; line-height: 1.5; }
+    .comp-body { display: grid; grid-template-columns: 1fr 320px; gap: 40px; align-items: start; }
+    
+    .tool-card { background: #111; border: 1px solid #222; border-radius: 24px; padding: 32px; margin-bottom: 24px; transition: border-color 0.3s; }
+    .tool-card.is-partenaire { border-color: #c8f135; position: relative; }
+    .badge-partenaire { background: #c8f135; color: #000; font-size: 10px; font-weight: 800; padding: 2px 8px; border-radius: 4px; text-transform: uppercase; }
+    
+    .tool-rank { font-weight: 800; opacity: 0.4; }
+    .tool-rank.rank-1 { color: #c8f135; opacity: 1; }
+    .tool-name { font-size: 28px; font-weight: 700; }
+    .score-number { font-size: 32px; font-weight: 800; }
+    .tool-tagline { font-size: 18px; font-weight: 600; color: #c8f135; margin: 12px 0; }
+    .tool-desc { opacity: 0.7; line-height: 1.6; margin-bottom: 24px; }
+    
+    .tool-cta { display: block; text-align: center; padding: 16px; border-radius: 12px; font-weight: 700; text-decoration: none; transition: transform 0.2s; }
+    .cta-primary { background: #c8f135; color: #000; }
+    .cta-secondary { background: #222; color: #fff; }
+    .tool-cta:hover { transform: translateY(-2px); }
+
+    .sidebar-widget { background: #111; border: 1px solid #222; border-radius: 20px; padding: 24px; margin-bottom: 20px; }
+    .sidebar-widget-title { font-weight: 700; margin-bottom: 16px; font-size: 16px; }
+    .quick-rank-item { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid #222; text-decoration: none; color: #fff; transition: opacity 0.2s; }
+    .quick-rank-item:last-child { border: none; }
+    .quick-rank-item:hover { opacity: 0.7; }
+    .qr-num { font-weight: 800; opacity: 0.3; width: 24px; }
+    .qr-num.rank-1 { color: #c8f135; opacity: 1; }
+    .qr-name { flex: 1; font-weight: 600; font-size: 14px; }
+    .qr-score { font-weight: 700; }
+  </style>
+
+  <div class="comp-page">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="/">Accueil</a> <span class="opacity-40">/</span>
+        <a href="/comparatifs">Comparatifs</a> <span class="opacity-40">/</span>
+        <span>Sondages & Feedback IA</span>
+      </nav>
+
+      <header class="comp-header">
+        <span class="comp-cat-label">Analyse Client</span>
+        <h1 class="comp-title">Meilleurs outils de sondage IA<br>— Comparatif 2026</h1>
+        <p class="comp-subtitle">Collectez des avis clients et laissez l'IA analyser les sentiments et les tendances automatiquement. Voici notre sélection expert.</p>
+      </header>
+
+      <div class="comp-body">
+        <main>
+          <div class="tools-list">
+            {tools.map(tool => (
+              <div class={`tool-card ${tool.partenaire ? 'is-partenaire' : ''}`} id={tool.slug}>
+                <div class="tool-card-top">
+                  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+                    <span class={`tool-rank ${tool.rank === 1 ? 'rank-1' : ''}`}>N°{tool.rank}</span>
+                    {tool.partenaire && <span class="badge-partenaire">Recommandé</span>}
+                  </div>
+                  <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+                    <h2 class="tool-name">{tool.name}</h2>
+                    <div class="tool-global-score">
+                      <span class="score-number" style={`color: ${scoreColor(tool.globalScore)}`}>{tool.globalScore.toFixed(1)}</span>
+                      <span style="opacity:0.3">/5</span>
+                    </div>
+                  </div>
+                  <p class="tool-tagline">{tool.tagline}</p>
+                  <p class="tool-desc">{tool.description}</p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 200px; gap: 32px; align-items: end;">
+                   <div class="pros-cons" style="display:grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                      <div>
+                        <p style="font-weight:700; color:#c8f135; margin-bottom:8px; font-size:14px;">Avantages</p>
+                        <ul style="font-size:13px; opacity:0.8; list-style:none; padding:0;">
+                          {tool.avantages.map(av => <li>• {av}</li>)}
+                        </ul>
+                      </div>
+                      <div>
+                        <p style="font-weight:700; opacity:0.5; margin-bottom:8px; font-size:14px;">Inconvénients</p>
+                        <ul style="font-size:13px; opacity:0.5; list-style:none; padding:0;">
+                          {tool.inconvenients.map(inc => <li>• {inc}</li>)}
+                        </ul>
+                      </div>
+                   </div>
+                   <div class="tool-cta-box">
+                      <div style="text-align:right; margin-bottom:12px;">
+                        <div style="font-weight:700;">{tool.prix}</div>
+                        <div style="font-size:12px; opacity:0.5;">{tool.essai}</div>
+                      </div>
+                      <a href={tool.lien} target="_blank" rel="nofollow noopener" class={`tool-cta ${tool.partenaire ? 'cta-primary' : 'cta-secondary'}`}>
+                        Voir le site →
+                      </a>
+                   </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </main>
+
+        <aside class="sidebar">
+          <div class="sidebar-widget">
+            <div class="sidebar-widget-title">Classement rapide</div>
+            {tools.map(t => (
+              <a href={t.lien} target="_blank" rel="nofollow noopener" class="quick-rank-item">
+                <span class={`qr-num ${t.rank === 1 ? 'rank-1' : ''}`}>{`#${t.rank}`}</span>
+                <span class="qr-name">{t.name}</span>
+                <span class="qr-score" style={`color:${scoreColor(t.globalScore)}`}>{t.globalScore.toFixed(1)}</span>
+              </a>
+            ))}
+          </div>
+          
+          <div class="sidebar-widget">
+            <div class="sidebar-widget-title">Pourquoi l'IA ?</div>
+            <p style="font-size:13px; opacity:0.7; line-height:1.4;">L'IA transforme les sondages :<br/><br/>
+            1. <b>Analyse de sentiment</b> pour traiter 1000 avis en 2 secondes.<br/>
+            2. <b>Rédaction prédictive</b> pour optimiser vos questions.<br/>
+            3. <b>Détection de fraude</b> pour éliminer les fausses réponses.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
