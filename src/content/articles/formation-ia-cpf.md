@@ -1,6 +1,6 @@
 ---
 title: "Formation IA finançable CPF — le guide complet 2026"
-description: "Toutes les formations à l'intelligence artificielle finançables par le CPF en 2026. Comment utiliser vos droits de formation pour apprendre l'IA gratuitement."
+description: "Comment utiliser vos droits CPF pour vous former à l'IA en 2026. Découvrez les meilleures formations certifiées et financez votre montée en compétences."
 category: "Formation"
 tags: ["formation intelligence artificielle cpf", "formation IA", "CPF", "apprendre IA"]
 author: "Équipe lesoutils-ia"
