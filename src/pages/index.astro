@@ -8,7 +8,10 @@ const featured = sorted.find(a => a.data.featured) || sorted[0];
 const recent = sorted.filter(a => a.slug !== featured?.slug).slice(0, 3);
 ---
 
-<BaseLayout title="Les Outils IA - Boostez la productivité de votre PME">
+<BaseLayout 
+  title="Les Outils IA : Le Média n°1 sur l'IA pour PME & Entreprises"
+  description="Boostez la productivité de votre entreprise en 2026. Comparatifs indépendants, tests d'outils IA, guides pratiques et actualités pour maîtriser l'IA au bureau."
+>
   <style>
     /* FIX DE SÉCURITÉ POUR LE DÉCALAGE À DROITE */
     * { box-sizing: border-box; }
