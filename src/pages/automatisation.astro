@@ -6,7 +6,11 @@ const articles = await getCollection('articles', ({ data }) => !data.draft);
 const filtered = articles.filter(a => a.data.category.toLowerCase().includes('automatisation'));
 ---
 
-<BaseLayout title="Automatisation IA pour entreprises — lesoutils-ia.fr">
+<BaseLayout 
+  title="Automatisation IA & Workflows : Gagnez du temps en 2026"
+  description="Maîtrisez Zapier, Make.com et n8n. Découvrez nos guides et comparatifs pour automatiser vos tâches répétitives et booster la productivité de votre PME."
+>
+
   <style>
     .page { padding-top: 56px; }
     .page-header { padding: 3rem 0 2rem; border-bottom: 1px solid var(--border); }
