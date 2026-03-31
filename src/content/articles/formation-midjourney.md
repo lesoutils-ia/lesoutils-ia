@@ -1,6 +1,6 @@
 ---
-title: "Formation Midjourney — guide complet débutants 2026"
-description: "Apprenez à utiliser Midjourney pour créer des images IA professionnelles. Tout ce qu'il faut savoir pour débuter : compte, prompts, astuces et tarifs."
+title: "Midjourney - Guide complet pour créer des images Pro en 2026"
+description: "Apprenez à maîtriser Midjourney pour votre PME. De la création de compte aux prompts avancés, générez des visuels IA professionnels sans photographe."
 category: "Formation"
 tags: ["formation midjourney", "Midjourney", "IA image", "créer images IA", "guide débutant"]
 author: "Équipe lesoutils-ia"
