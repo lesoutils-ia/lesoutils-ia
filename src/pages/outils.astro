@@ -6,7 +6,10 @@ const articles = await getCollection('articles', ({ data }) => !data.draft);
 const sorted = articles.sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime());
 ---
 
-<BaseLayout title="Tous les outils IA testés — lesoutils-ia.fr">
+<BaseLayout 
+  title="Annuaire Outils IA 2026 : 120+ Logiciels Testés pour PME"
+  description="Trouvez le meilleur logiciel d'intelligence artificielle pour votre entreprise. Plus de 120 outils IA analysés, notés et comparés par nos experts."
+>
   <style>
     .page { padding-top: 56px; }
     .page-header { padding: 3rem 0 2rem; border-bottom: 1px solid var(--border); }
