@@ -1,6 +1,6 @@
 ---
-title: "Tarif outils IA — guide complet des prix 2026"
-description: "Combien coûtent vraiment les outils IA en 2026 ? ChatGPT, Jasper, HubSpot, Make.com — tous les tarifs détaillés et comparés pour les entreprises françaises."
+title: "Quel budget pour l'IA en 2026 ? Le guide des tarifs réels"
+description: "Combien coûtent ChatGPT, Jasper ou Make.com en 2026 ? Découvrez les tarifs détaillés et nos conseils budget pour équiper votre PME sans vous ruiner."
 category: "Guides"
 tags: ["tarif outils ia", "prix outils IA", "budget IA", "outils IA PME"]
 author: "Équipe lesoutils-ia"
