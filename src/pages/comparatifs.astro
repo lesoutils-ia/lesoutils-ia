@@ -40,7 +40,7 @@ const description = "Retrouvez tous nos comparatifs détaillés des meilleurs ou
             <div class="comp-card-desc">{comp.desc}</div>
             <div class="comp-card-outils">
               {comp.outils.map(o => (
-                <span class={`outil-tag ${o === comp.partenaire ? 'is-partenaire' : ''}`}>{o}</span>
+                <span class={`outil-tag${o === comp.partenaire ? ' is-partenaire' : ''}`}>{o}</span>
               ))}
             </div>
             <div class="comp-card-cta">Voir le classement →</div>
@@ -53,8 +53,8 @@ const description = "Retrouvez tous nos comparatifs détaillés des meilleurs ou
           <div class="section-label">Articles comparatifs</div>
           <div class="articles-list">
             {comparatifsArticles.map(a => (
-              <a href={`/articles/${a.slug}`} class="article-row">
-                <div class="article-info">
+              <a href={`/articles/${a.slug}`} class="article-row" style="display:grid;text-decoration:none;color:inherit;">
+                <div>
                   <div class="article-row-cat">{a.data.category}</div>
                   <div class="article-row-title">{a.data.title}</div>
                   <div class="article-row-desc">{a.data.description}</div>
