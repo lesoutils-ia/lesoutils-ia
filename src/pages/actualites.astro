@@ -1,40 +1,48 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { getCollection } from 'astro:content';
 
-const articles = await getCollection('articles', ({ data }) => !data.draft);
-const sorted = articles.sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime());
+const comparatifsPages = [
+  { slug: "/comparatifs/ia-service-client", cat: "Service client", titre: "Meilleurs chatbots IA service client PME — 2026", desc: "Intercom Fin, Tidio, Zendesk AI testés sur de vrais tickets. Taux de résolution automatique mesurés sur 6 semaines.", outils: ["Intercom", "Tidio", "Zendesk AI", "Freshdesk", "Crisp"], partenaire: "Intercom" },
+  { slug: "/comparatifs/formation-ia", cat: "Formation", titre: "Meilleure formations IA entreprises — Comparatif 2026", desc: "DataScientest, OpenClassrooms, Coursera — les meilleures plateformes de formation IA pour PME. Financement CPF disponible.", outils: ["DataScientest", "OpenClassrooms", "Coursera", "LinkedIn Learning", "Skill et You"], partenaire: "DataScientest" },
+  { slug: "/comparatifs/sondages-ia", cat: "Analyse Client", titre: "SurveyMonkey vs Typeform vs Jotform — Meilleur outil sondage IA", desc: "Collectez des avis clients et laissez l'IA analyser les sentiments et les tendances automatiquement. Le classement des solutions 2026.", outils: ["SurveyMonkey", "Typeform", "Jotform"], partenaire: "SurveyMonkey" },
+  { 
+    slug: "/comparatifs/assistants-reunion-ia", 
+    cat: "Productivité", 
+    titre: "Claap vs Fathom vs Otter — Meilleur Assistant Réunion IA 2026", 
+    desc: "Marre de prendre des notes ? 3 assistants IA testés sur de vraies réunions. Transcription française, résumés auto et intégration CRM.", 
+    outils: ["Claap", "Fathom", "Otter.ai"], 
+    partenaire: "" 
+  }
+];
 ---
 
 <BaseLayout 
-  title="Actualités IA pour Entreprises & PME : Le Guide 2026"
-  description="Restez à jour sur l'intelligence artificielle : nouveaux outils, mises à jour majeures et conseils concrets pour booster la productivité de votre entreprise."
+  title="Comparatifs Outils IA 2026 : Le Guide pour choisir les meilleures solutions"
+  description="Quel outil IA choisir pour votre entreprise ? Découvrez nos comparatifs détaillés, tests réels et avis d'experts pour prendre la meilleure décision."
 >
-
   <style>
     .page { padding-top: 56px; }
     .page-header { padding: 3rem 0 2rem; border-bottom: 1px solid var(--border); }
     .page-label { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.8rem; }
     .page-title { font-family: var(--font-display); font-size: clamp(28px, 4vw, 48px); font-weight: 800; line-height: 1.2; letter-spacing: -1px; margin-bottom: 0.8rem; }
-    .page-desc { font-size: 16px; color: var(--text-muted); line-height: 1.7; max-width: 600px; }
+    .page-desc { font-size: 16px; color: var(--text-muted); line-height: 1.7; max-width: 700px; }
     
-    .articles-list { padding: 2rem 0; }
-    .article-row { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2rem; padding: 1.5rem 0; border-bottom: 1px solid var(--border); text-decoration: none; color: inherit; }
-    .article-row:last-child { border-bottom: none; }
-    .article-row-cat { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 5px; }
-    .article-row-title { font-family: var(--font-body); font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 5px; transition: color .15s; }
-    .article-row:hover .article-row-title { color: var(--accent); }
-    .article-row-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
-    .article-row-meta { font-size: 12px; color: var(--text-muted); white-space: nowrap; }
-    .empty-state { padding: 4rem 0; text-align: center; color: var(--text-muted); font-size: 15px; }
+    .comparatifs-list { padding: 2rem 0; }
+    .comp-row { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2rem; padding: 1.5rem 0; border-bottom: 1px solid var(--border); text-decoration: none; color: inherit; }
+    .comp-row:last-child { border-bottom: none; }
+    .comp-row-cat { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 5px; }
+    .comp-row-title { font-family: var(--font-body); font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 5px; transition: color .15s; }
+    .comp-row:hover .comp-row-title { color: var(--accent); }
+    .comp-row-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+    .comp-row-tools { font-size: 11px; margin-top: 8px; color: var(--text-mid); font-weight: 500; }
 
-    /* Section SEO Densifiée */
-    .seo-content { padding: 4rem 0; border-top: 1px solid var(--border); margin-top: 2rem; }
+    /* Densification SEO */
+    .seo-section { padding: 4rem 0; border-top: 1px solid var(--border); margin-top: 2rem; }
     .seo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; margin-bottom: 3rem; }
-    .seo-block h2 { font-family: var(--font-display); font-size: 18px; font-weight: 800; margin-bottom: 1.2rem; color: var(--text); }
+    .seo-block h2 { font-family: var(--font-display); font-size: 18px; font-weight: 800; margin-bottom: 1.2rem; }
     .seo-block p { font-size: 14px; color: var(--text-mid); line-height: 1.8; margin-bottom: 1rem; }
     
-    .faq-section { background: var(--bg-light); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); }
+    .faq-mini { background: var(--bg-light); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); }
     .faq-item { margin-bottom: 1.5rem; }
     .faq-item h3 { font-size: 15px; font-weight: 700; margin-bottom: 0.5rem; color: var(--accent); }
     .faq-item p { font-size: 14px; color: var(--text-mid); line-height: 1.6; }
@@ -43,51 +51,47 @@ const sorted = articles.sort((a, b) => new Date(b.data.publishDate).getTime() - 
   <div class="page">
     <div class="wrap">
       <div class="page-header">
-        <div class="page-label">Veille Technologique</div>
-        <h1 class="page-title">Actualités IA<br>pour les entreprises</h1>
-        <p class="page-desc">Découvrez les dernières avancées du machine learning et de l'IA générative. [span_2](start_span)Nous analysons les nouveautés pour vous aider à transformer votre productivité business en 2026[span_2](end_span).</p>
+        <div class="page-label">Bancs d'essai 2026</div>
+        <h1 class="page-title">Comparatifs des<br>meilleurs outils IA</h1>
+        <p class="page-desc">Nous testons rigoureusement les solutions d'intelligence artificielle du marché pour vous aider à choisir celles qui correspondent réellement à vos besoins business.</p>
       </div>
 
-      <div class="articles-list">
-        {sorted.length > 0 ? (
-          sorted.map((a) => (
-            <a href={`/articles/${a.slug}`} class="article-row">
-              <div>
-                <div class="article-row-cat">{a.data.category}</div>
-                <div class="article-row-title">{a.data.title}</div>
-                <div class="article-row-desc">{a.data.description}</div>
-              </div>
-              <div class="article-row-meta">{a.data.readTime}</div>
-            </a>
-          ))
-        ) : (
-          <div class="empty-state">Nos analyses d'actualités arrivent très bientôt.</div>
-        )}
+      <div class="comparatifs-list">
+        {comparatifsPages.map((c) => (
+          <a href={c.slug} class="comp-row">
+            <div>
+              <div class="comp-row-cat">{c.cat}</div>
+              <div class="comp-row-title">{c.titre}</div>
+              <div class="comp-row-desc">{c.desc}</div>
+              <div class="comp-row-tools">Outils inclus : {c.outils.join(', ')}</div>
+            </div>
+            <div class="article-row-meta">Voir le test</div>
+          </a>
+        ))}
       </div>
 
-      <div class="seo-content">
+      <div class="seo-section">
         <div class="seo-grid">
           <div class="seo-block">
-            <h2>Pourquoi suivre l'actualité de l'IA ?</h2>
-            <p>Le rythme de l'innovation en intelligence artificielle est exponentiel. [span_3](start_span)Pour une PME, rester informé n'est plus une option mais une nécessité stratégique pour maintenir sa compétitivité[span_3](end_span). [span_4](start_span)Les nouveaux modèles comme GPT-5 ou Claude 4 redéfinissent chaque mois ce qu'il est possible d'automatiser[span_4](end_span).</p>
-            <p>Nos articles décryptent ces changements technologiques pour les rendre accessibles sans expertise technique préalable. [span_5](start_span)Nous nous concentrons sur l'impact opérationnel : réduction des coûts, gain de temps sur les tâches répétitives et amélioration de la relation client[span_5](end_span).</p>
+            <h2>Pourquoi se fier à nos comparatifs IA ?</h2>
+            <p>Le marché de l'IA est saturé de promesses marketing. Pour une PME, choisir entre deux outils comme Intercom AI ou Zendesk peut s'avérer complexe. Nous analysons chaque solution sur des critères de ROI, de facilité d'intégration et de support de la langue française.</p>
+            <p>Nos tests ne sont pas basés sur des fiches techniques, mais sur des périodes d'essai réelles de 4 à 8 semaines en conditions de production.</p>
           </div>
           <div class="seo-block">
-            <h2>L'IA en 2026 : Ce qu'il faut retenir</h2>
-            [span_6](start_span)<p>En 2026, l'IA n'est plus seulement un outil de discussion, mais un véritable agent autonome capable d'exécuter des processus complexes[span_6](end_span). [span_7](start_span)L'intégration dans les outils SaaS du quotidien facilite l'adoption par les collaborateurs sans nécessiter de formations lourdes[span_7](end_span).</p>
-            [span_8](start_span)<p>Nous couvrons les thématiques essentielles : automatisation du marketing, analyse prédictive des données de vente, et sécurisation des données d'entreprise face aux nouveaux enjeux de l'IA[span_8](end_span).</p>
+            <h2>Comment nous évaluons les outils</h2>
+            [span_7](start_span)[span_8](start_span)<p>Nous nous concentrons sur trois piliers : la performance technique (précision des modèles), l'accessibilité financière pour les structures françaises, et la sécurité des données d'entreprise[span_7](end_span)[span_8](end_span). [span_9](start_span)Notre objectif est de vous éviter les gadgets pour vous concentrer sur les outils qui génèrent de la valeur immédiate[span_9](end_span).</p>
           </div>
         </div>
 
-        <div class="faq-section">
-          <h2>Questions fréquentes sur l'IA en entreprise</h2>
+        <div class="faq-mini">
+          <h2>Questions fréquentes sur les outils IA</h2>
           <div class="faq-item">
-            <h3>Quel budget prévoir pour intégrer l'IA ?</h3>
-            [span_9](start_span)<p>Contrairement aux idées reçues, de nombreuses solutions basées sur l'IA sont disponibles sous forme d'abonnement SaaS très abordables, permettant un test rapide avec un investissement initial minimal[span_9](end_span).</p>
+            <h3>Faut-il privilégier les outils spécialisés ou généralistes ?</h3>
+            <p>Tout dépend de votre usage. Un outil spécialisé (comme un assistant de réunion dédié) sera souvent plus précis qu'une fonctionnalité ajoutée à la hâte dans une suite généraliste.</p>
           </div>
           <div class="faq-item">
-            <h3>L'IA est-elle adaptée aux petites entreprises ?</h3>
-            <p>Absolument. [span_10](start_span)Les PME sont souvent plus agiles pour adopter ces outils et peuvent ainsi rivaliser avec des structures beaucoup plus grandes en automatisant leurs processus internes[span_10](end_span).</p>
+            <h3>Le support du français est-il fiable en 2026 ?</h3>
+            <p>La plupart des grands modèles d'IA gèrent désormais parfaitement le français, mais les nuances métier varient encore selon les éditeurs. [span_10](start_span)Nous testons systématiquement cet aspect[span_10](end_span).</p>
           </div>
         </div>
       </div>
