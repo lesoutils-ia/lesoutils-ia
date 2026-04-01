@@ -172,8 +172,13 @@ const scoreLabels: { [key: string]: string } = {"transcription": "Précision IA"
           <div class="sidebar-widget">
             <div class="sidebar-widget-title">Classement rapide</div>
             {tools.map(t => (
-              <a href={`#${t.slug}`} class="quick-rank-item">
-                <span class={`qr-num${t.rank === 1 ? ' rank-1' : ''}`}>{`#${t.rank}`}</span>
+              <a 
+                href={(t.partenaire || t.slug === 'claap') ? t.lien : `#${t.slug}`} 
+                target={(t.partenaire || t.slug === 'claap') ? "_blank" : "_self"} 
+                rel={(t.partenaire || t.slug === 'claap') ? "nofollow noopener" : ""} 
+                class="quick-rank-item"
+              >
+                <span class={`qr-num ${t.rank === 1 ? 'rank-1' : ''}`}>{`#${t.rank}`}</span>
                 <span class="qr-name">{t.name}</span>
                 <span class="qr-score" style={`color:${scoreColor(t.globalScore)}`}>{t.globalScore.toFixed(1)}</span>
               </a>
