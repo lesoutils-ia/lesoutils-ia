@@ -65,7 +65,8 @@ const tools = [
     globalScore: 4.4,
     prix: "À partir de 39$/mois",
     essai: "Essai 14 jours",
-    lien: "https://lemlist.com",
+    lien: "https://get.lemlist.com/a841xxyr0yzk",
+    affiliateLink: "https://get.lemlist.com/a841xxyr0yzk",
     partenaire: false,
     avantages: ["Images dynamiques IA", "Délivrabilité exceptionnelle", "Multicanal intégré", "Icebreakers automatisés"],
     inconvenients: ["Pas fait pour les grosses newsletters", "Prix par utilisateur", "Interface chargée"],
@@ -151,7 +152,7 @@ const scoreLabels: { [key: string]: string } = {"delivrabilite": "Délivrabilit�
                   <div class="tool-rank-row">
                     <span class={`tool-rank${tool.rank === 1 ? ' rank-1' : ''}`}>N°{tool.rank}</span>
                     {tool.partenaire && <span class="badge-partenaire">Partenaire</span>}
-                    {!tool.partenaire && <span class="badge-affilie">Lien affilié</span>}
+                    {!tool.partenaire && (tool.affiliateLink || tool.slug === 'mailchimp' || tool.slug === 'activecampaign' || tool.slug === 'lemlist') && <span class="badge-affilie">Lien affilié</span>}
                   </div>
                   <div class="tool-name-row">
                     <h2 class="tool-name">{tool.name}</h2>
