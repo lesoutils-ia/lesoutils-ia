@@ -2,7 +2,6 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
-// Récupération sécurisée des articles pour la veille
 const articles = await getCollection('articles', ({ data }) => !data.draft);
 const sorted = articles.sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime());
 ---
@@ -27,15 +26,14 @@ const sorted = articles.sort((a, b) => new Date(b.data.publishDate).getTime() - 
     .article-row-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
     .article-row-meta { font-size: 12px; color: var(--text-muted); white-space: nowrap; }
 
-    /* SECTION DE DENSIFICATION SEO (Pour éviter le Low Content) */
     .seo-extra { padding: 4rem 0; border-top: 1px solid var(--border); margin-top: 2rem; }
     .seo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; margin-bottom: 3rem; }
-    .seo-block h2 { font-family: var(--font-display); font-size: 18px; font-weight: 800; margin-bottom: 1.2rem; color: var(--text); }
+    .seo-block h2 { font-family: var(--font-display); font-size: 18px; font-weight: 800; margin-bottom: 1.2rem; color: #ffffff; }
     .seo-block p { font-size: 14px; color: var(--text-mid); line-height: 1.8; margin-bottom: 1rem; }
     
-    .faq-mini { background: var(--bg-light); padding: 2.5rem; border-radius: 12px; border: 1px solid var(--border); }
+    .faq-mini { background: #111111; padding: 2.5rem; border-radius: 12px; border: 1px solid var(--border); }
     .faq-item { margin-bottom: 1.5rem; }
-    .faq-item h3 { font-size: 15px; font-weight: 700; margin-bottom: 0.5rem; color: var(--accent); }
+    .faq-item h3 { font-size: 14px; font-weight: 700; margin-bottom: 0.5rem; color: var(--accent); text-transform: uppercase; }
     .faq-item p { font-size: 14px; color: var(--text-mid); line-height: 1.6; }
   </style>
 
@@ -43,23 +41,25 @@ const sorted = articles.sort((a, b) => new Date(b.data.publishDate).getTime() - 
     <div class="wrap">
       <div class="page-header">
         <div class="page-label">Veille Stratégique</div>
-        <h1 class="page-title">L'essentiel de l'IA<br>pour votre business</h1>
+        <h1 class="page-title">L'essentiel de l'IA<br />pour votre business</h1>
         <p class="page-desc">
-          Restez informé des évolutions majeures de l'IA générative. [span_1](start_span)Nous filtrons le bruit pour vous livrer uniquement les mises à jour et outils qui impactent réellement la productivité des PME françaises.[span_1](end_span)
+          Restez informé des évolutions majeures de l'IA générative. Nous filtrons le bruit pour vous livrer uniquement les mises à jour et outils qui impactent réellement la productivité des PME françaises.
         </p>
       </div>
 
       <div class="articles-list">
-        {sorted.length > 0 ? sorted.map((a) => (
-          <a href={`/articles/${a.slug}`} class="article-row">
-            <div>
-              <div class="article-row-cat">{a.data.category}</div>
-              <div class="article-row-title">{a.data.title}</div>
-              <div class="article-row-desc">{a.data.description}</div>
-            </div>
-            <div class="article-row-meta">{a.data.readTime}</div>
-          </a>
-        )) : (
+        {sorted.length > 0 ? (
+          sorted.map((a) => (
+            <a href={`/articles/${a.slug}`} class="article-row">
+              <div>
+                <div class="article-row-cat">{a.data.category}</div>
+                <div class="article-row-title">{a.data.title}</div>
+                <div class="article-row-desc">{a.data.description}</div>
+              </div>
+              <div class="article-row-meta">{a.data.readTime}</div>
+            </a>
+          ))
+        ) : (
           <div class="empty-state">Nos analyses d'actualités arrivent très bientôt.</div>
         )}
       </div>
@@ -69,27 +69,27 @@ const sorted = articles.sort((a, b) => new Date(b.data.publishDate).getTime() - 
           <div class="seo-block">
             <h2>Pourquoi suivre l'actualité IA en 2026 ?</h2>
             <p>
-              [span_2](start_span)L'intelligence artificielle représente aujourd'hui un levier de croissance inédit pour les PME.[span_2](end_span) 
-              [span_3](start_span)Historiquement, les innovations majeures nécessitaient des investissements massifs, mais avec l'IA générative et les outils SaaS, une entreprise de 10 salariés peut désormais accéder aux mêmes capacités d'analyse qu'un grand groupe.[span_3](end_span)
+              [span_4](start_span)L'intelligence artificielle représente aujourd'hui un levier de croissance inédit pour les PME[span_4](end_span). 
+              [span_5](start_span)Historiquement, les innovations majeures nécessitaient des investissements massifs, mais avec l'IA générative et les outils SaaS, une entreprise de 10 salariés peut accéder aux mêmes capacités que les grands groupes[span_5](end_span).
             </p>
             <p>
-              Le rythme de l'innovation est exponentiel. [span_4](start_span)Suivre l'actualité permet de repérer les outils qui automatiseront votre service client, votre prospection ou votre rédaction de contenu avant vos concurrents.[span_4](end_span)
+              [span_6](start_span)Suivre l'actualité permet de repérer les outils qui automatiseront votre service client, votre prospection ou votre rédaction avant vos concurrents[span_6](end_span).
             </p>
           </div>
           <div class="seo-block">
             <h2>L'impact de l'IA sur la productivité</h2>
             <p>
-              [span_5](start_span)Le principal défi n'est plus la technologie, mais le choix des bons outils et l'accompagnement des équipes face au changement.[span_5](end_span) 
-              [span_6](start_span)Nos guides vous aident à déchiffrer ce marché complexe pour vous concentrer sur les cas d'usage générant un véritable retour sur investissement (ROI).[span_6](end_span)
+              [span_7](start_span)Le principal défi n'est plus la technologie, mais le choix des bons outils et l'accompagnement des équipes face au changement[span_7](end_span). 
+              [span_8](start_span)Nos guides vous aident à vous concentrer sur les cas d'usage générant un véritable retour sur investissement (ROI)[span_8](end_span).
             </p>
           </div>
         </div>
 
         <div class="faq-mini">
-          <h2>FAQ : L'IA au quotidien en entreprise</h2>
+          <h2 style="margin-bottom: 2rem;">FAQ : L'IA au quotidien en entreprise</h2>
           <div class="faq-item">
             <h3>Quel budget prévoir pour démarrer avec l'IA ?</h3>
-            <p>La plupart des solutions performantes fonctionnent par abonnement SaaS abordables, permettant de tester l'impact réel sur votre activité avec un risque financier minimal.</p>
+            <p>La plupart des solutions fonctionnent par abonnement SaaS abordables, permettant de tester l'impact réel avec un risque financier minimal.</p>
           </div>
           <div class="faq-item">
             <h3>L'IA peut-elle remplacer mes collaborateurs ?</h3>
