@@ -2,42 +2,38 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
-[span_0](start_span)// On récupère uniquement les articles de blog/actus[span_0](end_span)
+// Récupération sécurisée des articles pour la veille
 const articles = await getCollection('articles', ({ data }) => !data.draft);
-
-[span_1](start_span)// On les trie par date de publication (du plus récent au plus ancien)[span_1](end_span)
 const sorted = articles.sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime());
 ---
 
 <BaseLayout 
   title="Actualités IA pour Entreprises & PME : Le Guide 2026"
-  description="Restez à jour sur l'intelligence artificielle : nouveaux outils, mises à jour majeures et conseils pour booster la productivité de votre entreprise."
+  description="Restez à jour sur l'intelligence artificielle : nouveaux outils, mises à jour majeures et conseils concrets pour booster la productivité de votre entreprise."
 >
-
   <style>
     .page { padding-top: 56px; }
-    .page-header { padding: 3rem 0 2rem; border-bottom: 1px solid var(--border); [span_2](start_span)}
-    .page-label { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.8rem; }[span_2](end_span)
-    .page-title { font-family: var(--font-display); font-size: clamp(28px, 4vw, 48px); font-weight: 800; line-height: 1.2; letter-spacing: -1px; margin-bottom: 0.8rem; [span_3](start_span)}
-    .page-desc { font-size: 16px; color: var(--text-muted); line-height: 1.7; max-width: 600px; }[span_3](end_span)
+    .page-header { padding: 3rem 0 2rem; border-bottom: 1px solid var(--border); }
+    .page-label { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.8rem; }
+    .page-title { font-family: var(--font-display); font-size: clamp(28px, 4vw, 48px); font-weight: 800; line-height: 1.2; letter-spacing: -1px; margin-bottom: 0.8rem; }
+    .page-desc { font-size: 16px; color: var(--text-muted); line-height: 1.7; max-width: 700px; }
     
-    .articles-list { padding: 2rem 0; [span_4](start_span)}
-    .article-row { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2rem; padding: 1.5rem 0; border-bottom: 1px solid var(--border); text-decoration: none; color: inherit; }[span_4](end_span)
-    .article-row:last-child { border-bottom: none; [span_5](start_span)}
-    .article-row-cat { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 5px; }[span_5](end_span)
-    .article-row-title { font-family: var(--font-body); font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 5px; transition: color .15s; [span_6](start_span)}
-    .article-row:hover .article-row-title { color: var(--accent); }[span_6](end_span)
-    .article-row-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; [span_7](start_span)}
-    .article-row-meta { font-size: 12px; color: var(--text-muted); white-space: nowrap; }[span_7](end_span)
-    .empty-state { padding: 4rem 0; text-align: center; color: var(--text-muted); font-size: 15px; [span_8](start_span)}
+    .articles-list { padding: 2rem 0; }
+    .article-row { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2rem; padding: 1.5rem 0; border-bottom: 1px solid var(--border); text-decoration: none; color: inherit; }
+    .article-row:last-child { border-bottom: none; }
+    .article-row-cat { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 5px; }
+    .article-row-title { font-family: var(--font-body); font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 5px; transition: color .15s; }
+    .article-row:hover .article-row-title { color: var(--accent); }
+    .article-row-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+    .article-row-meta { font-size: 12px; color: var(--text-muted); white-space: nowrap; }
 
-    /* Section SEO pour densifier la page et éviter le "low content" */
-    .seo-content { padding: 4rem 0; border-top: 1px solid var(--border); margin-top: 2rem; }[span_8](end_span)
-    .seo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; margin-bottom: 3rem; [span_9](start_span)}
-    .seo-block h2 { font-family: var(--font-display); font-size: 18px; font-weight: 800; margin-bottom: 1.2rem; color: var(--text); }[span_9](end_span)
-    .seo-block p { font-size: 14px; color: var(--text-mid); line-height: 1.8; margin-bottom: 1rem; [span_10](start_span)}
+    /* SECTION DE DENSIFICATION SEO (Pour éviter le Low Content) */
+    .seo-extra { padding: 4rem 0; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .seo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; margin-bottom: 3rem; }
+    .seo-block h2 { font-family: var(--font-display); font-size: 18px; font-weight: 800; margin-bottom: 1.2rem; color: var(--text); }
+    .seo-block p { font-size: 14px; color: var(--text-mid); line-height: 1.8; margin-bottom: 1rem; }
     
-    .faq-section { background: var(--bg-light); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); }
+    .faq-mini { background: var(--bg-light); padding: 2.5rem; border-radius: 12px; border: 1px solid var(--border); }
     .faq-item { margin-bottom: 1.5rem; }
     .faq-item h3 { font-size: 15px; font-weight: 700; margin-bottom: 0.5rem; color: var(--accent); }
     .faq-item p { font-size: 14px; color: var(--text-mid); line-height: 1.6; }
@@ -46,54 +42,62 @@ const sorted = articles.sort((a, b) => new Date(b.data.publishDate).getTime() - 
   <div class="page">
     <div class="wrap">
       <div class="page-header">
-        <div class="page-label">Veille Technologique</div>
-        <h1 class="page-title">Actualités IA<br>pour les entreprises</h1>
-        <p class="page-desc">Découvrez les dernières avancées du machine learning et de l'IA générative. Nous analysons les nouveautés pour vous aider à transformer votre productivité business en 2026.</p>
+        <div class="page-label">Veille Stratégique</div>
+        <h1 class="page-title">L'essentiel de l'IA<br>pour votre business</h1>
+        <p class="page-desc">
+          Restez informé des évolutions majeures de l'IA générative. [span_1](start_span)Nous filtrons le bruit pour vous livrer uniquement les mises à jour et outils qui impactent réellement la productivité des PME françaises.[span_1](end_span)
+        </p>
       </div>
 
       <div class="articles-list">
-        {sorted.length > 0 ? (
-          sorted.map((a) => (
-            <a href={`/articles/${a.slug}`} class="article-row">
-              <div>
-                <div class="article-row-cat">{a.data.category}</div>[span_10](end_span)
-                [span_11](start_span)<div class="article-row-title">{a.data.title}</div>[span_11](end_span)
-                [span_12](start_span)<div class="article-row-desc">{a.data.description}</div>[span_12](end_span)
-              </div>
-              [span_13](start_span)<div class="article-row-meta">{a.data.readTime}</div>[span_13](end_span)
-            </a>
-          ))
-        ) : (
-          [span_14](start_span)<div class="empty-state">Nos analyses d'actualités arrivent très bientôt.</div>[span_14](end_span)
+        {sorted.length > 0 ? sorted.map((a) => (
+          <a href={`/articles/${a.slug}`} class="article-row">
+            <div>
+              <div class="article-row-cat">{a.data.category}</div>
+              <div class="article-row-title">{a.data.title}</div>
+              <div class="article-row-desc">{a.data.description}</div>
+            </div>
+            <div class="article-row-meta">{a.data.readTime}</div>
+          </a>
+        )) : (
+          <div class="empty-state">Nos analyses d'actualités arrivent très bientôt.</div>
         )}
       </div>
 
-      <div class="seo-content">
+      <div class="seo-extra">
         <div class="seo-grid">
           <div class="seo-block">
-            <h2>Pourquoi suivre l'actualité de l'IA ?</h2>
-            <p>Le rythme de l'innovation en intelligence artificielle est exponentiel. Pour une PME, rester informé n'est plus une option mais une nécessité stratégique pour maintenir sa compétitivité. [span_15](start_span)Les nouveaux modèles redéfinissent chaque mois ce qu'il est possible d'automatiser.[span_15](end_span)</p>
-            <p>Nos articles décryptent ces changements technologiques pour les rendre accessibles sans expertise technique préalable. [span_16](start_span)Nous nous concentrons sur l'impact opérationnel : réduction des coûts et gain de temps.[span_16](end_span)</p>
+            <h2>Pourquoi suivre l'actualité IA en 2026 ?</h2>
+            <p>
+              [span_2](start_span)L'intelligence artificielle représente aujourd'hui un levier de croissance inédit pour les PME.[span_2](end_span) 
+              [span_3](start_span)Historiquement, les innovations majeures nécessitaient des investissements massifs, mais avec l'IA générative et les outils SaaS, une entreprise de 10 salariés peut désormais accéder aux mêmes capacités d'analyse qu'un grand groupe.[span_3](end_span)
+            </p>
+            <p>
+              Le rythme de l'innovation est exponentiel. [span_4](start_span)Suivre l'actualité permet de repérer les outils qui automatiseront votre service client, votre prospection ou votre rédaction de contenu avant vos concurrents.[span_4](end_span)
+            </p>
           </div>
           <div class="seo-block">
-            <h2>L'IA en 2026 : Ce qu'il faut retenir</h2>
-            <p>En 2026, l'IA n'est plus seulement un outil de discussion, mais un véritable agent autonome capable d'exécuter des processus complexes. [span_17](start_span)L'intégration dans les outils SaaS facilite l'adoption par les collaborateurs.[span_17](end_span)</p>
-            [span_18](start_span)<p>Nous couvrons les thématiques essentielles : automatisation du marketing, analyse prédictive des données de vente, et sécurisation des données d'entreprise.[span_18](end_span)</p>
+            <h2>L'impact de l'IA sur la productivité</h2>
+            <p>
+              [span_5](start_span)Le principal défi n'est plus la technologie, mais le choix des bons outils et l'accompagnement des équipes face au changement.[span_5](end_span) 
+              [span_6](start_span)Nos guides vous aident à déchiffrer ce marché complexe pour vous concentrer sur les cas d'usage générant un véritable retour sur investissement (ROI).[span_6](end_span)
+            </p>
           </div>
         </div>
 
-        <div class="faq-section">
-          <h2>Questions fréquentes sur l'IA en entreprise</h2>
+        <div class="faq-mini">
+          <h2>FAQ : L'IA au quotidien en entreprise</h2>
           <div class="faq-item">
-            <h3>Quel budget prévoir pour intégrer l'IA ?</h3>
-            [span_19](start_span)<p>De nombreuses solutions basées sur l'IA sont disponibles sous forme d'abonnement SaaS abordables, permettant un test rapide avec un investissement minimal.[span_19](end_span)</p>
+            <h3>Quel budget prévoir pour démarrer avec l'IA ?</h3>
+            <p>La plupart des solutions performantes fonctionnent par abonnement SaaS abordables, permettant de tester l'impact réel sur votre activité avec un risque financier minimal.</p>
           </div>
           <div class="faq-item">
-            <h3>L'IA est-elle adaptée aux petites entreprises ?</h3>
-            <p>Absolument. [span_20](start_span)Les PME sont souvent plus agiles pour adopter ces outils et peuvent ainsi rivaliser avec des structures plus grandes en automatisant leurs processus.[span_20](end_span)</p>
+            <h3>L'IA peut-elle remplacer mes collaborateurs ?</h3>
+            <p>L'objectif est l'augmentation des capacités humaines : libérer vos équipes des tâches répétitives pour qu'elles se concentrent sur les missions à haute valeur ajoutée.</p>
           </div>
         </div>
       </div>
+      
     </div>
   </div>
 </BaseLayout>
