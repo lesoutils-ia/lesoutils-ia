@@ -28,10 +28,16 @@ const sorted = articles.sort((a, b) => new Date(b.data.publishDate).getTime() - 
     .article-row-meta { font-size: 12px; color: var(--text-muted); white-space: nowrap; }
     .empty-state { padding: 4rem 0; text-align: center; color: var(--text-muted); font-size: 15px; }
 
+    /* Section SEO Densifiée */
     .seo-content { padding: 4rem 0; border-top: 1px solid var(--border); margin-top: 2rem; }
-    .seo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; }
-    .seo-block h2 { font-family: var(--font-display); font-size: 18px; font-weight: 800; margin-bottom: 1.2rem; letter-spacing: -0.5px; }
+    .seo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; margin-bottom: 3rem; }
+    .seo-block h2 { font-family: var(--font-display); font-size: 18px; font-weight: 800; margin-bottom: 1.2rem; color: var(--text); }
     .seo-block p { font-size: 14px; color: var(--text-mid); line-height: 1.8; margin-bottom: 1rem; }
+    
+    .faq-section { background: var(--bg-light); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); }
+    .faq-item { margin-bottom: 1.5rem; }
+    .faq-item h3 { font-size: 15px; font-weight: 700; margin-bottom: 0.5rem; color: var(--accent); }
+    .faq-item p { font-size: 14px; color: var(--text-mid); line-height: 1.6; }
   </style>
 
   <div class="page">
@@ -39,7 +45,7 @@ const sorted = articles.sort((a, b) => new Date(b.data.publishDate).getTime() - 
       <div class="page-header">
         <div class="page-label">Veille Technologique</div>
         <h1 class="page-title">Actualités IA<br>pour les entreprises</h1>
-        <p class="page-desc">Les dernières nouveautés sur les outils IA, les mises à jour majeures et ce que ça change concrètement pour la productivité de votre business.</p>
+        <p class="page-desc">Découvrez les dernières avancées du machine learning et de l'IA générative. [span_2](start_span)Nous analysons les nouveautés pour vous aider à transformer votre productivité business en 2026[span_2](end_span).</p>
       </div>
 
       <div class="articles-list">
@@ -55,19 +61,33 @@ const sorted = articles.sort((a, b) => new Date(b.data.publishDate).getTime() - 
             </a>
           ))
         ) : (
-          <div class="empty-state">Nos premières actualités arrivent très bientôt.</div>
+          <div class="empty-state">Nos analyses d'actualités arrivent très bientôt.</div>
         )}
       </div>
 
       <div class="seo-content">
         <div class="seo-grid">
           <div class="seo-block">
-            <h2>Suivre l'évolution de l'IA en 2026</h2>
-            <p>L'intelligence artificielle représente aujourd'hui un levier de croissance inédit pour les structures de toutes tailles. Avec l'avènement de l'IA générative, les capacités d'analyse et d'automatisation sont désormais accessibles aux entreprises sans investissements massifs.</p>
+            <h2>Pourquoi suivre l'actualité de l'IA ?</h2>
+            <p>Le rythme de l'innovation en intelligence artificielle est exponentiel. [span_3](start_span)Pour une PME, rester informé n'est plus une option mais une nécessité stratégique pour maintenir sa compétitivité[span_3](end_span). [span_4](start_span)Les nouveaux modèles comme GPT-5 ou Claude 4 redéfinissent chaque mois ce qu'il est possible d'automatiser[span_4](end_span).</p>
+            <p>Nos articles décryptent ces changements technologiques pour les rendre accessibles sans expertise technique préalable. [span_5](start_span)Nous nous concentrons sur l'impact opérationnel : réduction des coûts, gain de temps sur les tâches répétitives et amélioration de la relation client[span_5](end_span).</p>
           </div>
           <div class="seo-block">
-            <h2>Impact concret sur votre activité</h2>
-            <p>Que ce soit pour optimiser votre prospection, accélérer votre rédaction de contenus ou déployer des chatbots intelligents, l'IA offre des solutions rentables au quotidien. Le défi actuel est de choisir les bons outils pour garantir un véritable retour sur investissement (ROI).</p>
+            <h2>L'IA en 2026 : Ce qu'il faut retenir</h2>
+            [span_6](start_span)<p>En 2026, l'IA n'est plus seulement un outil de discussion, mais un véritable agent autonome capable d'exécuter des processus complexes[span_6](end_span). [span_7](start_span)L'intégration dans les outils SaaS du quotidien facilite l'adoption par les collaborateurs sans nécessiter de formations lourdes[span_7](end_span).</p>
+            [span_8](start_span)<p>Nous couvrons les thématiques essentielles : automatisation du marketing, analyse prédictive des données de vente, et sécurisation des données d'entreprise face aux nouveaux enjeux de l'IA[span_8](end_span).</p>
+          </div>
+        </div>
+
+        <div class="faq-section">
+          <h2>Questions fréquentes sur l'IA en entreprise</h2>
+          <div class="faq-item">
+            <h3>Quel budget prévoir pour intégrer l'IA ?</h3>
+            [span_9](start_span)<p>Contrairement aux idées reçues, de nombreuses solutions basées sur l'IA sont disponibles sous forme d'abonnement SaaS très abordables, permettant un test rapide avec un investissement initial minimal[span_9](end_span).</p>
+          </div>
+          <div class="faq-item">
+            <h3>L'IA est-elle adaptée aux petites entreprises ?</h3>
+            <p>Absolument. [span_10](start_span)Les PME sont souvent plus agiles pour adopter ces outils et peuvent ainsi rivaliser avec des structures beaucoup plus grandes en automatisant leurs processus internes[span_10](end_span).</p>
           </div>
         </div>
       </div>
