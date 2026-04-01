@@ -15,7 +15,8 @@ const filtered = articles.filter(a => a.data.category.toLowerCase().includes('pm
     .page-header { padding: 3rem 0 2rem; border-bottom: 1px solid var(--border); }
     .page-label { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.8rem; }
     .page-title { font-family: var(--font-display); font-size: clamp(28px, 4vw, 48px); font-weight: 800; line-height: 1.2; letter-spacing: -1px; margin-bottom: 0.8rem; }
-    .page-desc { font-size: 16px; color: var(--text-muted); line-height: 1.7; max-width: 600px; }
+    .page-desc { font-size: 16px; color: var(--text-muted); line-height: 1.7; max-width: 700px; }
+    
     .articles-list { padding: 2rem 0; }
     .article-row { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2rem; padding: 1.5rem 0; border-bottom: 1px solid var(--border); text-decoration: none; color: inherit; }
     .article-row:last-child { border-bottom: none; }
@@ -25,6 +26,12 @@ const filtered = articles.filter(a => a.data.category.toLowerCase().includes('pm
     .article-row-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
     .article-row-meta { font-size: 12px; color: var(--text-muted); white-space: nowrap; }
     .empty-state { padding: 4rem 0; text-align: center; color: var(--text-muted); font-size: 15px; }
+
+    /* NOUVELLE SECTION SEO */
+    .seo-section { padding: 3.5rem 0; border-top: 1px solid var(--border); margin-top: 2rem; }
+    .seo-section-title { font-family: var(--font-display); font-size: 18px; font-weight: 800; margin-bottom: 1.5rem; letter-spacing: -0.5px; }
+    .seo-intro { max-width: 800px; }
+    .seo-intro p { font-size: 14px; color: var(--text-mid); line-height: 1.8; margin-bottom: 1.2rem; }
   </style>
 
   <div class="page">
@@ -32,8 +39,9 @@ const filtered = articles.filter(a => a.data.category.toLowerCase().includes('pm
       <div class="page-header">
         <div class="page-label">IA pour PME</div>
         <h1 class="page-title">L'intelligence artificielle<br>pour les PME françaises</h1>
-        <p class="page-desc">Des guides concrets pour intégrer l'IA dans votre entreprise, sans budget colossal et sans expertise technique.</p>
+        <p class="page-desc">Des guides concrets pour intégrer l'IA dans votre entreprise, sans budget colossal et sans expertise technique. Découvrez comment automatiser vos tâches, améliorer votre service client et gagner en productivité avec des outils accessibles et pensés pour la réalité des petites et moyennes entreprises.</p>
       </div>
+      
       <div class="articles-list">
         {filtered.length > 0 ? filtered.map(a => (
           <a href={`/articles/${a.slug}`} class="article-row">
@@ -48,6 +56,16 @@ const filtered = articles.filter(a => a.data.category.toLowerCase().includes('pm
           <div class="empty-state">Nos premiers articles IA pour PME arrivent très bientôt.</div>
         )}
       </div>
+
+      <div class="seo-section">
+        <h2 class="seo-section-title">Pourquoi intégrer l'Intelligence Artificielle dans votre PME ?</h2>
+        <div class="seo-intro">
+          <p>L'intelligence artificielle représente aujourd'hui un levier de croissance inédit pour les PME. Historiquement, les innovations technologiques majeures nécessitaient des investissements massifs, souvent inaccessibles aux petites structures. Aujourd'hui, avec l'avènement de l'IA générative et des outils SaaS dopés au machine learning, la donne a totalement changé. Une entreprise de 10 à 50 salariés peut désormais accéder à des capacités d'analyse, de rédaction et d'automatisation équivalentes à celles de grands groupes internationaux.</p>
+          <p>Sur cette page, nous rassemblons toutes nos ressources, études de cas et tutoriels spécifiquement dédiés aux dirigeants et managers de PME. Que vous cherchiez à optimiser votre prospection commerciale, à rédiger des fiches produits plus rapidement, ou à mettre en place un chatbot intelligent pour soulager votre service client, l'IA offre des solutions concrètes et rapidement rentables.</p>
+          <p>Le principal défi n'est plus la technologie en elle-même, mais le choix des bons outils et l'accompagnement de vos équipes face au changement. Nos guides sont conçus pour vous aider à déchiffrer ce marché complexe, à éviter les pièges des gadgets inutiles, et à vous concentrer sur les cas d'usage qui génèrent un véritable retour sur investissement (ROI) pour votre activité au quotidien.</p>
+        </div>
+      </div>
+      
     </div>
   </div>
 </BaseLayout>
