@@ -1,7 +1,7 @@
 ---
 title: "Avis DeepSeek : Le test complet 2026 (mieux que ChatGPT ?)"
 description: "Test complet de DeepSeek : performances, prix et risques RGPD. Découvrez si cette alternative gratuite vaut vraiment le coup pour votre PME en 2026."
-category: "Comparatifs"
+category: "IA pour PME"
 tags: ["deepseek avis", "Deepseek", "comparatif IA", "ChatGPT alternative"]
 author: "Équipe lesoutils-ia"
 authorInitials: "LI"
