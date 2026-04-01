@@ -1,0 +1,207 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "Claap vs Fathom vs Otter — Meilleur Assistant Réunion IA 2026";
+const description = "Quel assistant de réunion IA choisir ? Comparatif 2026 entre Claap, Fathom et Otter.ai pour transcrire, résumer et automatiser vos comptes-rendus.";
+
+const tools = [
+  {
+    rank: 1,
+    name: "Claap",
+    slug: "claap",
+    tagline: "L'assistant tout-en-un : Réunion, Vidéo et Résumé IA",
+    description: "Claap est devenu l'outil le plus polyvalent du marché. Il ne se contente pas d'enregistrer vos réunions Zoom ou Meet, il permet aussi de faire des 'vidéo messages' (type Loom) avec une IA qui structure vos propos. Sa force ? Un dashboard pro où l'IA classe vos réunions par thématiques et génère des comptes-rendus actionnables en 30 secondes. C'est l'outil qui offre la meilleure expérience utilisateur en 2026 pour les équipes modernes.",
+    scores: {transcription: 4.8, facilite: 4.9, rapport: 4.6, ia: 4.7},
+    globalScore: 4.8,
+    prix: "Gratuit / Pro dès 10$/mois",
+    essai: "Version gratuite disponible",
+    lien: "https://www.claap.io",
+    partenaire: false,
+    avantages: ["Transcription française parfaite", "Enregistrement d'écran intégré", "Résumés IA personnalisables", "Recherche globale dans les vidéos"],
+    inconvenients: ["Interface très riche", "Nécessite un temps d'adaptation"],
+    ideal: "Équipes produit, Sales, Agences"
+  },
+  {
+    rank: 2,
+    name: "Fathom",
+    slug: "fathom",
+    tagline: "La simplicité absolue pour les utilisateurs de CRM",
+    description: "Fathom reste le favori de ceux qui veulent un outil qui s'oublie. Son point fort est l'intégration gratuite avec les CRM (HubSpot, Salesforce). Pendant la réunion, vous cliquez sur un bouton pour 'marquer' un moment important, et l'IA s'occupe du reste. C'est l'outil le plus rapide à mettre en place et celui qui offre le plus de fonctions gratuitement pour les individus.",
+    scores: {transcription: 4.6, facilite: 4.9, rapport: 4.7, ia: 4.5},
+    globalScore: 4.7,
+    prix: "Gratuit / Premium pour équipes",
+    essai: "100% gratuit pour usage individuel",
+    lien: "https://fathom.video",
+    partenaire: false,
+    avantages: ["Gratuit pour les individus", "Synchro CRM automatique", "Boutons de highlights en direct", "Très léger"],
+    inconvenients: ["Moins complet que Claap en vidéo", "Moins d'options de montage"],
+    ideal: "Solopreneurs, Sales, Recruteurs"
+  },
+  {
+    rank: 3,
+    name: "Otter.ai",
+    slug: "otter",
+    tagline: "Le pionnier de la transcription textuelle",
+    description: "Otter est le vétéran du secteur. Si votre besoin est purement textuel (transcription brute de longs entretiens), il reste très performant. Son IA 'Otter AI Chat' permet de poser des questions en direct sur ce qui se dit dans la réunion. Cependant, son interface commence à dater face à la modernité d'un Claap et sa gestion du français est parfois un cran en dessous des nouveaux modèles européens.",
+    scores: {transcription: 4.7, facilite: 4.4, rapport: 4.2, ia: 4.6},
+    globalScore: 4.5,
+    prix: "Gratuit / Pro dès 10$/mois",
+    essai: "300 minutes gratuites / mois",
+    lien: "https://otter.ai",
+    partenaire: false,
+    avantages: ["Chat IA en temps réel", "Excellente app mobile", "Historique de transcription puissant", "Large base d'utilisateurs"],
+    inconvenients: ["Interface un peu vieillissante", "Français parfois perfectible", "Moins d'outils vidéo"],
+    ideal: "Journalistes, Chercheurs, Étudiants"
+  }
+];
+
+function scoreColor(score: number) {
+  if (score >= 4.5) return '#c8f135';
+  if (score >= 4.0) return '#a0d020';
+  if (score >= 3.5) return '#f0c030';
+  return '#f07030';
+}
+
+const scoreLabels: { [key: string]: string } = {"transcription": "Précision IA", "facilite": "Ergonomie", "rapport": "Rapport Q/P", "ia": "Qualité IA"};
+---
+
+<BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Meilleur assistant réunion IA 2026",
+      "numberOfItems": tools.length,
+      "itemListElement": tools.map((t, i) => ({ "@type": "ListItem", "position": i + 1, "name": t.name, "url": t.lien }))
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://lesoutils-ia.fr/" },
+        { "@type": "ListItem", "position": 2, "name": "Comparatifs", "item": "https://lesoutils-ia.fr/comparatifs" },
+        { "@type": "ListItem", "position": 3, "name": "Assistants Réunion IA" }
+      ]
+    })} />
+  </Fragment>
+
+  <style>
+    .comp-page{padding-top:56px}.container{max-width:1100px;margin:0 auto;padding:0 1.5rem}.breadcrumb{padding:1.2rem 0 0;display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-muted);flex-wrap:wrap}.breadcrumb a:hover{color:var(--accent)}.breadcrumb-sep{opacity:.4}.comp-header{padding:2rem 0 2.5rem;border-bottom:1px solid var(--border)}.comp-cat-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);background:var(--accent-dim);padding:4px 10px;border-radius:3px;display:inline-block;margin-bottom:1rem}.comp-title{font-family:var(--font-display);font-size:clamp(26px,4vw,42px);font-weight:800;line-height:1.2;letter-spacing:-.5px;margin-bottom:1rem}.comp-subtitle{font-size:16px;color:var(--text-mid);line-height:1.65;max-width:680px;margin-bottom:1.5rem}.comp-meta{display:flex;align-items:center;gap:1.5rem;font-size:12px;color:var(--text-muted);flex-wrap:wrap}.comp-meta-item{display:flex;align-items:center;gap:6px}.comp-meta-dot{width:4px;height:4px;border-radius:50%;background:var(--accent);display:inline-block}.comp-body{display:grid;grid-template-columns:1fr 280px;gap:3.5rem;padding:2.5rem 0 4rem;align-items:start}@media(max-width:860px){.comp-body{grid-template-columns:1fr;gap:2rem}}.tools-list{display:flex;flex-direction:column;gap:1.5rem}.tool-card{background:var(--bg3);border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:border-color .2s}.tool-card:hover{border-color:var(--border-strong)}.tool-card.is-partenaire{border-color:rgba(200,241,53,.3)}.tool-card-top{padding:1.4rem 1.4rem 0}.tool-rank-row{display:flex;align-items:center;gap:10px;margin-bottom:1rem}.tool-rank{font-family:var(--font-display);font-size:11px;font-weight:700;color:var(--text-muted);background:var(--bg);border:1px solid var(--border);padding:3px 9px;border-radius:3px}.tool-rank.rank-1{color:var(--accent);border-color:rgba(200,241,53,.4);background:var(--accent-dim)}.badge-partenaire{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-text);background:var(--accent);padding:3px 8px;border-radius:3px}.tool-name-row{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:.5rem;flex-wrap:wrap}.tool-name{font-family:var(--font-display);font-size:20px;font-weight:800}.tool-global-score{display:flex;align-items:center;gap:6px;flex-shrink:0}.score-number{font-family:var(--font-display);font-size:22px;font-weight:800}.score-max{font-size:12px;color:var(--text-muted);margin-top:4px}.tool-tagline{font-size:13px;color:var(--text-muted);font-style:italic;margin-bottom:.8rem}.tool-desc{font-size:14px;color:var(--text-mid);line-height:1.7;margin-bottom:1.2rem}.scores-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:1rem 1.4rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}@media(max-width:540px){.scores-grid{grid-template-columns:repeat(2,1fr)}}.score-item{text-align:center}.score-label{font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}.score-bar-wrap{height:3px;background:var(--border);border-radius:2px;margin-bottom:4px}.score-bar{height:3px;border-radius:2px}.score-val{font-family:var(--font-display);font-size:13px;font-weight:700}.tool-bottom{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;padding:1.2rem 1.4rem 1.4rem}@media(max-width:640px){.tool-bottom{grid-template-columns:1fr;gap:.8rem}}.pros-cons-title{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:.5rem}.pros-list,.cons-list{list-style:none;display:flex;flex-direction:column;gap:4px}.pros-list li,.cons-list li{font-size:12px;color:var(--text-mid);display:flex;align-items:flex-start;gap:6px;line-height:1.5}.pros-list li::before{content:'+';color:var(--accent);font-weight:700;flex-shrink:0;margin-top:1px}.cons-list li::before{content:'−';color:var(--text-muted);font-weight:700;flex-shrink:0;margin-top:1px}.info-price{font-family:var(--font-display);font-size:14px;font-weight:700;margin-bottom:3px}.info-essai{font-size:12px;color:var(--accent);margin-bottom:8px}.info-ideal-label{font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px}.info-ideal{font-size:12px;color:var(--text-mid);line-height:1.5}.tool-cta-wrap{display:flex;align-items:flex-end}.tool-cta{display:inline-block;width:100%;text-align:center;padding:10px 18px;border-radius:5px;font-family:var(--font-display);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;transition:opacity .15s}.tool-cta.cta-primary{background:var(--accent);color:var(--accent-text)}.tool-cta.cta-secondary{background:var(--bg);border:1px solid var(--border);color:var(--text-mid)}.tool-cta:hover{opacity:.85}.sidebar{position:sticky;top:72px;display:flex;flex-direction:column;gap:1.2rem}@media(max-width:860px){.sidebar{position:static}}.sidebar-widget{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:1.4rem}.sidebar-widget-title{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1rem;text-align:center}.quick-rank-item{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);transition:opacity .15s;text-decoration:none;color:inherit}.quick-rank-item:last-child{border-bottom:none;padding-bottom:0}.quick-rank-item:hover{opacity:.75}.qr-num{font-family:var(--font-display);font-size:11px;font-weight:800;color:var(--text-muted);width:18px;flex-shrink:0}.qr-num.rank-1{color:var(--accent)}.qr-name{font-size:13px;font-weight:600;flex:1}.qr-score{font-family:var(--font-display);font-size:13px;font-weight:700}.method-text{font-size:13px;color:var(--text-mid);line-height:1.7;margin-bottom:1rem}.method-criteria{list-style:none;display:flex;flex-direction:column;gap:6px}.method-criteria li{display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--text-mid);line-height:1.5}.method-criteria li::before{content:'→';color:var(--accent);flex-shrink:0}.nl-title{font-family:var(--font-display);font-size:14px;font-weight:700;margin-bottom:.5rem}.nl-text{font-size:13px;color:var(--text-mid);line-height:1.6;margin-bottom:1rem}.nl-input{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:5px;padding:9px 12px;font-size:13px;color:var(--text);margin-bottom:8px;outline:none;transition:border-color .15s}.nl-input:focus{border-color:var(--accent)}.nl-btn{width:100%;background:var(--accent);color:var(--accent-text);font-family:var(--font-display);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:10px;border-radius:5px;border:none;cursor:pointer}.comp-footer-note{border-top:1px solid var(--border);padding:2rem 0;font-size:12px;color:var(--text-muted);line-height:1.7;max-width:720px}.comp-footer-note a{color:var(--accent)}
+  </style>
+
+  <div class="comp-page">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="/">Accueil</a><span class="breadcrumb-sep">›</span>
+        <a href="/comparatifs">Comparatifs</a><span class="breadcrumb-sep">›</span>
+        <span>Assistants Réunion IA</span>
+      </nav>
+      <header class="comp-header">
+        <span class="comp-cat-label">Comparatif 2026</span>
+        <h1 class="comp-title">Claap vs Fathom vs Otter — Meilleur Assistant Réunion IA</h1>
+        <p class="comp-subtitle">Marre de prendre des notes en réunion ? Nous avons testé les outils IA qui automatisent vos comptes-rendus, transcriptions et suivis de tâches.</p>
+        <div class="comp-meta">
+          <span class="comp-meta-item"><span class="comp-meta-dot"></span>Mis à jour avril 2026</span>
+          <span class="comp-meta-item"><span class="comp-meta-dot"></span>3 outils testés</span>
+          <span class="comp-meta-item"><span class="comp-meta-dot"></span>4 critères notés</span>
+          <span class="comp-meta-item"><span class="comp-meta-dot"></span>7 min de lecture</span>
+        </div>
+      </header>
+
+      <div class="comp-body">
+        <main>
+          <div class="tools-list">
+            {tools.map(tool => (
+              <div class={`tool-card${tool.partenaire ? ' is-partenaire' : ''}`} id={tool.slug}>
+                <div class="tool-card-top">
+                  <div class="tool-rank-row">
+                    <span class={`tool-rank${tool.rank === 1 ? ' rank-1' : ''}`}>N°{tool.rank}</span>
+                    {tool.partenaire && <span class="badge-partenaire">Partenaire</span>}
+                  </div>
+                  <div class="tool-name-row">
+                    <h2 class="tool-name">{tool.name}</h2>
+                    <div class="tool-global-score">
+                      <span class="score-number" style={`color:${scoreColor(tool.globalScore)}`}>{tool.globalScore.toFixed(1)}</span>
+                      <span class="score-max">/5</span>
+                    </div>
+                  </div>
+                  <p class="tool-tagline">{tool.tagline}</p>
+                  <p class="tool-desc">{tool.description}</p>
+                </div>
+                
+                <div class="scores-grid">
+                  {Object.entries(tool.scores).map(([key, val]) => (
+                    <div class="score-item">
+                      <div class="score-label">{scoreLabels[key] || key}</div>
+                      <div class="score-bar-wrap"><div class="score-bar" style={`width:${(val/5)*100}%;background:${scoreColor(val)}`}></div></div>
+                      <div class="score-val" style={`color:${scoreColor(val)}`}>{val.toFixed(1)}</div>
+                    </div>
+                  ))}
+                </div>
+
+                <div class="tool-bottom">
+                  <div>
+                    <div class="pros-cons-title">Points forts</div>
+                    <ul class="pros-list">{tool.avantages.map(a => <li>{a}</li>)}</ul>
+                  </div>
+                  <div>
+                    <div class="pros-cons-title">Limites</div>
+                    <ul class="cons-list">{tool.inconvenients.map(i => <li>{i}</li>)}</ul>
+                    <div style="margin-top:1rem">
+                      <div class="info-ideal-label">Idéal pour</div>
+                      <div class="info-ideal">{tool.ideal}</div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="info-price">{tool.prix}</div>
+                    <div class="info-essai">{tool.essai}</div>
+                    <div class="tool-cta-wrap">
+                      <a href={tool.lien} target="_blank" rel="nofollow noopener" class={`tool-cta ${tool.partenaire ? 'cta-primary' : 'cta-secondary'}`}>
+                        {tool.partenaire ? `Essayer ${tool.name} →` : 'Voir le site →'}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div class="comp-footer-note"><strong>Note éditoriale</strong> — Ce comparatif est basé sur nos tests de production réels. Nous privilégions les outils offrant une transcription française de haute qualité pour les entreprises. <a href="/mentions-legales">En savoir plus</a>.</div>
+        </main>
+
+        <aside class="sidebar">
+          <div class="sidebar-widget">
+            <div class="sidebar-widget-title">Classement rapide</div>
+            {tools.map(t => (
+              <a href={`#${t.slug}`} class="quick-rank-item">
+                <span class={`qr-num${t.rank === 1 ? ' rank-1' : ''}`}>{`#${t.rank}`}</span>
+                <span class="qr-name">{t.name}</span>
+                <span class="qr-score" style={`color:${scoreColor(t.globalScore)}`}>{t.globalScore.toFixed(1)}</span>
+              </a>
+            ))}
+          </div>
+          <div class="sidebar-widget">
+            <div class="sidebar-widget-title">Notre méthode</div>
+            <p class="method-text">Chaque outil a été testé sur 20 réunions réelles (Zoom, Meet, Teams) avec évaluation de la précision de transcription et de la pertinence des résumés IA.</p>
+            <ul class="method-criteria">
+              <li>Précision de la transcription</li>
+              <li>Qualité des résumés IA</li>
+              <li>Facilité d'intégration CRM</li>
+              <li>Rapport qualité / prix</li>
+            </ul>
+          </div>
+          <div class="sidebar-widget">
+            <div class="nl-title">Un outil IA par semaine</div>
+            <p class="nl-text">La sélection des meilleurs outils IA chaque lundi.</p>
+            <form action="https://2224bad4.sibforms.com/serve/MUIFAA5FZ9wsz8jYxQoLCDh0LwleB1JzinLPJ8-XdB2OVm1lXNjNpuVAZxqsMhUxpLQzP4qmL8FdgRRwFog-CWPz4rAQJspvW9Vumzyfg4PvOaNHtUe7pPeOEChXfHsSn58QNgN1bJruhL1EgT5UjU1ub9wi4KPai9kOQOfii2viH8r9IM2YY3c2bdF5kfXolnpmvlJm5dTrmPAlnw==" method="POST">
+              <input type="email" name="EMAIL" class="nl-input" placeholder="votre@email.com" required />
+              <button type="submit" class="nl-btn">S'abonner</button>
+              <input type="text" name="email_address_check" value="" style="display:none;">
+              <input type="hidden" name="locale" value="fr">
+            </form>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
