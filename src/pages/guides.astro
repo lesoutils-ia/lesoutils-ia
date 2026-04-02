@@ -25,6 +25,16 @@ const filtered = articles.filter(a => a.data.category.toLowerCase().includes('gu
     .article-row-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
     .article-row-meta { font-size: 12px; color: var(--text-muted); white-space: nowrap; }
     .empty-state { padding: 4rem 0; text-align: center; color: var(--text-muted); font-size: 15px; }
+
+    /* Nouveaux styles pour le contenu SEO riche */
+    .section-label { font-family: var(--font-display); font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin: 3rem 0 1.5rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); }
+    .guide-intro-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem; }
+    .step-card { background: var(--bg3); border: 1px solid var(--border); padding: 1.5rem; border-radius: 8px; }
+    .step-number { color: var(--accent); font-family: var(--font-display); font-weight: 800; font-size: 24px; margin-bottom: 0.5rem; display: block; }
+    .faq-section { margin: 4rem 0 6rem; }
+    .faq-item { margin-bottom: 2.5rem; max-width: 800px; }
+    .faq-q { font-family: var(--font-display); font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 0.8rem; }
+    .faq-a { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
   </style>
 
   <div class="page">
@@ -34,6 +44,7 @@ const filtered = articles.filter(a => a.data.category.toLowerCase().includes('gu
         <h1 class="page-title">Guides pratiques IA</h1>
         <p class="page-desc">Tout ce qu'il faut savoir pour utiliser l'IA dans votre entreprise, expliqué simplement et testé en conditions réelles.</p>
       </div>
+
       <div class="articles-list">
         {filtered.length > 0 ? filtered.map(a => (
           <a href={`/articles/${a.slug}`} class="article-row">
@@ -48,6 +59,51 @@ const filtered = articles.filter(a => a.data.category.toLowerCase().includes('gu
           <div class="empty-state">Nos premiers guides arrivent très bientôt.</div>
         )}
       </div>
-    </div>
+
+      <div class="seo-rich-content">
+        <div class="section-label">Stratégie d'implémentation</div>
+        <h2 class="page-title" style="font-size: 24px; margin-bottom: 1.5rem;">Comment déployer l'IA dans votre PME en 2026 ?</h2>
+        <p class="page-desc" style="max-width: 100%; margin-bottom: 2rem;">
+          Adopter l'IA ne consiste pas seulement à ouvrir un compte ChatGPT. Pour obtenir un véritable gain de productivité, une approche structurée est nécessaire. Nos guides sont conçus pour vous accompagner à chaque étape de cette transition technologique, en mettant l'accent sur les outils "No-Code" et l'automatisation métier.
+        </p>
+
+        <div class="guide-intro-grid">
+          <div class="step-card">
+            <span class="step-number">01</span>
+            <h3 style="font-size:16px; font-weight:700; margin-bottom:0.8rem;">Audit des Processus</h3>
+            <p style="font-size:13px; color:var(--text-muted); line-height:1.6;">Identifiez les tâches répétitives à faible valeur ajoutée : saisie de données, tri d'emails, ou rédaction de comptes-rendus de réunion. C'est ici que l'IA offre le meilleur ROI immédiat.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-number">02</span>
+            <h3 style="font-size:16px; font-weight:700; margin-bottom:0.8rem;">Sélection de la "Stack"</h3>
+            <p style="font-size:13px; color:var(--text-muted); line-height:1.6;">Choisissez des outils qui communiquent entre eux. En 2026, la connectivité (via API ou Make) est plus importante que la puissance brute d'un seul modèle IA.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-number">03</span>
+            <h3 style="font-size:16px; font-weight:700; margin-bottom:0.8rem;">Gouvernance & RGPD</h3>
+            <p style="font-size:13px; color:var(--text-muted); line-height:1.6;">Établissez une charte d'utilisation claire. Vos collaborateurs doivent savoir quelles données peuvent être partagées avec les IA pour rester en conformité européenne.</p>
+          </div>
+        </div>
+
+        <div class="faq-section">
+          <div class="section-label">Foire aux questions technique</div>
+          
+          <div class="faq-item">
+            <div class="faq-q">Quelle est la différence entre un guide et un comparatif ?</div>
+            <div class="faq-a">Alors que nos comparatifs vous aident à choisir le meilleur outil, nos guides se concentrent sur le "Comment". Ils détaillent les étapes de configuration, les meilleures techniques de prompt engineering et les pièges à éviter lors de l'installation.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">L'IA générative est-elle fiable pour les données financières ?</div>
+            <div class="faq-a">L'IA ne doit jamais travailler seule sur des chiffres critiques. En 2026, l'usage recommandé est celui de "l'humain dans la boucle" (Human-in-the-loop). L'IA pré-analyse et structure, mais un expert doit toujours valider le résultat final.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">Comment rester à jour face à l'évolution rapide des modèles ?</div>
+            <div class="faq-a">C'est la mission de cette section. Nous mettons à jour nos tutoriels dès qu'une mise à jour majeure impacte les workflows des PME. Nous recommandons de vous concentrer sur les fondamentaux de la logique d'automatisation plutôt que sur les réglages spécifiques d'une interface qui peut changer.</div>
+          </div>
+        </div>
+      </div>
+      </div>
   </div>
 </BaseLayout>
