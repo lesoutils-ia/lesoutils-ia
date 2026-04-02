@@ -6,7 +6,6 @@ import { getCollection } from 'astro:content';
 const allArticles = await getCollection('articles', ({ data }) => !data.draft);
 
 // 2. FILTRE STRICT : On ne garde que ceux dont la catégorie est "Formation"
-// On utilise .toLowerCase() pour être sûr que ça marche même si tu écris "formation" ou "Formation"
 const formationArticles = allArticles.filter(article => {
   return article.data.category && article.data.category.toLowerCase() === 'formation';
 });
@@ -23,7 +22,7 @@ const formationArticles = allArticles.filter(article => {
     .page-title { font-family: var(--font-display); font-size: clamp(28px, 4vw, 48px); font-weight: 800; line-height: 1.2; letter-spacing: -1px; margin-bottom: 0.8rem; }
     .page-desc { font-size: 16px; color: var(--text-muted); line-height: 1.7; max-width: 600px; }
     
-    .articles-list { padding: 2rem 0; }
+    .articles-list { padding: 2rem 0 4rem; }
     .article-row { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2rem; padding: 1.5rem 0; border-bottom: 1px solid var(--border); text-decoration: none; color: inherit; }
     .article-row:last-child { border-bottom: none; }
     .article-row-cat { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 5px; }
@@ -33,7 +32,13 @@ const formationArticles = allArticles.filter(article => {
     .article-row-meta { font-size: 12px; color: var(--text-muted); white-space: nowrap; }
     
     .empty-state { padding: 4rem 0; text-align: center; color: var(--text-muted); font-size: 15px; }
-    .empty-state a { color: var(--accent); text-decoration: underline; }
+
+    /* Nouveaux styles pour le contenu riche */
+    .section-label { font-family: var(--font-display); font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin: 3rem 0 1.5rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); }
+    .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; margin-bottom: 4rem; }
+    .info-card h3 { font-family: var(--font-display); font-size: 18px; font-weight: 700; margin-bottom: 1rem; color: #fff; }
+    .info-card p { font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 1rem; }
+    .highlight-box { background: var(--bg3); border: 1px solid var(--border); padding: 2rem; border-radius: 12px; margin: 2rem 0; }
   </style>
 
   <div class="page">
@@ -41,7 +46,7 @@ const formationArticles = allArticles.filter(article => {
       <div class="page-header">
         <div class="page-label">Apprentissage</div>
         <h1 class="page-title">Formations IA</h1>
-        <p class="page-desc">Découvrez nos ressources pour maîtriser l'IA : tutoriels, financements CPF et sélections des meilleurs programmes.</p>
+        <p class="page-desc">Maîtrisez les outils de demain. Nous analysons les meilleurs programmes pour monter en compétences sur l'IA générative et l'automatisation.</p>
       </div>
 
       <div class="articles-list">
@@ -60,10 +65,53 @@ const formationArticles = allArticles.filter(article => {
           ))
         ) : (
           <div class="empty-state">
-            <p>Aucun article trouvé dans la catégorie "Formation".</p>
-            <p style="margin-top:10px; font-size:13px;">Vérifiez que vos fichiers Markdown ont bien <code style="color:var(--accent)">category: "Formation"</code> dans leur en-tête.</p>
+            <p>Nos guides de formation sont en cours de rédaction.</p>
           </div>
         )}
+      </div>
+
+      <div class="content-rich-section">
+        <div class="section-label">Financements & Prise en charge</div>
+        
+        <div class="highlight-box">
+          <h2 style="font-family: var(--font-display); font-size: 22px; font-weight: 800; margin-bottom: 1rem;">Comment financer votre formation IA en 2026 ?</h2>
+          <p style="font-size: 15px; line-height: 1.7; color: var(--text-muted);">
+            L'État français et les organismes collecteurs (OPCO) ont placé l'intelligence artificielle au cœur des priorités de formation. Que vous soyez salarié, dirigeant de PME ou indépendant, plusieurs leviers existent pour réduire votre reste à charge à zéro.
+          </p>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Compte Personnel de Formation (CPF)</h3>
+            <p>La majorité des formations certifiantes en IA (Data Analysis, Prompt Engineering certifié) sont éligibles au CPF. En 2026, de nouveaux modules spécifiques à l'IA générative ont été ajoutés au catalogue France Compétences.</p>
+            <p><strong>Conseil :</strong> Vérifiez que l'organisme dispose de la certification Qualiopi, indispensable pour mobiliser vos droits.</p>
+          </div>
+          <div class="info-card">
+            <h3>Plan de Développement des Compétences</h3>
+            <p>Pour les PME de moins de 50 salariés, l'OPCO peut prendre en charge l'intégralité des coûts pédagogiques. L'IA étant considérée comme une compétence "critique" pour la compétitivité, les dossiers de financement sont actuellement prioritaires.</p>
+          </div>
+          <div class="info-card">
+            <h3>FNE-Formation</h3>
+            <p>Le dispositif FNE-Formation accompagne les entreprises dans la transition numérique. Si votre entreprise entame une transformation profonde de ses processus via l'IA, vous pouvez solliciter une aide allant jusqu'à 70% des frais de formation.</p>
+          </div>
+        </div>
+
+        <div class="section-label">Questions Fréquentes</div>
+        
+        <div class="info-grid" style="margin-bottom: 5rem;">
+          <div class="info-card">
+            <h4 style="color:var(--accent); font-size: 15px; margin-bottom: 0.5rem;">Faut-il savoir coder pour se former à l'IA ?</h4>
+            <p>Absolument pas. En 2026, 80% des formations pour PME se concentrent sur le "No-Code" et le "Prompt Engineering". L'objectif est d'apprendre à piloter les outils (ChatGPT, Claude, Make) plutôt qu'à programmer les algorithmes.</p>
+          </div>
+          <div class="info-card">
+            <h4 style="color:var(--accent); font-size: 15px; margin-bottom: 0.5rem;">Quelle est la durée idéale d'une formation IA ?</h4>
+            <p>Pour une acculturation efficace, un format de 2 à 3 jours intensifs est recommandé. Pour une expertise métier (RH, Marketing, Finance), des cursus de 40 heures permettent une maîtrise complète des automatisations complexes.</p>
+          </div>
+          <div class="info-card">
+            <h4 style="color:var(--accent); font-size: 15px; margin-bottom: 0.5rem;">L'IA va-t-elle rendre ma formation obsolète rapidement ?</h4>
+            <p>C'est tout l'inverse. Se former à l'IA, c'est apprendre à apprendre. Les bases de la logique de "prompt" et de la structure des données restent valables quels que soient les futurs modèles sortis par OpenAI ou Google.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
