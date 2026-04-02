@@ -16,25 +16,18 @@ const recent = sorted.filter(a => a.slug !== featured?.slug).slice(0, 3);
     * { box-sizing: border-box; }
     .home-page { padding-top: 56px; overflow-x: hidden; width: 100%; }
     .wrap { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; width: 100%; }
-    
-    /* TICKER ORIGINAL */
     .ticker { background: var(--accent); color: var(--accent-text); font-family: var(--font-display); font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 7px 0; overflow: hidden; white-space: nowrap; }
     .ticker-inner { display: inline-block; animation: ticker 30s linear infinite; }
     .ticker-inner span { margin: 0 2.5rem; }
     @keyframes ticker { from { transform: translateX(0) } to { transform: translateX(-50%) } }
 
-    /* HERO ORIGINAL */
     .hero { padding: 3rem 0; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; border-bottom: 1px solid var(--border); }
     .hero-left { padding-right: 3rem; border-right: 1px solid var(--border); display: flex; flex-direction: column; gap: 2rem; }
-    @media (max-width: 860px) { 
-      .hero { grid-template-columns: 1fr; gap: 2rem; } 
-      .hero-left { border-right: none; padding-right: 0; border-bottom: 1px solid var(--border); padding-bottom: 2rem; } 
-    }
+    @media (max-width: 860px) { .hero { grid-template-columns: 1fr; gap: 2rem; } .hero-left { border-right: none; padding-right: 0; border-bottom: 1px solid var(--border); padding-bottom: 2rem; } }
     .hero-label { font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); display: flex; align-items: center; gap: 8px; }
     .hero-label::before { content: ''; width: 20px; height: 1px; background: var(--accent); }
     .hero-title { font-family: var(--font-display); font-size: clamp(36px, 5vw, 64px); font-weight: 800; line-height: 1.0; letter-spacing: -2px; }
     .hero-title em { font-style: italic; font-weight: 400; color: var(--text-muted); }
-    
     .hero-meta { display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap; font-size: 12px; color: var(--text-muted); padding-top: 1.5rem; border-top: 1px solid var(--border); }
     .hero-meta-item { display: flex; align-items: center; gap: 5px; }
     .hero-meta-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--accent); }
@@ -49,13 +42,11 @@ const recent = sorted.filter(a => a.slug !== featured?.slug).slice(0, 3);
     .hero-featured-title { font-family: var(--font-body); font-size: 18px; font-weight: 700; line-height: 1.4; letter-spacing: 0px; margin-bottom: 8px; }
     .hero-featured-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
 
-    /* NEWSLETTER ORIGINAL */
     .newsletter-widget { border: 1px solid var(--accent); border-radius: 8px; padding: 1.4rem; background: var(--accent-dim); }
     .newsletter-widget-title { font-family: var(--font-display); font-size: 15px; font-weight: 800; margin-bottom: 5px; }
     .newsletter-input { width: 100%; background: var(--bg); border: 1px solid var(--border); color: var(--text); font-family: var(--font-body); font-size: 13px; padding: 10px 14px; border-radius: 4px; outline: none; margin-bottom: 8px; display: block; }
     .newsletter-btn { width: 100%; background: var(--accent); color: var(--accent-text); font-family: var(--font-display); font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 10px; border-radius: 4px; border: none; cursor: pointer; display: block; text-align: center; }
 
-    /* ARTICLES GRID ORIGINAL */
     .articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid var(--border); }
     @media (max-width: 900px) { .articles-grid { grid-template-columns: 1fr; } }
     .article-card { padding: 1.8rem; border-right: 1px solid var(--border); transition: background .15s; display: block; text-decoration: none; color: inherit; }
@@ -68,7 +59,6 @@ const recent = sorted.filter(a => a.slug !== featured?.slug).slice(0, 3);
     .article-read { color: var(--accent); font-weight: 500; }
     .article-read::after { content: ' →'; }
 
-    /* TOOLS STRIP ORIGINAL */
     .tools-strip { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid var(--border); }
     @media (max-width: 860px) { .tools-strip { grid-template-columns: repeat(2, 1fr); } }
     .tool-card { padding: 1.4rem 1.6rem; border-right: 1px solid var(--border); display: flex; align-items: flex-start; gap: 12px; transition: background .15s; text-decoration: none; color: inherit; }
@@ -78,7 +68,7 @@ const recent = sorted.filter(a => a.slug !== featured?.slug).slice(0, 3);
     .tool-name { font-family: var(--font-body); font-size: 13px; font-weight: 700; margin-bottom: 3px; }
     .tool-desc { font-size: 11px; color: var(--text-muted); line-height: 1.4; }
 
-    /* --- NOUVEAU BAS DE PAGE ESTHÉTIQUE --- */
+    /* NOUVEAUX STYLES BAS DE PAGE UNIQUEMENT */
     .expert-section { padding: 4rem 0; border-bottom: 1px solid var(--border); }
     .section-label-seo { font-family: var(--font-display); font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; }
     .info-grid-seo { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; margin: 2rem 0 4rem; }
@@ -86,18 +76,16 @@ const recent = sorted.filter(a => a.slug !== featured?.slug).slice(0, 3);
     .info-card-seo h3 { font-family: var(--font-display); font-size: 18px; font-weight: 800; margin-bottom: 1rem; color: #fff; }
     .info-card-seo p { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
     .faq-grid-seo { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2rem; }
+    @media (max-width: 768px) { .faq-grid-seo { grid-template-columns: 1fr; } }
     .faq-q-seo { font-family: var(--font-body); font-size: 15px; font-weight: 700; color: var(--accent); margin-bottom: 0.5rem; }
     .faq-a-seo { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
 
-    /* BANNIÈRE FINALE ORIGINALE */
     .bottom-banner { padding: 3.5rem 0; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; border-bottom: 1px solid var(--border); }
     .banner-title { font-family: var(--font-display); font-size: clamp(22px, 3vw, 40px); font-weight: 800; letter-spacing: -1.5px; line-height: 1.1; }
     .banner-title span { color: var(--accent); }
     .banner-actions { display: flex; gap: 10px; flex-wrap: wrap; }
     .btn-primary { background: var(--accent); color: var(--accent-text); font-family: var(--font-display); font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 13px 24px; border-radius: 4px; border: none; cursor: pointer; display: inline-block; text-decoration: none; }
     .btn-outline { background: transparent; color: var(--text); font-family: var(--font-display); font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 13px 24px; border-radius: 4px; border: 1px solid var(--border-strong); cursor: pointer; display: inline-block; text-decoration: none; }
-
-    @media (max-width: 860px) { .faq-grid-seo { grid-template-columns: 1fr; } }
   </style>
 
   <div class="home-page">
@@ -120,7 +108,6 @@ const recent = sorted.filter(a => a.slug !== featured?.slug).slice(0, 3);
               <div class="hero-meta-item"><div class="hero-meta-dot"></div> PME & Freelances</div>
             </div>
           </div>
-          
           <div class="newsletter-widget">
             <div class="newsletter-widget-title">La dose hebdo d'IA</div>
             <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 1rem;">Rejoignez 4,500+ décideurs. Pas de spam, juste du concret.</p>
@@ -130,13 +117,10 @@ const recent = sorted.filter(a => a.slug !== featured?.slug).slice(0, 3);
             </form>
           </div>
         </div>
-
         <div class="hero-right">
           {featured && (
             <a href={`/articles/${featured.slug}`} class="hero-featured">
-              <div class="hero-featured-img">
-                <div class="hero-featured-tag">À la une</div>
-              </div>
+              <div class="hero-featured-img"><div class="hero-featured-tag">À la une</div></div>
               <div class="hero-featured-body">
                 <div class="hero-featured-cat">{featured.data.category}</div>
                 <h2 class="hero-featured-title">{featured.data.title}</h2>
@@ -153,31 +137,16 @@ const recent = sorted.filter(a => a.slug !== featured?.slug).slice(0, 3);
             <div class="article-cat">{post.data.category}</div>
             <h3 class="article-title">{post.data.title}</h3>
             <p class="article-excerpt">{post.data.description}</p>
-            <div class="article-footer">
-              <span>{post.data.readTime}</span>
-              <span class="article-read">Lire</span>
-            </div>
+            <div class="article-footer"><span>{post.data.readTime}</span><span class="article-read">Lire</span></div>
           </a>
         ))}
       </section>
 
       <section class="tools-strip">
-        <a href="/comparatifs/crm" class="tool-card">
-          <div class="tool-icon">H</div>
-          <div><div class="tool-name">HubSpot</div><div class="tool-desc">Meilleur CRM IA</div></div>
-        </a>
-        <a href="/comparatifs/automatisation" class="tool-card">
-          <div class="tool-icon">M</div>
-          <div><div class="tool-name">Make.com</div><div class="tool-desc">Automatisation pro</div></div>
-        </a>
-        <a href="/comparatifs/chatgpt-alternatives" class="tool-card">
-          <div class="tool-icon">C</div>
-          <div><div class="tool-name">Claude 3.5</div><div class="tool-desc">Le top du LLM</div></div>
-        </a>
-        <a href="/comparatifs/email-marketing" class="tool-card">
-          <div class="tool-icon">B</div>
-          <div><div class="tool-name">Brevo</div><div class="tool-desc">Marketing & Email</div></div>
-        </a>
+        <a href="/comparatifs/crm" class="tool-card"><div class="tool-icon">H</div><div><div class="tool-name">HubSpot</div><div class="tool-desc">Meilleur CRM IA</div></div></a>
+        <a href="/comparatifs/automatisation" class="tool-card"><div class="tool-icon">M</div><div><div class="tool-name">Make.com</div><div class="tool-desc">Automatisation pro</div></div></a>
+        <a href="/comparatifs/chatgpt-alternatives" class="tool-card"><div class="tool-icon">C</div><div><div class="tool-name">Claude 3.5</div><div class="tool-desc">Le top du LLM</div></div></a>
+        <a href="/comparatifs/email-marketing" class="tool-card"><div class="tool-icon">B</div><div><div class="tool-name">Brevo</div><div class="tool-desc">Marketing & Email</div></div></a>
       </section>
 
       <section class="expert-section">
@@ -185,27 +154,25 @@ const recent = sorted.filter(a => a.slug !== featured?.slug).slice(0, 3);
         <h2 style="font-family: var(--font-display); font-size: clamp(24px, 4vw, 36px); font-weight: 800; letter-spacing: -1px; margin-bottom: 2rem;">
           L'IA pour les entreprises : <span style="color:var(--accent)">Au-delà de la hype.</span>
         </h2>
-        
         <div class="info-grid-seo">
           <div class="info-card-seo">
             <h3>Tests en conditions réelles</h3>
-            <p>Contrairement aux sites qui copient les fiches techniques, nous intégrons chaque outil dans nos propres workflows de PME française. Nous mesurons le gain de temps réel et la facilité d'adoption.</p>
+            <p>Nous intégrons chaque outil dans nos propres workflows de PME française. Nous mesurons le gain de temps réel et la facilité d'adoption par les équipes.</p>
           </div>
           <div class="info-card-seo">
             <h3>Indépendance Editoriale</h3>
-            <p>Nos comparatifs sont basés sur des critères objectifs : conformité RGPD, service client francophone, et surtout, le rapport coût/bénéfice pour une structure de 1 à 50 salariés.</p>
+            <p>Nos comparatifs sont basés sur des critères objectifs : conformité RGPD, service client francophone, et surtout, le rapport coût/bénéfice réel.</p>
           </div>
           <div class="info-card-seo">
             <h3>Mise à jour 2026</h3>
-            <p>Le marché de l'IA change chaque semaine. Nos guides sont révisés mensuellement pour refléter les dernières versions des modèles comme ChatGPT, Claude ou Mistral.</p>
+            <p>Le marché de l'IA change chaque semaine. Nos guides sont révisés mensuellement pour refléter les dernières versions des modèles comme ChatGPT ou Claude.</p>
           </div>
         </div>
-
         <div class="section-label-seo">Foire aux questions</div>
         <div class="faq-grid-seo">
           <div>
             <div class="faq-q-seo">Quel est le meilleur outil IA pour débuter ?</div>
-            <div class="faq-a-seo">Pour la plupart des PME, la porte d'entrée idéale reste un assistant comme ChatGPT Plus ou Claude Pro, combiné à un outil d'automatisation simple comme Make.</div>
+            <div class="faq-a-seo">Pour la plupart des PME, la porte d'entrée idéale reste un assistant comme ChatGPT Plus ou Claude Pro, combiné à un outil d'automatisation comme Make.</div>
           </div>
           <div>
             <div class="faq-q-seo">L'IA est-elle compatible avec le RGPD ?</div>
@@ -231,6 +198,7 @@ const recent = sorted.filter(a => a.slug !== featured?.slug).slice(0, 3);
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const btn = form.querySelector('button');
+      const originalText = btn.innerText;
       btn.innerText = "PATIENTEZ...";
       btn.disabled = true;
       try {
