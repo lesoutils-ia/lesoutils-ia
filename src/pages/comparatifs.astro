@@ -45,7 +45,7 @@ const comparatifsPages = [
     .outil-tag { font-size: 10px; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); padding: 2px 7px; border-radius: 3px; }
     .outil-tag.is-partenaire { color: var(--accent); border-color: rgba(200,241,53,0.3); background: var(--accent-dim); }
     .comp-card-cta { font-family: var(--font-display); font-size: 11px; font-weight: 700; color: var(--accent); margin-top: 2px; }
-    .articles-list { padding: 0 0 4rem; }
+    .articles-list { padding: 0 0 2rem; }
     .article-row { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2rem; padding: 1.5rem 0; border-bottom: 1px solid var(--border); }
     .article-row:last-child { border-bottom: none; }
     .article-row:hover .article-row-title { color: var(--accent); }
@@ -53,6 +53,13 @@ const comparatifsPages = [
     .article-row-title { font-family: var(--font-body); font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 5px; transition: color .15s; }
     .article-row-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
     .article-row-meta { font-size: 12px; color: var(--text-muted); white-space: nowrap; }
+
+    /* Nouveaux styles pour la FAQ */
+    .seo-section { margin-top: 4rem; padding-bottom: 5rem; }
+    .faq-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem; margin-top: 2rem; }
+    @media (max-width: 768px) { .faq-grid { grid-template-columns: 1fr; } }
+    .faq-q { font-family: var(--font-display); font-size: 17px; font-weight: 700; margin-bottom: 0.8rem; color: #fff; }
+    .faq-a { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
   </style>
 
   <div class="page">
@@ -98,6 +105,34 @@ const comparatifsPages = [
           </div>
         </>
       )}
+
+      <div class="seo-section">
+        <div class="section-label">Méthodologie & Expertise</div>
+        <h2 class="page-title" style="font-size: 24px; margin-bottom: 1.5rem;">Comment nous testons les solutions IA ?</h2>
+        <p class="page-desc" style="max-width: 100%;">
+          Le marché de l'intelligence artificielle en 2026 est saturé de solutions "gadgets". Pour vous aider à choisir, notre équipe de consultants IA analyse chaque logiciel selon une grille de scoring rigoureuse. Nous ne nous contentons pas de tester l'interface utilisateur ; nous poussons les outils dans leurs retranchements techniques : limites de contexte des LLM, latence des API, et surtout, la pertinence des résultats en langue française. Chaque comparatif (CRM, automatisation, rédaction) est le fruit d'au moins 20 heures de tests intensifs.
+        </p>
+
+        <div class="section-label">Foire aux questions</div>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <div class="faq-q">Pourquoi privilégier des outils IA compatibles RGPD ?</div>
+            <div class="faq-a">Pour une PME française, la sécurité des données clients est primordiale. En 2026, utiliser une IA qui n'offre pas de garanties sur l'hébergement des données en Europe peut exposer l'entreprise à des risques juridiques majeurs. Nos classements indiquent systématiquement le niveau de conformité.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Peut-on réellement remplacer des logiciels classiques par l'IA ?</div>
+            <div class="faq-a">L'IA ne remplace pas l'outil de base mais le transforme. Un CRM comme HubSpot ou Salesforce n'est plus une simple base de données, mais un copilote qui rédige vos emails et prédit vos ventes. L'enjeu est de choisir l'outil qui intègre l'IA nativement pour gagner en productivité sans multiplier les abonnements.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Quel budget faut-il prévoir pour l'automatisation IA ?</div>
+            <div class="faq-a">Une PME type consacre désormais entre 2% et 5% de sa masse salariale dans les outils d'efficience IA. Cela inclut les licences d'automatisation (Make, Zapier) et les accès aux modèles de langage (Claude, GPT-4o). Le retour sur investissement est généralement constaté dès le troisième mois d'utilisation.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Comment intégrer ces outils dans une équipe non-technique ?</div>
+            <div class="faq-a">La simplicité d'usage (No-Code) est l'un de nos critères de notation. En 2026, la plupart des outils comme Canva pour l'image ou Notion pour l'organisation ont rendu l'IA accessible via des commandes en langage naturel, ne nécessitant aucune compétence en programmation.</div>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>
