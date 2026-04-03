@@ -99,50 +99,44 @@ const recent = sorted.filter(a => a.slug !== featured?.slug).slice(0, 3);
     .btn-primary { background: var(--accent); color: var(--accent-text); font-family: var(--font-display); font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 13px 24px; border-radius: 4px; border: none; cursor: pointer; display: inline-block; text-decoration: none; }
     .btn-outline { background: transparent; color: var(--text); font-family: var(--font-display); font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 13px 24px; border-radius: 4px; border: 1px solid var(--border-strong); cursor: pointer; display: inline-block; text-decoration: none; }
 
-    /* Styles pour la grille de cartes SEO */
-.seo-rich-content {
-  margin-top: 2rem;
-}
+        /* SECTION SEO */
+    .seo-section { padding: 3.5rem 0; border-bottom: 1px solid var(--border); }
+    
+    .section-label { 
+      font-family: var(--font-display); font-size: 11px; font-weight: 700; 
+      letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); 
+      margin-bottom: 1rem; 
+    }
 
-.section-label {
-  font-family: var(--font-display);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 1rem;
-}
+    .page-title { 
+      font-family: var(--font-display); font-weight: 800; letter-spacing: -1px; 
+      color: var(--text); 
+    }
 
-.guide-intro-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-top: 2rem;
-}
+    .page-desc p { 
+      font-size: 14px; color: var(--text-mid); line-height: 1.8; 
+    }
 
-.step-card {
-  background: var(--bg3);
-  border: 1px solid var(--border);
-  padding: 1.5rem;
-  border-radius: 8px;
-}
+    .guide-intro-grid { 
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2.5rem; 
+    }
 
-.step-number {
-  display: block;
-  font-family: var(--font-display);
-  font-size: 24px;
-  font-weight: 800;
-  color: var(--accent);
-  margin-bottom: 1rem;
-  opacity: 0.5;
-}
+    .step-card { 
+      background: var(--bg3); border: 1px solid var(--border); 
+      padding: 1.8rem; border-radius: 8px; transition: border-color 0.2s;
+    }
+    
+    .step-card:hover { border-color: var(--border-strong); }
 
-@media (max-width: 860px) {
-  .guide-intro-grid {
-    grid-template-columns: 1fr;
-  }
-}
+    .step-number { 
+      display: block; font-family: var(--font-display); font-size: 24px; 
+      font-weight: 800; color: var(--accent); margin-bottom: 1rem; opacity: 0.5; 
+    }
+
+    @media (max-width: 860px) { 
+      .guide-intro-grid { grid-template-columns: 1fr; gap: 1.5rem; } 
+    }
+
 
   </style>
 
