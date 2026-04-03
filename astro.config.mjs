@@ -7,5 +7,6 @@ export default defineConfig({
     '/outils': '/comparatifs',
     '/automatisation': '/comparatifs/automatisation',
     '/redaction-ia': '/comparatifs/redaction-ia',
+    '/actualites': '/guides',
   },
 });
