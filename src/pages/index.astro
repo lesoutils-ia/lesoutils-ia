@@ -99,15 +99,51 @@ const recent = sorted.filter(a => a.slug !== featured?.slug).slice(0, 3);
     .btn-primary { background: var(--accent); color: var(--accent-text); font-family: var(--font-display); font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 13px 24px; border-radius: 4px; border: none; cursor: pointer; display: inline-block; text-decoration: none; }
     .btn-outline { background: transparent; color: var(--text); font-family: var(--font-display); font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 13px 24px; border-radius: 4px; border: 1px solid var(--border-strong); cursor: pointer; display: inline-block; text-decoration: none; }
 
-    /* SECTION SEO */
-    .seo-section { padding: 3.5rem 0; border-bottom: 1px solid var(--border); }
-    .seo-section-title { font-family: var(--font-display); font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 2rem; }
-    .seo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
-    @media (max-width: 860px) { .seo-grid { grid-template-columns: 1fr; gap: 1.5rem; } }
-    .seo-block-title { font-family: var(--font-display); font-size: 15px; font-weight: 700; margin-bottom: 0.6rem; }
-    .seo-block-text { font-size: 13px; color: var(--text-muted); line-height: 1.7; }
-    .seo-intro { max-width: 760px; margin-bottom: 2.5rem; }
-    .seo-intro p { font-size: 14px; color: var(--text-mid); line-height: 1.8; margin-bottom: 0.8rem; }
+    /* Styles pour la grille de cartes SEO */
+.seo-rich-content {
+  margin-top: 2rem;
+}
+
+.section-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.guide-intro-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.step-card {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.step-number {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+@media (max-width: 860px) {
+  .guide-intro-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
   </style>
 
   <div class="home-page">
