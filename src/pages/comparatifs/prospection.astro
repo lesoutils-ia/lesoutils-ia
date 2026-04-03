@@ -16,6 +16,7 @@ const tools = [
     prix: "À partir de 39€/mois",
     essai: "Essai 14 jours",
     lien: "https://lemlist.com",
+    affiliateLink: "https://lemlist.com/?via=lesoutilsia",
     partenaire: true,
     avantages: ["Personnalisation IA avancée", "Images dynamiques", "Multicanal email + LinkedIn", "Taux réponse élevés"],
     inconvenients: ["Prix élevé pour démarrer", "Interface un peu chargée", "Courbe d'apprentissage"],
@@ -65,7 +66,7 @@ const tools = [
     globalScore: 4.5,
     prix: "Gratuit / Basique à 49$/mois",
     essai: "Plan gratuit avec crédits",
-    lien: "https://get.apollo.io/sy4gbfxk52aj", // Ton lien d'affiliation Apollo
+    lien: "https://get.apollo.io/sy4gbfxk52aj",
     affiliateLink: "https://get.apollo.io/sy4gbfxk52aj",
     partenaire: false,
     avantages: ["Base de données incluse", "IA prédictive d'achat", "Tout-en-un massif", "Excellent rapport Q/P"],
@@ -164,7 +165,7 @@ const scoreLabels: { [key: string]: string } = {"reponse": "Taux réponse", "ia"
                   <p class="tool-tagline">{tool.tagline}</p>
                   <p class="tool-desc">{tool.description}</p>
                 </div>
-                
+
                 <div class="scores-grid">
                   {Object.entries(tool.scores).map(([key, val]) => (
                     <div class="score-item">
@@ -215,7 +216,7 @@ const scoreLabels: { [key: string]: string } = {"reponse": "Taux réponse", "ia"
               </a>
             ))}
           </div>
-<div class="sidebar-widget">
+          <div class="sidebar-widget">
             <div class="sidebar-widget-title">Notre méthode</div>
             <p class="method-text">Chaque outil testé sur de vraies campagnes de prospection B2B — taux de réponse mesurés sur 500 contacts minimum par outil.</p>
             <ul class="method-criteria">
