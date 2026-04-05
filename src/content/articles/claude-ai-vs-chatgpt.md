@@ -85,8 +85,10 @@ Code et développement — l'écosystème d'outils et de plugins autour de ChatG
 
 Notoriété et adoption dans l'équipe — si vous voulez déployer un outil IA à des collaborateurs qui n'ont jamais utilisé ce type de technologie, "ChatGPT" est un mot qu'ils connaissent déjà. C'est un avantage d'adoption non négligeable.
 
-> **Besoin de voir les chiffres ?**
-> Si vous cherchez un tableau technique complet avec les notes de performances, les temps de réponse et toutes les options alternatives (Mistral, Gemini, Perplexity), consultez notre [comparatif détaillé des alternatives à ChatGPT](https://lesoutils-ia.fr/comparatifs/chatgpt-alternatives).
+<p style="color: white; margin: 2rem 0;">
+  <strong>Besoin de voir les chiffres ?</strong><br />
+  Si vous cherchez un tableau technique complet avec les notes de performances, les temps de réponse et toutes les options alternatives (Mistral, Gemini, Perplexity), consultez notre <a href="https://lesoutils-ia.fr/comparatifs/chatgpt-alternatives" style="color: white; text-decoration: underline; font-weight: bold;">comparatif détaillé des alternatives à ChatGPT</a>.
+</p>
 
 ## Notre verdict honnête
 
