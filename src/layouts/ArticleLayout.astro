@@ -36,20 +36,17 @@ const categorySlug = category.toLowerCase().replace(/ /g, '-').normalize("NFD").
         </div>
         <h1 class="article-title">{title}</h1>
         <p class="article-subtitle">{description}</p>
-        <div class="article-meta-row">
-  <div class="meta-author">
-    <div class="author-avatar">{authorInitials}</div>
-    {author}
-  </div>
-  <span class="meta-date">
-    {new Date(publishDate).toLocaleDateString('fr-FR', {
-      day: 'numeric',
-      month: 'long',
-      year: 'numeric',
-    })}
-  </span>
-  <span>{readTime} de lecture</span>
-</div>
+         <div class="article-meta-row">
+          <div class="meta-author"><div class="author-avatar">{authorInitials}</div>{author}</div>
+          <span class="meta-date">
+            {new Date(publishDate).toLocaleDateString('fr-FR', {
+              day: 'numeric',
+              month: 'long',
+              year: 'numeric',
+            })}
+          </span>
+          <span>{readTime} de lecture</span>
+        </div>
 
       </div>
 
@@ -123,6 +120,8 @@ const categorySlug = category.toLowerCase().replace(/ /g, '-').normalize("NFD").
   .newsletter-widget-title { font-size: 15px; font-weight: 800; margin-bottom: 5px; }
   .newsletter-input { width: 100%; padding: 10px; border-radius: 4px; border: 1px solid var(--border); margin-bottom: 8px; background: var(--bg); color: var(--text); }
   .newsletter-btn { width: 100%; background: var(--accent); color: var(--accent-text); font-weight: 700; padding: 10px; border-radius: 4px; border: none; cursor: pointer; }
+  .meta-date::before { content: "•"; margin: 0 8px; color: var(--text-muted); }
+
 </style>
 
 <script is:inline>
