@@ -37,9 +37,20 @@ const categorySlug = category.toLowerCase().replace(/ /g, '-').normalize("NFD").
         <h1 class="article-title">{title}</h1>
         <p class="article-subtitle">{description}</p>
         <div class="article-meta-row">
-          <div class="meta-author"><div class="author-avatar">{authorInitials}</div>{author}</div>
-          <span>{readTime} de lecture</span>
-        </div>
+  <div class="meta-author">
+    <div class="author-avatar">{authorInitials}</div>
+    {author}
+  </div>
+  <span class="meta-date">
+    {new Date(publishDate).toLocaleDateString('fr-FR', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+    })}
+  </span>
+  <span>{readTime} de lecture</span>
+</div>
+
       </div>
 
       <div class="article-body-wrap">
