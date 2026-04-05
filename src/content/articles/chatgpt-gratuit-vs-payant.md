@@ -1,7 +1,7 @@
 ---
 title: "ChatGPT gratuit vs payant - ce que vous obtenez vraiment en 2026"
 description: "ChatGPT gratuit suffit-il pour une PME en 2026 ? Comparatif honnête entre le plan gratuit et ChatGPT Plus à 20$/mois — fonctions, limites, et quand l'upgrade vaut vraiment le coup."
-category: "Guide ChatGPT"
+category: "Guides"
 tags: ["chatgpt gratuit", "chatgpt plus", "chatgpt payant", "chatgpt prix 2026", "GPT-4o"]
 author: "Équipe lesoutils-ia"
 authorInitials: "LI"
