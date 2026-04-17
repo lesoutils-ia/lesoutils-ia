@@ -5,8 +5,8 @@ category: "IA pour PME"
 tags: ["deepseek ou chatgpt", "Deepseek", "ChatGPT", "comparatif IA", "outil IA PME"]
 author: "Équipe lesoutils-ia"
 authorInitials: "LI"
-publishDate: "2026-04-08"
-updateDate: "2026-04-08"
+publishDate: "2026-04-17"
+updateDate: "2026-04-17"
 readTime: "7 min"
 featured: false
 draft: false
