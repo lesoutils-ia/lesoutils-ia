@@ -1,7 +1,7 @@
 ---
 title: "Deepseek ou ChatGPT — lequel choisir en 2026 ?"
 description: "Deepseek ou ChatGPT : on a testé les deux pendant un mois sur des cas métiers réels. Performances, confidentialité, prix — le verdict pour les entreprises françaises."
-category: "Comparatif"
+category: "IA pour PME"
 tags: ["deepseek ou chatgpt", "Deepseek", "ChatGPT", "comparatif IA", "outil IA PME"]
 author: "Équipe lesoutils-ia"
 authorInitials: "LI"
