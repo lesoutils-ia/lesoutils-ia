@@ -5,8 +5,8 @@ category: "Guides"
 tags: ["chatgpt lettre de motivation", "ChatGPT", "CV", "recherche emploi", "prompts ChatGPT"]
 author: "Équipe lesoutils-ia"
 authorInitials: "LI"
-publishDate: "2026-04-08"
-updateDate: "2026-04-08"
+publishDate: "2026-04-17"
+updateDate: "2026-04-17"
 readTime: "8 min"
 featured: false
 draft: false
