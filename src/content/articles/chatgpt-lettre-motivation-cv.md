@@ -1,7 +1,7 @@
 ---
 title: "ChatGPT pour la lettre de motivation et le CV — guide complet"
 description: "Comment utiliser ChatGPT pour rédiger une lettre de motivation et optimiser son CV en 2026. Les prompts qui fonctionnent vraiment, les erreurs à éviter."
-category: "Guide ChatGPT"
+category: "Guides"
 tags: ["chatgpt lettre de motivation", "ChatGPT", "CV", "recherche emploi", "prompts ChatGPT"]
 author: "Équipe lesoutils-ia"
 authorInitials: "LI"
