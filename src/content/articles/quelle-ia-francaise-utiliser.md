@@ -1,7 +1,7 @@
 ---
 title: "Quelle IA française utiliser en 2026 ? Le guide complet"
 description: "Mistral, CraftIA, Bloom, le Chat Pro... Les meilleures IA françaises testées et comparées. Souveraineté des données, RGPD et qualité du français — notre verdict."
-category: "Comparatif"
+category: "Formation"
 tags: ["quelle ia française utiliser", "IA française", "Mistral AI", "RGPD IA", "alternative ChatGPT française"]
 author: "Équipe lesoutils-ia"
 authorInitials: "LI"
