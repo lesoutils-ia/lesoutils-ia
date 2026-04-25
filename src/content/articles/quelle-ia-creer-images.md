@@ -1,7 +1,7 @@
 ---
 title: "Quelle IA utiliser pour créer des images en 2026 ?"
 description: "Midjourney, DALL-E, Firefly, Stable Diffusion — quel outil IA choisir pour générer des images selon votre budget et votre usage ? Comparatif complet testé."
-category: "Comparatif"
+category: "Guides"
 tags: ["quelle ia utiliser pour créer des images", "IA génération images", "Midjourney", "DALL-E", "Firefly"]
 author: "Équipe lesoutils-ia"
 authorInitials: "LI"
