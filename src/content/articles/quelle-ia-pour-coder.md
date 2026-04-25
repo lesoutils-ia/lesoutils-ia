@@ -1,7 +1,7 @@
 ---
 title: "Top 5 des IA pour coder plus vite en 2026"
 description: "GitHub Copilot, Cursor, Claude, Deepseek... Quelle IA utiliser pour coder en 2026 ? Comparatif des meilleurs outils testés par des développeurs en conditions réelles."
-category: "Comparatif"
+category: "IA pour PME"
 tags: ["quelle ia pour le code", "IA pour coder", "GitHub Copilot", "Cursor", "Deepseek code"]
 author: "Équipe lesoutils-ia"
 authorInitials: "LI"
